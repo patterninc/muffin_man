@@ -23,6 +23,7 @@ module MuffinMan
       @aws_access_key_id = credentials[:aws_access_key_id]
       @aws_secret_access_key = credentials[:aws_secret_access_key]
       @sts_iam_role_arn = credentials[:sts_iam_role_arn]
+      @region = credentials[:region] || 'na'
       @sandbox = sandbox
       Typhoeus::Config.user_agent = ''
       @config = MuffinMan.configuration
@@ -120,7 +121,7 @@ module MuffinMan
 
     def derive_aws_region
       @aws_region ||= AWS_REGION_MAP[region]
-      raise MuffinMan::Error.new("#{region} is not supported or does not exist. Region must be one of the following: na, eu, fe") unless @aws_region
+      raise MuffinMan::Error.new("#{region} is not supported or does not exist. Region must be one of the following: #{AWS_REGION_MAP.keys.join(', ')}") unless @aws_region
       @aws_region
     end
   end
