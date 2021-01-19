@@ -32,7 +32,7 @@ module MuffinMan
     end
 
     def sp_api_host
-      hostname.prepend("sandbox.") if sandbox
+      sandbox ? hostname.prepend("sandbox.") : hostname
     end
 
     def sp_api_url
@@ -95,7 +95,12 @@ module MuffinMan
         region: region,
         endpoint: sp_api_host
       }
-      request_config[:credentials_provider] = request_sts_token unless sts_iam_role_arn.nil?
+      if sts_iam_role_arn.nil?
+        request_config[:access_key_id] = aws_access_key_id
+        request_config[:secret_access_key] = aws_secret_access_key
+      else
+        request_config[:credentials_provider] = request_sts_token
+      end
       signer = Aws::Sigv4::Signer.new(request_config)
       signer.sign_request(http_method: request_type, url: request.url)
     end
