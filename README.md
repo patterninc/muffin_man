@@ -22,6 +22,20 @@ Or install it yourself as:
 
 ## Usage
 
+You can save and retrieve the LWA refresh token by defining a lambda in your initializers.
+
+Example:
+
+```ruby
+  MuffinMan.configure do |config|
+    config.save_access_token = -> (client_id, token) do
+      Redis.set("SP-TOKEN-#{client_id}", token.token, expires: token.expire)
+    end
+
+    config.get_access_token = -> (client_id) { Redis.get("SP-TOKEN-#{client_id}") }
+  end
+```
+
 TODO: Write usage instructions here
 
 ## Development
