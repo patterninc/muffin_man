@@ -50,7 +50,18 @@ module MuffinMan
       )
     end
 
-    # TODO: we should store this and know when we need to refresh it
+    def retrieve_lwa_access_token
+      return request_lwa_access_token unless defined?(MuffinMan.configuration.get_access_token)
+      stored_token = MuffinMan.configuration.get_access_token.call(client_id)
+      if stored_token.nil? || stored_token.expires < Time.now
+        new_token = request_lwa_access_token
+        save_access_token(client_id, new_token) if defined?(save_access_token)
+        return new_token
+      else
+        return stored_token.token
+      end
+    end
+
     def request_lwa_access_token
       body = {
         grant_type: 'refresh_token',
@@ -90,7 +101,7 @@ module MuffinMan
 
     def headers
       headers = {
-        'x-amz-access-token' => request_lwa_access_token,
+        'x-amz-access-token' => retrieve_lwa_access_token,
         'user-agent' => "MuffinMan/#{VERSION} (Language=Ruby)",
         'content-type' => "application/json"
       }
