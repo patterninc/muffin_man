@@ -7,19 +7,22 @@ require 'securerandom'
 module MuffinMan
   class SpApiClient
     attr_reader :refresh_token, :client_id, :client_secret, :aws_access_key_id,
-      :aws_secret_access_key, :sts_iam_role_arn, :sandbox, :region, :hostname, :config
+      :aws_secret_access_key, :sts_iam_role_arn, :sandbox, :config, :region
     ACCESS_TOKEN_URL = 'https://api.amazon.com/auth/o2/token'.freeze
     SERVICE_NAME = 'execute-api'.freeze
+    AWS_REGION_MAP = {
+      'na' => 'us-east-1',
+      'eu' => 'eu-west-1',
+      'fe' => 'us-west-2'
+    }.freeze
 
-    def initialize(credentials, sandbox = false, hostname = "sellingpartnerapi-na.amazon.com")
+    def initialize(credentials, sandbox = false)
       @refresh_token = credentials[:refresh_token]
       @client_id = credentials[:client_id]
       @client_secret = credentials[:client_secret]
       @aws_access_key_id = credentials[:aws_access_key_id]
       @aws_secret_access_key = credentials[:aws_secret_access_key]
       @sts_iam_role_arn = credentials[:sts_iam_role_arn]
-      @region = credentials[:region]
-      @hostname = hostname
       @sandbox = sandbox
       Typhoeus::Config.user_agent = ''
       @config = MuffinMan.configuration
@@ -32,6 +35,7 @@ module MuffinMan
     end
 
     def sp_api_host
+      hostname = "sellingpartnerapi-#{region}.amazon.com"
       sandbox ? hostname.prepend("sandbox.") : hostname
     end
 
@@ -82,7 +86,7 @@ module MuffinMan
 
     def request_sts_token
       client = Aws::STS::Client.new(
-        region: region,
+        region: derive_aws_region,
         access_key_id: aws_access_key_id,
         secret_access_key: aws_secret_access_key
       )
@@ -92,7 +96,7 @@ module MuffinMan
     def signed_request
       request_config = {
         service: SERVICE_NAME,
-        region: region,
+        region: derive_aws_region,
         endpoint: sp_api_host
       }
       if sts_iam_role_arn.nil?
@@ -112,6 +116,12 @@ module MuffinMan
         'content-type' => "application/json"
       }
       signed_request.headers.merge(headers)
+    end
+
+    def derive_aws_region
+      @aws_region ||= AWS_REGION_MAP[region]
+      raise MuffinMan::Error.new("#{region} is not supported or does not exist. Region must be one of the following: na, eu, fe") unless @aws_region
+      @aws_region
     end
   end
 end

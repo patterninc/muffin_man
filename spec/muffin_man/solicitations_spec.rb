@@ -10,7 +10,6 @@ RSpec.describe MuffinMan::Solicitations do
       client_secret: 'a-client-secret',
       aws_access_key_id: 'an-aws-access-key-id',
       aws_secret_access_key: 'an-aws-secret-access-key',
-      region: 'us-east-1'
     }
   }
   let(:hostname) { "sellingpartnerapi-na.amazon.com" }
