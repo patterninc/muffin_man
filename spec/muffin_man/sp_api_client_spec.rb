@@ -7,7 +7,6 @@ RSpec.describe MuffinMan::SpApiClient do
       client_secret: 'a-client-secret',
       aws_access_key_id: 'an-aws-access-key-id',
       aws_secret_access_key: 'an-aws-secret-access-key',
-      region: 'us-east-1'
     }
   }
   let(:fake_lwa_access_token) { "this_will_get_you_into_drury_lane" }
@@ -22,19 +21,10 @@ RSpec.describe MuffinMan::SpApiClient do
     expect(client.client_secret).not_to be_nil
     expect(client.aws_access_key_id).not_to be_nil
     expect(client.aws_secret_access_key).not_to be_nil
-    expect(client.region).not_to be_nil
-    expect(client.hostname).not_to be_nil
   end
 
   it 'sets the Typhoeus user agent to an empty string' do
     expect(Typhoeus::Config.user_agent).to eq('')
-  end
-
-  context 'when using the sandbox environment' do
-    let(:sandbox) { true }
-    it 'correctly builds the canonical api hostname' do
-      expect("sandbox.#{client.hostname}").to eq(client.send(:sp_api_host))
-    end
   end
 
   context 'testing auth' do
@@ -42,15 +32,17 @@ RSpec.describe MuffinMan::SpApiClient do
       module MuffinMan
         class FakeKlass < SpApiClient
           attr_reader :local_var_path, :request_type, :query_params
-          def make_a_request
+          def make_a_request(region = 'na')
             @local_var_path = '/some_path'
             @request_type = 'GET'
             @query_params = {}
+            @region = region
             call_api
           end
         end
       end
     end
+    let(:client) { MuffinMan::FakeKlass.new(credentials, sandbox) }
     before do
       stub_request_access_token
       stub_fake_request
@@ -58,9 +50,9 @@ RSpec.describe MuffinMan::SpApiClient do
 
     it 'gets an access token and signs the headers' do
       expect(Typhoeus).to receive(:get).
-        with("https://#{client.hostname}/some_path", headers: hash_including('x-amz-access-token' => fake_lwa_access_token,
+        with("https://#{hostname}/some_path", headers: hash_including('x-amz-access-token' => fake_lwa_access_token,
                                                            'authorization' => a_string_including("SignedHeaders=host;x-amz-content-sha256;x-amz-date")))
-      MuffinMan::FakeKlass.new(credentials).make_a_request
+      client.make_a_request
     end
 
     context 'when the config defines a lambda for token caching' do
@@ -78,8 +70,8 @@ RSpec.describe MuffinMan::SpApiClient do
         it 'uses and saves the new token' do
           expect_any_instance_of(MockRedis).to receive(:set).with("SP-TOKEN-#{credentials[:client_id]}", fake_lwa_access_token)
           expect(Typhoeus).to receive(:get).
-            with("https://#{client.hostname}/some_path", headers: hash_including('x-amz-access-token' => fake_lwa_access_token))
-          MuffinMan::FakeKlass.new(credentials).make_a_request
+            with("https://#{hostname}/some_path", headers: hash_including('x-amz-access-token' => fake_lwa_access_token))
+          client.make_a_request
         end
       end
 
@@ -92,8 +84,16 @@ RSpec.describe MuffinMan::SpApiClient do
         it 'uses the stored token' do
           expect_any_instance_of(MockRedis).to receive(:get).with("SP-TOKEN-#{credentials[:client_id]}").and_return(another_fake_lwa_access_token)
           expect(Typhoeus).to receive(:get).
-            with("https://#{client.hostname}/some_path", headers: hash_including('x-amz-access-token' => another_fake_lwa_access_token))
-          MuffinMan::FakeKlass.new(credentials).make_a_request
+            with("https://#{hostname}/some_path", headers: hash_including('x-amz-access-token' => another_fake_lwa_access_token))
+          client.make_a_request
+        end
+      end
+
+      context 'when using the sandbox environment' do
+        let(:sandbox) { true }
+        it 'correctly builds the canonical api hostname' do
+          expect(Typhoeus).to receive(:get).with("https://sandbox.#{hostname}/some_path", headers: hash_including({}))
+          client.make_a_request
         end
       end
     end

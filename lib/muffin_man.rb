@@ -16,10 +16,5 @@ module MuffinMan
 
   class Configuration
     attr_accessor :save_access_token, :get_access_token
-
-    def initialize
-      @save_access_token = -> {}
-      @get_access_token = -> {}
-    end
   end
 end
