@@ -32,10 +32,10 @@ credentials = {
   client_secret: CLIENT_SECRET,
   aws_access_key_id: AWS_ACCESS_KEY_ID,
   aws_secret_access_key: AWS_SECRET_ACCESS_KEY,
+  region: REGION, # This can be one of ['na', 'eu', 'fe'] and defaults to 'na'
   sts_iam_role_arn: STS_IAM_ROLE_ARN, # Optional
 }
 client = MuffinMan::Solicitations.new(credentials)
-region = 'na' # This can be one of ['na', 'eu', 'fe'] and defaults to 'na'
 response = client.create_product_review_and_seller_feedback_solicitation(amazon_order_id, marketplace_ids, region)
 JSON.parse(response.body)
 ```
