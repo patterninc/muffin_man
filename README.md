@@ -1,8 +1,8 @@
 # MuffinMan
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/muffin_man`. To experiment with that code, run `bin/console` for an interactive prompt.
+MuffinMan is a ruby interface to the Amazon Selling Partner API. For more information on registering to use the Selling Partner API, see [Amazon's documentation](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/developer-guide/SellingPartnerApiDeveloperGuide.md)
 
-TODO: Delete this and the text above, and describe your gem
+As of now, this gem only supports the `create_product_review_and_seller_feedback_solicitation` model, likely with more to come.
 
 ## Installation
 
@@ -22,17 +22,44 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To make a call to the Amazon Selling Partner API, define your credentials and make a call as shown:
 
-## Development
+```ruby
+require 'muffin_man'
+credentials = {
+  refresh_token: LWA_REFRESH_TOKEN,
+  client_id: CLIENT_ID,
+  client_secret: CLIENT_SECRET,
+  aws_access_key_id: AWS_ACCESS_KEY_ID,
+  aws_secret_access_key: AWS_SECRET_ACCESS_KEY,
+  region: REGION, # This can be one of ['na', 'eu', 'fe'] and defaults to 'na'
+  sts_iam_role_arn: STS_IAM_ROLE_ARN, # Optional
+}
+client = MuffinMan::Solicitations.new(credentials)
+response = client.create_product_review_and_seller_feedback_solicitation(amazon_order_id, marketplace_ids, region)
+JSON.parse(response.body)
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+You can optionally use Amazon's sandbox environment by specifying `client = MuffinMan::Solicitations.new(credentials, sandbox = true)`
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+You can save and retrieve the LWA refresh token by defining a lambda in your initializers.
+
+For example, if you are using Redis as your cache you could define:
+
+```ruby
+@@redis = Redis.new
+MuffinMan.configure do |config|
+  config.save_access_token = -> (client_id, token) do
+    @@redis.set("SP-TOKEN-#{client_id}", token['access_token'], ex: token['expires_in'])
+  end
+
+  config.get_access_token = -> (client_id) { @@redis.get("SP-TOKEN-#{client_id}") }
+end
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/muffin_man. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/muffin_man/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/patterninc/muffin_man. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/patterninc/muffin_man/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
