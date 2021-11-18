@@ -8,7 +8,7 @@ module MuffinMan
   class SpApiClient
     attr_reader :refresh_token, :client_id, :client_secret, :aws_access_key_id,
       :aws_secret_access_key, :sts_iam_role_arn, :sandbox, :config, :region, :request_type,
-      :local_var_path, :query_params
+      :local_var_path, :query_params, :request_body
     ACCESS_TOKEN_URL = 'https://api.amazon.com/auth/o2/token'.freeze
     SERVICE_NAME = 'execute-api'.freeze
     AWS_REGION_MAP = {
@@ -33,7 +33,15 @@ module MuffinMan
     private
 
     def call_api
-      Typhoeus.send(request_type.downcase.to_sym, request.url, headers: headers)
+      Typhoeus.send(request_type.downcase.to_sym, request.url, request_opts)
+    end
+
+    def request_opts
+      opts = { headers: headers }
+      if request_body
+        opts[:body] = request_body.to_json
+      end
+      opts
     end
 
     def sp_api_host
@@ -108,7 +116,7 @@ module MuffinMan
         request_config[:credentials_provider] = request_sts_token
       end
       signer = Aws::Sigv4::Signer.new(request_config)
-      signer.sign_request(http_method: request_type, url: request.url)
+      signer.sign_request(http_method: request_type, url: request.url, body: request_body&.to_json)
     end
 
     def headers
