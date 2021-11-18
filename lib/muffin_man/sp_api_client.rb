@@ -7,7 +7,8 @@ require 'securerandom'
 module MuffinMan
   class SpApiClient
     attr_reader :refresh_token, :client_id, :client_secret, :aws_access_key_id,
-      :aws_secret_access_key, :sts_iam_role_arn, :sandbox, :config, :region
+      :aws_secret_access_key, :sts_iam_role_arn, :sandbox, :config, :region, :request_type,
+      :local_var_path, :query_params
     ACCESS_TOKEN_URL = 'https://api.amazon.com/auth/o2/token'.freeze
     SERVICE_NAME = 'execute-api'.freeze
     AWS_REGION_MAP = {
