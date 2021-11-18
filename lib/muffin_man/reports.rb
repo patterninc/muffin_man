@@ -13,13 +13,13 @@ module MuffinMan
       start_time = sandbox ? SANDBOX_START_TIME : start_time
 
       @local_var_path = "/reports/2021-06-30/reports"
-      @query_params = {
-        "marketplaceIds" => marketplace_ids,
-        "dataStartTime" => start_time,
-        "dataEndTime" => end_time,
+      @request_body = {
         "reportType" => report_type,
-        "reportOptions" => report_options,
+        "marketplaceIds" => marketplace_ids,
       }
+      @request_body["dataStartTime"] = start_time unless start_time.nil?
+      @request_body["dataEndTime"] = end_time unless end_time.nil?
+      @request_body["reportOptions"] = report_options unless report_options.empty?
       @request_type = 'POST'
       call_api
     end
