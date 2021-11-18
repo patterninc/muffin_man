@@ -13,7 +13,15 @@ module Support
     end
 
     def stub_create_report
-      stub_request(:post, "https://#{hostname}/reports/2021-06-30/reports?dataEndTime=#{end_time}&dataStartTime=#{start_time}&marketplaceIds=#{amazon_marketplace_id}&reportType=#{report_type}").
+      stub_request(:post, "https://#{hostname}/reports/2021-06-30/reports").
+        with(
+          body: {
+            "reportType" => report_type,
+            "marketplaceIds" => amazon_marketplace_id,
+            "dataStartTime" => start_time,
+            "dataEndTime" => end_time,
+          }.to_json
+        ).
         to_return(:status => 201, :body => {"reportId": "ID323"}.to_json, :headers => {})
     end
 
