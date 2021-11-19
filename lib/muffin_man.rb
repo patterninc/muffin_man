@@ -1,6 +1,7 @@
 require_relative "muffin_man/version"
 require "muffin_man/sp_api_client"
 require "muffin_man/solicitations"
+require "muffin_man/reports"
 
 module MuffinMan
   class Error < StandardError; end

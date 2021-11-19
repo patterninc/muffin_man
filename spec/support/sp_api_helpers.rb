@@ -12,9 +12,36 @@ module Support
         to_return(:status => 200, :body => "{}", :headers => {})
     end
 
+    def stub_create_report
+      stub_request(:post, "https://#{hostname}/reports/2021-06-30/reports").
+        with(
+          body: {
+            "reportType" => report_type,
+            "marketplaceIds" => amazon_marketplace_id,
+            "dataStartTime" => start_time,
+            "dataEndTime" => end_time,
+          }.to_json
+        ).
+        to_return(:status => 201, :body => {"reportId": "ID323"}.to_json, :headers => {})
+    end
+
     def stub_solicitations
       stub_request(:post, "https://#{hostname}/solicitations/v1/orders/#{amazon_order_id}/solicitations/productReviewAndSellerFeedback?marketplaceIds=#{amazon_marketplace_id}").
         to_return(:status => 201, :body => "{}", :headers => {})
+    end
+
+    def credentials
+      {
+        refresh_token: 'a-refresh-token',
+        client_id: 'a-client-id',
+        client_secret: 'a-client-secret',
+        aws_access_key_id: 'an-aws-access-key-id',
+        aws_secret_access_key: 'an-aws-secret-access-key',
+      }
+    end
+
+    def hostname
+      "sellingpartnerapi-na.amazon.com"
     end
   end
 end

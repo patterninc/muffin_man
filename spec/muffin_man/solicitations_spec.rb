@@ -3,16 +3,6 @@ RSpec.describe MuffinMan::Solicitations do
     stub_request_access_token
     stub_solicitations
   end
-  let(:credentials) {
-    {
-      refresh_token: 'a-refresh-token',
-      client_id: 'a-client-id',
-      client_secret: 'a-client-secret',
-      aws_access_key_id: 'an-aws-access-key-id',
-      aws_secret_access_key: 'an-aws-secret-access-key',
-    }
-  }
-  let(:hostname) { "sellingpartnerapi-na.amazon.com" }
   let(:amazon_order_id) { "123-1234567-1234567" }
   let(:amazon_marketplace_id) { "ATVPDKIKX0DER" }
 

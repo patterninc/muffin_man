@@ -36,7 +36,7 @@ credentials = {
   sts_iam_role_arn: STS_IAM_ROLE_ARN, # Optional
 }
 client = MuffinMan::Solicitations.new(credentials)
-response = client.create_product_review_and_seller_feedback_solicitation(amazon_order_id, marketplace_ids, region)
+response = client.create_product_review_and_seller_feedback_solicitation(amazon_order_id, marketplace_ids)
 JSON.parse(response.body)
 ```
 
