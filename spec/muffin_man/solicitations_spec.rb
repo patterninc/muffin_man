@@ -1,4 +1,4 @@
-RSpec.describe MuffinMan::Solicitations do
+RSpec.describe MuffinMan::Solicitations::V1 do
   before do
     stub_request_access_token
     stub_solicitations
