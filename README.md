@@ -1,5 +1,7 @@
 # MuffinMan
 
+![Ruby CI](https://github.com/patterninc/muffin_man/actions/workflows/ci.yml/badge.svg)
+
 MuffinMan is a ruby interface to the Amazon Selling Partner API. For more information on registering to use the Selling Partner API, see [Amazon's documentation](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/developer-guide/SellingPartnerApiDeveloperGuide.md)
 
 As of now, this gem only supports the `create_product_review_and_seller_feedback_solicitation` model, likely with more to come.
