@@ -1,4 +1,4 @@
-RSpec.describe MuffinMan::Reports do
+RSpec.describe MuffinMan::Reports::V20210630 do
   before do
     stub_request_access_token
     stub_create_report

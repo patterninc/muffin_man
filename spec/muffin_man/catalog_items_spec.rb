@@ -1,4 +1,4 @@
-RSpec.describe MuffinMan::V20201201::CatalogItems do
+RSpec.describe MuffinMan::CatalogItems::V20201201 do
   before do
     stub_request_access_token
     stub_search_catalog_items
