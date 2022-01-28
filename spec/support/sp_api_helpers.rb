@@ -36,7 +36,7 @@ module Support
     end
 
     def stub_search_catalog_items
-      stub_request(:get, "https://#{hostname}/catalog/2020-12-01/items?keywords=stuff&marketplaceIds=#{amazon_marketplace_id}").
+      stub_request(:get, "https://#{hostname}/catalog/2020-12-01/items?keywords=#{keywords}&marketplaceIds=#{amazon_marketplace_id}").
         to_return(:status => 200, :body => "{}", :headers => {})
     end
 
