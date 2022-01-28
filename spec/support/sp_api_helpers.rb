@@ -30,6 +30,16 @@ module Support
         to_return(:status => 201, :body => "{}", :headers => {})
     end
 
+    def stub_get_catalog_item
+      stub_request(:get, "https://#{hostname}/catalog/2020-12-01/items/#{asin}?marketplaceIds=#{amazon_marketplace_id}").
+        to_return(:status => 200, :body => File.read("./spec/support/get_catalog_item.json"), :headers => {})
+    end
+
+    def stub_search_catalog_items
+      stub_request(:get, "https://#{hostname}/catalog/2020-12-01/items?keywords=#{keywords}&marketplaceIds=#{amazon_marketplace_id}").
+        to_return(:status => 200, :body => File.read("./spec/support/search_catalog_items.json"), :headers => {})
+    end
+
     def credentials
       {
         refresh_token: 'a-refresh-token',
