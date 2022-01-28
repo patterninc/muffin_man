@@ -1,6 +1,6 @@
 module MuffinMan
-  module V20201201
-    class CatalogItems < SpApiClient
+  module CatalogItems
+    class V20201201 < SpApiClient
       SANDBOX_KEYWORDS = "shoes".freeze
       SANDBOX_ASIN = "B07N4M94X4".freeze
       SANDBOX_MARKETPLACE_IDS = "ATVPDKIKX0DER".freeze
