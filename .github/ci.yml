@@ -1,0 +1,32 @@
+name: Ruby CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches:
+      - 'master'
+  pull_request:
+    branches:
+      - 'master'
+
+jobs:
+  ci-build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        ruby-version: [3.1, 3.0, 2.7, 2.6, 2.5]
+
+    # Check-out repo
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Ruby ${{ matrix.ruby-version }}
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+      - name: Install dependencies
+        run: bundle install
+      - name: Run RSpec
+        run: bundle exec rake
