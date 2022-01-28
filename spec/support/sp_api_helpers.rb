@@ -30,8 +30,13 @@ module Support
         to_return(:status => 201, :body => "{}", :headers => {})
     end
 
-    def stub_catalog_items
+    def stub_get_catalog_item
       stub_request(:get, "https://#{hostname}/catalog/2020-12-01/items/#{asin}?marketplaceIds=#{amazon_marketplace_id}").
+        to_return(:status => 200, :body => "{}", :headers => {})
+    end
+
+    def stub_search_catalog_items
+      stub_request(:get, "https://#{hostname}/catalog/2020-12-01/items?keywords=stuff&marketplaceIds=#{amazon_marketplace_id}").
         to_return(:status => 200, :body => "{}", :headers => {})
     end
 
