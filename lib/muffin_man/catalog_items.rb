@@ -13,6 +13,7 @@ module MuffinMan
 
     def get_catalog_item(asin, marketplace_ids, included_data = nil, locale = nil)
       @local_var_path = "/catalog/2020-12-01/items/#{asin}"
+      marketplace_ids = [marketplace_ids] unless marketplace_ids.is_a?(Array)
       @query_params = { "marketplaceIds" => marketplace_ids.join(',') }
       @query_params["includedData"] = included_data.join(',') if included_data.is_a?(Array)
       @query_params["locale"] = locale if locale.is_a?(String)

@@ -30,6 +30,11 @@ module Support
         to_return(:status => 201, :body => "{}", :headers => {})
     end
 
+    def stub_catalog_items
+      stub_request(:get, "https://#{hostname}/catalog/2020-12-01/items/#{asin}?marketplaceIds=#{amazon_marketplace_id}").
+        to_return(:status => 200, :body => "{}", :headers => {})
+    end
+
     def credentials
       {
         refresh_token: 'a-refresh-token',
