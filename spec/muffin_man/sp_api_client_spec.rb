@@ -57,12 +57,12 @@ RSpec.describe MuffinMan::SpApiClient do
 
     context 'when the config defines a lambda for token caching' do
       before do
-        @@redis = MockRedis.new
+        redis_instance = MockRedis.new
         MuffinMan.configure do |config|
           config.save_access_token = -> (client_id, token) do
-            @@redis.set("SP-TOKEN-#{client_id}", token['access_token'])
+            redis_instance.set("SP-TOKEN-#{client_id}", token['access_token'])
           end
-          config.get_access_token = -> (client_id) { @@redis.get("SP-TOKEN-#{client_id}") }
+          config.get_access_token = -> (client_id) { redis_instance.get("SP-TOKEN-#{client_id}") }
         end
       end
 
