@@ -15,7 +15,7 @@ module MuffinMan
         keywordsLocale
         locale
       ].freeze
-      GET_CATALOG_ITEM_PARAMS = %w[includeData locale].freeze
+      GET_CATALOG_ITEM_PARAMS = %w[includedData locale].freeze
 
       def search_catalog_items(keywords, marketplace_ids, params = {})
         if sandbox
