@@ -47,9 +47,7 @@ module MuffinMan
         @params = params
         @local_var_path = "/catalog/2020-12-01/items/#{@asin}"
         @query_params = { "marketplaceIds" => @marketplace_ids.join(",") }
-        puts @params
         @query_params.merge!(@params.slice(*GET_CATALOG_ITEM_PARAMS))
-        puts @query_params
         @request_type = "GET"
         call_api
       end
