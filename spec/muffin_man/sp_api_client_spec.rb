@@ -32,10 +32,10 @@ RSpec.describe MuffinMan::SpApiClient do
       module MuffinMan
         class FakeKlass < SpApiClient
           attr_reader :local_var_path, :request_type, :query_params
-          def make_a_request(region = 'na')
+          def make_a_request(region = 'na', query_params: {})
             @local_var_path = '/some_path'
             @request_type = 'GET'
-            @query_params = {}
+            @query_params = query_params
             @region = region
             call_api
           end
@@ -94,6 +94,15 @@ RSpec.describe MuffinMan::SpApiClient do
         it 'correctly builds the canonical api hostname' do
           expect(Typhoeus).to receive(:get).with("https://sandbox.#{hostname}/some_path", headers: hash_including({}))
           client.make_a_request
+        end
+      end
+
+      context 'multiple requests with the same client instance' do
+        it 'uses correct query params for each new request' do
+          expect(Typhoeus).to receive(:get).with("https://#{hostname}/some_path?flavor=blueberry", headers: hash_including({}))
+          client.make_a_request(query_params: { 'flavor' => 'blueberry' })
+          expect(Typhoeus).to receive(:get).with("https://#{hostname}/some_path?flavor=chocolate", headers: hash_including({}))
+          client.make_a_request(query_params: { 'flavor' => 'chocolate' })
         end
       end
     end
