@@ -59,10 +59,7 @@ module MuffinMan
     end
 
     def request
-      @request ||= Typhoeus::Request.new(
-        canonical_uri,
-        params: query_params
-      )
+      Typhoeus::Request.new(canonical_uri, params: query_params)
     end
 
     def retrieve_lwa_access_token
