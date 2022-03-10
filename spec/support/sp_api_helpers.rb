@@ -51,6 +51,17 @@ module Support
         to_return(:status => 200, :body => File.read("./spec/support/list_financial_event_groups.json"), :headers => {})
     end
 
+    def stub_list_financial_event_by_group_id
+      stub_request(:get, "https://#{hostname}/finances/v0/financialEventGroups/#{event_group_id}/financialEvents").
+        with(
+        query: {
+          :MaxResultsPerPage => max_results_per_page,
+          :PostedBefore => posted_before,
+          :PostedAfter => posted_after,
+        }).
+        to_return(:status => 200, :body => File.read("./spec/support/list_financial_event_groups.json"), :headers => {})
+    end
+
     def credentials
       {
         refresh_token: 'a-refresh-token',
