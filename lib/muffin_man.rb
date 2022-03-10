@@ -3,6 +3,7 @@ require "muffin_man/sp_api_client"
 require "muffin_man/solicitations/v1"
 require "muffin_man/reports/v20210630"
 require "muffin_man/catalog_items/v20201201"
+require "muffin_man/finances/v0"
 
 module MuffinMan
   class Error < StandardError; end
