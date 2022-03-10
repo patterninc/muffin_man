@@ -1,0 +1,27 @@
+{
+    "NextToken": "d91f1g",
+    "FinancialEventGroupList": [
+      {
+        "FinancialEventGroupId": "S9ovghNaTa5wN159887-9vFGAMwE",
+        "ProcessingStatus": "Closed",
+        "FundTransferStatus": "Succeeded",
+        "OriginalTotal": {
+          "CurrencyCode": "USD",
+          "CurrencyAmount": -9.56
+        },
+        "ConvertedTotal": {
+          "CurrencyCode": "USD",
+          "CurrencyAmount": 10.99
+        },
+        "FundTransferDate": "2022-03-10T16:56:42.190Z",
+        "TraceId": "7799759, 684299009638680028135",
+        "AccountTail": "431",
+        "BeginningBalance": {
+          "CurrencyCode": "USD",
+          "CurrencyAmount": 0
+        },
+        "FinancialEventGroupStart": "2022-03-04T16:56:42.190Z",
+        "FinancialEventGroupEnd": "2022-03-04T16:56:42.190Z"
+      }
+    ]
+  }
