@@ -62,6 +62,26 @@ module Support
         to_return(:status => 200, :body => File.read("./spec/support/list_financial_event_groups.json"), :headers => {})
     end
 
+    def stub_get_reports
+      stub_request(:get, "https://#{hostname}/reports/2021-06-30/reports?processingStatuses=#{processing_statuses}&reportTypes=#{report_types}")
+        .to_return(status: 200, body: File.read("./spec/support/get_reports.json"), headers: {})
+    end
+
+    def stub_get_report
+      stub_request(:get, "https://#{hostname}/reports/2021-06-30/reports/#{report_id}")
+        .to_return(status: 200, body: File.read("./spec/support/get_report.json"), headers: {})
+    end
+
+    def stub_cancel_report
+      stub_request(:delete, "https://#{hostname}/reports/2021-06-30/reports/#{report_id}")
+        .to_return(status: 200, headers: {})
+    end
+
+    def stub_get_report_document
+      stub_request(:get, "https://#{hostname}/reports/2021-06-30/documents/#{report_document_id}")
+        .to_return(status: 200, body: File.read("./spec/support/get_report_document.json"), headers: {})
+    end
+
     def credentials
       {
         refresh_token: 'a-refresh-token',
