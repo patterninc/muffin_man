@@ -82,6 +82,12 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/get_report_document.json"), headers: {})
     end
 
+    def stub_get_authorization_code
+      body = '{"payload":{"authorizationCode": "ANDMxqpCmqWHJeyzdbMH"}}'
+      stub_request(:get, "https://#{hostname}/authorization/v1/authorizationCode?developerId=#{developer_id}&mwsAuthToken=#{mws_auth_token}&sellingPartnerId=#{selling_partner_id}")
+        .to_return(status: 200, body: body, headers: {})
+    end
+
     def credentials
       {
         refresh_token: 'a-refresh-token',
