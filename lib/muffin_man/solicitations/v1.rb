@@ -11,9 +11,11 @@ module MuffinMan
       def create_product_review_and_seller_feedback_solicitation(amazon_order_id, marketplace_ids)
         @amazon_order_id = sandbox ? SANDBOX_AMAZON_ORDER_ID : amazon_order_id
         @marketplace_ids = sandbox ? SANDBOX_MARKETPLACE_IDS : marketplace_ids
-        @local_var_path = '/solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback'.sub('{' + 'amazonOrderId' + '}', @amazon_order_id)
+        @local_var_path = "/solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback".sub(
+          "{" + "amazonOrderId" + "}", @amazon_order_id
+        )
         @query_params = { "marketplaceIds" => @marketplace_ids }
-        @request_type = 'POST'
+        @request_type = "POST"
         call_api
       end
     end
