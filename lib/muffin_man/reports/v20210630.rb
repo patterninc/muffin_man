@@ -44,7 +44,7 @@ module MuffinMan
         @local_var_path = "/reports/2021-06-30/reports"
         @request_body = {
           "reportType" => report_type,
-          "marketplaceIds" => marketplace_ids,
+          "marketplaceIds" => marketplace_ids
         }
         @request_body["dataStartTime"] = start_time unless start_time.nil?
         @request_body["dataEndTime"] = end_time unless end_time.nil?

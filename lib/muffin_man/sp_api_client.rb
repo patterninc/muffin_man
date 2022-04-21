@@ -1,20 +1,21 @@
-require 'aws-sigv4'
-require 'uri'
-require 'aws-sdk-core'
-require 'typhoeus'
-require 'securerandom'
+require "aws-sigv4"
+require "uri"
+require "aws-sdk-core"
+require "typhoeus"
+require "securerandom"
 
 module MuffinMan
   class SpApiClient
     attr_reader :refresh_token, :client_id, :client_secret, :aws_access_key_id,
-      :aws_secret_access_key, :sts_iam_role_arn, :sandbox, :config, :region, :request_type,
-      :local_var_path, :query_params, :request_body, :scope
-    ACCESS_TOKEN_URL = 'https://api.amazon.com/auth/o2/token'.freeze
-    SERVICE_NAME = 'execute-api'.freeze
+                :aws_secret_access_key, :sts_iam_role_arn, :sandbox, :config, :region, :request_type,
+                :local_var_path, :query_params, :request_body, :scope
+
+    ACCESS_TOKEN_URL = "https://api.amazon.com/auth/o2/token".freeze
+    SERVICE_NAME = "execute-api".freeze
     AWS_REGION_MAP = {
-      'na' => 'us-east-1',
-      'eu' => 'eu-west-1',
-      'fe' => 'us-west-2'
+      "na" => "us-east-1",
+      "eu" => "eu-west-1",
+      "fe" => "us-west-2"
     }.freeze
 
     def initialize(credentials, sandbox = false)
@@ -24,10 +25,10 @@ module MuffinMan
       @aws_access_key_id = credentials[:aws_access_key_id]
       @aws_secret_access_key = credentials[:aws_secret_access_key]
       @sts_iam_role_arn = credentials[:sts_iam_role_arn]
-      @region = credentials[:region] || 'na'
+      @region = credentials[:region] || "na"
       @scope = credentials[:scope]
       @sandbox = sandbox
-      Typhoeus::Config.user_agent = ''
+      Typhoeus::Config.user_agent = ""
       @config = MuffinMan.configuration
     end
 
@@ -39,9 +40,7 @@ module MuffinMan
 
     def request_opts
       opts = { headers: headers }
-      if request_body
-        opts[:body] = request_body.to_json
-      end
+      opts[:body] = request_body.to_json if request_body
       opts
     end
 
@@ -64,20 +63,21 @@ module MuffinMan
     end
 
     def retrieve_lwa_access_token
-      return request_lwa_access_token['access_token'] unless defined?(config.get_access_token)
+      return request_lwa_access_token["access_token"] unless defined?(config.get_access_token)
+
       stored_token = config.get_access_token.call(client_id)
       if stored_token.nil?
         new_token = request_lwa_access_token
         config.save_access_token.call(client_id, new_token) if defined?(config.save_access_token)
-        return new_token['access_token']
+        new_token["access_token"]
       else
-        return stored_token
+        stored_token
       end
     end
 
     def request_lwa_access_token
       body = {
-        grant_type: 'refresh_token',
+        grant_type: "refresh_token",
         refresh_token: refresh_token,
         client_id: client_id,
         client_secret: client_secret
@@ -86,7 +86,7 @@ module MuffinMan
         ACCESS_TOKEN_URL,
         body: URI.encode_www_form(body),
         headers: {
-          'Content-Type' => 'application/x-www-form-urlencoded;charset=UTF-8'
+          "Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8"
         }
       )
       JSON.parse(response.body)
@@ -142,16 +142,20 @@ module MuffinMan
     def headers
       access_token = scope ? retrieve_grantless_access_token : retrieve_lwa_access_token
       headers = {
-        'x-amz-access-token' => access_token,
-        'user-agent' => "MuffinMan/#{VERSION} (Language=Ruby)",
-        'content-type' => "application/json"
+        "x-amz-access-token" => access_token,
+        "user-agent" => "MuffinMan/#{VERSION} (Language=Ruby)",
+        "content-type" => "application/json"
       }
       signed_request.headers.merge(headers)
     end
 
     def derive_aws_region
       @aws_region ||= AWS_REGION_MAP[region]
-      raise MuffinMan::Error.new("#{region} is not supported or does not exist. Region must be one of the following: #{AWS_REGION_MAP.keys.join(', ')}") unless @aws_region
+      unless @aws_region
+        raise MuffinMan::Error,
+              "#{region} is not supported or does not exist. Region must be one of the following: #{AWS_REGION_MAP.keys.join(", ")}"
+      end
+
       @aws_region
     end
   end
