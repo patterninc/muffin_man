@@ -8,7 +8,7 @@ module MuffinMan
   class SpApiClient
     attr_reader :refresh_token, :client_id, :client_secret, :aws_access_key_id,
       :aws_secret_access_key, :sts_iam_role_arn, :sandbox, :config, :region, :request_type,
-      :local_var_path, :query_params, :request_body
+      :local_var_path, :query_params, :request_body, :scope
     ACCESS_TOKEN_URL = 'https://api.amazon.com/auth/o2/token'.freeze
     SERVICE_NAME = 'execute-api'.freeze
     AWS_REGION_MAP = {
@@ -25,6 +25,7 @@ module MuffinMan
       @aws_secret_access_key = credentials[:aws_secret_access_key]
       @sts_iam_role_arn = credentials[:sts_iam_role_arn]
       @region = credentials[:region] || 'na'
+      @scope = credentials[:scope]
       @sandbox = sandbox
       Typhoeus::Config.user_agent = ''
       @config = MuffinMan.configuration
@@ -91,6 +92,28 @@ module MuffinMan
       JSON.parse(response.body)
     end
 
+    def retrieve_grantless_access_token
+      # No storage of this type for now
+      request_grantless_access_token["access_token"]
+    end
+
+    def request_grantless_access_token
+      body = {
+        grant_type: "client_credentials",
+        scope: scope,
+        client_id: client_id,
+        client_secret: client_secret
+      }
+      response = Typhoeus.post(
+        ACCESS_TOKEN_URL,
+        body: URI.encode_www_form(body),
+        headers: {
+          "Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8"
+        }
+      )
+      JSON.parse(response.body)
+    end
+
     def request_sts_token
       client = Aws::STS::Client.new(
         region: derive_aws_region,
@@ -117,8 +140,9 @@ module MuffinMan
     end
 
     def headers
+      access_token = scope ? retrieve_grantless_access_token : retrieve_lwa_access_token
       headers = {
-        'x-amz-access-token' => retrieve_lwa_access_token,
+        'x-amz-access-token' => access_token,
         'user-agent' => "MuffinMan/#{VERSION} (Language=Ruby)",
         'content-type' => "application/json"
       }
