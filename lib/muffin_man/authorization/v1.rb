@@ -7,7 +7,6 @@ module MuffinMan
           "developerId" => developer_id,
           "mwsAuthToken" => mws_auth_token
         }
-        @query_params = {} if sandbox
         @request_type = "GET"
         @local_var_path = "/authorization/v1/authorizationCode"
         call_api
