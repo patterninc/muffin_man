@@ -3,11 +3,13 @@
 require "muffin_man"
 require "webmock/rspec"
 require "support/sp_api_helpers"
+require "support/lwa_helpers"
 
 WebMock.disable_net_connect!(allow_localhost: true)
 
 RSpec.configure do |config|
   config.include Support::SpApiHelpers
+  config.include Support::LwaHelpers
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = ".rspec_status"
 
