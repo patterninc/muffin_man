@@ -63,6 +63,27 @@ MuffinMan.configure do |config|
 end
 ```
 
+### Retrieiving the refresh token
+
+To retrieve the refresh token from an LWA Website authorization workflow, you can use the LWA helper:
+
+```ruby
+# Get your auth code first, either through the Website oauth flow or Authorization API
+credentials = {
+  client_id: CLIENT_ID,
+  client_secret: CLIENT_SECRET,
+  aws_access_key_id: AWS_ACCESS_KEY_ID,
+  aws_secret_access_key: AWS_SECRET_ACCESS_KEY,
+  sts_iam_role_arn: STS_IAM_ROLE_ARN, # Optional
+  scope: 'sellingpartnerapi::migration' # Grantless scope for MWS migration
+}
+client = MuffinMan::Authorization::V1.new(credentials)
+resp = JSON.parse(client.get_authorization_code(seller_id, developer_id, mws_auth_token).body)
+auth_code = resp['payload']['authorizationCode']
+# Then query retrieve the refresh token to store
+refresh_token = MuffinMan::Lwa::AuthHelper.get_refresh_token(CLIENT_ID, CLIENT_SECRET, auth_code)
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/patterninc/muffin_man. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/patterninc/muffin_man/blob/master/CODE_OF_CONDUCT.md).
