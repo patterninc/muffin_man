@@ -1,5 +1,6 @@
 require "muffin_man/version"
 require "muffin_man/sp_api_client"
+require "muffin_man/lwa/auth_helper"
 require "muffin_man/solicitations/v1"
 require "muffin_man/reports/v20210630"
 require "muffin_man/catalog_items/v20201201"
