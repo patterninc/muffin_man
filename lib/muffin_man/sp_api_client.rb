@@ -7,8 +7,9 @@ require "securerandom"
 module MuffinMan
   class SpApiClient
     attr_reader :refresh_token, :client_id, :client_secret, :aws_access_key_id,
-                :aws_secret_access_key, :sts_iam_role_arn, :sandbox, :config, :region, :request_type,
-                :local_var_path, :query_params, :request_body, :scope
+                :aws_secret_access_key, :sts_iam_role_arn, :sandbox, :config,
+                :region, :request_type, :local_var_path, :query_params,
+                :request_body, :scope, :access_token_cache_key
 
     ACCESS_TOKEN_URL = "https://api.amazon.com/auth/o2/token".freeze
     SERVICE_NAME = "execute-api".freeze
@@ -27,6 +28,7 @@ module MuffinMan
       @sts_iam_role_arn = credentials[:sts_iam_role_arn]
       @region = credentials[:region] || "na"
       @scope = credentials[:scope]
+      @access_token_cache_key = credentials[:access_token_cache_key]
       @sandbox = sandbox
       Typhoeus::Config.user_agent = ""
       @config = MuffinMan.configuration
@@ -63,16 +65,20 @@ module MuffinMan
     end
 
     def retrieve_lwa_access_token
-      return request_lwa_access_token["access_token"] unless defined?(config.get_access_token)
+      return request_lwa_access_token["access_token"] unless use_cache?
 
-      stored_token = config.get_access_token.call(client_id)
+      stored_token = config.get_access_token.call(access_token_cache_key)
       if stored_token.nil?
         new_token = request_lwa_access_token
-        config.save_access_token.call(client_id, new_token) if defined?(config.save_access_token)
+        config.save_access_token.call(access_token_cache_key, new_token)
         new_token["access_token"]
       else
         stored_token
       end
+    end
+
+    def use_cache?
+      defined?(config.save_access_token) && defined?(config.get_access_token) && access_token_cache_key
     end
 
     def request_lwa_access_token
