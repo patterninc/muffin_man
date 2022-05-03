@@ -6,7 +6,8 @@ RSpec.describe MuffinMan::SpApiClient do
       client_id: "a-client-id",
       client_secret: "a-client-secret",
       aws_access_key_id: "an-aws-access-key-id",
-      aws_secret_access_key: "an-aws-secret-access-key"
+      aws_secret_access_key: "an-aws-secret-access-key",
+      access_token_cache_key: "a-selling_partner_id"
     }
   end
   let(:fake_lwa_access_token) { "this_will_get_you_into_drury_lane" }
@@ -60,16 +61,16 @@ RSpec.describe MuffinMan::SpApiClient do
       before do
         redis_instance = MockRedis.new
         MuffinMan.configure do |config|
-          config.save_access_token = lambda { |client_id, token|
-            redis_instance.set("SP-TOKEN-#{client_id}", token["access_token"])
+          config.save_access_token = lambda { |access_token_cache_key, token|
+            redis_instance.set("SP-TOKEN-#{access_token_cache_key}", token["access_token"])
           }
-          config.get_access_token = ->(client_id) { redis_instance.get("SP-TOKEN-#{client_id}") }
+          config.get_access_token = ->(access_token_cache_key) { redis_instance.get("SP-TOKEN-#{access_token_cache_key}") }
         end
       end
 
       context "when there is no stored token" do
         it "uses and saves the new token" do
-          expect_any_instance_of(MockRedis).to receive(:set).with("SP-TOKEN-#{credentials[:client_id]}",
+          expect_any_instance_of(MockRedis).to receive(:set).with("SP-TOKEN-#{credentials[:access_token_cache_key]}",
                                                                   fake_lwa_access_token)
           expect(Typhoeus).to receive(:get)
             .with("https://#{hostname}/some_path", headers: hash_including("x-amz-access-token" => fake_lwa_access_token))
@@ -80,11 +81,11 @@ RSpec.describe MuffinMan::SpApiClient do
       context "when there is a stored token" do
         let(:another_fake_lwa_access_token) { "i-know-the-muffin-man" }
         before do
-          MockRedis.new.set("SP-TOKEN-#{credentials[:client_id]}", another_fake_lwa_access_token)
+          MockRedis.new.set("SP-TOKEN-#{credentials[:access_token_cache_key]}", another_fake_lwa_access_token)
         end
 
         it "uses the stored token" do
-          expect_any_instance_of(MockRedis).to receive(:get).with("SP-TOKEN-#{credentials[:client_id]}").and_return(another_fake_lwa_access_token)
+          expect_any_instance_of(MockRedis).to receive(:get).with("SP-TOKEN-#{credentials[:access_token_cache_key]}").and_return(another_fake_lwa_access_token)
           expect(Typhoeus).to receive(:get)
             .with("https://#{hostname}/some_path", headers: hash_including("x-amz-access-token" => another_fake_lwa_access_token))
           client.make_a_request
