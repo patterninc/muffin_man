@@ -47,9 +47,9 @@ response = client.create_product_review_and_seller_feedback_solicitation(amazon_
 JSON.parse(response.body)
 ```
 
-### Access Token Caching
-
 You can optionally use Amazon's sandbox environment by specifying `client = MuffinMan::Solicitations.new(credentials, sandbox = true)`
+
+### Access Token Caching
 
 You can save and retrieve the LWA refresh token by defining a lambda in your initializers.
 
