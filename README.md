@@ -40,11 +40,14 @@ credentials = {
   aws_secret_access_key: AWS_SECRET_ACCESS_KEY,
   region: REGION, # This can be one of ['na', 'eu', 'fe'] and defaults to 'na'
   sts_iam_role_arn: STS_IAM_ROLE_ARN, # Optional
+  access_token_cache_key: SELLING_PARTNER_ID, # Optional if you want access token caching
 }
 client = MuffinMan::Solicitations::V1.new(credentials)
 response = client.create_product_review_and_seller_feedback_solicitation(amazon_order_id, marketplace_ids)
 JSON.parse(response.body)
 ```
+
+### Access Token Caching
 
 You can optionally use Amazon's sandbox environment by specifying `client = MuffinMan::Solicitations.new(credentials, sandbox = true)`
 
@@ -55,11 +58,11 @@ For example, if you are using Redis as your cache you could define:
 ```ruby
 @@redis = Redis.new
 MuffinMan.configure do |config|
-  config.save_access_token = -> (client_id, token) do
-    @@redis.set("SP-TOKEN-#{client_id}", token['access_token'], ex: token['expires_in'])
+  config.save_access_token = -> (access_token_cache_key, token) do
+    @@redis.set("SP-TOKEN-#{access_token_cache_key}", token['access_token'], ex: token['expires_in'])
   end
 
-  config.get_access_token = -> (client_id) { @@redis.get("SP-TOKEN-#{client_id}") }
+  config.get_access_token = -> (access_token_cache_key) { @@redis.get("SP-TOKEN-#{access_token_cache_key}") }
 end
 ```
 
