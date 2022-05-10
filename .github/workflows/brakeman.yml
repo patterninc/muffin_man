@@ -30,5 +30,6 @@ jobs:
       - name: brakeman
         id: brakeman
         run: |
-          brakeman -w3 --color -q
+          ls -al
+          brakeman -w3 --color -q --force
           if [ $? -ne 0 ]; then return 1; fi
