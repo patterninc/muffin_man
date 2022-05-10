@@ -13,5 +13,4 @@
 .env
 Gemfile.lock
 *.gem
-.ruby-version
 .byebug_history
