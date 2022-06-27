@@ -14,9 +14,7 @@ RSpec.describe MuffinMan::Orders::V0 do
     describe "get_orders" do
       it "requests a list of orders" do
         WebMock.allow_net_connect!
-        byebug
         response = orders_client.get_orders(marketplace_ids:marketplace_ids)
-        byebug
         puts "#{response}"
         expect(response.response_code).to eq(200)
       end
