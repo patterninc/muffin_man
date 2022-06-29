@@ -71,7 +71,14 @@ module MuffinMan
         report_document_id = sandbox ? SANDBOX_REPORT_DOCUMENT_ID : report_document_id
         @local_var_path = "/reports/2021-06-30/documents/#{report_document_id}"
         @request_type = "GET"
-        call_api
+        response = call_api
+        parsed_response=JSON.parse(response.body)
+        report=Net::HTTP.get(URI.parse(parsed_response['url']))
+        unless (parsed_response['compressionAlgorithm']).nil?
+          input = StringIO.new(report)
+          report = Zlib::GzipReader.new(input).read
+        end
+        report
       end
     end
   end
