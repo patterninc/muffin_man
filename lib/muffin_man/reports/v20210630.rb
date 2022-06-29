@@ -71,7 +71,11 @@ module MuffinMan
         report_document_id = sandbox ? SANDBOX_REPORT_DOCUMENT_ID : report_document_id
         @local_var_path = "/reports/2021-06-30/documents/#{report_document_id}"
         @request_type = "GET"
-        response = call_api
+        call_api
+      end
+
+      def get_report_document_body(report_document_id)
+        response = get_report_document(report_document_id)
         parsed_response=JSON.parse(response.body)
         report=Net::HTTP.get(URI.parse(parsed_response['url']))
         unless (parsed_response['compressionAlgorithm']).nil?

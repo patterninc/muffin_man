@@ -52,7 +52,15 @@ RSpec.describe MuffinMan::Reports::V20210630 do
 
   describe "get_report_document" do
     it "requests a report document" do
-      report = reports_client.get_report_document(report_document_id)
+      response = reports_client.get_report_document(report_document_id)
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body)["url"]).to eq("https://d34o8swod1owfl.cloudfront.net/Report_47700__GET_MERCHANT_LISTINGS_ALL_DATA_.txt")
+    end
+  end
+
+  describe "get_report_document_body" do
+    it "requests a report document" do
+      report = reports_client.get_report_document_body(report_document_id)
       expect(report).to eq(File.read("./spec/support/report_document_contents.txt"))
     end
   end
