@@ -24,10 +24,22 @@ module MuffinMan
       def get_orders(marketplace_ids, params = {})
         @local_var_path = "/orders/v0/orders"
         @query_params = params.slice(*GET_ORDERS_PARAMS)
-        @query_params["MarketplaceIds"] = marketplace_ids
+        @query_params["MarketplaceIds"] = marketplace_ids # try multiple at once.
         @request_type = "GET"
         call_api
       end
+
+      def get_order_items(order_id, next_token = nil)
+        @query_params = {"NextToken" => next_token} unless next_token.nil? 
+        @local_var_path = "/orders/v0/orders/#{order_id}/orderItems"
+        @request_type = "GET"
+        call_api
+      end
+
+
+
+
+
 
       def get_order(order_id)
         @local_var_path = "/orders/v0/orders/#{order_id}"
@@ -43,13 +55,6 @@ module MuffinMan
 
       def get_order_address(order_id)
         @local_var_path = "/orders/v0/orders/#{order_id}/address"
-        @request_type = "GET"
-        call_api
-      end
-
-      def get_order_items(order_id, next_token = nil)
-        @query_params = {"NextToken" => next_token} unless next_token.nil? 
-        @local_var_path = "/orders/v0/orders/#{order_id}/orderItems"
         @request_type = "GET"
         call_api
       end
@@ -83,6 +88,6 @@ module MuffinMan
         call_api
       end
 
+    end
   end
-end
 end

@@ -109,5 +109,16 @@ module Support
     def hostname
       "sellingpartnerapi-na.amazon.com"
     end
+
+
+
+
+    def stub_get_orders
+      stub_request(:get, "https://#{hostname}/orders/v0/orders?processingStatuses=#{processing_statuses}&reportTypes=#{report_types}")
+        .to_return(status: 200, body: File.read("./spec/support/get_orderss.json"), headers: {})
+    end
+
+
+
   end
 end

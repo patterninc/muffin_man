@@ -1,6 +1,12 @@
 RSpec.describe MuffinMan::Orders::V0 do
   # before do
   #   stub_request_access_token
+  #   stub_get_reports
+  #   stub_create_report
+  #   stub_get_report
+  #   stub_cancel_report
+  #   stub_get_report_document
+  #   stub_report_document_contents
   # end
 
   let(:marketplace_ids) { ["ATVPDKIKX0DER"] } 
@@ -13,7 +19,6 @@ RSpec.describe MuffinMan::Orders::V0 do
 
   describe "get_orders" do
     it "requests a list of orders" do
-      WebMock.allow_net_connect!
       response = orders_client.get_orders(marketplace_ids:marketplace_ids)
       puts "#{response}"
       expect(response.response_code).to eq(200)
