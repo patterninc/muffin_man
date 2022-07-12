@@ -1,0 +1,49 @@
+{
+  "payload":{
+     "OrderItems":[
+        {
+           "TaxCollection":{
+              "Model":"MarketplaceFacilitator",
+              "ResponsibleParty":"Amazon Services, Inc."
+           },
+           "ProductInfo":{
+              "NumberOfItems":"1"
+           },
+           "BuyerInfo":{
+              
+           },
+           "ItemTax":{
+              "CurrencyCode":"USD",
+              "Amount":"3.73"
+           },
+           "QuantityShipped":1,
+           "BuyerRequestedCancel":{
+              "IsBuyerRequestedCancel":"false",
+              "BuyerCancelReason":""
+           },
+           "ItemPrice":{
+              "CurrencyCode":"USD",
+              "Amount":"44.99"
+           },
+           "ASIN":"B07QLFMYWM",
+           "SellerSKU":"1234567890",
+           "Title":"Counter Assault Bear Spray Canister, 8.1 oz",
+           "IsGift":"false",
+           "ConditionSubtypeId":"New",
+           "IsTransparency":false,
+           "QuantityOrdered":1,
+           "PromotionDiscountTax":{
+              "CurrencyCode":"USD",
+              "Amount":"0.00"
+           },
+           "ConditionId":"New",
+           "PromotionDiscount":{
+              "CurrencyCode":"USD",
+              "Amount":"0.00"
+           },
+           "OrderItemId":"1234565789"
+        }
+     ],
+     "AmazonOrderId":"1234567890"
+  }
+}
