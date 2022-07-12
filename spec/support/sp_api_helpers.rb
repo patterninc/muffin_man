@@ -111,8 +111,6 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/get_order_items.json"), headers: {})
     end
 
-
-
     def stub_get_authorization_code
       body = '{"payload":{"authorizationCode": "ANDMxqpCmqWHJeyzdbMH"}}'
       stub_request(:get, "https://#{hostname}/authorization/v1/authorizationCode?developerId=#{developer_id}&mwsAuthToken=#{mws_auth_token}&sellingPartnerId=#{selling_partner_id}")
