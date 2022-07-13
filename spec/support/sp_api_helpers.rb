@@ -90,6 +90,27 @@ module Support
         to_return(status: 200, body: File.read("./spec/support/report_document_contents.txt"), headers: { 'Content-Type' => 'text/tsv' })
     end
 
+
+    def stub_get_orders
+      stub_request(:get, "https://#{hostname}/orders/v0/orders?MarketplaceIds=#{marketplace_ids}")
+        .to_return(status: 200, body: File.read("./spec/support/get_orders.json"), headers: {})
+    end
+
+    def stub_get_orders_with_ids
+      stub_request(:get, "https://#{hostname}/orders/v0/orders?MarketplaceIds=#{marketplace_ids}&AmazonOrderIds=#{payload["orderIds"]}")
+        .to_return(status: 200, body: File.read("./spec/support/get_orders.json"), headers: {})
+    end
+
+    def stub_get_orders_with_next_token
+      stub_request(:get, "https://#{hostname}/orders/v0/orders?MarketplaceIds=#{marketplace_ids}&NextToken=#{payload_2["NextToken"]}")
+      .to_return(status: 200, body: File.read("./spec/support/get_orders.json"), headers: {})
+    end
+
+    def stub_get_order_items
+      stub_request(:get, "https://#{hostname}/orders/v0/orders/#{order_id}/orderItems")
+        .to_return(status: 200, body: File.read("./spec/support/get_order_items.json"), headers: {})
+    end
+
     def stub_get_authorization_code
       body = '{"payload":{"authorizationCode": "ANDMxqpCmqWHJeyzdbMH"}}'
       stub_request(:get, "https://#{hostname}/authorization/v1/authorizationCode?developerId=#{developer_id}&mwsAuthToken=#{mws_auth_token}&sellingPartnerId=#{selling_partner_id}")
