@@ -1,7 +1,3 @@
-# 1.4.4
-
-- Support for Tokens API [#17](https://github.com/patterninc/muffin_man/pull/17)
-
 # 1.4.3
 
 - Support for getOrderAddress [#16](https://github.com/patterninc/muffin_man/pull/16)
