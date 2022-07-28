@@ -25,8 +25,13 @@ module MuffinMan
         NextToken
       ].freeze
 
-      def get_orders(marketplace_ids, params = {})
+      PII_DATA_ELEMENTS = %w[
+        buyerInfo shippingAddress buyerTaxInformation
+      ]
+
+      def get_orders(marketplace_ids, params = {}, pii_data_elements: [])
         @local_var_path = "/orders/v0/orders"
+        @pii_data_elements = pii_data_elements & PII_DATA_ELEMENTS
         @query_params = params.slice(*GET_ORDERS_PARAMS)
         @query_params["MarketplaceIds"] = marketplace_ids
         @request_type = "GET"

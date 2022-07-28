@@ -8,6 +8,12 @@ module Support
         .to_return(status: 200, body: '{ "access_token": "this_will_get_you_into_drury_lane", "expires_in": 3600 }', headers: {})
     end
 
+    def stub_request_rdt_token
+      stub_request(:post, "https://#{hostname}/tokens/2021-03-01/restrictedDataToken")
+        .with(body: hash_including({ "restrictedResources" => hash_including({})}))
+        .to_return(status: 200, body: '{ "restrictedDataToken": "this_will_get_you_into 123 E. drury_lane", "expires_in": 3600 }', headers: {})
+    end
+
     def stub_fake_request
       stub_request(:get, "https://#{hostname}/some_path")
         .to_return(status: 200, body: "{}", headers: {})
