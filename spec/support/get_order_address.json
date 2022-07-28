@@ -1,0 +1,15 @@
+{
+  "payload": {
+    "AmazonOrderId": "123-4567890-1234567",
+    "ShippingAddress": {
+      "StateOrRegion": "NY",
+      "AddressLine1": "1 Avenue",
+      "Phone": "+1 555-555-5555 ext. 12345",
+      "PostalCode": "11762-4030",
+      "City": "New York",
+      "CountryCode": "US",
+      "AddressType": "Residential",
+      "Name": "peter parker"
+    }
+  }
+}
