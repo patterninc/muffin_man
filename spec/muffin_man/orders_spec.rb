@@ -5,6 +5,7 @@ RSpec.describe MuffinMan::Orders::V0 do
     stub_get_orders_with_ids
     stub_get_orders_with_next_token
     stub_get_order_items
+    stub_get_order_address
   end
 
   let(:marketplace_ids) { "ATVPDKIKX0DER,A2EUQ1WTGCTBG2" } 
@@ -39,6 +40,14 @@ RSpec.describe MuffinMan::Orders::V0 do
       response = orders_client.get_order_items(order_id)
       expect(response.response_code).to eq(200)
       expect(JSON.parse(response.body)["payload"]["OrderItems"][0]["ASIN"]).to eq("B07QLFMYWM")
+    end
+  end
+
+  describe 'get_order_address' do
+    it 'requests address info for an order' do
+      response = orders_client.get_order_address(order_id)
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body)["payload"]["ShippingAddress"]["Name"]).to eq("peter parker")
     end
   end
 end

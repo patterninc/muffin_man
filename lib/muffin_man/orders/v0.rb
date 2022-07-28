@@ -39,6 +39,12 @@ module MuffinMan
         @request_type = "GET"
         call_api
       end
+
+      def get_order_address(order_id)
+        @local_var_path = "/orders/v0/orders/#{order_id}/address"
+        @request_type = "GET"
+        call_api
+      end
     end
   end
 end
