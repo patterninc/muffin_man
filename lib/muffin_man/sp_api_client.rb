@@ -9,7 +9,8 @@ module MuffinMan
     attr_reader :refresh_token, :client_id, :client_secret, :aws_access_key_id,
                 :aws_secret_access_key, :sts_iam_role_arn, :sandbox, :config,
                 :region, :request_type, :local_var_path, :query_params,
-                :request_body, :scope, :access_token_cache_key
+                :request_body, :scope, :access_token_cache_key, :credentials,
+                :pii_data_elements
 
     ACCESS_TOKEN_URL = "https://api.amazon.com/auth/o2/token".freeze
     SERVICE_NAME = "execute-api".freeze
@@ -30,6 +31,8 @@ module MuffinMan
       @scope = credentials[:scope]
       @access_token_cache_key = credentials[:access_token_cache_key]
       @sandbox = sandbox
+      @credentials = credentials
+      @pii_data_elements = []
       Typhoeus::Config.user_agent = ""
       @config = MuffinMan.configuration
     end
@@ -146,13 +149,28 @@ module MuffinMan
     end
 
     def headers
-      access_token = scope ? retrieve_grantless_access_token : retrieve_lwa_access_token
+      if requires_rdt_token_for_pii?
+        access_token = retrieve_rdt_access_token || retrieve_lwa_access_token
+      else
+        access_token = scope ? retrieve_grantless_access_token : retrieve_lwa_access_token
+      end
       headers = {
         "x-amz-access-token" => access_token,
         "user-agent" => "MuffinMan/#{VERSION} (Language=Ruby)",
         "content-type" => "application/json"
       }
       signed_request.headers.merge(headers)
+    end
+
+    def requires_rdt_token_for_pii?
+      pii_data_elements.any?
+    end
+
+    def retrieve_rdt_access_token
+      rdt_token_response = Tokens::V20210301.new(credentials, sandbox).create_restricted_data_token(
+        @local_var_path, @request_type, pii_data_elements
+      )
+      JSON.parse(rdt_token_response.body)["restrictedDataToken"]
     end
 
     def derive_aws_region
