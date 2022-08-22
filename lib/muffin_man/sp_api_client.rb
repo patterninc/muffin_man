@@ -127,7 +127,8 @@ module MuffinMan
       client = Aws::STS::Client.new(
         region: derive_aws_region,
         access_key_id: aws_access_key_id,
-        secret_access_key: aws_secret_access_key
+        secret_access_key: aws_secret_access_key,
+        http_wire_trace: (ENV["AWS_DEBUG"] == "true" || false)
       )
       client.assume_role(role_arn: sts_iam_role_arn, role_session_name: SecureRandom.uuid)
     end
