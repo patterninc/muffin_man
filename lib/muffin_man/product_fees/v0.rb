@@ -2,6 +2,7 @@
 
 module MuffinMan
   module ProductFees
+    require "json"
     require "sp_api_helper"
     class V0 < SpApiClient
       attr_reader :asin
