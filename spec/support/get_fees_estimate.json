@@ -1,0 +1,138 @@
+{
+  "payload": {
+    "FeesEstimateResult": {
+      "Status": "Success",
+      "FeesEstimateIdentifier": {
+        "MarketplaceId": "ATVPDKIKX0DER",
+        "IdType": "ASIN",
+        "OptionalFulfillmentProgram": "FBA_CORE",
+        "SellerId": "A2EJCTH67GJMT3",
+        "SellerInputIdentifier": "6c1e5d9b-d516-404f-8cd4-b41afad44a3f",
+        "IsAmazonFulfilled": true,
+        "IdValue": "B09WZ936D8",
+        "PriceToEstimateFees": {
+          "ListingPrice": {
+            "CurrencyCode": "USD",
+            "Amount": 149.94
+          }
+        }
+      },
+      "FeesEstimate": {
+        "TimeOfFeesEstimation": "2022-09-07T07: 44: 26.000Z",
+        "TotalFeesEstimate": {
+          "CurrencyCode": "USD",
+          "Amount": 29.78
+        },
+        "FeeDetailList": [
+          {
+            "FeeType": "ReferralFee",
+            "FeeAmount": {
+              "CurrencyCode": "USD",
+              "Amount": 22.49
+            },
+            "FinalFee": {
+              "CurrencyCode": "USD",
+              "Amount": 22.49
+            },
+            "FeePromotion": {
+              "CurrencyCode": "USD",
+              "Amount": 0.0
+            }
+          },
+          {
+            "FeeType": "VariableClosingFee",
+            "FeeAmount": {
+              "CurrencyCode": "USD",
+              "Amount": 0.0
+            },
+            "FinalFee": {
+              "CurrencyCode": "USD",
+              "Amount": 0.0
+            },
+            "FeePromotion": {
+              "CurrencyCode": "USD",
+              "Amount": 0.0
+            }
+          },
+          {
+            "FeeType": "PerItemFee",
+            "FeeAmount": {
+              "CurrencyCode": "USD",
+              "Amount": 0.0
+            },
+            "FinalFee": {
+              "CurrencyCode": "USD",
+              "Amount": 0.0
+            },
+            "FeePromotion": {
+              "CurrencyCode": "USD",
+              "Amount": 0.0
+            }
+          },
+          {
+            "FeeType": "FBAFees",
+            "FeeAmount": {
+              "CurrencyCode": "USD",
+              "Amount": 7.38
+            },
+            "FinalFee": {
+              "CurrencyCode": "USD",
+              "Amount": 7.29
+            },
+            "FeePromotion": {
+              "CurrencyCode": "USD",
+              "Amount": 0.09
+            },
+            "IncludedFeeDetailList": [
+              {
+                "FeeType": "FBAWeightHandling",
+                "FeeAmount": {
+                  "CurrencyCode": "USD",
+                  "Amount": 0.0
+                },
+                "FinalFee": {
+                  "CurrencyCode": "USD",
+                  "Amount": 0.0
+                },
+                "FeePromotion": {
+                  "CurrencyCode": "USD",
+                  "Amount": 0.0
+                }
+              },
+              {
+                "FeeType": "FBAPickAndPack",
+                "FeeAmount": {
+                  "CurrencyCode": "USD",
+                  "Amount": 7.38
+                },
+                "FinalFee": {
+                  "CurrencyCode": "USD",
+                  "Amount": 7.29
+                },
+                "FeePromotion": {
+                  "CurrencyCode": "USD",
+                  "Amount": 0.09
+                }
+              },
+              {
+                "FeeType": "FBAOrderHandling",
+                "FeeAmount": {
+                  "CurrencyCode": "USD",
+                  "Amount": 0.0
+                },
+                "FinalFee": {
+                  "CurrencyCode": "USD",
+                  "Amount": 0.0
+                },
+                "FeePromotion": {
+                  "CurrencyCode": "USD",
+                  "Amount": 0.0
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
