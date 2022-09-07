@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-require 'muffin_man/sp_api_helper/price_to_estimate_fees'
+
+require "muffin_man/sp_api_helper/price_to_estimate_fees"
 
 module SpApiHelper
   class FeesEstimateRequest

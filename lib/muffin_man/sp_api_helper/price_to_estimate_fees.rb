@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'muffin_man/sp_api_helper/money_type'
+require "muffin_man/sp_api_helper/money_type"
 
 module SpApiHelper
   class PriceToEstimateFees

@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 module MuffinMan
   module ProductFees
     require "sp_api_helper"
     class V0 < SpApiClient
       attr_reader :asin
+
       def get_my_fees_estimate_for_asin(asin, marketplace_id, map_price, currency_code)
         @asin = asin
         @local_var_path = "/products/fees/v0/items/#{@asin}/feesEstimate"
