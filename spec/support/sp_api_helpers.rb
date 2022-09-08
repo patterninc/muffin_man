@@ -129,24 +129,24 @@ module Support
     end
 
     def stub_get_my_fees_estimate_for_asin
-      stub_request(:get, "https://#{hostname}/products/fees/v0/items/#{asin}/feesEstimate")
+      stub_request(:post, "https://#{hostname}/products/fees/v0/items/#{asin}/feesEstimate")
       .with(body:{
-          "fees_estimate_request": {
-            "marketplace_id": "ATVPDKIKX0DER",
-            "price_to_estimate_fees": {
-              "listing_price": {
-                "amount": 149.94,
-                "currency_code": "USD"
-              }
-            },
-            "identifier": "b013ad16-258a-48f4-82e4-c096ec25387c",
-            "is_amazon_fulfilled": true,
-            "optional_fulfillment_program": "FBA_CORE"
-          }
+        "FeesEstimateRequest": {
+          "MarketplaceId": "ATVPDKIKX0DER",
+          "PriceToEstimateFees": {
+            "ListingPrice": {
+              "Amount": 149.94,
+              "CurrencyCode": "USD"
+            }
+          },
+          "Identifier": "cd4c6683-1198-4a1b-8495-6b6f3e9550b3",
+          "IsAmazonFulfilled": true,
+          "OptionalFulfillmentProgram": "FBA_CORE"
         }
+      }
       ).to_return(status: 200, body: File.read("./spec/support/get_fees_estimate.json"), headers: {})
     end
-
+    
     def credentials
       {
         refresh_token: "a-refresh-token",
