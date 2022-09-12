@@ -1,11 +1,16 @@
+# frozen_string_literal: true
+
+# Module to help create request body for API endpoints
 module SpApiHelpers
   require "securerandom"
 
-  def self.fees_estimate_request_body(marketplace_id, price, fees_currency_code, shipping = nil, points = nil, identifier = SecureRandom.uuid, is_amazon_fulfilled = true, optional_fulfillment_program = "FBA_CORE")
-    GetMyFeesEstimateRequest.new(marketplace_id, price, fees_currency_code, shipping, points, identifier,
+  def self.fees_estimate_request_body(marketplace_id, price, fees_currency_code,
+                                      shipping = nil, points = nil, identifier = SecureRandom.uuid,
+                                      is_amazon_fulfilled = true, optional_fulfillment_program = "FBA_CORE")
+    GetMyFeesEstimateRequest.new(marketplace_id, price, fees_currency_code,
+                                 shipping, points, identifier,
                                  is_amazon_fulfilled, optional_fulfillment_program)
   end
-
   class GetMyFeesEstimateRequest
     attr_accessor :fees_estimate_request
 
@@ -17,7 +22,7 @@ module SpApiHelpers
 
     def to_camelize
       {
-        "FeesEstimateRequest" => 
+        "FeesEstimateRequest" =>
           fees_estimate_request.to_camelize
       }
     end
@@ -38,11 +43,11 @@ module SpApiHelpers
 
     def to_camelize
       {
-        'Identifier' => identifier,
-        'IsAmazonFulfilled' => is_amazon_fulfilled,
-        'MarketplaceId' => marketplace_id,
-        'OptionalFulfillmentProgram' => optional_fulfillment_program,
-        'PriceToEstimateFees' => price_to_estimate_fees.to_camelize
+        "Identifier" => identifier,
+        "IsAmazonFulfilled" => is_amazon_fulfilled,
+        "MarketplaceId" => marketplace_id,
+        "OptionalFulfillmentProgram" => optional_fulfillment_program,
+        "PriceToEstimateFees" => price_to_estimate_fees.to_camelize
       }
     end
   end
@@ -55,9 +60,9 @@ module SpApiHelpers
       @shipping = MoneyType.new(shipping, currency_code) if shipping
       @points = points if points
     end
-    
+
     def to_camelize
-      { 'ListingPrice' => listing_price.to_camelize}
+      { "ListingPrice" => listing_price.to_camelize }
     end
   end
 
@@ -80,8 +85,8 @@ module SpApiHelpers
 
     def to_camelize
       {
-        'Amount' => amount,
-        'CurrencyCode' => currency_code
+        "Amount" => amount,
+        "CurrencyCode" => currency_code
       }
     end
   end
