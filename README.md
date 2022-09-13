@@ -9,6 +9,7 @@ As of now, this gem only supports portions of the following APIs with more to co
 - `create_product_review_and_seller_feedback_solicitation`
 - `catalog_items`
 - `reports`
+- `product_pricing`
 
 ## Installation
 
