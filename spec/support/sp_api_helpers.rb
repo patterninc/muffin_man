@@ -128,6 +128,11 @@ module Support
         .to_return(status: 200, body: body, headers: {})
     end
 
+    def stub_get_my_fees_estimate_for_asin
+      stub_request(:post, "https://#{hostname}/products/fees/v0/items/#{asin}/feesEstimate")
+        .to_return(status: 200, body: File.read("./spec/support/get_fees_estimate.json"), headers: {})
+    end
+
     def stub_get_competitive_pricing
       stub_request(:get, "https://#{hostname}/products/pricing/v0/competitivePrice?Asins=#{asin}&ItemType=#{item_type}&MarketplaceId=#{amazon_marketplace_id}")
         .to_return(status: 200, body: File.read("./spec/support/get_competitive_pricing.json"), headers: {})
