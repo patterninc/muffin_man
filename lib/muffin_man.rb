@@ -8,7 +8,9 @@ require "muffin_man/catalog_items/v20201201"
 require "muffin_man/finances/v0"
 require "muffin_man/authorization/v1"
 require "muffin_man/tokens/v20210301"
-require "muffin_man/product_pricing/v0"
+require "muffin_man/fees/v0"
+require "muffin_man/helpers/fees/fees_estimate_request"
+require "muffin_man/helpers/fees/fees_estimate_by_id_request"
 
 module MuffinMan
   class Error < StandardError; end

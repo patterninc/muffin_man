@@ -1,0 +1,135 @@
+[
+    [0] {
+                        "Status" : "Success",
+        "FeesEstimateIdentifier" : {
+                    "MarketplaceId" : "ATVPDKIKX0DER",
+                           "IdType" : "ASIN",
+                         "SellerId" : "A2EJCTH67GJMT3",
+            "SellerInputIdentifier" : "1",
+                "IsAmazonFulfilled" : true,
+                          "IdValue" : "B0B9CB8SL9",
+              "PriceToEstimateFees" : {
+                "ListingPrice" : {
+                    "CurrencyCode" : "USD",
+                          "Amount" : 1
+                }
+            }
+        },
+                  "FeesEstimate" : {
+            "TimeOfFeesEstimation" : "2022-09-12T13:04:44.000Z",
+               "TotalFeesEstimate" : {
+                "CurrencyCode" : "USD",
+                      "Amount" : 4.17
+            },
+                   "FeeDetailList" : [
+                [0] {
+                         "FeeType" : "ReferralFee",
+                       "FeeAmount" : {
+                        "CurrencyCode" : "USD",
+                              "Amount" : 0.3
+                    },
+                        "FinalFee" : {
+                        "CurrencyCode" : "USD",
+                              "Amount" : 0.3
+                    },
+                    "FeePromotion" : {
+                        "CurrencyCode" : "USD",
+                              "Amount" : 0.0
+                    }
+                },
+                [1] {
+                         "FeeType" : "VariableClosingFee",
+                       "FeeAmount" : {
+                        "CurrencyCode" : "USD",
+                              "Amount" : 0.0
+                    },
+                        "FinalFee" : {
+                        "CurrencyCode" : "USD",
+                              "Amount" : 0.0
+                    },
+                    "FeePromotion" : {
+                        "CurrencyCode" : "USD",
+                              "Amount" : 0.0
+                    }
+                },
+                [2] {
+                         "FeeType" : "PerItemFee",
+                       "FeeAmount" : {
+                        "CurrencyCode" : "USD",
+                              "Amount" : 0.0
+                    },
+                        "FinalFee" : {
+                        "CurrencyCode" : "USD",
+                              "Amount" : 0.0
+                    },
+                    "FeePromotion" : {
+                        "CurrencyCode" : "USD",
+                              "Amount" : 0.0
+                    }
+                },
+                [3] {
+                                  "FeeType" : "FBAFees",
+                                "FeeAmount" : {
+                        "CurrencyCode" : "USD",
+                              "Amount" : 3.96
+                    },
+                                 "FinalFee" : {
+                        "CurrencyCode" : "USD",
+                              "Amount" : 3.87
+                    },
+                             "FeePromotion" : {
+                        "CurrencyCode" : "USD",
+                              "Amount" : 0.09
+                    },
+                    "IncludedFeeDetailList" : [
+                        [0] {
+                                 "FeeType" : "FBAWeightHandling",
+                               "FeeAmount" : {
+                                "CurrencyCode" : "USD",
+                                      "Amount" : 0.0
+                            },
+                                "FinalFee" : {
+                                "CurrencyCode" : "USD",
+                                      "Amount" : 0.0
+                            },
+                            "FeePromotion" : {
+                                "CurrencyCode" : "USD",
+                                      "Amount" : 0.0
+                            }
+                        },
+                        [1] {
+                                 "FeeType" : "FBAPickAndPack",
+                               "FeeAmount" : {
+                                "CurrencyCode" : "USD",
+                                      "Amount" : 3.96
+                            },
+                                "FinalFee" : {
+                                "CurrencyCode" : "USD",
+                                      "Amount" : 3.87
+                            },
+                            "FeePromotion" : {
+                                "CurrencyCode" : "USD",
+                                      "Amount" : 0.09
+                            }
+                        },
+                        [2] {
+                                 "FeeType" : "FBAOrderHandling",
+                               "FeeAmount" : {
+                                "CurrencyCode" : "USD",
+                                      "Amount" : 0.0
+                            },
+                                "FinalFee" : {
+                                "CurrencyCode" : "USD",
+                                      "Amount" : 0.0
+                            },
+                            "FeePromotion" : {
+                                "CurrencyCode" : "USD",
+                                      "Amount" : 0.0
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]
