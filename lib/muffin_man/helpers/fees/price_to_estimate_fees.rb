@@ -13,6 +13,12 @@ module MuffinMan
           @shipping = Helpers::Fees::MoneyType.new(shipping, currency_code) if shipping
           @points = points if points
         end
+
+        def to_camelize
+          {
+            "ListingPrice": listing_price.to_camelize
+          }
+        end
       end
     end
   end

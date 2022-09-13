@@ -30,11 +30,12 @@ module MuffinMan
       def build_request_body_for_estimate fees_estimate_request
         return nil if fees_estimate_request == nil
         
-        fees_estimate_request.to_request_object
+        fees_estimate_request.to_camelize
       end
 
       def build_request_body_for_estimate_by_ids fees_estimate_by_id_requests
         return nil if fees_estimate_by_id_requests == nil
+
         objects = if fees_estimate_by_id_requests.is_a? Array
           fees_estimate_by_id_requests
         else
@@ -43,7 +44,7 @@ module MuffinMan
 
         request_object = []
         objects.each do |fees_estimate_id_object|
-          request_object << fees_estimate_id_object.to_request_object
+          request_object << fees_estimate_id_object.to_camelize
         end
 
         return request_object

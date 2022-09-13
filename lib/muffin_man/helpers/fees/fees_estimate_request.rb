@@ -18,19 +18,12 @@ module MuffinMan
           @optional_fullfillment_program = optional_fullfillment_program if optional_fullfillment_program
         end
 
-        def to_request_object
+        def to_camelize
           {
-            "FeesEstimateRequest": {
-              "MarketplaceId": @marketplace_id,
-              "IsAmazonFulfilled":  @is_amazon_fulfilled,
-              "Identifier": @identifier,
-              "PriceToEstimateFees": {
-                "ListingPrice": {
-                  "CurrencyCode": @price_to_estimate_fees&.listing_price&.currency_code,
-                  "Amount": @price_to_estimate_fees&.listing_price&.amount
-                }
-              }
-            }
+            "MarketplaceId": marketplace_id,
+            "IsAmazonFulfilled":  is_amazon_fulfilled,
+            "Identifier": identifier,
+            "PriceToEstimateFees": price_to_estimate_fees.to_camelize
           }
         end
       end

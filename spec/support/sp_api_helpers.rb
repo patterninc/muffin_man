@@ -144,20 +144,20 @@ module Support
 
     def stub_get_my_fees_estimate_for_sku
       stub_request(:post, "https://#{hostname}/products/fees/v0/listings/#{sku}/feesEstimate")
-        .with(body: fees_estimate_request.to_request_object.to_json)
+        .with(body: fees_estimate_request.to_camelize.to_json)
         .to_return(status: 200, body: File.read("./spec/support/get_my_fees_estimate_for_sku.json"), headers: {})
     end
 
     def stub_get_my_fees_estimate_for_asin
       stub_request(:post, "https://#{hostname}/products/fees/v0/items/#{asin}/feesEstimate")
-        .with(body: fees_estimate_request.to_request_object.to_json)
+        .with(body: fees_estimate_request.to_camelize.to_json)
         .to_return(status: 200, body: File.read("./spec/support/get_my_fees_estimate_for_asin.json"), headers: {})
     end
 
 
     def stub_get_my_fees_estimates
       stub_request(:post, "https://#{hostname}/products/fees/v0/feesEstimate")
-        .with(body: [fees_estimate_by_id_request.to_request_object].to_json)
+        .with(body: [fees_estimate_by_id_request.to_camelize].to_json)
         .to_return(status: 200, body: File.read("./spec/support/get_my_fees_estimates.json"), headers: {})
     end
   end

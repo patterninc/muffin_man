@@ -14,21 +14,11 @@ module MuffinMan
           @fees_estimate_request = Helpers::Fees::FeesEstimateRequest.new(marketplace_id, price, currency_code, identifier, is_amazon_fulfilled)
         end
 
-        def to_request_object
+        def to_camelize
           {
-            "IdType": @id_type,
-            "IdValue": @id_value,
-            "FeesEstimateRequest": {
-              "MarketplaceId": @fees_estimate_request.marketplace_id,
-              "IsAmazonFulfilled":  @fees_estimate_request&.is_amazon_fulfilled,
-              "Identifier": @fees_estimate_request&.identifier,
-              "PriceToEstimateFees": {
-                "ListingPrice": {
-                  "CurrencyCode": @fees_estimate_request&.price_to_estimate_fees&.listing_price&.currency_code,
-                  "Amount": @fees_estimate_request&.price_to_estimate_fees&.listing_price&.amount
-                }
-              }
-            }
+            "IdType": id_type,
+            "IdValue": id_value,
+            "FeesEstimateRequest": fees_estimate_request.to_camelize
           }
         end
       end

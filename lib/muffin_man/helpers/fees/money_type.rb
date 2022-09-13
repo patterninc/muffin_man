@@ -18,6 +18,13 @@ module MuffinMan
           @currency_code = currency_code
           @amount = amount
         end
+
+        def to_camelize
+          {
+            "CurrencyCode": currency_code,
+            "Amount": amount
+          }
+        end
       end
     end
   end
