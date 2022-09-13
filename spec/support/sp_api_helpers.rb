@@ -133,6 +133,10 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/get_fees_estimate.json"), headers: {})
     end
 
+    def stub_get_competitive_pricing
+      stub_request(:get, "https://#{hostname}/products/pricing/v0/competitivePrice?Asins=#{asin}&ItemType=#{item_type}&MarketplaceId=#{amazon_marketplace_id}")
+        .to_return(status: 200, body: File.read("./spec/support/get_competitive_pricing.json"), headers: {})
+    end
     def credentials
       {
         refresh_token: "a-refresh-token",

@@ -10,6 +10,7 @@ As of now, this gem only supports portions of the following APIs with more to co
 - `catalog_items`
 - `reports`
 - `product_fees`
+- `product_pricing`
 
 ## Installation
 
