@@ -1,4 +1,4 @@
-RSpec.describe MuffinMan::Fees::V0 do
+RSpec.describe MuffinMan::ProductFees::V0 do
   before do
     stub_request_access_token
     stub_get_my_fees_estimate_for_sku
@@ -17,24 +17,24 @@ RSpec.describe MuffinMan::Fees::V0 do
   	MuffinMan::Helpers::Fees::FeesEstimateByIdRequest.new('ASIN','B000000000','ATVP000000000',1,'USD', 1, true)
   }
 
-  subject(:fees_client) { described_class.new(credentials) }
+  subject(:product_fees_client) { described_class.new(credentials) }
 
 
   describe "get_my_fees_estimate_for_asin" do
     it "makes a get_my_fees_estimate_for_asin request to amazon" do
-      expect(fees_client.get_my_fees_estimate_for_asin(asin, fees_estimate_request).response_code).to eq(200)
+      expect(product_fees_client.get_my_fees_estimate_for_asin(asin, fees_estimate_request).response_code).to eq(200)
     end
   end
 
   describe "get_my_fees_estimate_for_sku" do
     it "makes a get_my_fees_estimate_for_sku request to amazon" do
-      expect(fees_client.get_my_fees_estimate_for_sku(sku, fees_estimate_request).response_code).to eq(200)
+      expect(product_fees_client.get_my_fees_estimate_for_sku(sku, fees_estimate_request).response_code).to eq(200)
     end
   end
 
   describe "get_my_fees_estimates" do
     it "makes a get_my_fees_estimates request to amazon" do
-      expect(fees_client.get_my_fees_estimates(fees_estimate_by_id_request).response_code).to eq(200)
+      expect(product_fees_client.get_my_fees_estimates(fees_estimate_by_id_request).response_code).to eq(200)
     end
   end
 
