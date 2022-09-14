@@ -11,7 +11,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
   describe "get_prep_instructions" do
     before { stub_get_prep_instructions }
 
-    it "makes a request to get a listings item" do
+    it "makes a request to get prep instructions for a SKU/country" do
       expect(fba_inbound_client.get_prep_instructions(country_code, seller_sku_list: sku_list).response_code).to eq(200)
       expect(JSON.parse(fba_inbound_client.get_prep_instructions(country_code, seller_sku_list: sku_list).body).dig("payload", "SKUPrepInstructionsList").first["SellerSKU"]).to eq(sku_list.first)
     end
