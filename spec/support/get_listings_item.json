@@ -1,0 +1,262 @@
+{
+  "sku": "SD-ABC-12345",
+  "attributes": {
+    "pesticide_marking": [
+      {
+        "marking_type": "epa_registration_number",
+        "registration_status": "fifra_not_considered_pesticide",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "item_package_weight": [
+      {
+        "unit": "pounds",
+        "value": "0.51",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "fulfillment_availability": [
+      {
+        "fulfillment_channel_code": "AMAZON_NA",
+        "marketplace_id": "ATVPDKIKX0DER"
+      },
+      {
+        "fulfillment_channel_code": "DEFAULT",
+        "quantity": 0,
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "item_weight": [
+      {
+        "unit": "pounds",
+        "value": "0.51",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "bullet_point": [
+      {
+        "language_tag": "en_US",
+        "value": "Some bullet point that tells us something cool",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "item_dimensions": [
+      {
+        "height": {
+          "unit": "inches",
+          "value": "2.10"
+        },
+        "length": {
+          "unit": "inches",
+          "value": "4.70"
+        },
+        "width": {
+          "unit": "inches",
+          "value": "2.30"
+        },
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "product_description": [
+      {
+        "language_tag": "en_US",
+        "value": "This product will grow a magic beanstalk",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "supplier_declared_dg_hz_regulation": [
+      {
+        "value": "not_applicable",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "brand": [
+      {
+        "language_tag": "en_US",
+        "value": "Jack",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "generic_keyword": [
+      {
+        "language_tag": "en_US",
+        "value": "beanstalk jack bean stalk",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "purchasable_offer": [
+      {
+        "currency": "USD",
+        "our_price": [
+          {
+            "schedule": [
+              {
+                "value_with_tax": 45.35
+              }
+            ]
+          }
+        ],
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "merchant_shipping_group": [
+      {
+        "value": "legacy-template-id",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "item_name": [
+      {
+        "language_tag": "en_US",
+        "value": "Jack's Beanstalk",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "list_price": [
+      {
+        "currency": "USD",
+        "value": "45.35",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "batteries_required": [
+      {
+        "value": "false",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "product_tax_code": [
+      {
+        "value": "A_HLTH_DIETSUPMT",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "item_type_keyword": [
+      {
+        "value": "wellness-and-relaxation-products",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "merchant_suggested_asin": [
+      {
+        "value": "B008EKVG3I",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "condition_type": [
+      {
+        "value": "new_new",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "item_package_dimensions": [
+      {
+        "height": {
+          "unit": "inches",
+          "value": "2.10"
+        },
+        "length": {
+          "unit": "inches",
+          "value": "4.70"
+        },
+        "width": {
+          "unit": "inches",
+          "value": "2.30"
+        },
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "ghs": [
+      {
+        "classification": [
+          {
+            "class": "amzn_specific_no_label_with_warning"
+          }
+        ],
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "batteries_included": [
+      {
+        "value": "false",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "swatch_product_image_locator": [
+      {
+        "media_location": "https://images-na.ssl-images-amazon.com/images/I/81EvnwitbbS.jpg",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "main_product_image_locator": [
+      {
+        "media_location": "https://images-na.ssl-images-amazon.com/images/I/61hV4XFg31S.jpg",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "other_product_image_locator_1": [
+      {
+        "media_location": "https://images-na.ssl-images-amazon.com/images/I/71p7fGrxN8S.jpg",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "other_product_image_locator_2": [
+      {
+        "media_location": "https://images-na.ssl-images-amazon.com/images/I/71ZCh64TJcL.jpg",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "other_product_image_locator_3": [
+      {
+        "media_location": "https://images-na.ssl-images-amazon.com/images/I/81RqlD4A2UL.jpg",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "other_product_image_locator_4": [
+      {
+        "media_location": "https://images-na.ssl-images-amazon.com/images/I/815AtJnO9OS.jpg",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "other_product_image_locator_5": [
+      {
+        "media_location": "https://images-na.ssl-images-amazon.com/images/I/81Tfl0YVlzS.jpg",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "other_product_image_locator_6": [
+      {
+        "media_location": "https://images-na.ssl-images-amazon.com/images/I/81MVIPPcPbL.jpg",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "other_product_image_locator_7": [
+      {
+        "media_location": "https://images-na.ssl-images-amazon.com/images/I/81GRH69QQwS.jpg",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ],
+    "other_product_image_locator_8": [
+      {
+        "media_location": "https://images-na.ssl-images-amazon.com/images/I/81EvnwitbbS.jpg",
+        "marketplace_id": "ATVPDKIKX0DER"
+      }
+    ]
+  },
+  "offers": [
+    {
+      "marketplaceId": "ATVPDKIKX0DER",
+      "offerType": "B2C",
+      "price": {
+        "currency": "USD",
+        "currencyCode": "USD",
+        "amount": "45.35"
+      }
+    }
+  ],
+  "fulfillmentAvailability": [
+    {
+      "fulfillmentChannelCode": "AMAZON_NA"
+    }
+  ]
+}
