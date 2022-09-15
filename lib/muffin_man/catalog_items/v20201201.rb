@@ -17,7 +17,7 @@ module MuffinMan
       ].freeze
       GET_CATALOG_ITEM_PARAMS = %w[includedData locale].freeze
 
-      def search_catalog_items(keywords, marketplace_ids, params = {})
+      def search_catalog_items(keywords, marketplace_ids, params = {}, version="2020-12-01")
         if sandbox
           keywords = SANDBOX_KEYWORDS
           marketplace_ids = SANDBOX_MARKETPLACE_IDS
@@ -26,7 +26,7 @@ module MuffinMan
         @keywords = keywords.is_a?(Array) ? keywords : [keywords]
         @marketplace_ids = marketplace_ids.is_a?(Array) ? marketplace_ids : [marketplace_ids]
         @params = params
-        @local_var_path = "/catalog/2020-12-01/items"
+        @local_var_path = "/catalog/#{version}/items"
         @query_params = {
           "keywords" => @keywords.join(","),
           "marketplaceIds" => @marketplace_ids.join(",")
@@ -36,7 +36,7 @@ module MuffinMan
         call_api
       end
 
-      def get_catalog_item(asin, marketplace_ids, params = {})
+      def get_catalog_item(asin, marketplace_ids, params = {}, version="2020-12-01")
         if sandbox
           asin = SANDBOX_ASIN
           marketplace_ids = SANDBOX_MARKETPLACE_IDS
@@ -45,7 +45,7 @@ module MuffinMan
         @asin = asin
         @marketplace_ids = marketplace_ids.is_a?(Array) ? marketplace_ids : [marketplace_ids]
         @params = params
-        @local_var_path = "/catalog/2020-12-01/items/#{@asin}"
+        @local_var_path = "/catalog/#{version}/items/#{@asin}"
         @query_params = { "marketplaceIds" => @marketplace_ids.join(",") }
         @query_params.merge!(@params.slice(*GET_CATALOG_ITEM_PARAMS))
         @request_type = "GET"
