@@ -10,10 +10,10 @@ module MuffinMan
         attr_accessor :price_to_estimate_fees
         attr_accessor :optional_fullfillment_program
 
-        def initialize(marketplace_id, price, currency_code, identifier, is_amazon_fulfilled, optional_fullfillment_program=nil)
+        def initialize(marketplace_id, price, currency_code, identifier, is_amazon_fulfilled, optional_fullfillment_program=nil, shipping=nil, points=nil)
           @marketplace_id = marketplace_id
           @identifier = identifier
-          @price_to_estimate_fees = Helpers::Fees::PriceToEstimateFees.new(price, currency_code)
+          @price_to_estimate_fees = Helpers::Fees::PriceToEstimateFees.new(price, currency_code, shipping, points)
           @is_amazon_fulfilled = is_amazon_fulfilled
           @optional_fullfillment_program = optional_fullfillment_program if optional_fullfillment_program
         end
