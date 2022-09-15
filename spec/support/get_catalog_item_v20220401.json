@@ -1,0 +1,17 @@
+{
+  "asin" : "B000XXXXXX",
+  "summaries" : [
+    {
+      "marketplaceId" : "ATV0000000000",
+      "brand" : "Thymes",
+      "itemClassification" : "BASE_PRODUCT",
+      "itemName" : "Thymes Frosted Plaid Frasier Fir Candle Set - 3 Oz (2 Pack)",
+      "manufacturer" : "Thymes",
+      "packageQuantity" : 1,
+      "partNumber" : "TH00000000000",
+      "size" : "3 Oz (Pack of 2)",
+      "websiteDisplayGroup" : "lighting_display_on_website",
+      "websiteDisplayGroupName" : "Lighting"
+    }
+  ]
+}

@@ -47,6 +47,16 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/search_catalog_items.json"), headers: {})
     end
 
+    def stub_get_catalog_item_v20220401
+      stub_request(:get, "https://#{hostname}/catalog/2022-04-01/items/#{asin}?marketplaceIds=#{amazon_marketplace_id}")
+        .to_return(status: 200, body: File.read("./spec/support/get_catalog_item_v20220401.json"), headers: {})
+    end
+
+    def stub_search_catalog_items_v20220401
+      stub_request(:get, "https://#{hostname}/catalog/2022-04-01/items?keywords=#{keywords}&marketplaceIds=#{amazon_marketplace_id}")
+        .to_return(status: 200, body: File.read("./spec/support/search_catalog_items_v20220401.json"), headers: {})
+    end
+
     def stub_list_financial_event_groups
       stub_request(:get, "https://#{hostname}/finances/v0/financialEventGroups")
         .with(

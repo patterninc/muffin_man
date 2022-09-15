@@ -1,0 +1,41 @@
+{
+  "numberOfResults" : 50793154,
+  "pagination" : {
+    "nextToken" : ""
+  },
+  "refinements" : {
+    "brands" : [
+      {
+        "numberOfResults" : 1284000,
+        "brandName" : "Generic"
+      }
+    ],
+    "classifications" : [
+      {
+       "numberOfResults" : 33955276,
+       "displayName" : "Clothing, Shoes & Jewelry",
+       "classificationId" : "asdfghjk"
+     }
+   ]
+  },
+  "items" : [
+    {
+      "asin" : "B000XXXXXX",
+     "summaries" : [
+      {
+        "marketplaceId" : "ATV0000000000",
+        "brand" : "Shoe",
+        "color" : "Clear",
+        "itemClassification" : "BASE_PRODUCT",
+        "itemName" : "Shoe-Fix Shoe Glue: Instant Professional Grade Shoe Repair Glue",
+        "manufacturer" : "Shoe-Fix",
+        "packageQuantity" : 1,
+        "partNumber" : "NJ-0000-0000",
+        "size" : ".7 oz (20g)",
+        "websiteDisplayGroup" : "home_display_on_website",
+        "websiteDisplayGroupName" : "Home"
+      }
+    ]
+   }
+ ]
+}
