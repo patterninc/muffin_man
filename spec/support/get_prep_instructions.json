@@ -1,0 +1,25 @@
+{
+  "payload": {
+    "SKUPrepInstructionsList": [
+      {
+        "SellerSKU": "SD-ABC-12345",
+        "ASIN": "B00123ABCD",
+        "BarcodeInstruction": "RequiresFNSKULabel",
+        "PrepGuidance": "NoAdditionalPrepRequired",
+        "PrepInstructionList": [
+          "Labeling"
+        ],
+        "AmazonPrepFeesDetailsList": [
+          {
+            "PrepInstruction": "Labeling",
+            "FeePerUnit": {
+              "CurrencyCode": "USD",
+              "Value": 0.55
+            }
+          }
+        ]
+      }
+    ],
+    "InvalidSKUList": []
+  }
+}
