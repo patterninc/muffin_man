@@ -1,3 +1,7 @@
+# 1.4.6
+
+- Support for Catalog API's of version 20220401 [#22](https://github.com/patterninc/muffin_man/pull/22)
+
 # 1.4.4
 
 - Support for Tokens API [#17](https://github.com/patterninc/muffin_man/pull/17)
