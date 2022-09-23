@@ -11,6 +11,19 @@ module MuffinMan
         @request_type = "GET"
         call_api
       end
+
+      def create_inbound_shipment_plan(ship_from_address, label_prep_preference, inbound_shipment_plan_request_items, ship_to_country_code: nil, ship_to_country_subdivision_code: nil)
+        @local_var_path = "/fba/inbound/v0/plans"
+        @request_body = {
+          "ShipFromAddress" => ship_from_address,
+          "LabelPrepPreference" => label_prep_preference,
+          "InboundShipmentPlanRequestItems" => inbound_shipment_plan_request_items,
+        }
+        @request_body["ShipToCountryCode"] = ship_to_country_code unless ship_to_country_code.nil?
+        @request_body["ShipToCountrySubdivisionCode"] = ship_to_country_subdivision_code unless ship_to_country_subdivision_code.nil?
+        @request_type = "POST"
+        call_api
+      end
     end
   end
 end

@@ -1,0 +1,37 @@
+{
+  "payload":{
+     "InboundShipmentPlans":[
+        {
+           "ShipmentId":"FBA16WN8GFP1",
+           "DestinationFulfillmentCenterId":"CMH7",
+           "ShipToAddress":{
+              "Name":"CMH7",
+              "AddressLine1":"1245 BEECH RD SW",
+              "City":"NEW ALBANY",
+              "StateOrProvinceCode":"OH",
+              "CountryCode":"US",
+              "PostalCode":"43054-7762"
+           },
+           "LabelPrepType":"SELLER_LABEL",
+           "Items":[
+              {
+                 "SellerSKU":"SD-ABC-123456",
+                 "FulfillmentNetworkSKU":"XXXXXXXXX",
+                 "Quantity":1
+              }
+           ],
+           "EstimatedBoxContentsFee":{
+              "TotalUnits":1,
+              "FeePerUnit":{
+                 "CurrencyCode":"USD",
+                 "Value":0.15
+              },
+              "TotalFee":{
+                 "CurrencyCode":"USD",
+                 "Value":0.15
+              }
+           }
+        }
+     ]
+  }
+}

@@ -158,6 +158,11 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/get_prep_instructions.json"), headers: {})
     end
 
+    def stub_create_inbound_shipment_plan
+      stub_request(:post, "https://#{hostname}/fba/inbound/v0/plans")
+        .to_return(status: 200, body: File.read("./spec/support/create_inbound_shipment_plan_v0.json"), headers: {})
+    end
+
     def credentials
       {
         refresh_token: "a-refresh-token",
