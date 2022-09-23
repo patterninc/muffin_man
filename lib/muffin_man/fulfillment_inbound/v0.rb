@@ -24,6 +24,17 @@ module MuffinMan
         @request_type = "POST"
         call_api
       end
+
+      def create_inbound_shipment(shipment_id, marketplace_id, inbound_shipment_header, inbound_shipment_items)
+        @local_var_path = "/fba/inbound/v0/shipments/#{shipment_id}"
+        @request_body = {
+          "MarketplaceId": marketplace_id,
+          "InboundShipmentHeader": inbound_shipment_header,
+          "InboundShipmentItems": inbound_shipment_items,
+        }
+        @request_type = "POST"
+        call_api
+      end
     end
   end
 end

@@ -1,0 +1,12 @@
+{
+  "payload": {
+    "ShipmentId": "FBA1232453KJ"
+  },
+  "errors": [
+    {
+      "code": "1234",
+      "message": "Hooray",
+      "details": "No Errors required"
+    }
+  ]
+}
