@@ -5,6 +5,18 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
 
   let(:country_code) { "US" }
   let(:sku_list) { ["SD-ABC-12345"] }
+  let(:address) do
+    {
+      "Name"=>"The Muffin Man",
+      "AddressLine1"=>"12345 Drury Lane",
+      "AddressLine2"=>nil,
+      "City"=>"CandyLand",
+      "DistrictOrCounty"=>nil,
+      "StateOrProvinceCode"=>"CL",
+      "CountryCode"=>"US",
+      "PostalCode"=>"12345"
+    }
+  end
 
   subject(:fba_inbound_client) { described_class.new(credentials) }
 
@@ -19,18 +31,6 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
 
   describe "create_inbound_shipment_plan" do
     before { stub_create_inbound_shipment_plan }
-    let(:address) do
-      {
-        "Name"=>"The Muffin Man",
-        "AddressLine1"=>"12345 Drury Lane",
-        "AddressLine2"=>nil,
-        "City"=>"CandyLand",
-        "DistrictOrCounty"=>nil,
-        "StateOrProvinceCode"=>"CL",
-        "CountryCode"=>"US",
-        "PostalCode"=>"12345"
-      }
-    end
     let(:label_prep_preference) { "SELLER_LABEL" }
     let(:inbound_shipment_plan_request_items) do
       [
@@ -49,6 +49,30 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
       response = fba_inbound_client.create_inbound_shipment_plan(address, label_prep_preference, inbound_shipment_plan_request_items)
       expect(response.response_code).to eq(200)
       expect(JSON.parse(response.body).dig("payload", "InboundShipmentPlans").first["ShipmentId"]).to eq('FBA16WN8GFP1')
+    end
+  end
+
+  describe "create_inbound_shipment" do
+    before { stub_create_inbound_shipment }
+    let(:inbound_shipment_header) do
+      {
+        "ShipmentName" => "TEST SHIPMENT",
+        "ShipFromAddress" => address,
+        "DestinationFulfillmentCenterId" => "BFI9",
+        "LabelPrepPreference" => "SELLER_LABEL",
+        "AreCasesRequired" => false,
+        "ShipmentStatus" => "WORKING",
+        "IntendedBoxContentsSource" => "FEED"
+      }
+    end
+    let(:inbound_shipment_items) { [ {"SellerSKU"=>"SD-ABC-12345", "QuantityShipped"=>1} ] }
+    let(:shipment_id) { "FBA1232453KJ" }
+    let(:marketplace_id) { "ATVPDKIKX0DER" }
+
+    it "makes a request to create an inbound shipment" do
+      response = fba_inbound_client.create_inbound_shipment(shipment_id, marketplace_id, inbound_shipment_header, inbound_shipment_items)
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body).dig("payload", "ShipmentId")).to eq(shipment_id)
     end
   end
 end
