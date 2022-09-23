@@ -1,6 +1,6 @@
 # 1.4.8
 
-- Support for createInboundShipmentPlan [#25](https://github.com/patterninc/muffin_man/pull/25)
+- Support for createInboundShipment [#25](https://github.com/patterninc/muffin_man/pull/25)
 
 # 1.4.7
 
