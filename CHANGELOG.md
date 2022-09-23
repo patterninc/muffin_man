@@ -1,3 +1,7 @@
+# 1.4.7
+
+- Support for createInboundShipmentPlan [#24](https://github.com/patterninc/muffin_man/pull/24)
+
 # 1.4.6
 
 - Support for Catalog API's of version 20220401 [#22](https://github.com/patterninc/muffin_man/pull/22)
