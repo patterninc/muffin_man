@@ -1,3 +1,7 @@
+# 1.4.9
+
+- Fix to override global AWS config with credentials that are passed [#26](https://github.com/patterninc/muffin_man/pull/26)
+
 # 1.4.8
 
 - Support for createInboundShipment [#25](https://github.com/patterninc/muffin_man/pull/25)
