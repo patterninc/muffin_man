@@ -1,3 +1,7 @@
+# 1.4.10
+
+- Fix to override global AWS config with credentials that are passed [#27](https://github.com/patterninc/muffin_man/pull/27)
+
 # 1.4.9
 
 - Fix to override global AWS config with credentials that are passed [#26](https://github.com/patterninc/muffin_man/pull/26)
