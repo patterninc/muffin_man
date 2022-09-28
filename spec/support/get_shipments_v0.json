@@ -1,0 +1,45 @@
+{
+  "payload": {
+    "ShipmentData": [
+      {
+        "ShipmentId": "string",
+        "ShipmentName": "string",
+        "ShipFromAddress": {
+          "Name": "string",
+          "AddressLine1": "string",
+          "AddressLine2": "string",
+          "DistrictOrCounty": "string",
+          "City": "string",
+          "StateOrProvinceCode": "string",
+          "CountryCode": "string",
+          "PostalCode": "string"
+        },
+        "DestinationFulfillmentCenterId": "string",
+        "ShipmentStatus": "WORKING",
+        "LabelPrepType": "NO_LABEL",
+        "AreCasesRequired": true,
+        "ConfirmedNeedByDate": "2022-09-28",
+        "BoxContentsSource": "NONE",
+        "EstimatedBoxContentsFee": {
+          "TotalUnits": 0,
+          "FeePerUnit": {
+            "CurrencyCode": "USD",
+            "Value": 0
+          },
+          "TotalFee": {
+            "CurrencyCode": "USD",
+            "Value": 0
+          }
+        }
+      }
+    ],
+    "NextToken": "string"
+  },
+  "errors": [
+    {
+      "code": "string",
+      "message": "string",
+      "details": "string"
+    }
+  ]
+}
