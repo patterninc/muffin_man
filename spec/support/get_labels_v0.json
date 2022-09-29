@@ -1,0 +1,12 @@
+{
+  "payload": {
+    "DownloadURL": "DOWNLOAD_URL_STRING"
+  },
+  "errors": [
+    {
+      "code": "string",
+      "message": "string",
+      "details": "string"
+    }
+  ]
+}

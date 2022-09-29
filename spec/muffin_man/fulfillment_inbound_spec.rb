@@ -82,10 +82,24 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
     let(:marketplace_id) { "ATVPDKIKX0DER" }
     let(:query_type) { "SHIPMENT" }
 
-    it "makes a request to create an inbound shipment" do
+    it "makes a request to get a shipment" do
       response = fba_inbound_client.get_shipments(query_type, marketplace_id, shipment_id_list: shipment_id_list)
       expect(response.response_code).to eq(200)
       expect(JSON.parse(response.body).dig("payload", "ShipmentData")).not_to be_nil
+    end
+  end
+
+  describe "get_labels" do
+    before { stub_get_labels }
+    let(:shipment_id) { "FBA1232453KJ" }
+    let(:page_type) { "PackageLabel_Plain_Paper" }
+    let(:label_type) { "UNIQUE" }
+    let(:package_labels_to_print) { ["FBA12A3B4CDEFG5H1", "FBA12A3B4CDEFG5H2", "FBA12A3B4CDEFG5H3", "FBA12A3B4CDEFG5H4"] }
+
+    it "makes a request to get labels" do
+      response = fba_inbound_client.get_labels(shipment_id, page_type, label_type, package_labels_to_print: package_labels_to_print)
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body).dig("payload", "DownloadURL")).not_to be_nil
     end
   end
 end

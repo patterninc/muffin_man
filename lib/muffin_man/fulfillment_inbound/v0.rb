@@ -51,6 +51,23 @@ module MuffinMan
         @request_type = "GET"
         call_api
       end
+
+      def get_labels(shipment_id, page_type, label_type, number_of_packages: nil, package_labels_to_print: [], number_of_pallets: nil, page_size: nil, page_start_index: nil)
+        @local_var_path = "/fba/inbound/v0/shipments/#{shipment_id}/labels"
+        @query_params = {
+          "shipmentID" => shipment_id,
+          "PageType" => page_type,
+          "LabelType" => label_type
+        }
+        @query_params["NumberOfPackages"] = number_of_packages unless number_of_packages.nil?
+        @query_params["PackageLabelsToPrint"] = package_labels_to_print.join(",") if package_labels_to_print.any?
+        @query_params["NumberOfPallets"] = number_of_pallets unless number_of_pallets.nil?
+        @query_params["PageSize"] = page_size unless page_size.nil?
+        @query_params["PageStartIndex"] = page_start_index unless page_start_index.nil?
+
+        @request_type = "GET"
+        call_api
+      end
     end
   end
 end

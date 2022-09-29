@@ -173,6 +173,11 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/get_shipments_v0.json"), headers: {})
     end
 
+    def stub_get_labels
+      stub_request(:get, "https://sellingpartnerapi-na.amazon.com/fba/inbound/v0/shipments/FBA1232453KJ/labels?LabelType=UNIQUE&PackageLabelsToPrint=FBA12A3B4CDEFG5H1,FBA12A3B4CDEFG5H2,FBA12A3B4CDEFG5H3,FBA12A3B4CDEFG5H4&PageType=PackageLabel_Plain_Paper&shipmentID=FBA1232453KJ")
+        .to_return(status: 200, body: File.read("./spec/support/get_labels_v0.json"), headers: {})
+    end
+
     def credentials
       {
         refresh_token: "a-refresh-token",
