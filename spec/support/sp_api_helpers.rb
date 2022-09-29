@@ -168,6 +168,11 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/create_inbound_shipment_v0.json"), headers: {})
     end
 
+    def stub_update_inbound_shipment
+      stub_request(:put, "https://#{hostname}/fba/inbound/v0/shipments/#{shipment_id}")
+        .to_return(status: 200, body: File.read("./spec/support/update_inbound_shipment_v0.json"), headers: {})
+    end
+
     def credentials
       {
         refresh_token: "a-refresh-token",

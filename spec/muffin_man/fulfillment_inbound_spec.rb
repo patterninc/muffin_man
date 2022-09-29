@@ -75,4 +75,28 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
       expect(JSON.parse(response.body).dig("payload", "ShipmentId")).to eq(shipment_id)
     end
   end
+
+  describe "update_inbound_shipment" do
+    before { stub_update_inbound_shipment }
+    let(:inbound_shipment_header) do
+      {
+        "ShipmentName" => "TEST SHIPMENT",
+        "ShipFromAddress" => address,
+        "DestinationFulfillmentCenterId" => "BFI9",
+        "LabelPrepPreference" => "SELLER_LABEL",
+        "AreCasesRequired" => false,
+        "ShipmentStatus" => "WORKING",
+        "IntendedBoxContentsSource" => "FEED"
+      }
+    end
+    let(:inbound_shipment_items) { [ {"SellerSKU"=>"SD-ABC-12345", "QuantityShipped"=>1} ] }
+    let(:shipment_id) { "FBA1232453KJ" }
+    let(:marketplace_id) { "ATVPDKIKX0DER" }
+
+    it "makes a request to create an inbound shipment" do
+      response = fba_inbound_client.update_inbound_shipment(shipment_id, marketplace_id, inbound_shipment_header, inbound_shipment_items)
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body).dig("payload", "ShipmentId")).to eq(shipment_id)
+    end
+  end
 end
