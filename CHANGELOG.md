@@ -1,4 +1,4 @@
-# 1.4.8
+# 1.4.11
 
 - Support for getLabels [#25](https://github.com/patterninc/muffin_man/pull/29)
 # 1.4.10
