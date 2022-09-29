@@ -36,6 +36,22 @@ module MuffinMan
         call_api
       end
 
+      def get_shipments(query_type, marketplace_id, shipment_status_list: [], shipment_id_list: [], last_updated_after: nil, last_updated_before: nil, next_token: nil)
+        @local_var_path = "/fba/inbound/v0/shipments"
+        @query_params = {
+          "MarketplaceId" => marketplace_id,
+          "QueryType" => query_type,
+        }
+        @query_params["ShipmentStatusList"] = shipment_status_list.join(",") if shipment_status_list.any?
+        @query_params["ShipmentIdList"] = shipment_id_list.join(",") if shipment_id_list.any?
+        @query_params["LastUpdatedAfter"] = last_updated_after unless last_updated_after.nil?
+        @query_params["LastUpdatedBefore"] = last_updated_before unless last_updated_before.nil?
+        @query_params["NextToken"] = next_token unless next_token.nil?
+
+        @request_type = "GET"
+        call_api
+      end
+
       def update_inbound_shipment(shipment_id, marketplace_id, inbound_shipment_header, inbound_shipment_items)
         @local_var_path = "/fba/inbound/v0/shipments/#{shipment_id}"
         @request_body = {

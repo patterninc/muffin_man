@@ -76,6 +76,19 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
     end
   end
 
+  describe "get_shipments" do
+    before { stub_get_shipments }
+    let(:shipment_id_list) { ["FBA1232453KJ"] }
+    let(:marketplace_id) { "ATVPDKIKX0DER" }
+    let(:query_type) { "SHIPMENT" }
+
+    it "makes a request to create an inbound shipment" do
+      response = fba_inbound_client.get_shipments(query_type, marketplace_id, shipment_id_list: shipment_id_list)
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body).dig("payload", "ShipmentData")).not_to be_nil
+    end
+  end
+
   describe "update_inbound_shipment" do
     before { stub_update_inbound_shipment }
     let(:inbound_shipment_header) do

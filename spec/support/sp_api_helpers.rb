@@ -168,6 +168,11 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/create_inbound_shipment_v0.json"), headers: {})
     end
 
+    def stub_get_shipments
+      stub_request(:get, "https://#{hostname}/fba/inbound/v0/shipments?MarketplaceId=#{marketplace_id}&QueryType=#{query_type}&ShipmentIdList=#{shipment_id_list.join(",")}")
+        .to_return(status: 200, body: File.read("./spec/support/get_shipments_v0.json"), headers: {})
+    end
+
     def stub_update_inbound_shipment
       stub_request(:put, "https://#{hostname}/fba/inbound/v0/shipments/#{shipment_id}")
         .to_return(status: 200, body: File.read("./spec/support/update_inbound_shipment_v0.json"), headers: {})
