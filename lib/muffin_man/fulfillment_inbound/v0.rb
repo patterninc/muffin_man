@@ -64,7 +64,15 @@ module MuffinMan
         @query_params["NumberOfPallets"] = number_of_pallets unless number_of_pallets.nil?
         @query_params["PageSize"] = page_size unless page_size.nil?
         @query_params["PageStartIndex"] = page_start_index unless page_start_index.nil?
+        @request_type = "GET"
+        call_api
+      end
 
+      def get_shipment_items_by_shipment_id(shipment_id, marketplace_id)
+        @local_var_path = "/fba/inbound/v0/shipments/#{shipment_id}/items"
+        @query_params = {
+          "MarketplaceId" => marketplace_id,
+        }
         @request_type = "GET"
         call_api
       end
