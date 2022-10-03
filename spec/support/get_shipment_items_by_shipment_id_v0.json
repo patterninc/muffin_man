@@ -1,0 +1,29 @@
+{
+  "payload": {
+    "ItemData": [
+      {
+        "ShipmentId": "string",
+        "SellerSKU": "string",
+        "FulfillmentNetworkSKU": "string",
+        "QuantityShipped": 0,
+        "QuantityReceived": 0,
+        "QuantityInCase": 0,
+        "ReleaseDate": "2022-09-30",
+        "PrepDetailsList": [
+          {
+            "PrepInstruction": "Polybagging",
+            "PrepOwner": "AMAZON"
+          }
+        ]
+      }
+    ],
+    "NextToken": "string"
+  },
+  "errors": [
+    {
+      "code": "string",
+      "message": "string",
+      "details": "string"
+    }
+  ]
+}
