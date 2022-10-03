@@ -1,3 +1,7 @@
+# 1.4.13
+
+- Support for updateInboundShipment [#28](https://github.com/patterninc/muffin_man/pull/28)
+
 # 1.4.12
 
 - Support for getShipmentItemsByShipmentId [#30](https://github.com/patterninc/muffin_man/pull/30)
