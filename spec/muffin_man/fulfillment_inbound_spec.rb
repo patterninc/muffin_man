@@ -82,7 +82,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
     let(:marketplace_id) { "ATVPDKIKX0DER" }
     let(:query_type) { "SHIPMENT" }
 
-    it "makes a request to create an inbound shipment" do
+    it "makes a request to get a shipment" do
       response = fba_inbound_client.get_shipments(query_type, marketplace_id, shipment_id_list: shipment_id_list)
       expect(response.response_code).to eq(200)
       expect(JSON.parse(response.body).dig("payload", "ShipmentData")).not_to be_nil
@@ -110,6 +110,32 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
       response = fba_inbound_client.update_inbound_shipment(shipment_id, marketplace_id, inbound_shipment_header, inbound_shipment_items)
       expect(response.response_code).to eq(200)
       expect(JSON.parse(response.body).dig("payload", "ShipmentId")).to eq(shipment_id)
+    end
+  end
+
+  describe "get_labels" do
+    before { stub_get_labels }
+    let(:shipment_id) { "FBA1232453KJ" }
+    let(:page_type) { "PackageLabel_Plain_Paper" }
+    let(:label_type) { "UNIQUE" }
+    let(:package_labels_to_print) { ["FBA12A3B4CDEFG5H1", "FBA12A3B4CDEFG5H2", "FBA12A3B4CDEFG5H3", "FBA12A3B4CDEFG5H4"] }
+
+    it "makes a request to get labels" do
+      response = fba_inbound_client.get_labels(shipment_id, page_type, label_type, package_labels_to_print: package_labels_to_print)
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body).dig("payload", "DownloadURL")).not_to be_nil
+    end
+  end
+
+  describe "get_shipment_items_by_shipment_id" do
+    before { stub_get_shipment_items_by_shipment_id }
+    let(:shipment_id) { "FBA1232453KJ" }
+    let(:marketplace_id) { "ATVPDKIKX0DER" }
+
+    it "makes a request to create an inbound shipment" do
+      response = fba_inbound_client.get_shipment_items_by_shipment_id(shipment_id, marketplace_id)
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body).dig("payload", "ItemData")).not_to be_empty
     end
   end
 end
