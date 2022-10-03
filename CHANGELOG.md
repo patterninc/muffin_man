@@ -1,6 +1,6 @@
 # 1.4.12
 
-- Support for getLabels [#30](https://github.com/patterninc/muffin_man/pull/30)
+- Support for getShipmentItemsByShipmentId [#30](https://github.com/patterninc/muffin_man/pull/30)
 
 # 1.4.11
 

@@ -106,7 +106,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
     let(:shipment_id) { "FBA1232453KJ" }
     let(:marketplace_id) { "ATVPDKIKX0DER" }
 
-    it "makes a request to create an inbound shipment" do
+    it "makes a request to update an inbound shipment" do
       response = fba_inbound_client.update_inbound_shipment(shipment_id, marketplace_id, inbound_shipment_header, inbound_shipment_items)
       expect(response.response_code).to eq(200)
       expect(JSON.parse(response.body).dig("payload", "ShipmentId")).to eq(shipment_id)

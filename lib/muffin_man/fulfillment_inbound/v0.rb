@@ -51,6 +51,7 @@ module MuffinMan
         @request_type = "GET"
         call_api
       end
+
       def update_inbound_shipment(shipment_id, marketplace_id, inbound_shipment_header, inbound_shipment_items)
         @local_var_path = "/fba/inbound/v0/shipments/#{shipment_id}"
         @request_body = {
@@ -59,8 +60,9 @@ module MuffinMan
           "InboundShipmentItems": inbound_shipment_items,
         }
         @request_type = "PUT"
+        call_api
       end
-      
+
       def get_labels(shipment_id, page_type, label_type, number_of_packages: nil, package_labels_to_print: [], number_of_pallets: nil, page_size: nil, page_start_index: nil)
         @local_var_path = "/fba/inbound/v0/shipments/#{shipment_id}/labels"
         @query_params = {
