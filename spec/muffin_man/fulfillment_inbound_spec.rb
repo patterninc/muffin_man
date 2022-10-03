@@ -114,4 +114,36 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
       expect(JSON.parse(response.body).dig("payload", "ItemData")).not_to be_empty
     end
   end
+
+  describe "put_transport_details" do
+    before { stub_put_transport_details }
+    let(:shipment_id) { "FBA1232453KJ" }
+    let(:is_partnered) { true }
+    let(:shipment_type) { "LPL" }
+    let(:transport_details) do [
+        {
+          "PartneredSmallParcelData"=>[],
+          "NonPartneredSmallParcelData"=>[],
+          "PartneredLtlData"=>[],
+          "NonPartneredLtlData"=>[]
+        }
+      ]
+    end
+    let(:transport_result) do [
+        {
+          "TransportStatus"=>"WORKING", 
+          "ErrorCode"=>"", 
+          "ErrorDescription"=>""
+        }
+      ]
+    end
+    
+
+    it "makes a request to put transport details to amazon" do
+      response = fba_inbound_client.put_transport_details(shipment_id, is_partnered, shipment_type, transport_details)
+      byebug
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body).dig("payload", "TransportResult")).to eq(transport_result)
+    end
+  end
 end

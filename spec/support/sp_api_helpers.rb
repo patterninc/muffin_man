@@ -168,6 +168,12 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/create_inbound_shipment_v0.json"), headers: {})
     end
 
+    def stub_put_transport_details
+      stub_request(:put, "https://sellingpartnerapi-na.amazon.com/fba/inbound/v0/shipments/#{shipment_id}/transport").
+         with(:body => "{\"shipmentId\":\"FBA1232453KJ\",\"IsPartnered\":true,\"ShipmentType\":\"LPL\",\"TransportDetails\":[{\"PartneredSmallParcelData\":[],\"NonPartneredSmallParcelData\":[],\"PartneredLtlData\":[],\"NonPartneredLtlData\":[]}]}").
+         to_return(:status => 200, :body => File.read("./spec/support/put_transport_details_v0.json"), :headers => {})
+    end
+
     def stub_get_shipments
       stub_request(:get, "https://#{hostname}/fba/inbound/v0/shipments?MarketplaceId=#{marketplace_id}&QueryType=#{query_type}&ShipmentIdList=#{shipment_id_list.join(",")}")
         .to_return(status: 200, body: File.read("./spec/support/get_shipments_v0.json"), headers: {})
