@@ -87,6 +87,18 @@ module MuffinMan
         @request_type = "GET"
         call_api
       end
+
+      def put_transport_details(shipment_id, is_partnered, shipment_type, transport_details)
+        @local_var_path = "/fba/inbound/v0/shipments/#{shipment_id}/transport"
+        @request_body = {
+          "shipmentId": shipment_id,
+          "IsPartnered": is_partnered,
+          "ShipmentType": shipment_type,
+          "TransportDetails": transport_details,
+        }
+        @request_type = "PUT"
+        call_api
+      end
     end
   end
 end
