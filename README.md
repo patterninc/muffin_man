@@ -11,6 +11,7 @@ As of now, this gem only supports portions of the following APIs with more to co
 - `reports`
 - `product_fees`
 - `product_pricing`
+- `fulfillment_inbound`
 
 ## Installation
 
