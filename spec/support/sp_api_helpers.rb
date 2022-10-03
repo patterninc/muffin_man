@@ -186,7 +186,6 @@ module Support
     def stub_get_shipment_items_by_shipment_id
       stub_request(:get, "https://#{hostname}/fba/inbound/v0/shipments/#{shipment_id}/items?MarketplaceId=#{marketplace_id}")
         .to_return(status: 200, body: File.read("./spec/support/get_shipment_items_by_shipment_id_v0.json"), headers: {})
-
     end
 
     def credentials
