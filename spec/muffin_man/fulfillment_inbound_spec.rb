@@ -141,7 +141,6 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
 
     it "makes a request to put transport details to amazon" do
       response = fba_inbound_client.put_transport_details(shipment_id, is_partnered, shipment_type, transport_details)
-      byebug
       expect(response.response_code).to eq(200)
       expect(JSON.parse(response.body).dig("payload", "TransportResult")).to eq(transport_result)
     end
