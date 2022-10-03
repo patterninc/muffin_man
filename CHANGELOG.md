@@ -1,6 +1,10 @@
+# 1.4.13
+
+- Support for updateInboundShipment [#28](https://github.com/patterninc/muffin_man/pull/28)
+
 # 1.4.12
 
-- Support for getLabels [#30](https://github.com/patterninc/muffin_man/pull/30)
+- Support for getShipmentItemsByShipmentId [#30](https://github.com/patterninc/muffin_man/pull/30)
 
 # 1.4.11
 
@@ -8,7 +12,7 @@
 
 # 1.4.10
 
-- Fix to override global AWS config with credentials that are passed [#27](https://github.com/patterninc/muffin_man/pull/27)
+- Support for getShipments  [#27](https://github.com/patterninc/muffin_man/pull/27)
 
 # 1.4.9
 
