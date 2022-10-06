@@ -13,7 +13,7 @@ RSpec.describe MuffinMan::CatalogItems::V20220401 do
 
   describe "search_catalog_items" do
     it "makes a search_catalog_items request to amazon" do
-      response = catalog_items_client.search_catalog_items(amazon_marketplace_id, { keywords: keywords})
+      response = catalog_items_client.search_catalog_items(amazon_marketplace_id, { "keywords" => keywords})
       response_body = JSON.parse(response.body)
       expect(response.response_code).to eq(200)
       expect(response_body.keys).to include("items")
