@@ -1,3 +1,7 @@
+# 1.4.14
+
+- Fixes for catalogItems API [#32](https://github.com/patterninc/muffin_man/pull/32)
+
 # 1.4.13
 
 - Support for updateInboundShipment [#28](https://github.com/patterninc/muffin_man/pull/28)
@@ -12,7 +16,7 @@
 
 # 1.4.10
 
-- Support for getShipments  [#27](https://github.com/patterninc/muffin_man/pull/27)
+- Support for getShipments [#27](https://github.com/patterninc/muffin_man/pull/27)
 
 # 1.4.9
 
