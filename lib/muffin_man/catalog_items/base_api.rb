@@ -6,7 +6,8 @@ module MuffinMan
       SANDBOX_MARKETPLACE_IDS = "ATVPDKIKX0DER".freeze
       attr_reader :keywords, :asin, :marketplace_ids, :params
 
-      SEARCH_CATALOG_ITEMS_PARAMS = %w[
+      SEARCH_CATALOG_ITEMS_PARAMS = [].freeze
+      BASE_SEARCH_CATALOG_ITEMS_PARAMS = %w[
         includedData
         brandNames
         classificationIds
@@ -30,10 +31,10 @@ module MuffinMan
         @params = params
         @local_var_path = "/catalog/#{api_version}/items"
         @query_params = {
-          "keywords" => @keywords.join(","),
           "marketplaceIds" => @marketplace_ids.join(",")
         }
-        @query_params.merge!(@params.slice(*SEARCH_CATALOG_ITEMS_PARAMS))
+        @query_params["keywords"] = @keywords.join(",") if @keywords.any?
+        @query_params.merge!(@params.slice(*search_catalog_items_params))
         @request_type = "GET"
         call_api
       end
@@ -52,6 +53,12 @@ module MuffinMan
         @query_params.merge!(@params.slice(*GET_CATALOG_ITEM_PARAMS))
         @request_type = "GET"
         call_api
+      end
+
+      private
+
+      def search_catalog_items_params
+        BASE_SEARCH_CATALOG_ITEMS_PARAMS + self.class::SEARCH_CATALOG_ITEMS_PARAMS
       end
     end
   end

@@ -1,3 +1,9 @@
+# 1.5.0
+
+## Breaking changes - 1. v20220401 search_catalog_items method signature updated
+
+- [#32](https://github.com/patterninc/muffin_man/pull/32) Removes `keywords` argument requirement for v20220401 search_catalog_items as it is not required in v20220401. You'll need to pass `keywords` as a param rather than as an argument for the method
+
 # 1.4.13
 
 - Support for updateInboundShipment [#28](https://github.com/patterninc/muffin_man/pull/28)
@@ -12,7 +18,7 @@
 
 # 1.4.10
 
-- Support for getShipments  [#27](https://github.com/patterninc/muffin_man/pull/27)
+- Support for getShipments [#27](https://github.com/patterninc/muffin_man/pull/27)
 
 # 1.4.9
 
