@@ -1,6 +1,7 @@
-# 1.4.14
+# 1.5.0
 
-- Fixes for catalogItems API. Removes `keywords` variable requirement for v20220401 [#32](https://github.com/patterninc/muffin_man/pull/32)
+- [#32](https://github.com/patterninc/muffin_man/pull/32)
+- Removes `keywords` variable requirement for v20220401 search_catalog_items as it is not required in v20220401. You'll need to pass `keywords` as a param rather than as an argument for the method
 
 # 1.4.13
 
