@@ -1,6 +1,6 @@
 # 1.4.14
 
-- Fixes for catalogItems API [#32](https://github.com/patterninc/muffin_man/pull/32)
+- Fixes for catalogItems API. Removes `keywords` variable requirement for v20220401 [#32](https://github.com/patterninc/muffin_man/pull/32)
 
 # 1.4.13
 
