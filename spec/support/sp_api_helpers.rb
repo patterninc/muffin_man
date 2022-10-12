@@ -1,3 +1,6 @@
+require './spec/support/feeds/stub_feeds'
+require './spec/support/notifications/stub_notifications'
+
 module Support
   module SpApiHelpers
     def stub_request_access_token
