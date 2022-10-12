@@ -8,9 +8,6 @@ RSpec.describe MuffinMan::Notifications::V1 do
   let(:name) {"Feed process finish notification"}
   let(:destination_id) {"3acafc7e-121b-1329-8ae8-XXXXX"}
   let(:subscription_id) {"7fcacc7e-727b-11e9-8848-1681XXXXX"}
-  # let(:feed_id) { "5180510XXXX"}
-  # let(:feed_document_id) {"amzn1.tortuga.4.na.000000-0000-40nn-ae20-c521307857c2.TR82IOYXXXXXX"}
-  # let(:content_type) { "text/xml"}
   subject(:notification_client) { described_class.new(credentials) }
 
   describe "create_destinations" do
