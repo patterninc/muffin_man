@@ -1,3 +1,6 @@
+require './spec/support/outbound_fulfillment/stub_outbound_fulfillment'
+
+
 module Support
   module SpApiHelpers
     def stub_request_access_token
