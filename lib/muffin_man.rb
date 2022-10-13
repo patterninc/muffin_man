@@ -15,6 +15,8 @@ require "muffin_man/listings/v20210801"
 require "muffin_man/fulfillment_inbound/v0"
 require "muffin_man/fulfillment_outbound/v20200701"
 
+#request helpers
+require 'muffin_man/request_helpers'
 
 module MuffinMan
   class Error < StandardError; end
