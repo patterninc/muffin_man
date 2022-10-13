@@ -1,3 +1,8 @@
+require "muffin_man/request_helpers/outbound_fulfillment/address"
+require "muffin_man/request_helpers/outbound_fulfillment/item"
+require "muffin_man/request_helpers/outbound_fulfillment/fulfillment_preview_request"
+require "muffin_man/request_helpers/outbound_fulfillment/fulfillment_order_request"
+
 RSpec.describe MuffinMan::FulfillmentOutbound::V20200701 do
   before do
     stub_request_access_token
@@ -8,27 +13,26 @@ RSpec.describe MuffinMan::FulfillmentOutbound::V20200701 do
   let(:next_token) {"token"}
   let(:seller_fulfillment_order_id) {"19-XXXXX-50736"}
 
-
   let(:address) do
-    {
-      "Name"=>"The Muffin Man",
-      "AddressLine1"=>"12345 Drury Lane",
-      "AddressLine2"=>nil,
-      "City"=>"CandyLand",
-      "DistrictOrCounty"=>nil,
-      "StateOrProvinceCode"=>"CL",
-      "CountryCode"=>"US",
-      "PostalCode"=>"12345"
-    }
+    MuffinMan::RequestHelpers::OutboundFulfillment::Address.new({
+      "name"=>"The Muffin Man",
+      "address_line1"=>"12345 Drury Lane",
+      "address_line2"=>nil,
+      "city"=>"CandyLand",
+      "district_or_county"=>nil,
+      "state_or_region"=>"CL",
+      "country_code"=>"US",
+      "postal_code"=>"12345"
+    })
   end
 
-  let(:items) do 
+  let(:items) do
     [
-      {
-        :sellerSku=>"SD-P4L-104525", 
-        :sellerFulfillmentOrderItemId=>"10048980045217", 
-        :quantity=>1
-      }
+      MuffinMan::RequestHelpers::OutboundFulfillment::Item.new({
+              "seller_sku"=>"SD-P4L-104525",
+              "seller_fulfillment_order_item_id"=>"10048980045217",
+              "quantity"=>1
+            })
     ]
   end
 
@@ -36,34 +40,35 @@ RSpec.describe MuffinMan::FulfillmentOutbound::V20200701 do
 
   describe "get_fulfillment_preview" do
     before { stub_get_outbound_fulfillment_preview }
-    
+    let(:fulfillment_preview_request) do
+      MuffinMan::RequestHelpers::OutboundFulfillment::FulfillmentPreviewRequest.new(address,items)
+    end
+
     it "makes a request to get outbound fulfillment preview" do
-      expect(fba_outbound_client.get_fulfillment_preview(address,items).response_code).to eq(200)
-      expect(JSON.parse(fba_outbound_client.get_fulfillment_preview(address,items).body).dig("payload", "fulfillmentPreviews").first["shippingSpeedCategory"]).to eq("Expedited")
-      expect(JSON.parse(fba_outbound_client.get_fulfillment_preview(address,items).body).dig("payload", "fulfillmentPreviews")[1]["shippingSpeedCategory"]).to eq("Priority")
-      expect(JSON.parse(fba_outbound_client.get_fulfillment_preview(address,items).body).dig("payload", "fulfillmentPreviews")[2]["shippingSpeedCategory"]).to eq("Standard")
-    end    
+      response = fba_outbound_client.get_fulfillment_preview(fulfillment_preview_request)
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body).dig("payload", "fulfillmentPreviews").first["shippingSpeedCategory"]).to eq("Expedited")
+      expect(JSON.parse(response.body).dig("payload", "fulfillmentPreviews")[1]["shippingSpeedCategory"]).to eq("Priority")
+      expect(JSON.parse(response.body).dig("payload", "fulfillmentPreviews")[2]["shippingSpeedCategory"]).to eq("Standard")
+    end
   end
 
-  describe "get_fulfillment_preview" do
-    before { stub_get_outbound_fulfillment_preview }
-    
-    it "makes a request to get outbound fulfillment preview" do
-      expect(fba_outbound_client.get_fulfillment_preview(address,items).response_code).to eq(200)
-      expect(JSON.parse(fba_outbound_client.get_fulfillment_preview(address,items).body).dig("payload", "fulfillmentPreviews").first["shippingSpeedCategory"]).to eq("Expedited")
-      expect(JSON.parse(fba_outbound_client.get_fulfillment_preview(address,items).body).dig("payload", "fulfillmentPreviews")[1]["shippingSpeedCategory"]).to eq("Priority")
-      expect(JSON.parse(fba_outbound_client.get_fulfillment_preview(address,items).body).dig("payload", "fulfillmentPreviews")[2]["shippingSpeedCategory"]).to eq("Standard")
-    end    
-  end
+  describe "create_fulfillment_order" do
+    before { stub_create_fulfillment_order }
 
-  describe "get_fulfillment_preview" do
-    before { stub_get_outbound_fulfillment_preview }
+    let(:fulfillment_order) do
+      MuffinMan::RequestHelpers::OutboundFulfillment::FulfillmentOrderRequest.new("seller_fulfillment_order_id",
+        "displayable_order_id",
+        "displayable_order_date_time",
+        "displayable_order_comment",
+        "shipping_speed_category",
+        address,
+        items)
+    end
     
-    it "makes a request to get list fulfillment orders" do
-      expect(fba_outbound_client.get_fulfillment_preview(address,items).response_code).to eq(200)
-      expect(JSON.parse(fba_outbound_client.get_fulfillment_preview(address,items).body).dig("payload", "fulfillmentPreviews").first["shippingSpeedCategory"]).to eq("Expedited")
-      expect(JSON.parse(fba_outbound_client.get_fulfillment_preview(address,items).body).dig("payload", "fulfillmentPreviews")[1]["shippingSpeedCategory"]).to eq("Priority")
-      expect(JSON.parse(fba_outbound_client.get_fulfillment_preview(address,items).body).dig("payload", "fulfillmentPreviews")[2]["shippingSpeedCategory"]).to eq("Standard")
+    it "makes a request to create outbound fulfillment preview" do
+      response = fba_outbound_client.create_fulfillment_order(fulfillment_order)
+      expect(response.response_code).to eq(200)
     end    
   end
 
