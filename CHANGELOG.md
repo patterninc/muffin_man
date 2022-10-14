@@ -1,4 +1,4 @@
-# 1.4.13
+# 1.5.1
 
 - Support for getItemEligibilityPreview [#35](https://github.com/patterninc/muffin_man/pull/35)
 
