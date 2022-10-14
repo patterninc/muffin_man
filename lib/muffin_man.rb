@@ -13,9 +13,9 @@ require "muffin_man/tokens/v20210301"
 require "muffin_man/product_pricing/v0"
 require "muffin_man/listings/v20210801"
 require "muffin_man/fulfillment_inbound/v0"
+require "muffin_man/fulfillment_inbound/v1"
 require "muffin_man/feeds/v20210630"
 require "muffin_man/notifications/v1"
-
 
 module MuffinMan
   class Error < StandardError; end

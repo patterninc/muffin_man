@@ -1,3 +1,7 @@
+# 1.5.1
+
+- Support for getItemEligibilityPreview [#35](https://github.com/patterninc/muffin_man/pull/35)
+
 # 1.5.0
 
 ## Breaking changes - 1. v20220401 search_catalog_items method signature updated
