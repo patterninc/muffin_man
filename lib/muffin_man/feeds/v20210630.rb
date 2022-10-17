@@ -1,14 +1,13 @@
 module MuffinMan
   module Feeds
-    require "json"
     require "sp_api_helpers"
     class V20210630 < SpApiClient
 
       FEED_PATH = "/feeds/2021-06-30"
 
-      def create_feeds(feed_type, marketplace_ids, input_feed_document_id, params={})
+      def create_feed(feed_type, marketplace_ids, input_feed_document_id, params={})
         @local_var_path = "#{FEED_PATH}/feeds"
-        @request_body = {"feedType": feed_type, "marketplaceIds": marketplace_ids, "inputFeedDocumentId": input_feed_document_id}.merge(sp_api_params(params))
+        @request_body = {"feedType"=> feed_type, "marketplaceIds"=> marketplace_ids, "inputFeedDocumentId"=> input_feed_document_id}.merge(sp_api_params(params))
         @request_type = "POST"
         call_api
       end
@@ -29,7 +28,7 @@ module MuffinMan
 
       def create_documents(content_type, params={})
         @local_var_path = "#{FEED_PATH}/documents"
-        @request_body = {"contentType": content_type}.merge(sp_api_params(params))
+        @request_body = {"contentType"=> content_type}.merge(sp_api_params(params))
         @request_type = "POST"
         call_api
       end

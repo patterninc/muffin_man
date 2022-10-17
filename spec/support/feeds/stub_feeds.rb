@@ -8,7 +8,7 @@ def stub_get_feed
     .to_return(status: 200, body: JSON.parse(File.read("./spec/support/feeds/get_feeds.json"))["feeds"].first.to_json, headers: {})
 end
 
-def stub_create_feeds
+def stub_create_feed
   stub_request(:post, "https://#{hostname}/feeds/2021-06-30/feeds").with(body: {"feedType": feed_types, "marketplaceIds": amazon_marketplace_ids, "inputFeedDocumentId": feed_document_id})
     .to_return(status: 202, body: {feedId: feed_id}.to_json, headers: {})
 end

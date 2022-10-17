@@ -10,10 +10,10 @@ RSpec.describe MuffinMan::Notifications::V1 do
   let(:subscription_id) {"7fcacc7e-727b-11e9-8848-1681XXXXX"}
   subject(:notification_client) { described_class.new(credentials) }
 
-  describe "create_destinations" do
-    it "executes create_destinations request" do
-      stub_create_destinations
-      response = notification_client.create_destinations(arn, {name: name})
+  describe "create_destination" do
+    it "executes create_destination request" do
+      stub_create_destination
+      response = notification_client.create_destination(arn, name)
       expect(response.response_code).to eq(200)
       expect(JSON.parse(response.body)["payload"]["name"]).to eq name
     end
@@ -37,19 +37,10 @@ RSpec.describe MuffinMan::Notifications::V1 do
     end 
   end
 
-  describe "create_subscriptions" do
-    it "executes create_subscriptions request" do
-      stub_create_subscriptions
-      response = notification_client.create_subscriptions(notification_type, {destination_id: destination_id, payload_version: "1.0", marketplace_ids: "ASWDDXDER323"})
-      expect(response.response_code).to eq(200)
-      expect(JSON.parse(response.body)["payload"].keys).to include("subscriptionId")
-    end
-  end
-
-  describe "get_subscriptions" do
-    it "executes get_subscriptions request" do
-      stub_get_subscriptions
-      response = notification_client.get_subscriptions(notification_type)
+  describe "create_subscription" do
+    it "executes create_subscription request" do
+      stub_create_subscription
+      response = notification_client.create_subscription(notification_type, {destination_id: destination_id, payload_version: "1.0", marketplace_ids: "ASWDDXDER323", aggregation_time_period: "FiveMinutes"})
       expect(response.response_code).to eq(200)
       expect(JSON.parse(response.body)["payload"].keys).to include("subscriptionId")
     end
@@ -58,16 +49,25 @@ RSpec.describe MuffinMan::Notifications::V1 do
   describe "get_subscription" do
     it "executes get_subscription request" do
       stub_get_subscription
-      response = notification_client.get_subscription(notification_type, subscription_id)
+      response = notification_client.get_subscription(notification_type)
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body)["payload"].keys).to include("subscriptionId")
+    end
+  end
+
+  describe "get_subscription_by_id" do
+    it "executes get_subscription_by_id request" do
+      stub_get_subscription_by_id
+      response = notification_client.get_subscription_by_id(notification_type, subscription_id)
       expect(response.response_code).to eq(200)
       expect(JSON.parse(response.body)["payload"]["subscriptionId"]).to eq subscription_id
     end
   end
 
-  describe "delete_subscription" do
-    it "executes delete_subscription request" do
-      stub_delete_subscription
-      response = notification_client.delete_subscription(notification_type, subscription_id)
+  describe "delete_subscription_by_id" do
+    it "executes delete_subscription_by_id request" do
+      stub_delete_subscription_by_id
+      response = notification_client.delete_subscription_by_id(notification_type, subscription_id)
       expect(response.response_code).to eq(200)
     end
   end

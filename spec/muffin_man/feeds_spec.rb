@@ -40,10 +40,10 @@ RSpec.describe MuffinMan::Feeds::V20210630 do
     end  
   end
 
-  describe "create_feeds" do
-    it "executes create_feeds request" do
-      stub_create_feeds
-      response = feeds_client.create_feeds(feed_types, amazon_marketplace_ids, feed_document_id)
+  describe "create_feed" do
+    it "executes create_feed request" do
+      stub_create_feed
+      response = feeds_client.create_feed(feed_types, amazon_marketplace_ids, feed_document_id)
       expect(response.response_code).to eq(202)
       expect(JSON.parse(response.body)["feedId"]).to eq feed_id
     end  
