@@ -49,19 +49,19 @@ RSpec.describe MuffinMan::Feeds::V20210630 do
     end  
   end
 
-  describe "create_documents" do
-    it "executes create_documents request" do
-      stub_create_documents
-      response = feeds_client.create_documents(content_type)
+  describe "create_feed_document" do
+    it "executes create_feed_document request" do
+      stub_create_feed_document
+      response = feeds_client.create_feed_document(content_type)
       expect(response.response_code).to eq(201)
       expect(JSON.parse(response.body).keys).to include("feedDocumentId")
     end  
   end
 
-  describe "get_document" do
-    it "executes get_document request" do
-      stub_get_document
-      response = feeds_client.get_document(feed_document_id)
+  describe "get_feed_document" do
+    it "executes get_feed_document request" do
+      stub_get_feed_document
+      response = feeds_client.get_feed_document(feed_document_id)
       expect(response.response_code).to eq(200)
       expect(JSON.parse(response.body)["feedDocumentId"]).to eq feed_document_id
     end  

@@ -13,12 +13,12 @@ def stub_create_feed
     .to_return(status: 202, body: {feedId: feed_id}.to_json, headers: {})
 end
 
-def stub_create_documents
+def stub_create_feed_document
   stub_request(:post, "https://#{hostname}/feeds/2021-06-30/documents").with(body: {"contentType": content_type})
     .to_return(status: 201, body: File.read("./spec/support/feeds/create_documents.json"), headers: {})
 end
 
-def stub_get_document
+def stub_get_feed_document
   stub_request(:get, "https://#{hostname}/feeds/2021-06-30/documents/#{feed_document_id}")
     .to_return(status: 200, body: File.read("./spec/support/feeds/create_documents.json"), headers: {})
 end

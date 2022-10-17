@@ -26,14 +26,14 @@ module MuffinMan
         call_api
       end
 
-      def create_documents(content_type, params={})
+      def create_feed_document(content_type, params={})
         @local_var_path = "#{FEED_PATH}/documents"
         @request_body = {"contentType"=> content_type}.merge(sp_api_params(params))
         @request_type = "POST"
         call_api
       end
 
-      def get_document(feed_document_id)
+      def get_feed_document(feed_document_id)
         @local_var_path = "#{FEED_PATH}/documents/#{feed_document_id}"
         @request_type = "GET"
         call_api
