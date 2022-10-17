@@ -23,7 +23,7 @@ def stub_get_outbound_fulfillment_preview
     .to_return(status: 200, body: File.read("./spec/support/outbound_fulfillment/get_outbound_fulfillment_preview.json"), headers: {})
 end
 
-def stub_create_fulfillment_order
+def stub_create_fulfillment_orders
   stub_request(:post, "https://#{hostname}/fba/outbound/2020-07-01/fulfillmentOrders")
     .to_return(status: 200, headers: {})
 end

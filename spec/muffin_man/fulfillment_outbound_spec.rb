@@ -53,8 +53,8 @@ RSpec.describe MuffinMan::FulfillmentOutbound::V20200701 do
     end
   end
 
-  describe "create_fulfillment_order" do
-    before { stub_create_fulfillment_order }
+  describe "create_fulfillment_orders" do
+    before { stub_create_fulfillment_orders }
 
     let(:fulfillment_order) do
       MuffinMan::RequestHelpers::OutboundFulfillment::FulfillmentOrderRequest.new("seller_fulfillment_order_id",
@@ -66,8 +66,8 @@ RSpec.describe MuffinMan::FulfillmentOutbound::V20200701 do
         items)
     end
     
-    it "makes a request to create outbound fulfillment preview" do
-      response = fba_outbound_client.create_fulfillment_order(fulfillment_order)
+    it "makes a request to create outbound fulfillment order" do
+      response = fba_outbound_client.create_fulfillment_orders(fulfillment_order)
       expect(response.response_code).to eq(200)
     end    
   end

@@ -13,7 +13,7 @@ module MuffinMan
 
       # To create outbound fulfillment order
       # @param [MuffinMan::RequestHelpers::OutboundFulFillment::FulfillmentOrderRequest] fulfillment_order_request in the form of object
-      def create_fulfillment_order(fulfillment_order_request)
+      def create_fulfillment_orders(fulfillment_order_request)
         @local_var_path = "/fba/outbound/2020-07-01/fulfillmentOrders"
         @request_body = fulfillment_order_request.to_camelize
         @request_type = "POST"
