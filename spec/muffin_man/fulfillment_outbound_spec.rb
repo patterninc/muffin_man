@@ -53,8 +53,8 @@ RSpec.describe MuffinMan::FulfillmentOutbound::V20200701 do
     end
   end
 
-  describe "create_fulfillment_orders" do
-    before { stub_create_fulfillment_orders }
+  describe "create_fulfillment_order" do
+    before { stub_create_fulfillment_order }
 
     let(:fulfillment_order) do
       MuffinMan::RequestHelpers::OutboundFulfillment::FulfillmentOrderRequest.new("seller_fulfillment_order_id",
@@ -67,27 +67,27 @@ RSpec.describe MuffinMan::FulfillmentOutbound::V20200701 do
     end
     
     it "makes a request to create outbound fulfillment order" do
-      response = fba_outbound_client.create_fulfillment_orders(fulfillment_order)
+      response = fba_outbound_client.create_fulfillment_order(fulfillment_order)
       expect(response.response_code).to eq(200)
     end    
   end
 
-  context "list_fulfillment_orders" do
-    describe "list_fulfillment_orders" do
-      before { stub_list_fulfillment_orders }
+  context "list_all_fulfillment_orders" do
+    describe "list_all_fulfillment_orders" do
+      before { stub_list_all_fulfillment_orders }
 
       it "makes a request to get list fulfillment orders" do
-        expect(fba_outbound_client.list_fulfillment_orders(nil,nil).response_code).to eq(200)
-        expect(JSON.parse(fba_outbound_client.list_fulfillment_orders.body).dig("payload", "fulfillmentOrders").first["sellerFulfillmentOrderId"]).to eq(seller_fulfillment_order_id)
+        expect(fba_outbound_client.list_all_fulfillment_orders.response_code).to eq(200)
+        expect(JSON.parse(fba_outbound_client.list_all_fulfillment_orders.body).dig("payload", "fulfillmentOrders").first["sellerFulfillmentOrderId"]).to eq(seller_fulfillment_order_id)
       end
     end
 
     describe "list_fulfillment_orders with start date and token" do
       before { stub_list_fulfillment_orders_with_date_token(query_start_date, next_token) }
 
-      it "makes a request to get list fulfillment orders" do
-        expect(fba_outbound_client.list_fulfillment_orders(query_start_date,next_token).response_code).to eq(200)
-        expect(JSON.parse(fba_outbound_client.list_fulfillment_orders(query_start_date,next_token).body).dig("payload", "fulfillmentOrders").first["sellerFulfillmentOrderId"]).to eq(seller_fulfillment_order_id)
+      it "makes a request to get list all fulfillment orders" do
+        expect(fba_outbound_client.list_all_fulfillment_orders(query_start_date: query_start_date,next_token: next_token).response_code).to eq(200)
+        expect(JSON.parse(fba_outbound_client.list_all_fulfillment_orders(query_start_date: query_start_date, next_token: next_token).body).dig("payload", "fulfillmentOrders").first["sellerFulfillmentOrderId"]).to eq(seller_fulfillment_order_id)
       end
     end
   end

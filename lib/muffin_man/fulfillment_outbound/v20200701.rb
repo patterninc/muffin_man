@@ -13,7 +13,7 @@ module MuffinMan
 
       # To create outbound fulfillment order
       # @param [MuffinMan::RequestHelpers::OutboundFulFillment::FulfillmentOrderRequest] fulfillment_order_request in the form of object
-      def create_fulfillment_orders(fulfillment_order_request)
+      def create_fulfillment_order(fulfillment_order_request)
         @local_var_path = "/fba/outbound/2020-07-01/fulfillmentOrders"
         @request_body = fulfillment_order_request.to_camelize
         @request_type = "POST"
@@ -23,7 +23,7 @@ module MuffinMan
       # To get list of fulfillment orders
       # @param [String] query_start_date optional
       # @param [String] next_token optional
-      def list_fulfillment_orders(query_start_date=nil,next_token=nil)
+      def list_all_fulfillment_orders(query_start_date: nil,next_token: nil)
         @local_var_path = "/fba/outbound/2020-07-01/fulfillmentOrders"
 
         unless query_start_date.nil? && next_token.nil?
