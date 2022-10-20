@@ -60,8 +60,8 @@ module MuffinMan
             "addressLine2" => address_line2,
             "addressLine3" => address_line3,
             "city" => city,
-            "districtOrCountry" => district_or_country,
-            "stateOrProvinceCode" => state_or_region,
+            "districtOrCounty" => district_or_country,
+            "stateOrRegion" => state_or_region,
             "countryCode" => country_code,
             "postalCode" => postal_code,
             "phone" => phone

@@ -34,7 +34,6 @@ module MuffinMan
           @destination_address = destination_address
           @items = items
           @optional_params = optional_params
-
         end
 
         # Formate request object in sp-api request format
