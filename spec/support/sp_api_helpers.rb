@@ -11,6 +11,19 @@ module Support
         .to_return(status: 200, body: '{ "access_token": "this_will_get_you_into_drury_lane", "expires_in": 3600 }', headers: {})
     end
 
+    def stub_request_grantless_access_token
+      body = {
+        grant_type: "client_credentials",
+        scope: scope,
+        client_id: "a-client-id",
+        client_secret: "a-client-secret"
+      }
+      stub_request(:post, "https://api.amazon.com/auth/o2/token")
+        .with(body: URI.encode_www_form(body),
+              headers: { "Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8" })
+        .to_return(status: 200, body: '{ "access_token": "this_will_get_you_into_drury_lane", "expires_in": 3600 }', headers: {})
+    end
+
     def stub_request_rdt_token
       stub_request(:post, "https://#{hostname}/tokens/2021-03-01/restrictedDataToken")
         .with(body: hash_including({ "restrictedResources" => hash_including({})}))

@@ -1,8 +1,13 @@
 RSpec.describe MuffinMan::Notifications::V1 do
   before do
-    stub_request_access_token
+    if(self.class.metadata[:uses_grantless])
+      stub_request_grantless_access_token
+    else
+      stub_request_access_token
+    end
   end
 
+  let(:scope) { "sellingpartnerapi::notifications" }
   let(:arn) { "arn:aws:sqs:us-east-2:444455556666:queue1" }
   let(:notification_type) { "FeedProcessingFinished" }
   let(:name) {"Feed process finish notification"}
@@ -10,7 +15,7 @@ RSpec.describe MuffinMan::Notifications::V1 do
   let(:subscription_id) {"7fcacc7e-727b-11e9-8848-1681XXXXX"}
   subject(:notification_client) { described_class.new(credentials) }
 
-  describe "create_destination" do
+  describe "create_destination", uses_grantless: true do
     it "executes create_destination request" do
       stub_create_destination
       response = notification_client.create_destination(arn, name)
@@ -19,22 +24,22 @@ RSpec.describe MuffinMan::Notifications::V1 do
     end
   end
 
-  describe "get_destinations" do
+  describe "get_destinations", uses_grantless: true do
     it "executes get_destinations request" do
       stub_get_destinations
       response = notification_client.get_destinations
       expect(response.response_code).to eq(200)
       expect(JSON.parse(response.body)).not_to be_nil
-    end 
+    end
   end
 
-  describe "get_destination" do
+  describe "get_destination", uses_grantless: true do
     it "executes get_destination request" do
       stub_get_destination
       response = notification_client.get_destination(destination_id)
       expect(response.response_code).to eq(200)
       expect(JSON.parse(response.body)["payload"]["destinationId"]).to eq destination_id
-    end 
+    end
   end
 
   describe "create_subscription" do
@@ -55,7 +60,7 @@ RSpec.describe MuffinMan::Notifications::V1 do
     end
   end
 
-  describe "get_subscription_by_id" do
+  describe "get_subscription_by_id", uses_grantless: true  do
     it "executes get_subscription_by_id request" do
       stub_get_subscription_by_id
       response = notification_client.get_subscription_by_id(notification_type, subscription_id)
@@ -64,7 +69,7 @@ RSpec.describe MuffinMan::Notifications::V1 do
     end
   end
 
-  describe "delete_subscription_by_id" do
+  describe "delete_subscription_by_id", uses_grantless: true do
     it "executes delete_subscription_by_id request" do
       stub_delete_subscription_by_id
       response = notification_client.delete_subscription_by_id(notification_type, subscription_id)

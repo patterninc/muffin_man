@@ -14,7 +14,7 @@ def stub_get_destination
 end
 
 def stub_create_subscription
-  stub_request(:post, "https://#{hostname}/notifications/v1/subscriptions/#{notification_type}").with(body: {"payloadVersion":"1.0", "destinationId": destination_id, 
+  stub_request(:post, "https://#{hostname}/notifications/v1/subscriptions/#{notification_type}").with(body: {"payloadVersion":"1.0", "destinationId": destination_id,
     "processingDirective": {"eventFilter": {"eventFilterType": notification_type, "marketplaceIds": "ASWDDXDER323", "aggregationSettings": {"aggregationTimePeriod": "FiveMinutes"}}}})
     .to_return(status: 200, body: File.read("./spec/support/notifications/create_subscriptions.json"), headers: {})
 end
