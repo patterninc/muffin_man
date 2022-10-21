@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require_relative "lib/muffin_man/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "muffin_man"
   spec.version       = MuffinMan::VERSION
-  spec.authors       = ["Gavin", "Jason", "Nate"]
+  spec.authors       = %w[Gavin Jason Nate]
   spec.email         = ["gavin@pattern.com", "jason@pattern.com", "nate.salisbury@pattern.com"]
 
   spec.summary       = "Amazon Selling Partner API client"
@@ -18,10 +20,10 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_development_dependency "mock_redis", ">=0.14"
   spec.add_development_dependency "rspec", "~> 3.2"
-  spec.add_development_dependency 'webmock', '~> 2.1'
-  spec.add_development_dependency 'mock_redis', '>=0.14'
-  spec.add_runtime_dependency 'typhoeus', '~> 1.0', '>= 1.0.1'
-  spec.add_runtime_dependency 'aws-sigv4', '>= 1.1'
-  spec.add_runtime_dependency 'aws-sdk-core', '>= 2.4.4'
+  spec.add_development_dependency "webmock", "~> 2.1"
+  spec.add_runtime_dependency "aws-sdk-core", ">= 2.4.4"
+  spec.add_runtime_dependency "aws-sigv4", ">= 1.1"
+  spec.add_runtime_dependency "typhoeus", "~> 1.0", ">= 1.0.1"
 end

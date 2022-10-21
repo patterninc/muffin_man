@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "muffin_man/version"
 require "muffin_man/sp_api_client"
 require "muffin_man/solicitations/v1"

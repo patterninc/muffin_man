@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 module MuffinMan
   module CatalogItems
     class V20201201 < SpApiClient
-      SANDBOX_KEYWORDS = "shoes".freeze
-      SANDBOX_ASIN = "B07N4M94X4".freeze
-      SANDBOX_MARKETPLACE_IDS = "ATVPDKIKX0DER".freeze
+      SANDBOX_KEYWORDS = "shoes"
+      SANDBOX_ASIN = "B07N4M94X4"
+      SANDBOX_MARKETPLACE_IDS = "ATVPDKIKX0DER"
       attr_reader :keywords, :asin, :marketplace_ids, :params
 
       SEARCH_CATALOG_ITEMS_PARAMS = %w[

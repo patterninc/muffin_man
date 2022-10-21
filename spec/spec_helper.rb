@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require "muffin_man"
-require 'webmock/rspec'
-require 'support/sp_api_helpers.rb'
+require "webmock/rspec"
+require "support/sp_api_helpers"
 
 WebMock.disable_net_connect!(allow_localhost: true)
 
