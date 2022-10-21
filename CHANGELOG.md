@@ -1,3 +1,7 @@
+# 1.5.2
+
+- Support for Feeds and Notifications [#33](https://github.com/patterninc/muffin_man/pull/33)
+
 # 1.5.1
 
 - Support for getItemEligibilityPreview [#35](https://github.com/patterninc/muffin_man/pull/35)
