@@ -1,14 +1,16 @@
 module MuffinMan
   module RequestHelpers
     module OutboundFulfillment
-      class Address
+      class Address < MuffinMan::RequestHelpers::Base
         attr_accessor :name, :address_line1, :address_line2, :address_line3, :city,
-                  :district_or_country, :state_or_region, :country_code, :postal_code, :phone
+                  :district_or_county, :state_or_region, :country_code, :postal_code, :phone
 
         # Initializes the object
         # @param [Hash] attributes Model attributes in the form of hash
         def initialize(attributes = {})
           return unless attributes.is_a?(Hash)
+
+          attributes = attributes.with_indifferent_access
 
           if attributes.has_key?('name')
             self.name = attributes['name']
@@ -30,8 +32,8 @@ module MuffinMan
             self.city = attributes['city']
           end
 
-          if attributes.has_key?('district_or_country')
-            self.district_or_country = attributes['district_or_country']
+          if attributes.has_key?('district_or_county')
+            self.district_or_county = attributes['district_or_county']
           end
 
           if attributes.has_key?('state_or_region') || attributes.has_key?('state_or_province_code')
@@ -51,6 +53,39 @@ module MuffinMan
           end
         end
 
+        # return true if the model is valid
+        def valid?
+          return false if name.blank?
+          return false if address_line1.blank?
+          return false if state_or_region.blank?
+          return false if country_code.blank?
+
+          true
+        end
+
+        #Show invalid properties with the reasons.
+        #return Array for invalid properties with the reasons
+        def errors
+          errors = Array.new
+          if name.blank?
+            errors.push('invalid value for "name", name cannot be nil.')
+          end
+
+          if address_line1.blank?
+            errors.push('invalid value for "address_line1", address_line1 cannot be nil.')
+          end
+
+          if state_or_region.blank?
+            errors.push('invalid value for "state_or_region", state_or_region cannot be nil.')
+          end
+
+          if country_code.blank?
+            errors.push('invalid value for "country_code", country_code cannot be nil.')
+          end
+
+          errors
+        end
+
         # Formate request object in sp-api request format
         # @return hash for sp-api request format
         def to_camelize
@@ -60,7 +95,7 @@ module MuffinMan
             "addressLine2" => address_line2,
             "addressLine3" => address_line3,
             "city" => city,
-            "districtOrCounty" => district_or_country,
+            "districtOrCounty" => district_or_county,
             "stateOrRegion" => state_or_region,
             "countryCode" => country_code,
             "postalCode" => postal_code,

@@ -5,6 +5,8 @@ module MuffinMan
       # To get outbound fulfillment preview
       # @param [MuffinMan::RequestHelpers::OutboundFulFillment::FulfillmentPreviewRequest] fulfillment_preview_request in the form of object
       def get_fulfillment_preview(fulfillment_preview_request)
+        return unprocessable_entity(fulfillment_preview_request&.errors) unless fulfillment_preview_request&.valid?
+
         @local_var_path = "/fba/outbound/2020-07-01/fulfillmentOrders/preview"
         @request_body = fulfillment_preview_request.to_camelize
         @request_type = "POST"
@@ -14,6 +16,8 @@ module MuffinMan
       # To create outbound fulfillment order
       # @param [MuffinMan::RequestHelpers::OutboundFulFillment::FulfillmentOrderRequest] fulfillment_order_request in the form of object
       def create_fulfillment_order(fulfillment_order_request)
+        return unprocessable_entity(fulfillment_order_request&.errors) unless fulfillment_order_request&.valid?
+
         @local_var_path = "/fba/outbound/2020-07-01/fulfillmentOrders"
         @request_body = fulfillment_order_request.to_camelize
         @request_type = "POST"

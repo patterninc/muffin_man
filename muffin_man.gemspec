@@ -25,4 +25,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'typhoeus', '~> 1.0', '>= 1.0.1'
   spec.add_runtime_dependency 'aws-sigv4', '>= 1.1'
   spec.add_runtime_dependency 'aws-sdk-core', '>= 2.4.4'
+  spec.add_runtime_dependency 'activesupport', '~> 7.0', '>= 7.0.4'
 end

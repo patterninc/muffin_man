@@ -1,7 +1,7 @@
 module MuffinMan
   module RequestHelpers
     module OutboundFulfillment
-      class FulfillmentOrderRequest
+      class FulfillmentOrderRequest < MuffinMan::RequestHelpers::Base
         attr_accessor :seller_fulfillment_order_id, :displayable_order_id, :displayable_order_date_time, :displayable_order_comment, :shipping_speed_category, :destination_address, :items, :optional_params
 
         OPTIONAL_CREATE_FULFILLMENT_ORDER_PARAMS = %w[
@@ -34,6 +34,66 @@ module MuffinMan
           @destination_address = destination_address
           @items = items
           @optional_params = optional_params
+
+        end
+
+        # Check to see if the all the properties in the model are valid
+        # @return true if the model is valid
+        def valid?
+          return false if seller_fulfillment_order_id.blank?
+          return false if displayable_order_id.blank?
+          return false if displayable_order_date_time.blank?
+          return false if displayable_order_comment.blank?
+          return false if shipping_speed_category.blank?
+          return false if destination_address.blank?
+          return false if items.blank?
+          return false if destination_address.present? && !destination_address.valid?
+          return false if items.present? && items.map(&:valid?).include?(false)
+
+          true
+        end
+
+        # Show invalid properties with the reasons.
+        # @return Array for invalid properties with the reasons
+        def errors
+          errors = Array.new
+          if seller_fulfillment_order_id.nil?
+            errors.push('invalid value for "seller_fulfillment_order_id", seller_fulfillment_order_id cannot be nil.')
+          end
+
+          if displayable_order_id.nil?
+            errors.push('invalid value for "displayable_order_id", displayable_order_id cannot be nil.')
+          end
+
+          if displayable_order_date_time.nil?
+            errors.push('invalid value for "displayable_order_date_time", displayable_order_date_time cannot be nil.')
+          end
+
+          if displayable_order_comment.nil?
+            errors.push('invalid value for "displayable_order_comment", displayable_order_comment cannot be nil.')
+          end
+
+          if shipping_speed_category.nil?
+            errors.push('invalid value for "shipping_speed_category", shipping_speed_category cannot be nil.')
+          end
+
+          if destination_address.nil?
+            errors.push('invalid value for "destination_address", destination_address cannot be nil.')
+          end
+
+          if items.nil?
+            errors.push('invalid value for "items", items cannot be nil.')
+          end
+
+          if !destination_address.nil? && !destination_address.valid?
+            errors.push('invalid value for "destination_address",' + "#{destination_address.errors}")
+          end
+
+          if !items.nil? && items.map(&:valid?).include?(false)
+            errors.push('invalid value for "items", invalid item value.')
+          end
+
+          errors
         end
 
         # Formate request object in sp-api request format
