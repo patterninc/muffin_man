@@ -1,3 +1,7 @@
+# Unreleased
+
+- Support for getInventorySummaries [#36](https://github.com/patterninc/muffin_man/pull/36)
+
 # 1.5.1
 
 - Support for getItemEligibilityPreview [#35](https://github.com/patterninc/muffin_man/pull/35)

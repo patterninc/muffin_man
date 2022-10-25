@@ -199,6 +199,11 @@ module Support
         .to_return(status: 200, body: {"payload"=>{"asin"=>asin, "program"=>program, "isEligibleForProgram"=>true}}.to_json, headers: {})
     end
 
+    def stub_get_inventory_summaries_v1
+      stub_request(:get, "https://#{hostname}/fba/inventory/v1/summaries?granularityType=#{granularity_type}&granularityId=#{granularity_id}&marketplaceIds=#{marketplace_ids}")
+        .to_return(status: 200, body: File.read("./spec/support/get_inventory_summaries_v1.json"), headers: {})
+    end
+
     def credentials
       {
         refresh_token: "a-refresh-token",
