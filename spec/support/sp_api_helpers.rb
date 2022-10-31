@@ -106,7 +106,6 @@ module Support
         to_return(status: 200, body: File.read("./spec/support/report_document_contents.txt"), headers: { 'Content-Type' => 'text/tsv' })
     end
 
-
     def stub_get_orders
       stub_request(:get, "https://#{hostname}/orders/v0/orders?MarketplaceIds=#{marketplace_ids}")
         .to_return(status: 200, body: File.read("./spec/support/get_orders.json"), headers: {})
