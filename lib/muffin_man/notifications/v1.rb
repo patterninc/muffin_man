@@ -7,6 +7,7 @@ module MuffinMan
     class V1 < SpApiClient
       NOTIFICATION_PATH = "/notifications/v1"
       NOTIFICATION_SCOPE = "sellingpartnerapi::notifications"
+      PROCESSING_DIRECTIVE_SUPPORTED_NOTIFICATIONS = ["ANY_OFFER_CHANGED"]
 
       def create_destination(arn, name, params = {})
         @local_var_path = "#{NOTIFICATION_PATH}/destinations"
@@ -40,11 +41,13 @@ module MuffinMan
       def create_subscription(notification_type, params = {})
         @local_var_path = "#{NOTIFICATION_PATH}/subscriptions/#{notification_type}"
         params = params.transform_keys(&:to_s)
-        subscription_params = { "destinationId" => params["destination_id"],
-                                "processingDirective" => { "eventFilter" => { "eventFilterType" => notification_type,
-                                                                              "marketplaceIds" => params["marketplace_ids"] } } }
-        unless params["aggregation_time_period"].nil?
-          subscription_params["processingDirective"]["eventFilter"].merge!("aggregationSettings" => { "aggregationTimePeriod" => params["aggregation_time_period"] })
+        subscription_params = { "destinationId" => params["destination_id"] }
+        # currently SP-API's `processingDirective` only supports ANY_OFFER_CHANGED notification type.
+        if PROCESSING_DIRECTIVE_SUPPORTED_NOTIFICATIONS.include? notification_type
+          subscription_params["processingDirective"] = { "eventFilter" => { "eventFilterType" => notification_type, "marketplaceIds" => params["marketplace_ids"] } }
+          unless params["aggregation_time_period"].nil?
+            subscription_params["processingDirective"]["eventFilter"].merge!("aggregationSettings" => { "aggregationTimePeriod" => params["aggregation_time_period"] })
+          end
         end
         subscription_params.merge!("payloadVersion" => params["payload_version"]) unless params["payload_version"].nil?
         @request_body = subscription_params

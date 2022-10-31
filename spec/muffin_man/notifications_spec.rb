@@ -9,7 +9,7 @@ RSpec.describe MuffinMan::Notifications::V1 do
 
   let(:scope) { "sellingpartnerapi::notifications" }
   let(:arn) { "arn:aws:sqs:us-east-2:444455556666:queue1" }
-  let(:notification_type) { "FeedProcessingFinished" }
+  let(:notification_type) { "ANY_OFFER_CHANGED" }
   let(:name) {"Feed process finish notification"}
   let(:destination_id) {"3acafc7e-121b-1329-8ae8-XXXXX"}
   let(:subscription_id) {"7fcacc7e-727b-11e9-8848-1681XXXXX"}
