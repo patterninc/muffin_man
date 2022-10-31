@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 module MuffinMan
   module FulfillmentOutbound
     class V20200701 < SpApiClient
-
       # To get outbound fulfillment preview
       # @param [MuffinMan::RequestHelpers::OutboundFulFillment::FulfillmentPreviewRequest] fulfillment_preview_request in the form of object
       def get_fulfillment_preview(fulfillment_preview_request)
@@ -27,12 +28,10 @@ module MuffinMan
       # To get list of fulfillment orders
       # @param [String] query_start_date optional
       # @param [String] next_token optional
-      def list_all_fulfillment_orders(query_start_date: nil,next_token: nil)
+      def list_all_fulfillment_orders(query_start_date: nil, next_token: nil)
         @local_var_path = "/fba/outbound/2020-07-01/fulfillmentOrders"
 
-        unless query_start_date.nil? && next_token.nil?
-          @query_params = {}
-        end
+        @query_params = {} unless query_start_date.nil? && next_token.nil?
 
         @query_params[:queryStartDate] = query_start_date unless query_start_date.nil?
         @query_params[:nextToken] = next_token unless next_token.nil?
@@ -58,4 +57,3 @@ module MuffinMan
     end
   end
 end
-

@@ -18,12 +18,12 @@ module MuffinMan
 
         # Initializes the object
         # @param [String] seller_fulfillment_order_id
-        # @param [String] displayable_order_id 
-        # @param [String] displayable_order_date_time 
-        # @param [String] displayable_order_comment 
+        # @param [String] displayable_order_id
+        # @param [String] displayable_order_date_time
+        # @param [String] displayable_order_comment
         # @param [String] shipping_speed_category
         # @param [MuffinMan::RequestHelpers::OutboundFulfillment::Address] destination_address in form of object
-        # @param [MuffinMan::RequestHelpers::OutboundFulfillment::Item] items in the form of list of items objects 
+        # @param [MuffinMan::RequestHelpers::OutboundFulfillment::Item] items in the form of list of items objects
         # @param [Hash] optional_params optional sp-api attributes in the form of hash
         def initialize(seller_fulfillment_order_id, displayable_order_id, displayable_order_date_time, displayable_order_comment, shipping_speed_category, destination_address, items, optional_params = {})
           @seller_fulfillment_order_id = seller_fulfillment_order_id
@@ -96,7 +96,7 @@ module MuffinMan
           errors
         end
 
-        # Formate request object in sp-api request format
+        # Format request object in sp-api request format
         # @return hash for sp-api request format
         def to_camelize
           {

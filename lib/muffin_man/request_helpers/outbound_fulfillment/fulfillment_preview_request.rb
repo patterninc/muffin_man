@@ -57,7 +57,7 @@ module MuffinMan
           errors
         end
 
-        # Formate request object in sp-api request format
+        # Format request object in sp-api request format
         # @return hash for sp-api request format
         def to_camelize
           {
