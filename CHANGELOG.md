@@ -1,3 +1,7 @@
+# Unreleased
+
+- Support for getInventorySummaries [#36](https://github.com/patterninc/muffin_man/pull/36)
+
 # 1.5.2
 
 - Support for Feeds and Notifications [#33](https://github.com/patterninc/muffin_man/pull/33)

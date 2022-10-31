@@ -16,6 +16,7 @@ require "muffin_man/fulfillment_inbound/v0"
 require "muffin_man/fulfillment_inbound/v1"
 require "muffin_man/feeds/v20210630"
 require "muffin_man/notifications/v1"
+require "muffin_man/fba_inventory/v1"
 
 module MuffinMan
   class Error < StandardError; end
