@@ -1,5 +1,8 @@
+inherit_from: .rubocop_todo.yml
+
 AllCops:
   TargetRubyVersion: 2.5
+  NewCops: enable
 
 Style/StringLiterals:
   Enabled: true
@@ -14,3 +17,15 @@ Layout/LineLength:
 
 Metrics/MethodLength:
   Max: 30
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/OptionalBooleanParameter:
+  Enabled: false
