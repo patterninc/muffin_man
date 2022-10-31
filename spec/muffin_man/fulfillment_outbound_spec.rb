@@ -44,12 +44,22 @@ RSpec.describe MuffinMan::FulfillmentOutbound::V20200701 do
       MuffinMan::RequestHelpers::OutboundFulfillment::FulfillmentPreviewRequest.new(address,items)
     end
 
+    let(:invalid_fulfillment_preview_request) do
+      MuffinMan::RequestHelpers::OutboundFulfillment::FulfillmentPreviewRequest.new(address,[])
+    end
+
     it "makes a request to get outbound fulfillment preview" do
       response = fba_outbound_client.get_fulfillment_preview(fulfillment_preview_request)
       expect(response.response_code).to eq(200)
       expect(JSON.parse(response.body).dig("payload", "fulfillmentPreviews").first["shippingSpeedCategory"]).to eq("Expedited")
       expect(JSON.parse(response.body).dig("payload", "fulfillmentPreviews")[1]["shippingSpeedCategory"]).to eq("Priority")
       expect(JSON.parse(response.body).dig("payload", "fulfillmentPreviews")[2]["shippingSpeedCategory"]).to eq("Standard")
+    end
+
+    it "makes a request to get outbound fulfillment preview" do
+      response = fba_outbound_client.get_fulfillment_preview(invalid_fulfillment_preview_request)
+      expect(response.response_code).to eq(422)
+      expect(JSON.parse(response.body)).to have_key('errors')
     end
   end
 
@@ -65,11 +75,27 @@ RSpec.describe MuffinMan::FulfillmentOutbound::V20200701 do
         address,
         items)
     end
+
+    let(:invalid_fulfillment_order) do
+      MuffinMan::RequestHelpers::OutboundFulfillment::FulfillmentOrderRequest.new("seller_fulfillment_order_id",
+        "displayable_order_id",
+        "displayable_order_date_time",
+        "displayable_order_comment",
+        "shipping_speed_category",
+        nil,
+        items)
+    end
     
     it "makes a request to create outbound fulfillment order" do
       response = fba_outbound_client.create_fulfillment_order(fulfillment_order)
       expect(response.response_code).to eq(200)
-    end    
+    end
+
+    it "makes a request to create outbound fulfillment order" do
+      response = fba_outbound_client.create_fulfillment_order(invalid_fulfillment_order)
+      expect(response.response_code).to eq(422)
+      expect(JSON.parse(response.body)).to have_key('errors')
+    end
   end
 
   context "list_all_fulfillment_orders" do

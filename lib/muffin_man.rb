@@ -16,8 +16,6 @@ require "muffin_man/fulfillment_inbound/v0"
 require "muffin_man/fulfillment_inbound/v1"
 require "muffin_man/fulfillment_outbound/v20200701"
 require "muffin_man/fba_inventory/v1"
-
-#request helpers
 require 'muffin_man/request_helpers'
 
 module MuffinMan

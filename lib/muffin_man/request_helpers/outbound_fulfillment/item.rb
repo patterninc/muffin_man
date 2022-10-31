@@ -2,7 +2,7 @@ module MuffinMan
   module RequestHelpers
     module OutboundFulfillment
       class Item < MuffinMan::RequestHelpers::Base
-        attr_accessor :seller_sku, :seller_fulfillment_order_item_id, :quantity, :per_unit_declared_value, :optional_params
+        attr_accessor :seller_sku, :seller_fulfillment_order_item_id, :quantity, :optional_params
 
         OPTIONAL_ITEM_PARAMS = %w[
           perUnitDeclaredValue
