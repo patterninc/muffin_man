@@ -155,13 +155,13 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
     end
     let(:transport_result) do [
         {
-          "TransportStatus"=>"WORKING", 
-          "ErrorCode"=>"", 
+          "TransportStatus"=>"WORKING",
+          "ErrorCode"=>"",
           "ErrorDescription"=>""
         }
       ]
     end
-    
+
 
     it "makes a request to put transport details to amazon" do
       response = fba_inbound_client.put_transport_details(shipment_id, is_partnered, shipment_type, transport_details)
