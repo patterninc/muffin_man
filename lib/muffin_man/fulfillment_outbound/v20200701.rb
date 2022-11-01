@@ -3,7 +3,6 @@
 module MuffinMan
   module FulfillmentOutbound
     class V20200701 < SpApiClient
-      # To get outbound fulfillment preview
       # @param [MuffinMan::RequestHelpers::OutboundFulFillment::FulfillmentPreviewRequest] fulfillment_preview_request in the form of object
       def get_fulfillment_preview(fulfillment_preview_request)
         return unprocessable_entity(fulfillment_preview_request&.errors) unless fulfillment_preview_request&.valid?
@@ -14,7 +13,6 @@ module MuffinMan
         call_api
       end
 
-      # To create outbound fulfillment order
       # @param [MuffinMan::RequestHelpers::OutboundFulFillment::FulfillmentOrderRequest] fulfillment_order_request in the form of object
       def create_fulfillment_order(fulfillment_order_request)
         return unprocessable_entity(fulfillment_order_request&.errors) unless fulfillment_order_request&.valid?
@@ -25,7 +23,6 @@ module MuffinMan
         call_api
       end
 
-      # To get list of fulfillment orders
       # @param [String] query_start_date optional
       # @param [String] next_token optional
       def list_all_fulfillment_orders(query_start_date: nil, next_token: nil)
@@ -39,7 +36,6 @@ module MuffinMan
         call_api
       end
 
-      # To get fulfillment order
       # @param [String] seller_fulfillment_order_id
       def get_fulfillment_order(seller_fulfillment_order_id)
         @local_var_path = "/fba/outbound/2020-07-01/fulfillmentOrders/#{seller_fulfillment_order_id}"
@@ -47,7 +43,6 @@ module MuffinMan
         call_api
       end
 
-      # To cancel fulfillment order
       # @param [String] seller_fulfillment_order_id
       def cancel_fulfillment_order(seller_fulfillment_order_id)
         @local_var_path = "/fba/outbound/2020-07-01/fulfillmentOrders/#{seller_fulfillment_order_id}/cancel"
