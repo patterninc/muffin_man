@@ -184,7 +184,7 @@ module MuffinMan
     end
 
     def sp_api_params(params)
-      params.to_h.transform_keys{ |key| key.to_s.split('_').map.with_index{|x,i| i > 0 ? x.capitalize : x}.join }
+      params.to_h.transform_keys { |key| key.to_s.split("_").map.with_index { |x, i| i.positive? ? x.capitalize : x }.join }
     end
   end
 end
