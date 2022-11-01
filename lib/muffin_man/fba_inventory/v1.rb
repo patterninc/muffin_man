@@ -1,7 +1,6 @@
 module MuffinMan
   module FbaInventory
     class V1 < SpApiClient
-
       GET_INVENTORY_SUMMARIES_PARAMS = %w[
         details
         granularityType

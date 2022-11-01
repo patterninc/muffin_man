@@ -12,7 +12,7 @@ module MuffinMan
         @local_var_path = "/listings/2021-08-01/items/#{seller_id}/#{sku}"
         @marketplace_ids = marketplace_ids.is_a?(Array) ? marketplace_ids : [marketplace_ids]
         @query_params = {
-          "marketplaceIds" =>  @marketplace_ids.join(",")
+          "marketplaceIds" => @marketplace_ids.join(",")
         }
         @query_params["issueLocale"] = issue_locale if issue_locale
         @query_params["includedData"] = included_data.join(",") if included_data.any?

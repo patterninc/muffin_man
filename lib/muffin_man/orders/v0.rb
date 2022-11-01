@@ -1,7 +1,6 @@
 module MuffinMan
   module Orders
     class V0 < SpApiClient
-
       GET_ORDERS_PARAMS = %w[
         CreatedAfter
         CreatedBefore

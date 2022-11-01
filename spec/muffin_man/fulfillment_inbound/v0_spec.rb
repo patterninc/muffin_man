@@ -7,14 +7,14 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
   let(:sku_list) { ["SD-ABC-12345"] }
   let(:address) do
     {
-      "Name"=>"The Muffin Man",
-      "AddressLine1"=>"12345 Drury Lane",
-      "AddressLine2"=>nil,
-      "City"=>"CandyLand",
-      "DistrictOrCounty"=>nil,
-      "StateOrProvinceCode"=>"CL",
-      "CountryCode"=>"US",
-      "PostalCode"=>"12345"
+      "Name" => "The Muffin Man",
+      "AddressLine1" => "12345 Drury Lane",
+      "AddressLine2" => nil,
+      "City" => "CandyLand",
+      "DistrictOrCounty" => nil,
+      "StateOrProvinceCode" => "CL",
+      "CountryCode" => "US",
+      "PostalCode" => "12345"
     }
   end
 
@@ -35,12 +35,12 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
     let(:inbound_shipment_plan_request_items) do
       [
         {
-          "SellerSKU"=>"SD-ABC-123456",
-          "ASIN"=>"B123456JKL",
-          "Quantity"=>1,
-          "QuantityInCase"=>nil,
-          "PrepDetailsList"=>[],
-          "Condition"=>"NewItem",
+          "SellerSKU" => "SD-ABC-123456",
+          "ASIN" => "B123456JKL",
+          "Quantity" => 1,
+          "QuantityInCase" => nil,
+          "PrepDetailsList" => [],
+          "Condition" => "NewItem",
         }
       ]
     end
@@ -145,23 +145,22 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
     let(:is_partnered) { true }
     let(:shipment_type) { "LPL" }
     let(:transport_details) do [
-        {
-          "PartneredSmallParcelData"=>[],
-          "NonPartneredSmallParcelData"=>[],
-          "PartneredLtlData"=>[],
-          "NonPartneredLtlData"=>[]
-        }
-      ]
+      {
+        "PartneredSmallParcelData" => [],
+        "NonPartneredSmallParcelData" => [],
+        "PartneredLtlData" => [],
+        "NonPartneredLtlData" => []
+      }
+    ]
     end
     let(:transport_result) do [
-        {
-          "TransportStatus"=>"WORKING",
-          "ErrorCode"=>"",
-          "ErrorDescription"=>""
-        }
-      ]
+      {
+        "TransportStatus" => "WORKING",
+        "ErrorCode" => "",
+        "ErrorDescription" => ""
+      }
+    ]
     end
-
 
     it "makes a request to put transport details to amazon" do
       response = fba_inbound_client.put_transport_details(shipment_id, is_partnered, shipment_type, transport_details)

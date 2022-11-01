@@ -20,7 +20,7 @@ module MuffinMan
 
       API_VERSION = "2020-12-01".freeze
 
-      def search_catalog_items(keywords, marketplace_ids, params = {}, api_version=API_VERSION)
+      def search_catalog_items(keywords, marketplace_ids, params = {}, api_version = API_VERSION)
         if sandbox
           keywords = SANDBOX_KEYWORDS
           marketplace_ids = SANDBOX_MARKETPLACE_IDS
@@ -39,7 +39,7 @@ module MuffinMan
         call_api
       end
 
-      def get_catalog_item(asin, marketplace_ids, params = {}, api_version=API_VERSION)
+      def get_catalog_item(asin, marketplace_ids, params = {}, api_version = API_VERSION)
         if sandbox
           asin = SANDBOX_ASIN
           marketplace_ids = SANDBOX_MARKETPLACE_IDS
