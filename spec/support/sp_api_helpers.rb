@@ -118,8 +118,8 @@ module Support
     end
 
     def stub_report_document_contents
-      stub_request(:get, "https://d34o8swod1owfl.cloudfront.net/Report_47700__GET_MERCHANT_LISTINGS_ALL_DATA_.txt").
-        to_return(status: 200, body: File.read("./spec/support/report_document_contents.txt"), headers: { 'Content-Type' => 'text/tsv' })
+      stub_request(:get, "https://d34o8swod1owfl.cloudfront.net/Report_47700__GET_MERCHANT_LISTINGS_ALL_DATA_.txt")
+        .to_return(status: 200, body: File.read("./spec/support/report_document_contents.txt"), headers: { 'Content-Type' => 'text/tsv' })
     end
 
     def stub_get_orders
@@ -184,9 +184,9 @@ module Support
     end
 
     def stub_put_transport_details
-      stub_request(:put, "https://sellingpartnerapi-na.amazon.com/fba/inbound/v0/shipments/#{shipment_id}/transport").
-         with(:body => "{\"shipmentId\":\"FBA1232453KJ\",\"IsPartnered\":true,\"ShipmentType\":\"LPL\",\"TransportDetails\":[{\"PartneredSmallParcelData\":[],\"NonPartneredSmallParcelData\":[],\"PartneredLtlData\":[],\"NonPartneredLtlData\":[]}]}").
-         to_return(:status => 200, :body => File.read("./spec/support/put_transport_details_v0.json"), :headers => {})
+      stub_request(:put, "https://sellingpartnerapi-na.amazon.com/fba/inbound/v0/shipments/#{shipment_id}/transport")
+         .with(:body => "{\"shipmentId\":\"FBA1232453KJ\",\"IsPartnered\":true,\"ShipmentType\":\"LPL\",\"TransportDetails\":[{\"PartneredSmallParcelData\":[],\"NonPartneredSmallParcelData\":[],\"PartneredLtlData\":[],\"NonPartneredLtlData\":[]}]}")
+         .to_return(:status => 200, :body => File.read("./spec/support/put_transport_details_v0.json"), :headers => {})
     end
 
     def stub_get_shipments
