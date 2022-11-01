@@ -3,6 +3,7 @@ RSpec.describe MuffinMan::Tokens::V20210301 do
     stub_request_access_token
     stub_request_rdt_token
   end
+
   let(:selling_partner_id) { "TheMuffinMan" }
   let(:developer_id) { "WhoLivesOnDruryLane" }
   let(:mws_auth_token) { "Yes,IKnowTheMuffinMan" }

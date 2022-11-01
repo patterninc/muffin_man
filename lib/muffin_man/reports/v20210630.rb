@@ -76,8 +76,8 @@ module MuffinMan
 
       def get_report_document_body(report_document_id)
         response = get_report_document(report_document_id)
-        parsed_response=JSON.parse(response.body)
-        report=Net::HTTP.get(URI.parse(parsed_response['url']))
+        parsed_response = JSON.parse(response.body)
+        report = Net::HTTP.get(URI.parse(parsed_response['url']))
         unless (parsed_response['compressionAlgorithm']).nil?
           input = StringIO.new(report)
           report = Zlib::GzipReader.new(input).read

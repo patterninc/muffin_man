@@ -31,6 +31,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
 
   describe "create_inbound_shipment_plan" do
     before { stub_create_inbound_shipment_plan }
+
     let(:label_prep_preference) { "SELLER_LABEL" }
     let(:inbound_shipment_plan_request_items) do
       [
@@ -40,7 +41,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
           "Quantity" => 1,
           "QuantityInCase" => nil,
           "PrepDetailsList" => [],
-          "Condition" => "NewItem",
+          "Condition" => "NewItem"
         }
       ]
     end
@@ -54,6 +55,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
 
   describe "create_inbound_shipment" do
     before { stub_create_inbound_shipment }
+
     let(:inbound_shipment_header) do
       {
         "ShipmentName" => "TEST SHIPMENT",
@@ -65,7 +67,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
         "IntendedBoxContentsSource" => "FEED"
       }
     end
-    let(:inbound_shipment_items) { [ {"SellerSKU"=>"SD-ABC-12345", "QuantityShipped"=>1} ] }
+    let(:inbound_shipment_items) { [{ "SellerSKU" => "SD-ABC-12345", "QuantityShipped" => 1 }] }
     let(:shipment_id) { "FBA1232453KJ" }
     let(:marketplace_id) { "ATVPDKIKX0DER" }
 
@@ -78,6 +80,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
 
   describe "get_shipments" do
     before { stub_get_shipments }
+
     let(:shipment_id_list) { ["FBA1232453KJ"] }
     let(:marketplace_id) { "ATVPDKIKX0DER" }
     let(:query_type) { "SHIPMENT" }
@@ -91,6 +94,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
 
   describe "update_inbound_shipment" do
     before { stub_update_inbound_shipment }
+
     let(:inbound_shipment_header) do
       {
         "ShipmentName" => "TEST SHIPMENT",
@@ -102,7 +106,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
         "IntendedBoxContentsSource" => "FEED"
       }
     end
-    let(:inbound_shipment_items) { [ {"SellerSKU"=>"SD-ABC-12345", "QuantityShipped"=>1} ] }
+    let(:inbound_shipment_items) { [{ "SellerSKU" => "SD-ABC-12345", "QuantityShipped" => 1 }] }
     let(:shipment_id) { "FBA1232453KJ" }
     let(:marketplace_id) { "ATVPDKIKX0DER" }
 
@@ -115,6 +119,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
 
   describe "get_labels" do
     before { stub_get_labels }
+
     let(:shipment_id) { "FBA1232453KJ" }
     let(:page_type) { "PackageLabel_Plain_Paper" }
     let(:label_type) { "UNIQUE" }
@@ -129,6 +134,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
 
   describe "get_shipment_items_by_shipment_id" do
     before { stub_get_shipment_items_by_shipment_id }
+
     let(:shipment_id) { "FBA1232453KJ" }
     let(:marketplace_id) { "ATVPDKIKX0DER" }
 
@@ -141,6 +147,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
 
   describe "put_transport_details" do
     before { stub_put_transport_details }
+
     let(:shipment_id) { "FBA1232453KJ" }
     let(:is_partnered) { true }
     let(:shipment_type) { "LPL" }

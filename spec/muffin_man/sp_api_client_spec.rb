@@ -45,6 +45,7 @@ RSpec.describe MuffinMan::SpApiClient do
       end
     end
     let(:client) { MuffinMan::FakeKlass.new(credentials, sandbox) }
+
     before do
       stub_request_access_token
       stub_fake_request
@@ -80,6 +81,7 @@ RSpec.describe MuffinMan::SpApiClient do
 
       context "when there is a stored token" do
         let(:another_fake_lwa_access_token) { "i-know-the-muffin-man" }
+
         before do
           MockRedis.new.set("SP-TOKEN-#{credentials[:access_token_cache_key]}", another_fake_lwa_access_token)
         end
@@ -94,6 +96,7 @@ RSpec.describe MuffinMan::SpApiClient do
 
       context "when using the sandbox environment" do
         let(:sandbox) { true }
+
         it "correctly builds the canonical api hostname" do
           expect(Typhoeus).to receive(:get).with("https://sandbox.#{hostname}/some_path", headers: hash_including({}))
           client.make_a_request

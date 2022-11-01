@@ -17,7 +17,7 @@ module MuffinMan
         @request_body = {
           "ShipFromAddress" => ship_from_address,
           "LabelPrepPreference" => label_prep_preference,
-          "InboundShipmentPlanRequestItems" => inbound_shipment_plan_request_items,
+          "InboundShipmentPlanRequestItems" => inbound_shipment_plan_request_items
         }
         @request_body["ShipToCountryCode"] = ship_to_country_code unless ship_to_country_code.nil?
         @request_body["ShipToCountrySubdivisionCode"] = ship_to_country_subdivision_code unless ship_to_country_subdivision_code.nil?
@@ -30,7 +30,7 @@ module MuffinMan
         @request_body = {
           "MarketplaceId": marketplace_id,
           "InboundShipmentHeader": inbound_shipment_header,
-          "InboundShipmentItems": inbound_shipment_items,
+          "InboundShipmentItems": inbound_shipment_items
         }
         @request_type = "POST"
         call_api
@@ -40,7 +40,7 @@ module MuffinMan
         @local_var_path = "/fba/inbound/v0/shipments"
         @query_params = {
           "MarketplaceId" => marketplace_id,
-          "QueryType" => query_type,
+          "QueryType" => query_type
         }
         @query_params["ShipmentStatusList"] = shipment_status_list.join(",") if shipment_status_list.any?
         @query_params["ShipmentIdList"] = shipment_id_list.join(",") if shipment_id_list.any?
@@ -57,7 +57,7 @@ module MuffinMan
         @request_body = {
           "MarketplaceId": marketplace_id,
           "InboundShipmentHeader": inbound_shipment_header,
-          "InboundShipmentItems": inbound_shipment_items,
+          "InboundShipmentItems": inbound_shipment_items
         }
         @request_type = "PUT"
         call_api
@@ -82,7 +82,7 @@ module MuffinMan
       def get_shipment_items_by_shipment_id(shipment_id, marketplace_id)
         @local_var_path = "/fba/inbound/v0/shipments/#{shipment_id}/items"
         @query_params = {
-          "MarketplaceId" => marketplace_id,
+          "MarketplaceId" => marketplace_id
         }
         @request_type = "GET"
         call_api
@@ -94,7 +94,7 @@ module MuffinMan
           "shipmentId": shipment_id,
           "IsPartnered": is_partnered,
           "ShipmentType": shipment_type,
-          "TransportDetails": transport_details,
+          "TransportDetails": transport_details
         }
         @request_type = "PUT"
         call_api

@@ -5,7 +5,7 @@ module MuffinMan
         @local_var_path = "/fba/inbound/v1/eligibility/itemPreview"
         @query_params = {
           "asin" => asin,
-          "program" => program,
+          "program" => program
         }
         @query_params["marketplaceIds"] = marketplace_ids.join(",") if marketplace_ids.any?
         @request_type = "GET"

@@ -8,6 +8,7 @@ RSpec.describe MuffinMan::Reports::V20210630 do
     stub_get_report_document
     stub_report_document_contents
   end
+
   let(:report_types) { "FEE_DISCOUNTS_REPORT,GET_AFN_INVENTORY_DATA" }
   let(:processing_statuses) { "IN_QUEUE,IN_PROGRESS" }
   let(:amazon_marketplace_id) { "ATVPDKIKX0DER" }

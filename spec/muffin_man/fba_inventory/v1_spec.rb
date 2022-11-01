@@ -7,6 +7,7 @@ RSpec.describe MuffinMan::FbaInventory::V1 do
 
   describe "get_inventory_summaries" do
     before { stub_get_inventory_summaries_v1 }
+
     let(:granularity_type) { "Marketplace" }
     let(:granularity_id) { "ATVPDKIKX0DER" }
     let(:marketplace_ids) { "ATVPDKIKX0DER" }

@@ -3,13 +3,15 @@ RSpec.describe MuffinMan::ProductFees::V0 do
     stub_request_access_token
     stub_get_my_fees_estimate_for_asin
   end
+
   let(:asin) { "B09WZ936D8" }
   let(:amazon_marketplace_id) { "ATVPDKIKX0RRR" }
   let(:product_map_price) { "149.94" }
   let(:currency_code) { "USD" }
   let(:request_body) {
-    {"FeesEstimateRequest"=>{"MarketplaceId"=>"ATVPDKIKX0RRR", "PriceToEstimateFees"=>{"ListingPrice"=>{"Amount"=>149.94, "CurrencyCode"=>"USD"}}, "Identifier"=>"cd4c6683-1198-4a1b-8495-6b6f3e9550b3", "IsAmazonFulfilled"=>true, "OptionalFulfillmentProgram"=>"FBA_CORE"}}
+    { "FeesEstimateRequest" => { "MarketplaceId" => "ATVPDKIKX0RRR", "PriceToEstimateFees" => { "ListingPrice" => { "Amount" => 149.94, "CurrencyCode" => "USD" } }, "Identifier" => "cd4c6683-1198-4a1b-8495-6b6f3e9550b3", "IsAmazonFulfilled" => true, "OptionalFulfillmentProgram" => "FBA_CORE" } }
   }
+
   subject(:product_fees_client) { described_class.new(credentials) }
 
   describe "get_my_fees_estimate_for_asin" do

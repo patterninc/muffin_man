@@ -26,7 +26,7 @@ module Support
 
     def stub_request_rdt_token
       stub_request(:post, "https://#{hostname}/tokens/2021-03-01/restrictedDataToken")
-        .with(body: hash_including({ "restrictedResources" => hash_including({})}))
+        .with(body: hash_including({ "restrictedResources" => hash_including({}) }))
         .to_return(status: 200, body: '{ "restrictedDataToken": "this_will_get_you_into 123 E. drury_lane", "expires_in": 3600 }', headers: {})
     end
 
@@ -211,7 +211,7 @@ module Support
 
     def stub_get_item_eligibility_preview
       stub_request(:get, "https://#{hostname}/fba/inbound/v1/eligibility/itemPreview?asin=#{asin}&program=#{program}")
-        .to_return(status: 200, body: {"payload"=>{"asin"=>asin, "program"=>program, "isEligibleForProgram"=>true}}.to_json, headers: {})
+        .to_return(status: 200, body: { "payload" => { "asin" => asin, "program" => program, "isEligibleForProgram" => true } }.to_json, headers: {})
     end
 
     def stub_get_inventory_summaries_v1

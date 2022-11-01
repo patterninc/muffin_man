@@ -11,8 +11,8 @@ RSpec.describe MuffinMan::Orders::V0 do
 
   let(:marketplace_ids) { "ATVPDKIKX0DER,A2EUQ1WTGCTBG2" }
   let(:order_id) { "ID323" }
-  let(:payload) { {"orderIds"=>"123-1234567-1234567,123-2345678-2345678"} }
-  let(:payload_2) { {"NextToken"=>"12345678901234567890"} }
+  let(:payload) { { "orderIds" => "123-1234567-1234567,123-2345678-2345678" } }
+  let(:payload_2) { { "NextToken" => "12345678901234567890" } }
 
   subject(:orders_client) { described_class.new(credentials) }
 

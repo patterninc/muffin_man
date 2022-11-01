@@ -3,6 +3,7 @@ RSpec.describe MuffinMan::Solicitations::V1 do
     stub_request_access_token
     stub_solicitations
   end
+
   let(:amazon_order_id) { "123-1234567-1234567" }
   let(:amazon_marketplace_id) { "ATVPDKIKX0DER" }
 

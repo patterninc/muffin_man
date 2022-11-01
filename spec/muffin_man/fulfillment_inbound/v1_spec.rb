@@ -7,6 +7,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V1 do
 
   describe "get_item_eligibility_preview" do
     before { stub_get_item_eligibility_preview }
+
     let(:asin) { "B01234567" }
     let(:program) { "COMMINGLING" }
 

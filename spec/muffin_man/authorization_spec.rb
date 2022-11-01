@@ -3,6 +3,7 @@ RSpec.describe MuffinMan::Authorization::V1 do
     stub_request_access_token
     stub_get_authorization_code
   end
+
   let(:selling_partner_id) { "SELLINGID" }
   let(:developer_id) { "DEVID" }
   let(:mws_auth_token) { "MWSTOKEN" }
