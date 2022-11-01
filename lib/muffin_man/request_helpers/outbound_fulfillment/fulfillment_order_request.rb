@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 module MuffinMan
   module RequestHelpers
     module OutboundFulfillment
       class FulfillmentOrderRequest < MuffinMan::RequestHelpers::Base
-        attr_accessor :seller_fulfillment_order_id, :displayable_order_id, :displayable_order_date_time, :displayable_order_comment, :shipping_speed_category, :destination_address, :items, :optional_params
+        attr_accessor :seller_fulfillment_order_id, :displayable_order_id, :displayable_order_date_time,
+                      :displayable_order_comment, :shipping_speed_category, :destination_address, :items, :optional_params
 
         OPTIONAL_CREATE_FULFILLMENT_ORDER_PARAMS = %w[
           marketplaceId
@@ -15,7 +18,6 @@ module MuffinMan
           featureConstraints
         ].freeze
 
-
         # Initializes the object
         # @param [String] seller_fulfillment_order_id
         # @param [String] displayable_order_id
@@ -25,7 +27,8 @@ module MuffinMan
         # @param [MuffinMan::RequestHelpers::OutboundFulfillment::Address] destination_address in form of object
         # @param [MuffinMan::RequestHelpers::OutboundFulfillment::Item] items in the form of list of items objects
         # @param [Hash] optional_params optional sp-api attributes in the form of hash
-        def initialize(seller_fulfillment_order_id, displayable_order_id, displayable_order_date_time, displayable_order_comment, shipping_speed_category, destination_address, items, optional_params = {})
+        def initialize(seller_fulfillment_order_id, displayable_order_id, displayable_order_date_time,
+                       displayable_order_comment, shipping_speed_category, destination_address, items, optional_params = {})
           @seller_fulfillment_order_id = seller_fulfillment_order_id
           @displayable_order_id = displayable_order_id
           @displayable_order_date_time = displayable_order_date_time
@@ -34,7 +37,6 @@ module MuffinMan
           @destination_address = destination_address
           @items = items
           @optional_params = optional_params
-
         end
 
         # Check to see if the all the properties in the model are valid
@@ -56,7 +58,7 @@ module MuffinMan
         # Show invalid properties with the reasons.
         # @return Array for invalid properties with the reasons
         def errors
-          errors = Array.new
+          errors = []
           if seller_fulfillment_order_id.nil?
             errors.push('invalid value for "seller_fulfillment_order_id", seller_fulfillment_order_id cannot be nil.')
           end
@@ -81,12 +83,10 @@ module MuffinMan
             errors.push('invalid value for "destination_address", destination_address cannot be nil.')
           end
 
-          if items.nil?
-            errors.push('invalid value for "items", items cannot be nil.')
-          end
+          errors.push('invalid value for "items", items cannot be nil.') if items.nil?
 
           if !destination_address.nil? && !destination_address.valid?
-            errors.push('invalid value for "destination_address",' + "#{destination_address.errors}")
+            errors.push("invalid value for \"destination_address\",#{destination_address.errors}")
           end
 
           if !items.nil? && items.map(&:valid?).include?(false)

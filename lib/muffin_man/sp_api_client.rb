@@ -4,7 +4,6 @@ require "aws-sdk-core"
 require "typhoeus"
 require "securerandom"
 
-
 module MuffinMan
   class SpApiClient
     attr_reader :refresh_token, :client_id, :client_secret, :aws_access_key_id,
@@ -21,7 +20,7 @@ module MuffinMan
       "fe" => "us-west-2"
     }.freeze
 
-    UNPROCESSABLE_ENTITY_STATUS_CODE = 422.freeze
+    UNPROCESSABLE_ENTITY_STATUS_CODE = 422
 
     def initialize(credentials, sandbox = false)
       @refresh_token = credentials[:refresh_token]
@@ -187,9 +186,9 @@ module MuffinMan
     end
 
     def unprocessable_entity(errors)
-      Typhoeus::Response.new(code: UNPROCESSABLE_ENTITY_STATUS_CODE, body: {'errors': "#{errors}"}.to_json)
+      Typhoeus::Response.new(code: UNPROCESSABLE_ENTITY_STATUS_CODE, body: { errors: errors.to_s }.to_json)
     end
-    
+
     def sp_api_params(params)
       params.to_h.transform_keys { |key| key.to_s.split("_").map.with_index { |x, i| i.positive? ? x.capitalize : x }.join }
     end

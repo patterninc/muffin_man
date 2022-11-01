@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def stub_list_all_fulfillment_orders
   stub_request(:get, "https://#{hostname}/fba/outbound/2020-07-01/fulfillmentOrders")
     .to_return(status: 200, body: File.read("./spec/support/outbound_fulfillment/list_all_fulfillment_orders.json"), headers: {})

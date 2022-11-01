@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MuffinMan
   module RequestHelpers
     module OutboundFulfillment
@@ -16,7 +18,7 @@ module MuffinMan
         # @param [MuffinMan::RequestHelpers::OutboundFulfillment::Address] address in the form of object
         # @param[MuffinMan::RequestHelpers::OutboundFulfillment::Item] items in the form of list of items objects
         # @param [Hash] optional_params optional sp-api attributes in the form of hash
-        def initialize(address, items, optional_params={})
+        def initialize(address, items, optional_params = {})
           @address = address
           @items = items
           @optional_params = optional_params
@@ -36,19 +38,13 @@ module MuffinMan
         # Show invalid properties with the reasons.
         # @return Array for invalid properties with the reasons
         def errors
-          errors = Array.new
+          errors = []
 
-          if address.blank?
-            errors.push('invalid value for "address", address cannot be nil.')
-          end
+          errors.push('invalid value for "address", address cannot be nil.') if address.blank?
 
-          if items.blank?
-            errors.push('invalid value for "items", address cannot be nil.')
-          end
+          errors.push('invalid value for "items", address cannot be nil.') if items.blank?
 
-          if address.present? && !address.valid?
-            errors.push('invalid value for "address",' + "#{address.errors}")
-          end
+          errors.push("invalid value for \"address\",#{address.errors}") if address.present? && !address.valid?
 
           if items.present? && items.map(&:valid?).include?(false)
             errors.push('invalid value for "items", invalid item value.')
