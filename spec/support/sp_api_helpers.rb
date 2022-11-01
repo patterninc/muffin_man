@@ -1,3 +1,6 @@
+require './spec/support/feeds/stub_feeds'
+require './spec/support/notifications/stub_notifications'
+
 module Support
   module SpApiHelpers
     def stub_request_access_token
@@ -5,6 +8,19 @@ module Support
         .with(body: "grant_type=refresh_token&refresh_token=a-refresh-token&client_id=a-client-id&client_secret=a-client-secret",
               headers: { "Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8", "Expect" => "",
                          "User-Agent" => "" })
+        .to_return(status: 200, body: '{ "access_token": "this_will_get_you_into_drury_lane", "expires_in": 3600 }', headers: {})
+    end
+
+    def stub_request_grantless_access_token
+      body = {
+        grant_type: "client_credentials",
+        scope: scope,
+        client_id: "a-client-id",
+        client_secret: "a-client-secret"
+      }
+      stub_request(:post, "https://api.amazon.com/auth/o2/token")
+        .with(body: URI.encode_www_form(body),
+              headers: { "Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8" })
         .to_return(status: 200, body: '{ "access_token": "this_will_get_you_into_drury_lane", "expires_in": 3600 }', headers: {})
     end
 

@@ -1,0 +1,25 @@
+{
+  "payload": [
+    {
+      "name": "Feed process finish notification",
+      "destinationId": "3acafc7e-121b-1329-8ae8-XXXXX",
+      "resource": {
+        "sqs": {
+          "arn": "arn:aws:sqs:\"THL=VPC!>?[F9o^:ue(`)]k1+;pOWYbipP(NCr=T-d.\"8u5-w:\\0.xC@2KV?CubHE_qc'{QecKY8N]3K:kxx}|Nx=Y)Pg<z;fiJnO^"
+        },
+        "eventBridge": {
+          "name": "Event name",
+          "region": "NA",
+          "accountId": "123456789"
+        }
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": "2XX",
+      "message": "error message",
+      "details": "detailed message"
+    }
+  ]
+}

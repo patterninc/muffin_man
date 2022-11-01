@@ -1,0 +1,16 @@
+{
+  "feeds":[
+    {
+      "processingEndTime":"2022-10-11T13:06:00+00:00",
+      "processingStatus":"DONE",
+      "marketplaceIds":[
+        "ATVPDKIKXXXXX"
+      ],
+      "feedId":"5180510XXXX",
+      "feedType":"POST_FBA_INBOUND_CARTON_CONTENTS",
+      "createdTime":"2022-10-11T13:05:20+00:00",
+      "processingStartTime":"2022-10-11T13:05:30+00:00",
+      "resultFeedDocumentId":"amzn1.tortuga.4.na.000000-0000-40nn-ae20-c521307857c2.TR82IOYXXXXXX"
+    }
+  ]
+}
