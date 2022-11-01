@@ -130,7 +130,7 @@ module MuffinMan
       client = Aws::STS::Client.new(
         region: derive_aws_region,
         credentials: Aws::Credentials.new(aws_access_key_id, aws_secret_access_key),
-        http_wire_trace: (ENV["AWS_DEBUG"] == "true" || false)
+        http_wire_trace: (ENV.fetch("AWS_DEBUG", nil) == "true" || false)
       )
       client.assume_role(role_arn: sts_iam_role_arn, role_session_name: SecureRandom.uuid)
     end
@@ -188,6 +188,10 @@ module MuffinMan
 
     def unprocessable_entity(errors)
       Typhoeus::Response.new(code: UNPROCESSABLE_ENTITY_STATUS_CODE, body: {'errors': "#{errors}"}.to_json)
+    end
+    
+    def sp_api_params(params)
+      params.to_h.transform_keys { |key| key.to_s.split("_").map.with_index { |x, i| i.positive? ? x.capitalize : x }.join }
     end
   end
 end

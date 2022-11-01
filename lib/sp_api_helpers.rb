@@ -11,6 +11,7 @@ module SpApiHelpers
                                  shipping, points, identifier,
                                  is_amazon_fulfilled, optional_fulfillment_program)
   end
+
   class GetMyFeesEstimateRequest
     attr_accessor :fees_estimate_request
 

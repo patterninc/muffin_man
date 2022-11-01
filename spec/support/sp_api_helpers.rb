@@ -1,5 +1,6 @@
 require './spec/support/outbound_fulfillment/stub_outbound_fulfillment'
-
+require './spec/support/feeds/stub_feeds'
+require './spec/support/notifications/stub_notifications'
 
 module Support
   module SpApiHelpers
@@ -8,6 +9,19 @@ module Support
         .with(body: "grant_type=refresh_token&refresh_token=a-refresh-token&client_id=a-client-id&client_secret=a-client-secret",
               headers: { "Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8", "Expect" => "",
                          "User-Agent" => "" })
+        .to_return(status: 200, body: '{ "access_token": "this_will_get_you_into_drury_lane", "expires_in": 3600 }', headers: {})
+    end
+
+    def stub_request_grantless_access_token
+      body = {
+        grant_type: "client_credentials",
+        scope: scope,
+        client_id: "a-client-id",
+        client_secret: "a-client-secret"
+      }
+      stub_request(:post, "https://api.amazon.com/auth/o2/token")
+        .with(body: URI.encode_www_form(body),
+              headers: { "Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8" })
         .to_return(status: 200, body: '{ "access_token": "this_will_get_you_into_drury_lane", "expires_in": 3600 }', headers: {})
     end
 
@@ -108,7 +122,6 @@ module Support
       stub_request(:get, "https://d34o8swod1owfl.cloudfront.net/Report_47700__GET_MERCHANT_LISTINGS_ALL_DATA_.txt").
         to_return(status: 200, body: File.read("./spec/support/report_document_contents.txt"), headers: { 'Content-Type' => 'text/tsv' })
     end
-
 
     def stub_get_orders
       stub_request(:get, "https://#{hostname}/orders/v0/orders?MarketplaceIds=#{marketplace_ids}")

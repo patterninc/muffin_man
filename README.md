@@ -13,6 +13,8 @@ As of now, this gem only supports portions of the following APIs with more to co
 - `product_pricing`
 - `fulfillment_inbound`
 - `fulfillment_outbound`
+- `feeds`
+- `notifications`
 
 ## Installation
 
