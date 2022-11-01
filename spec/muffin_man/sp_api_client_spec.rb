@@ -65,7 +65,9 @@ RSpec.describe MuffinMan::SpApiClient do
           config.save_access_token = lambda { |access_token_cache_key, token|
             redis_instance.set("SP-TOKEN-#{access_token_cache_key}", token["access_token"])
           }
-          config.get_access_token = ->(access_token_cache_key) { redis_instance.get("SP-TOKEN-#{access_token_cache_key}") }
+          config.get_access_token = lambda { |access_token_cache_key|
+            redis_instance.get("SP-TOKEN-#{access_token_cache_key}")
+          }
         end
       end
 

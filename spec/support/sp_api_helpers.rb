@@ -211,7 +211,8 @@ module Support
 
     def stub_get_item_eligibility_preview
       stub_request(:get, "https://#{hostname}/fba/inbound/v1/eligibility/itemPreview?asin=#{asin}&program=#{program}")
-        .to_return(status: 200, body: { "payload" => { "asin" => asin, "program" => program, "isEligibleForProgram" => true } }.to_json, headers: {})
+        .to_return(status: 200, body: { "payload" => { "asin" => asin, "program" => program,
+                                                       "isEligibleForProgram" => true } }.to_json, headers: {})
     end
 
     def stub_get_inventory_summaries_v1

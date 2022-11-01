@@ -16,7 +16,9 @@ RSpec.describe MuffinMan::Lwa::AuthHelper do
     end
 
     it "raises an error if the authorization code is invalid" do
-      expect { described_class.get_refresh_token(client_id, client_secret, bad_auth_code) }.to raise_error(MuffinMan::Error)
+      expect do
+        described_class.get_refresh_token(client_id, client_secret, bad_auth_code)
+      end.to raise_error(MuffinMan::Error)
     end
   end
 end

@@ -14,7 +14,8 @@ RSpec.describe MuffinMan::Listings::V20210801 do
 
     it "makes a request to get a listings item" do
       expect(listings_client.get_listings_item(seller_id, sku, amazon_marketplace_id).response_code).to eq(200)
-      expect(JSON.parse(listings_client.get_listings_item(seller_id, sku, amazon_marketplace_id).body).dig("sku")).to eq(sku)
+      expect(JSON.parse(listings_client.get_listings_item(seller_id, sku,
+                                                          amazon_marketplace_id).body).dig("sku")).to eq(sku)
     end
   end
 end

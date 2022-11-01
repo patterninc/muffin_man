@@ -19,6 +19,9 @@ Style/StringLiteralsInInterpolation:
 Layout/LineLength:
   Max: 120
 
+Metrics/ClassLength:
+  Max: 500
+
 Metrics/MethodLength:
   Max: 30
 
