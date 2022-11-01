@@ -14,25 +14,22 @@ RSpec.describe MuffinMan::FulfillmentOutbound::V20200701 do
   let(:seller_fulfillment_order_id) {"19-XXXXX-50736"}
 
   let(:address) do
-    MuffinMan::RequestHelpers::OutboundFulfillment::Address.new({
-      "name"=>"The Muffin Man",
-      "address_line1"=>"12345 Drury Lane",
+    MuffinMan::RequestHelpers::OutboundFulfillment::V20200701.address_request(
+      "The Muffin Man",
+      "12345 Drury Lane",
+      "CL",
+      "US",
+      {
+      "district_or_county"=>nil,
       "address_line2"=>nil,
       "city"=>"CandyLand",
-      "district_or_county"=>nil,
-      "state_or_region"=>"CL",
-      "country_code"=>"US",
       "postal_code"=>"12345"
     })
   end
 
   let(:items) do
     [
-      MuffinMan::RequestHelpers::OutboundFulfillment::Item.new({
-              "seller_sku"=>"SD-P4L-104525",
-              "seller_fulfillment_order_item_id"=>"10048980045217",
-              "quantity"=>1
-            })
+      MuffinMan::RequestHelpers::OutboundFulfillment::V20200701.item_request("SD-P4L-104525","10048980045217",1)
     ]
   end
 
@@ -41,11 +38,11 @@ RSpec.describe MuffinMan::FulfillmentOutbound::V20200701 do
   describe "get_fulfillment_preview" do
     before { stub_get_outbound_fulfillment_preview }
     let(:fulfillment_preview_request) do
-      MuffinMan::RequestHelpers::OutboundFulfillment::FulfillmentPreviewRequest.new(address,items)
+      MuffinMan::RequestHelpers::OutboundFulfillment::V20200701.fulfillment_preview_request(address,items)
     end
 
     let(:invalid_fulfillment_preview_request) do
-      MuffinMan::RequestHelpers::OutboundFulfillment::FulfillmentPreviewRequest.new(address,[])
+      MuffinMan::RequestHelpers::OutboundFulfillment::V20200701.fulfillment_preview_request(address,[])
     end
 
     it "makes a request to get outbound fulfillment preview" do
@@ -67,7 +64,7 @@ RSpec.describe MuffinMan::FulfillmentOutbound::V20200701 do
     before { stub_create_fulfillment_order }
 
     let(:fulfillment_order) do
-      MuffinMan::RequestHelpers::OutboundFulfillment::FulfillmentOrderRequest.new("seller_fulfillment_order_id",
+      MuffinMan::RequestHelpers::OutboundFulfillment::V20200701.fulfillment_order_request("seller_fulfillment_order_id",
         "displayable_order_id",
         "displayable_order_date_time",
         "displayable_order_comment",
@@ -77,7 +74,7 @@ RSpec.describe MuffinMan::FulfillmentOutbound::V20200701 do
     end
 
     let(:invalid_fulfillment_order) do
-      MuffinMan::RequestHelpers::OutboundFulfillment::FulfillmentOrderRequest.new("seller_fulfillment_order_id",
+      MuffinMan::RequestHelpers::OutboundFulfillment::V20200701.fulfillment_order_request("seller_fulfillment_order_id",
         "displayable_order_id",
         "displayable_order_date_time",
         "displayable_order_comment",

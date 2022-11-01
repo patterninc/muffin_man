@@ -1,6 +1,3 @@
 require 'muffin_man/request_helpers/base'
 require 'muffin_man/request_helpers/inbound_shipment_plan_request_item'
-require 'muffin_man/request_helpers/outbound_fulfillment/address'
-require 'muffin_man/request_helpers/outbound_fulfillment/item'
-require 'muffin_man/request_helpers/outbound_fulfillment/fulfillment_preview_request'
-require 'muffin_man/request_helpers/outbound_fulfillment/fulfillment_order_request'
+require 'muffin_man/request_helpers/outbound_fulfillment/v20200701'
