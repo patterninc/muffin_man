@@ -12,9 +12,9 @@ RSpec.describe MuffinMan::ProductPricing::V0 do
 
   describe "get_competitive_pricing" do
     it "makes a get_competitive_pricing request to amazon" do
-      response = product_pricing_client.get_competitive_pricing(amazon_marketplace_id, item_type, { 'Asins' => asin })
+      response = product_pricing_client.get_competitive_pricing(amazon_marketplace_id, item_type, { "Asins" => asin })
       expect(response.response_code).to eq(200)
-      expect(JSON.parse(response.body)["payload"][0]['status']).to eq("Success")
+      expect(JSON.parse(response.body)["payload"][0]["status"]).to eq("Success")
     end
   end
 end

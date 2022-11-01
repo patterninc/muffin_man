@@ -49,7 +49,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
     it "makes a request to create an inbound shipment plan" do
       response = fba_inbound_client.create_inbound_shipment_plan(address, label_prep_preference, inbound_shipment_plan_request_items)
       expect(response.response_code).to eq(200)
-      expect(JSON.parse(response.body).dig("payload", "InboundShipmentPlans").first["ShipmentId"]).to eq('FBA16WN8GFP1')
+      expect(JSON.parse(response.body).dig("payload", "InboundShipmentPlans").first["ShipmentId"]).to eq("FBA16WN8GFP1")
     end
   end
 
@@ -151,22 +151,24 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
     let(:shipment_id) { "FBA1232453KJ" }
     let(:is_partnered) { true }
     let(:shipment_type) { "LPL" }
-    let(:transport_details) do [
-      {
-        "PartneredSmallParcelData" => [],
-        "NonPartneredSmallParcelData" => [],
-        "PartneredLtlData" => [],
-        "NonPartneredLtlData" => []
-      }
-    ]
+    let(:transport_details) do
+      [
+        {
+          "PartneredSmallParcelData" => [],
+          "NonPartneredSmallParcelData" => [],
+          "PartneredLtlData" => [],
+          "NonPartneredLtlData" => []
+        }
+      ]
     end
-    let(:transport_result) do [
-      {
-        "TransportStatus" => "WORKING",
-        "ErrorCode" => "",
-        "ErrorDescription" => ""
-      }
-    ]
+    let(:transport_result) do
+      [
+        {
+          "TransportStatus" => "WORKING",
+          "ErrorCode" => "",
+          "ErrorDescription" => ""
+        }
+      ]
     end
 
     it "makes a request to put transport details to amazon" do

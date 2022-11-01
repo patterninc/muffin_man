@@ -19,7 +19,7 @@ RSpec.describe MuffinMan::FbaInventory::V1 do
       }
     end
 
-    it 'gets the item eligibility preview' do
+    it "gets the item eligibility preview" do
       response = fba_inventory_client.get_inventory_summaries(params)
       expect(response.success?).to be true
       expect(JSON.parse(response.body).dig("payload", "inventorySummaries").length).to be > 0

@@ -1,8 +1,8 @@
 module MuffinMan
   module Solicitations
     class V1 < SpApiClient
-      SANDBOX_AMAZON_ORDER_ID = "123-1234567-1234567"
-      SANDBOX_MARKETPLACE_IDS = "ATVPDKIKX0DER"
+      SANDBOX_AMAZON_ORDER_ID = "123-1234567-1234567".freeze
+      SANDBOX_MARKETPLACE_IDS = "ATVPDKIKX0DER".freeze
       attr_reader :amazon_order_id, :marketplace_ids
 
       # Sends a solicitation to a buyer asking for seller feedback and a product review for the specified order. Send only one productReviewAndSellerFeedback or free form proactive message per order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.

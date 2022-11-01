@@ -26,7 +26,7 @@ module MuffinMan
 
       PII_DATA_ELEMENTS = %w[
         buyerInfo shippingAddress buyerTaxInformation
-      ]
+      ].freeze
 
       def get_orders(marketplace_ids, params = {}, pii_data_elements: [])
         @local_var_path = "/orders/v0/orders"

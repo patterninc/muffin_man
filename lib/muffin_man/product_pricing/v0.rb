@@ -5,7 +5,7 @@ module MuffinMan
     class V0 < SpApiClient
       GET_COMPETITIVE_PRICE_PARAMS = %w[Asins Skus CustomerType].freeze
 
-      def get_competitive_pricing(marketplace_id, item_type = 'Asin', params = {})
+      def get_competitive_pricing(marketplace_id, item_type = "Asin", params = {})
         @params = params
         @local_var_path = "/products/pricing/v0/competitivePrice"
         @query_params = { "MarketplaceId" => marketplace_id,
