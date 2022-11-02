@@ -3,7 +3,8 @@
 module MuffinMan
   module FulfillmentOutbound
     class V20200701 < SpApiClient
-      # @param [MuffinMan::RequestHelpers::OutboundFulFillment::FulfillmentPreviewRequest] fulfillment_preview_request in the form of object
+      # @param [MuffinMan::RequestHelpers::OutboundFulFillment::FulfillmentPreviewRequest] fulfillment_preview_request
+      # in the form of object
       def get_fulfillment_preview(fulfillment_preview_request)
         return unprocessable_entity(fulfillment_preview_request&.errors) unless fulfillment_preview_request&.valid?
 
@@ -13,7 +14,8 @@ module MuffinMan
         call_api
       end
 
-      # @param [MuffinMan::RequestHelpers::OutboundFulFillment::FulfillmentOrderRequest] fulfillment_order_request in the form of object
+      # @param [MuffinMan::RequestHelpers::OutboundFulFillment::FulfillmentOrderRequest] fulfillment_order_request
+      # in the form of object
       def create_fulfillment_order(fulfillment_order_request)
         return unprocessable_entity(fulfillment_order_request&.errors) unless fulfillment_order_request&.valid?
 
