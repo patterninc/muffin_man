@@ -66,13 +66,13 @@ module MuffinMan
         # @return Array for invalid properties with the
         def errors
           errors = []
-          errors.push('"seller_fulfillment_order_id" cannot be nil.') if seller_fulfillment_order_id.nil?
-          errors.push('"displayable_order_id" cannot be nil.') if displayable_order_id.nil?
-          errors.push('"displayable_order_date_time" cannot be nil.') if displayable_order_date_time.nil?
-          errors.push('"displayable_order_comment" cannot be nil.') if displayable_order_comment.nil?
-          errors.push('"shipping_speed_category" cannot be nil.') if shipping_speed_category.nil?
-          errors.push('"destination_address" cannot be nil.') if destination_address.nil?
-          errors.push('"items" cannot be nil.') if items.nil?
+          errors.push('"seller_fulfillment_order_id" cannot be nil.') if seller_fulfillment_order_id.blank?
+          errors.push('"displayable_order_id" cannot be nil.') if displayable_order_id.blank?
+          errors.push('"displayable_order_date_time" cannot be nil.') if displayable_order_date_time.blank?
+          errors.push('"displayable_order_comment" cannot be nil.') if displayable_order_comment.blank?
+          errors.push('"shipping_speed_category" cannot be nil.') if shipping_speed_category.blank?
+          errors.push('"destination_address" cannot be nil.') if destination_address.blank?
+          errors.push('"items" cannot be nil.') if items.blank?
 
           if !destination_address.nil? && !destination_address.valid?
             errors.push("invalid value for \"destination_address\", #{destination_address.errors}")

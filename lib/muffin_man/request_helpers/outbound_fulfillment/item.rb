@@ -38,9 +38,9 @@ module MuffinMan
         # Check to see if the all the properties in the model are valid
         # @return true if the model is valid
         def valid?
-          return false if seller_sku.nil?
-          return false if seller_fulfillment_order_item_id.nil?
-          return false if quantity.nil?
+          return false if seller_sku.blank?
+          return false if seller_fulfillment_order_item_id.blank?
+          return false if quantity.blank?
 
           true
         end
