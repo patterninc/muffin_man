@@ -179,7 +179,8 @@ module MuffinMan
       @aws_region ||= AWS_REGION_MAP[region]
       unless @aws_region
         raise MuffinMan::Error,
-              "#{region} is not supported or does not exist. Region must be one of the following: #{AWS_REGION_MAP.keys.join(", ")}"
+              "#{region} is not supported or does not exist. Region must be one " \
+              "of the following: #{AWS_REGION_MAP.keys.join(", ")}"
       end
 
       @aws_region

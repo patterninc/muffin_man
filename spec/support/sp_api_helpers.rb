@@ -6,10 +6,15 @@ module Support
   module SpApiHelpers
     def stub_request_access_token
       stub_request(:post, "https://api.amazon.com/auth/o2/token")
-        .with(body: "grant_type=refresh_token&refresh_token=a-refresh-token&client_id=a-client-id&client_secret=a-client-secret",
-              headers: { "Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8", "Expect" => "",
-                         "User-Agent" => "" })
-        .to_return(status: 200, body: '{ "access_token": "this_will_get_you_into_drury_lane", "expires_in": 3600 }', headers: {})
+        .with(
+          body: "grant_type=refresh_token&refresh_token=a-refresh-token" \
+                "&client_id=a-client-id&client_secret=a-client-secret",
+          headers: { "Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8", "Expect" => "",
+                     "User-Agent" => "" }
+        )
+        .to_return(status: 200,
+                   body: '{ "access_token": "this_will_get_you_into_drury_lane", "expires_in": 3600 }',
+                   headers: {})
     end
 
     def stub_request_grantless_access_token
@@ -22,13 +27,19 @@ module Support
       stub_request(:post, "https://api.amazon.com/auth/o2/token")
         .with(body: URI.encode_www_form(body),
               headers: { "Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8" })
-        .to_return(status: 200, body: '{ "access_token": "this_will_get_you_into_drury_lane", "expires_in": 3600 }', headers: {})
+        .to_return(status: 200,
+                   body: '{ "access_token": "this_will_get_you_into_drury_lane", "expires_in": 3600 }',
+                   headers: {})
     end
 
     def stub_request_rdt_token
       stub_request(:post, "https://#{hostname}/tokens/2021-03-01/restrictedDataToken")
         .with(body: hash_including({ "restrictedResources" => hash_including({}) }))
-        .to_return(status: 200, body: '{ "restrictedDataToken": "this_will_get_you_into 123 E. drury_lane", "expires_in": 3600 }', headers: {})
+        .to_return(
+          status: 200,
+          body: '{ "restrictedDataToken": "this_will_get_you_into 123 E. drury_lane", "expires_in": 3600 }',
+          headers: {}
+        )
     end
 
     def stub_fake_request
@@ -120,7 +131,9 @@ module Support
 
     def stub_report_document_contents
       stub_request(:get, "https://d34o8swod1owfl.cloudfront.net/Report_47700__GET_MERCHANT_LISTINGS_ALL_DATA_.txt")
-        .to_return(status: 200, body: File.read("./spec/support/report_document_contents.txt"), headers: { "Content-Type" => "text/tsv" })
+        .to_return(status: 200,
+                   body: File.read("./spec/support/report_document_contents.txt"),
+                   headers: { "Content-Type" => "text/tsv" })
     end
 
     def stub_get_orders
@@ -186,7 +199,13 @@ module Support
 
     def stub_put_transport_details
       stub_request(:put, "https://sellingpartnerapi-na.amazon.com/fba/inbound/v0/shipments/#{shipment_id}/transport")
-        .with(body: "{\"shipmentId\":\"FBA1232453KJ\",\"IsPartnered\":true,\"ShipmentType\":\"LPL\",\"TransportDetails\":[{\"PartneredSmallParcelData\":[],\"NonPartneredSmallParcelData\":[],\"PartneredLtlData\":[],\"NonPartneredLtlData\":[]}]}")
+        .with(
+          body: { "shipmentId": "FBA1232453KJ", "IsPartnered": true, "ShipmentType": "LPL",
+                  "TransportDetails": [{ "PartneredSmallParcelData": [],
+                                         "NonPartneredSmallParcelData": [],
+                                         "PartneredLtlData": [],
+                                         "NonPartneredLtlData": [] }] }.to_json
+        )
         .to_return(status: 200, body: File.read("./spec/support/put_transport_details_v0.json"), headers: {})
     end
 
@@ -207,7 +226,9 @@ module Support
 
     def stub_get_shipment_items_by_shipment_id
       stub_request(:get, "https://#{hostname}/fba/inbound/v0/shipments/#{shipment_id}/items?MarketplaceId=#{marketplace_id}")
-        .to_return(status: 200, body: File.read("./spec/support/get_shipment_items_by_shipment_id_v0.json"), headers: {})
+        .to_return(status: 200,
+                   body: File.read("./spec/support/get_shipment_items_by_shipment_id_v0.json"),
+                   headers: {})
     end
 
     def stub_get_item_eligibility_preview

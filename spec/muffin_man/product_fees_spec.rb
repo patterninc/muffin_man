@@ -10,7 +10,12 @@ RSpec.describe MuffinMan::ProductFees::V0 do
   let(:currency_code) { "USD" }
   let(:request_body) {
     { "FeesEstimateRequest" => { "MarketplaceId" => "ATVPDKIKX0RRR",
-                                 "PriceToEstimateFees" => { "ListingPrice" => { "Amount" => 149.94, "CurrencyCode" => "USD" } }, "Identifier" => "cd4c6683-1198-4a1b-8495-6b6f3e9550b3", "IsAmazonFulfilled" => true, "OptionalFulfillmentProgram" => "FBA_CORE" } }
+                                 "PriceToEstimateFees" => { "ListingPrice" => {
+                                   "Amount" => 149.94, "CurrencyCode" => "USD"
+                                 } },
+                                 "Identifier" => "cd4c6683-1198-4a1b-8495-6b6f3e9550b3",
+                                 "IsAmazonFulfilled" => true,
+                                 "OptionalFulfillmentProgram" => "FBA_CORE" } }
   }
 
   subject(:product_fees_client) { described_class.new(credentials) }

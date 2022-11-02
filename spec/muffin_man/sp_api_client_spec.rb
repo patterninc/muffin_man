@@ -53,8 +53,12 @@ RSpec.describe MuffinMan::SpApiClient do
 
     it "gets an access token and signs the headers" do
       expect(Typhoeus).to receive(:get)
-        .with("https://#{hostname}/some_path", headers: hash_including("x-amz-access-token" => fake_lwa_access_token,
-                                                                       "authorization" => a_string_including("SignedHeaders=host;x-amz-content-sha256;x-amz-date")))
+        .with(
+          "https://#{hostname}/some_path",
+          headers: hash_including("x-amz-access-token" => fake_lwa_access_token,
+                                  "authorization" =>
+                                  a_string_including("SignedHeaders=host;x-amz-content-sha256;x-amz-date"))
+        )
       client.make_a_request
     end
 
@@ -76,7 +80,8 @@ RSpec.describe MuffinMan::SpApiClient do
           expect_any_instance_of(MockRedis).to receive(:set).with("SP-TOKEN-#{credentials[:access_token_cache_key]}",
                                                                   fake_lwa_access_token)
           expect(Typhoeus).to receive(:get)
-            .with("https://#{hostname}/some_path", headers: hash_including("x-amz-access-token" => fake_lwa_access_token))
+            .with("https://#{hostname}/some_path",
+                  headers: hash_including("x-amz-access-token" => fake_lwa_access_token))
           client.make_a_request
         end
       end
@@ -89,9 +94,12 @@ RSpec.describe MuffinMan::SpApiClient do
         end
 
         it "uses the stored token" do
-          expect_any_instance_of(MockRedis).to receive(:get).with("SP-TOKEN-#{credentials[:access_token_cache_key]}").and_return(another_fake_lwa_access_token)
+          expect_any_instance_of(MockRedis).to receive(:get)
+            .with("SP-TOKEN-#{credentials[:access_token_cache_key]}")
+            .and_return(another_fake_lwa_access_token)
           expect(Typhoeus).to receive(:get)
-            .with("https://#{hostname}/some_path", headers: hash_including("x-amz-access-token" => another_fake_lwa_access_token))
+            .with("https://#{hostname}/some_path",
+                  headers: hash_including("x-amz-access-token" => another_fake_lwa_access_token))
           client.make_a_request
         end
       end
