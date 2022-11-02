@@ -1,4 +1,4 @@
-require './spec/support/outbound_fulfillment/stub_outbound_fulfillment'
+require "./spec/support/outbound_fulfillment/stub_outbound_fulfillment"
 require "./spec/support/feeds/stub_feeds"
 require "./spec/support/notifications/stub_notifications"
 
