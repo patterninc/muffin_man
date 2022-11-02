@@ -20,6 +20,8 @@ module MuffinMan
       "fe" => "us-west-2"
     }.freeze
 
+    UNPROCESSABLE_ENTITY_STATUS_CODE = 422
+
     def initialize(credentials, sandbox = false)
       @refresh_token = credentials[:refresh_token]
       @client_id = credentials[:client_id]
@@ -181,6 +183,10 @@ module MuffinMan
       end
 
       @aws_region
+    end
+
+    def unprocessable_entity(errors)
+      Typhoeus::Response.new(code: UNPROCESSABLE_ENTITY_STATUS_CODE, body: { errors: errors.to_s }.to_json)
     end
 
     def sp_api_params(params)
