@@ -1,0 +1,32 @@
+{
+  "payload":{
+    "nextToken":"nextToken",
+    "fulfillmentOrders":[
+      {
+        "sellerFulfillmentOrderId":"19-XXXXX-50736",
+        "displayableOrderId":"19-XXXXX-50736",
+        "displayableOrderDate":"2022-10-09T15:02:56Z",
+        "displayableOrderComment":"ebay Order: 19-XXXXX-50736",
+        "shippingSpeedCategory":"Expedited",
+        "destinationAddress":{
+          "name":"ABC",
+          "addressLine1":"339 Bramble Ln",
+          "city":"Dandridge",
+          "stateOrRegion":"TN",
+          "countryCode":"US",
+          "postalCode":"37725-3307"
+        },
+        "fulfillmentPolicy":"FillOrKill",
+        "receivedDate":"2022-10-09T15:08:49Z",
+        "fulfillmentOrderStatus":"Complete",
+        "statusUpdatedDate":"2022-10-09T23:14:02Z",
+        "featureConstraints":[
+          {
+            "featureName":"BLANK_BOX",
+            "featureFulfillmentPolicy":"NotRequired"
+          }
+        ]
+      }
+    ]
+  }
+}
