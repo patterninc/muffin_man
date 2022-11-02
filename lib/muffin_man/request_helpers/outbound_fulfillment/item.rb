@@ -19,6 +19,7 @@ module MuffinMan
         # Initializes the object
         # @param [Hash] attributes Model attributes in the form of hash
         def initialize(attributes = {})
+          super
           return unless attributes.is_a?(Hash)
 
           attributes = attributes.with_indifferent_access
@@ -48,13 +49,9 @@ module MuffinMan
         # @return Array for invalid properties with the reasons
         def errors
           errors = []
-          errors.push('invalid value for "seller_sku", seller_sku cannot be nil.') if seller_sku.blank?
-
-          if seller_fulfillment_order_item_id.blank?
-            errors.push('invalid value for "seller_fulfillment_order_item_id", seller_fulfillment_order_item_id cannot be nil.')
-          end
-
-          errors.push('invalid value for "quantity", quantity cannot be nil.') if quantity.blank?
+          errors.push('"seller_sku" cannot be nil.') if seller_sku.blank?
+          errors.push('"seller_fulfillment_order_item_id" cannot be nil.') if seller_fulfillment_order_item_id.blank?
+          errors.push('"quantity" cannot be nil.') if quantity.blank?
 
           errors
         end

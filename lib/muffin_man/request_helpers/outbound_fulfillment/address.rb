@@ -9,7 +9,10 @@ module MuffinMan
 
         # Initializes the object
         # @param [Hash] attributes Model attributes in the form of hash
+        # rubocop:disable Metrics/CyclomaticComplexity
+        # rubocop:disable Metrics/PerceivedComplexity
         def initialize(attributes = {})
+          super
           return unless attributes.is_a?(Hash)
 
           attributes = attributes.with_indifferent_access
@@ -42,6 +45,8 @@ module MuffinMan
 
           self.phone = attributes["phone"] if attributes.key?("phone")
         end
+        # rubocop:enable Metrics/CyclomaticComplexity
+        # rubocop:enable Metrics/PerceivedComplexity
 
         # return true if the model is valid
         def valid?
@@ -57,13 +62,10 @@ module MuffinMan
         # return Array for invalid properties with the reasons
         def errors
           errors = []
-          errors.push('invalid value for "name", name cannot be nil.') if name.blank?
-
-          errors.push('invalid value for "address_line1", address_line1 cannot be nil.') if address_line1.blank?
-
-          errors.push('invalid value for "state_or_region", state_or_region cannot be nil.') if state_or_region.blank?
-
-          errors.push('invalid value for "country_code", country_code cannot be nil.') if country_code.blank?
+          errors.push('"name" cannot be nil.') if name.blank?
+          errors.push('"address_line1" cannot be nil.') if address_line1.blank?
+          errors.push('"state_or_region" cannot be nil.') if state_or_region.blank?
+          errors.push('"country_code" cannot be nil.') if country_code.blank?
 
           errors
         end
