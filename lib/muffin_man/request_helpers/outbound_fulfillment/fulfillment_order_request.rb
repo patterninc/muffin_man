@@ -94,7 +94,7 @@ module MuffinMan
             "displayableOrderDate" => displayable_order_date_time,
             "displayableOrderComment" => displayable_order_comment,
             "shippingSpeedCategory" => shipping_speed_category,
-            "destinationAddress" => destination_address,
+            "destinationAddress" => destination_address.to_camelize,
             "items" => items.map(&:to_camelize)
           }.merge!(optional_params.slice(*OPTIONAL_CREATE_FULFILLMENT_ORDER_PARAMS))
         end
