@@ -2,6 +2,10 @@
 
 - Support for getInventorySummaries [#36](https://github.com/patterninc/muffin_man/pull/36)
 
+# 1.5.4
+
+- Fix to format create outbound fulfillment request [#40](https://github.com/patterninc/muffin_man/pull/40)
+
 # 1.5.3
 
 - Support for Fulfillment Outbound  [#34](https://github.com/patterninc/muffin_man/pull/34)

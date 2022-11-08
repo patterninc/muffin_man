@@ -38,16 +38,12 @@ RSpec.describe MuffinMan::FulfillmentOutbound::V20200701 do
     ]
   end
 
-  describe "get_fulfillment_preview" do
-    before { stub_get_outbound_fulfillment_preview }
-
+  describe "valid get_fulfillment_preview" do
     let(:fulfillment_preview_request) do
       MuffinMan::RequestHelpers::OutboundFulfillment::V20200701.fulfillment_preview_request(address, items)
     end
 
-    let(:invalid_fulfillment_preview_request) do
-      MuffinMan::RequestHelpers::OutboundFulfillment::V20200701.fulfillment_preview_request(address, [])
-    end
+    before { stub_get_outbound_fulfillment_preview }
 
     it "makes a request to get outbound fulfillment preview" do
       response = fba_outbound_client.get_fulfillment_preview(fulfillment_preview_request)
@@ -59,6 +55,12 @@ RSpec.describe MuffinMan::FulfillmentOutbound::V20200701 do
       expect(JSON.parse(response.body).dig("payload",
                                            "fulfillmentPreviews")[2]["shippingSpeedCategory"]).to eq("Standard")
     end
+  end
+
+  describe "invalid get_fulfillment_preview" do
+    let(:invalid_fulfillment_preview_request) do
+      MuffinMan::RequestHelpers::OutboundFulfillment::V20200701.fulfillment_preview_request(address, [])
+    end
 
     it "makes a request to get outbound fulfillment preview with invalid request object" do
       response = fba_outbound_client.get_fulfillment_preview(invalid_fulfillment_preview_request)
@@ -67,10 +69,8 @@ RSpec.describe MuffinMan::FulfillmentOutbound::V20200701 do
     end
   end
 
-  describe "create_fulfillment_order" do
-    before { stub_create_fulfillment_order }
-
-    let(:fulfillment_order) do
+  describe "valid create_fulfillment_order" do
+    let(:fulfillment_order_request) do
       MuffinMan::RequestHelpers::OutboundFulfillment::V20200701.fulfillment_order_request("seller_fulfillment_order_id",
                                                                                           "displayable_order_id",
                                                                                           "displayable_order_date_time",
@@ -80,6 +80,15 @@ RSpec.describe MuffinMan::FulfillmentOutbound::V20200701 do
                                                                                           items)
     end
 
+    before { stub_create_fulfillment_order }
+
+    it "makes a request to create outbound fulfillment order" do
+      response = fba_outbound_client.create_fulfillment_order(fulfillment_order_request)
+      expect(response.response_code).to eq(200)
+    end
+  end
+
+  describe "invalid create_fulfillment_order" do
     let(:invalid_fulfillment_order) do
       MuffinMan::RequestHelpers::OutboundFulfillment::V20200701.fulfillment_order_request("seller_fulfillment_order_id",
                                                                                           "displayable_order_id",
@@ -88,11 +97,6 @@ RSpec.describe MuffinMan::FulfillmentOutbound::V20200701 do
                                                                                           "shipping_speed_category",
                                                                                           nil,
                                                                                           items)
-    end
-
-    it "makes a request to create outbound fulfillment order" do
-      response = fba_outbound_client.create_fulfillment_order(fulfillment_order)
-      expect(response.response_code).to eq(200)
     end
 
     it "makes a request to create outbound fulfillment order with invalid request object" do
