@@ -1,6 +1,6 @@
 # Unreleased
 
-- Support for Merchant Fulfillment [#36](https://github.com/patterninc/muffin_man/pull/41)
+- Support for Merchant Fulfillment [#41](https://github.com/patterninc/muffin_man/pull/41)
 
 # 1.5.3
 
