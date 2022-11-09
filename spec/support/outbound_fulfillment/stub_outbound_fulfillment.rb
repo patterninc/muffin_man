@@ -25,6 +25,7 @@ end
 
 def stub_get_outbound_fulfillment_preview
   stub_request(:post, "https://#{hostname}/fba/outbound/2020-07-01/fulfillmentOrders/preview")
+    .with(body: fulfillment_preview_request.to_camelize)
     .to_return(status: 200,
                body: File.read("./spec/support/outbound_fulfillment/get_outbound_fulfillment_preview.json"),
                headers: {})
@@ -32,5 +33,6 @@ end
 
 def stub_create_fulfillment_order
   stub_request(:post, "https://#{hostname}/fba/outbound/2020-07-01/fulfillmentOrders")
+    .with(body: fulfillment_order_request.to_camelize)
     .to_return(status: 200, headers: {})
 end
