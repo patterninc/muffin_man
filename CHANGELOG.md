@@ -1,4 +1,4 @@
-# Unreleased
+# 1.5.5
 
 - Support for Merchant Fulfillment [#41](https://github.com/patterninc/muffin_man/pull/41)
 
