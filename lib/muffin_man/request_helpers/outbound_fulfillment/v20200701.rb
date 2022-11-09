@@ -21,7 +21,6 @@ module MuffinMan
           }.merge(optional_params))
         end
 
-        # rubocop:disable Metrics/ParameterLists
         def self.fulfillment_order_request(seller_fulfillment_order_id, displayable_order_id,
                                            displayable_order_date_time,
                                            displayable_order_comment, shipping_speed_category,
@@ -30,7 +29,6 @@ module MuffinMan
                                       displayable_order_comment, shipping_speed_category, destination_address,
                                       items, optional_params)
         end
-        # rubocop:enable Metrics/ParameterLists
 
         def self.fulfillment_preview_request(address, items, optional_params = {})
           FulfillmentPreviewRequest.new(address, items, optional_params)

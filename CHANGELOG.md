@@ -1,6 +1,6 @@
 # Unreleased
 
-- Support for getInventorySummaries [#36](https://github.com/patterninc/muffin_man/pull/36)
+- Support for Merchant Fulfillment [#41](https://github.com/patterninc/muffin_man/pull/41)
 
 # 1.5.4
 
@@ -8,7 +8,8 @@
 
 # 1.5.3
 
-- Support for Fulfillment Outbound  [#34](https://github.com/patterninc/muffin_man/pull/34)
+- Support for getInventorySummaries [#36](https://github.com/patterninc/muffin_man/pull/36)
+- Support for Fulfillment Outbound [#34](https://github.com/patterninc/muffin_man/pull/34)
 
 # 1.5.2
 

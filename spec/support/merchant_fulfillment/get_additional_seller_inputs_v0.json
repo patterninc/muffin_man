@@ -1,0 +1,120 @@
+{
+  "payload": {
+    "ShipmentLevelFields": [
+      {
+        "AdditionalInputFieldName": "string",
+        "SellerInputDefinition": {
+          "IsRequired": true,
+          "DataType": "string",
+          "Constraints": [
+            {
+              "ValidationRegEx": "string",
+              "ValidationString": "string"
+            }
+          ],
+          "InputDisplayText": "string",
+          "InputTarget": "SHIPMENT_LEVEL",
+          "StoredValue": {
+            "DataType": "string",
+            "ValueAsString": "string",
+            "ValueAsBoolean": true,
+            "ValueAsInteger": 0,
+            "ValueAsTimestamp": "2022-11-08T21:43:50.453Z",
+            "ValueAsAddress": {
+              "Name": "string",
+              "AddressLine1": "string",
+              "AddressLine2": "string",
+              "AddressLine3": "string",
+              "DistrictOrCounty": "string",
+              "Email": "string",
+              "City": "string",
+              "StateOrProvinceCode": "string",
+              "PostalCode": "string",
+              "CountryCode": "string",
+              "Phone": "string"
+            },
+            "ValueAsWeight": {
+              "Value": 0,
+              "Unit": "oz"
+            },
+            "ValueAsDimension": {
+              "value": 0,
+              "unit": "inches"
+            },
+            "ValueAsCurrency": {
+              "CurrencyCode": "str",
+              "Amount": 0
+            }
+          },
+          "RestrictedSetValues": [
+            "string"
+          ]
+        }
+      }
+    ],
+    "ItemLevelFieldsList": [
+      {
+        "Asin": "string",
+        "AdditionalInputs": [
+          {
+            "AdditionalInputFieldName": "string",
+            "SellerInputDefinition": {
+              "IsRequired": true,
+              "DataType": "string",
+              "Constraints": [
+                {
+                  "ValidationRegEx": "string",
+                  "ValidationString": "string"
+                }
+              ],
+              "InputDisplayText": "string",
+              "InputTarget": "SHIPMENT_LEVEL",
+              "StoredValue": {
+                "DataType": "string",
+                "ValueAsString": "string",
+                "ValueAsBoolean": true,
+                "ValueAsInteger": 0,
+                "ValueAsTimestamp": "2022-11-08T21:43:50.453Z",
+                "ValueAsAddress": {
+                  "Name": "string",
+                  "AddressLine1": "string",
+                  "AddressLine2": "string",
+                  "AddressLine3": "string",
+                  "DistrictOrCounty": "string",
+                  "Email": "string",
+                  "City": "string",
+                  "StateOrProvinceCode": "string",
+                  "PostalCode": "string",
+                  "CountryCode": "string",
+                  "Phone": "string"
+                },
+                "ValueAsWeight": {
+                  "Value": 0,
+                  "Unit": "oz"
+                },
+                "ValueAsDimension": {
+                  "value": 0,
+                  "unit": "inches"
+                },
+                "ValueAsCurrency": {
+                  "CurrencyCode": "str",
+                  "Amount": 0
+                }
+              },
+              "RestrictedSetValues": [
+                "string"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "errors": [
+    {
+      "code": "string",
+      "message": "string",
+      "details": "string"
+    }
+  ]
+}

@@ -28,7 +28,6 @@ module MuffinMan
         # @param [MuffinMan::RequestHelpers::OutboundFulfillment::Address] destination_address in form of object
         # @param [MuffinMan::RequestHelpers::OutboundFulfillment::Item] items in the form of list of items objects
         # @param [Hash] optional_params optional sp-api attributes in the form of hash
-        # rubocop:disable Metrics/ParameterLists
         def initialize(seller_fulfillment_order_id, displayable_order_id, displayable_order_date_time,
                        displayable_order_comment, shipping_speed_category, destination_address, items,
                        optional_params = {})
@@ -42,7 +41,6 @@ module MuffinMan
           @items = items
           @optional_params = optional_params
         end
-        # rubocop:enable Metrics/ParameterLists
 
         # Check to see if the all the properties in the model are valid
         # @return true if the model is valid

@@ -1,0 +1,85 @@
+{
+  "payload": {
+    "ShippingServiceList": [
+      {
+        "ShippingServiceName": "string",
+        "CarrierName": "string",
+        "ShippingServiceId": "string",
+        "ShippingServiceOfferId": "string",
+        "ShipDate": "2022-11-08T15:31:57.417Z",
+        "EarliestEstimatedDeliveryDate": "2022-11-08T15:31:57.417Z",
+        "LatestEstimatedDeliveryDate": "2022-11-08T15:31:57.417Z",
+        "Rate": {
+          "CurrencyCode": "str",
+          "Amount": 0
+        },
+        "ShippingServiceOptions": {
+          "DeliveryExperience": "DeliveryConfirmationWithAdultSignature",
+          "DeclaredValue": {
+            "CurrencyCode": "str",
+            "Amount": 0
+          },
+          "CarrierWillPickUp": true,
+          "CarrierWillPickUpOption": "CarrierWillPickUp",
+          "LabelFormat": "PDF"
+        },
+        "AvailableShippingServiceOptions": {
+          "AvailableCarrierWillPickUpOptions": [
+            {
+              "CarrierWillPickUpOption": "CarrierWillPickUp",
+              "Charge": {
+                "CurrencyCode": "str",
+                "Amount": 0
+              }
+            }
+          ],
+          "AvailableDeliveryExperienceOptions": [
+            {
+              "DeliveryExperienceOption": "DeliveryConfirmationWithAdultSignature",
+              "Charge": {
+                "CurrencyCode": "str",
+                "Amount": 0
+              }
+            }
+          ]
+        },
+        "AvailableLabelFormats": [
+          "PDF"
+        ],
+        "AvailableFormatOptionsForLabel": [
+          {
+            "IncludePackingSlipWithLabel": true,
+            "LabelFormat": "PDF"
+          }
+        ],
+        "RequiresAdditionalSellerInputs": true
+      }
+    ],
+    "RejectedShippingServiceList": [
+      {
+        "CarrierName": "string",
+        "ShippingServiceName": "string",
+        "ShippingServiceId": "string",
+        "RejectionReasonCode": "string",
+        "RejectionReasonMessage": "string"
+      }
+    ],
+    "TemporarilyUnavailableCarrierList": [
+      {
+        "CarrierName": "string"
+      }
+    ],
+    "TermsAndConditionsNotAcceptedCarrierList": [
+      {
+        "CarrierName": "string"
+      }
+    ]
+  },
+  "errors": [
+    {
+      "code": "string",
+      "message": "string",
+      "details": "string"
+    }
+  ]
+}

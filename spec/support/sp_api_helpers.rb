@@ -220,6 +220,31 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/get_inventory_summaries_v1.json"), headers: {})
     end
 
+    def stub_get_eligible_shipment_services
+      stub_request(:post, "https://#{hostname}/mfn/v0/eligibleShippingServices")
+        .to_return(status: 200, body: File.read("./spec/support/merchant_fulfillment/get_eligible_shipment_services_v0.json"), headers: {})
+    end
+
+    def stub_get_shipment
+      stub_request(:get, "https://#{hostname}/mfn/v0/shipments/#{shipment_id}")
+        .to_return(status: 200, body: File.read("./spec/support/merchant_fulfillment/get_shipment_v0.json"), headers: {})
+    end
+
+    def stub_cancel_shipment
+      stub_request(:delete, "https://#{hostname}/mfn/v0/shipments/#{shipment_id}")
+        .to_return(status: 200, body: File.read("./spec/support/merchant_fulfillment/get_shipment_v0.json"), headers: {})
+    end
+
+    def stub_create_shipment
+      stub_request(:post, "https://#{hostname}/mfn/v0/shipments")
+        .to_return(status: 200, body: File.read("./spec/support/merchant_fulfillment/get_shipment_v0.json"), headers: {})
+    end
+
+    def stub_get_additional_seller_inputs
+      stub_request(:post, "https://#{hostname}/mfn/v0/additionalSellerInputs")
+        .to_return(status: 200, body: File.read("./spec/support/merchant_fulfillment/get_additional_seller_inputs_v0.json"), headers: {})
+    end
+
     def credentials
       {
         refresh_token: "a-refresh-token",
