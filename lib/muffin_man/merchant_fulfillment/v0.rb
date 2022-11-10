@@ -19,7 +19,9 @@ module MuffinMan
         call_api
       end
 
+      CANCEL_SANDBOX_SHIPMENT_ID = "be7a0a53-00c3-4f6f-a63a-639f76ee9253"
       def cancel_shipment(shipment_id)
+        shipment_id = CANCEL_SANDBOX_SHIPMENT_ID if sandbox
         @local_var_path = "/mfn/v0/shipments/#{shipment_id}"
         @request_type = "DELETE"
         call_api
@@ -38,6 +40,11 @@ module MuffinMan
         @request_body["LabelFormatOption"] = label_format_option unless label_format_option.empty?
         if shipment_level_seller_inputs_list.any?
           @request_body["ShipmentLevelSellerInputsList"] = shipment_level_seller_inputs_list
+        end
+        if sandbox
+          @request_body = JSON.parse(
+            File.read("./lib/muffin_man/sandbox_helpers/merchant_fulfillment/create_shipment_body.json")
+          )
         end
         @request_type = "POST"
         call_api

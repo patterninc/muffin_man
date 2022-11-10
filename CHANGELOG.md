@@ -1,3 +1,7 @@
+# Unreleased
+
+- Sandbox support for create/delete shipments in Merchant Fulfillment [#42](https://github.com/patterninc/muffin_man/pull/42)
+
 # 1.5.5
 
 - Support for Merchant Fulfillment [#41](https://github.com/patterninc/muffin_man/pull/41)
