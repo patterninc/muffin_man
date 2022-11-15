@@ -45,7 +45,7 @@ module MuffinMan
           @request_body = JSON.parse(
             File.read(
               File.expand_path(
-                '../sandbox_helpers/merchant_fulfillment/create_shipment_body.json',
+                "../sandbox_helpers/merchant_fulfillment/create_shipment_body.json",
                 File.dirname(__FILE__)
               )
             )
