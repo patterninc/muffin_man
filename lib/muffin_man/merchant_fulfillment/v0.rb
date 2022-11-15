@@ -43,7 +43,12 @@ module MuffinMan
         end
         if sandbox
           @request_body = JSON.parse(
-            File.read("./lib/muffin_man/sandbox_helpers/merchant_fulfillment/create_shipment_body.json")
+            File.read(
+              File.expand_path(
+                '../sandbox_helpers/merchant_fulfillment/create_shipment_body.json',
+                File.dirname(__FILE__)
+              )
+            )
           )
         end
         @request_type = "POST"
