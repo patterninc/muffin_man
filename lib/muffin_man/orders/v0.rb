@@ -1,7 +1,6 @@
 module MuffinMan
   module Orders
     class V0 < SpApiClient
-
       GET_ORDERS_PARAMS = %w[
         CreatedAfter
         CreatedBefore
@@ -27,7 +26,7 @@ module MuffinMan
 
       PII_DATA_ELEMENTS = %w[
         buyerInfo shippingAddress buyerTaxInformation
-      ]
+      ].freeze
 
       def get_orders(marketplace_ids, params = {}, pii_data_elements: [])
         @local_var_path = "/orders/v0/orders"

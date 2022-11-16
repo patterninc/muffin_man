@@ -1,7 +1,8 @@
 module MuffinMan
   module Finances
     class V0 < SpApiClient
-      def list_financial_event_groups(max_results_per_page = nil, financial_event_group_started_before = nil, financial_event_group_started_after = nil, next_token = nil)
+      def list_financial_event_groups(max_results_per_page = nil, financial_event_group_started_before = nil,
+                                      financial_event_group_started_after = nil, next_token = nil)
         @local_var_path = "/finances/v0/financialEventGroups"
         @query_params = {}
         @query_params["MaxResultsPerPage"] = max_results_per_page unless max_results_per_page.nil?
@@ -18,7 +19,8 @@ module MuffinMan
         call_api
       end
 
-      def list_financial_events_by_group_id(event_group_id, max_results_per_page = nil, posted_after = nil, posted_before = nil, next_token = nil)
+      def list_financial_events_by_group_id(event_group_id, max_results_per_page = nil, posted_after = nil,
+                                            posted_before = nil, next_token = nil)
         @local_var_path = "/finances/v0/financialEventGroups/#{event_group_id}/financialEvents"
         @query_params = {}
         @query_params["MaxResultsPerPage"] = max_results_per_page unless max_results_per_page.nil?

@@ -1,7 +1,6 @@
 module MuffinMan
   module FbaInventory
     class V1 < SpApiClient
-
       GET_INVENTORY_SUMMARIES_PARAMS = %w[
         details
         granularityType
@@ -16,9 +15,9 @@ module MuffinMan
       # startDateTime, that must be included in subsequent requests.
       def get_inventory_summaries(params)
         if sandbox
-          params['granularityType'] = 'Marketplace'
-          params['granularityId'] = 'ATVPDKIKX0DER'
-          params['marketplaceIds'] = 'ATVPDKIKX0DER'
+          params["granularityType"] = "Marketplace"
+          params["granularityId"] = "ATVPDKIKX0DER"
+          params["marketplaceIds"] = "ATVPDKIKX0DER"
         end
         @local_var_path = "/fba/inventory/v1/summaries"
         @query_params = params.slice(*GET_INVENTORY_SUMMARIES_PARAMS)

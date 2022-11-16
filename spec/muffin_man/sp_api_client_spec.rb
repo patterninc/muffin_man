@@ -45,6 +45,7 @@ RSpec.describe MuffinMan::SpApiClient do
       end
     end
     let(:client) { MuffinMan::FakeKlass.new(credentials, sandbox) }
+
     before do
       stub_request_access_token
       stub_fake_request
@@ -52,8 +53,12 @@ RSpec.describe MuffinMan::SpApiClient do
 
     it "gets an access token and signs the headers" do
       expect(Typhoeus).to receive(:get)
-        .with("https://#{hostname}/some_path", headers: hash_including("x-amz-access-token" => fake_lwa_access_token,
-                                                                       "authorization" => a_string_including("SignedHeaders=host;x-amz-content-sha256;x-amz-date")))
+        .with(
+          "https://#{hostname}/some_path",
+          headers: hash_including("x-amz-access-token" => fake_lwa_access_token,
+                                  "authorization" =>
+                                  a_string_including("SignedHeaders=host;x-amz-content-sha256;x-amz-date"))
+        )
       client.make_a_request
     end
 
@@ -64,7 +69,9 @@ RSpec.describe MuffinMan::SpApiClient do
           config.save_access_token = lambda { |access_token_cache_key, token|
             redis_instance.set("SP-TOKEN-#{access_token_cache_key}", token["access_token"])
           }
-          config.get_access_token = ->(access_token_cache_key) { redis_instance.get("SP-TOKEN-#{access_token_cache_key}") }
+          config.get_access_token = lambda { |access_token_cache_key|
+            redis_instance.get("SP-TOKEN-#{access_token_cache_key}")
+          }
         end
       end
 
@@ -73,27 +80,33 @@ RSpec.describe MuffinMan::SpApiClient do
           expect_any_instance_of(MockRedis).to receive(:set).with("SP-TOKEN-#{credentials[:access_token_cache_key]}",
                                                                   fake_lwa_access_token)
           expect(Typhoeus).to receive(:get)
-            .with("https://#{hostname}/some_path", headers: hash_including("x-amz-access-token" => fake_lwa_access_token))
+            .with("https://#{hostname}/some_path",
+                  headers: hash_including("x-amz-access-token" => fake_lwa_access_token))
           client.make_a_request
         end
       end
 
       context "when there is a stored token" do
         let(:another_fake_lwa_access_token) { "i-know-the-muffin-man" }
+
         before do
           MockRedis.new.set("SP-TOKEN-#{credentials[:access_token_cache_key]}", another_fake_lwa_access_token)
         end
 
         it "uses the stored token" do
-          expect_any_instance_of(MockRedis).to receive(:get).with("SP-TOKEN-#{credentials[:access_token_cache_key]}").and_return(another_fake_lwa_access_token)
+          expect_any_instance_of(MockRedis).to receive(:get)
+            .with("SP-TOKEN-#{credentials[:access_token_cache_key]}")
+            .and_return(another_fake_lwa_access_token)
           expect(Typhoeus).to receive(:get)
-            .with("https://#{hostname}/some_path", headers: hash_including("x-amz-access-token" => another_fake_lwa_access_token))
+            .with("https://#{hostname}/some_path",
+                  headers: hash_including("x-amz-access-token" => another_fake_lwa_access_token))
           client.make_a_request
         end
       end
 
       context "when using the sandbox environment" do
         let(:sandbox) { true }
+
         it "correctly builds the canonical api hostname" do
           expect(Typhoeus).to receive(:get).with("https://sandbox.#{hostname}/some_path", headers: hash_including({}))
           client.make_a_request

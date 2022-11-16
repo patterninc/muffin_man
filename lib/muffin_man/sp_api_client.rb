@@ -179,7 +179,8 @@ module MuffinMan
       @aws_region ||= AWS_REGION_MAP[region]
       unless @aws_region
         raise MuffinMan::Error,
-              "#{region} is not supported or does not exist. Region must be one of the following: #{AWS_REGION_MAP.keys.join(", ")}"
+              "#{region} is not supported or does not exist. Region must be one " \
+              "of the following: #{AWS_REGION_MAP.keys.join(", ")}"
       end
 
       @aws_region
@@ -190,7 +191,11 @@ module MuffinMan
     end
 
     def sp_api_params(params)
-      params.to_h.transform_keys { |key| key.to_s.split("_").map.with_index { |x, i| i.positive? ? x.capitalize : x }.join }
+      params.to_h.transform_keys do |key|
+        key.to_s.split("_").map.with_index do |x, i|
+          i.positive? ? x.capitalize : x
+        end.join
+      end
     end
   end
 end
