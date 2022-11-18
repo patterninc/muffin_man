@@ -12,11 +12,11 @@
               "Price": {
                 "LandedPrice": {
                   "CurrencyCode": "USD",
-                  "Amount": 149.96
+                  "Amount": 149.95
                 },
                 "ListingPrice": {
                   "CurrencyCode": "USD",
-                  "Amount": 149.96
+                  "Amount": 149.95
                 },
                 "Shipping": {
                   "CurrencyCode": "USD",
@@ -29,7 +29,7 @@
           "NumberOfOfferListings": [
             {
               "condition": "New",
-              "Count": 5
+              "Count": 4
             },
             {
               "condition": "Used",
@@ -37,7 +37,7 @@
             },
             {
               "condition": "Any",
-              "Count": 6
+              "Count": 5
             }
           ]
         },
@@ -50,19 +50,67 @@
         "SalesRankings": [
           {
             "ProductCategoryId": "kitchen_display_on_website",
-            "Rank": 73806
+            "Rank": 253657
           },
           {
             "ProductCategoryId": "289819",
-            "Rank": 78
-          },
+            "Rank": 160
+          }
+        ]
+      },
+      "status": "Success"
+    },
+    {
+      "ASIN": "B012BM6AHG",
+      "Product": {
+        "CompetitivePricing": {
+          "CompetitivePrices": [
+            {
+              "belongsToRequester": false,
+              "condition": "New",
+              "subcondition": "New",
+              "Price": {
+                "LandedPrice": {
+                  "CurrencyCode": "USD",
+                  "Amount": 212.64
+                },
+                "ListingPrice": {
+                  "CurrencyCode": "USD",
+                  "Amount": 212.64
+                },
+                "Shipping": {
+                  "CurrencyCode": "USD",
+                  "Amount": 0
+                }
+              },
+              "CompetitivePriceId": "1"
+            }
+          ],
+          "NumberOfOfferListings": [
+            {
+              "condition": "New",
+              "Count": 2
+            },
+            {
+              "condition": "Any",
+              "Count": 2
+            }
+          ]
+        },
+        "Identifiers": {
+          "MarketplaceASIN": {
+            "MarketplaceId": "ATVPDKIKX0DER",
+            "ASIN": "B012BM6AHG"
+          }
+        },
+        "SalesRankings": [
           {
             "ProductCategoryId": "kitchen_display_on_website",
-            "Rank": 73806
+            "Rank": 303485
           },
           {
-            "ProductCategoryId": "289819",
-            "Rank": 78
+            "ProductCategoryId": "17384864011",
+            "Rank": 85
           }
         ]
       },
