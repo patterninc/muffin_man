@@ -7,7 +7,7 @@ RSpec.describe MuffinMan::ProductPricing::V0 do
   let(:amazon_marketplace_id) { "ATVPDKIKX0DER" }
   let(:item_type) { "Asin" }
   let(:asin) { "B09WZ936D8" }
-  let(:asins) { ["B09WZ936D8","B012BM6AHG"] }
+  let(:asins) { ["B09WZ936D8", "B012BM6AHG"] }
 
   subject(:product_pricing_client) { described_class.new(credentials) }
 

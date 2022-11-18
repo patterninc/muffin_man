@@ -165,7 +165,7 @@ module Support
     end
 
     def stub_get_competitive_pricing_batch
-      stub_request(:get, "https://#{hostname}/products/pricing/v0/competitivePrice?Asins=#{asins.join('%2C')}&ItemType=#{item_type}&MarketplaceId=#{amazon_marketplace_id}")
+      stub_request(:get, "https://#{hostname}/products/pricing/v0/competitivePrice?Asins=#{asins.join("%2C")}&ItemType=#{item_type}&MarketplaceId=#{amazon_marketplace_id}")
         .to_return(status: 200, body: File.read("./spec/support/get_competitive_pricing_batch.json"), headers: {})
     end
 
