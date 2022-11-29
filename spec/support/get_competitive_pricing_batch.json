@@ -1,0 +1,120 @@
+{
+  "payload": [
+    {
+      "ASIN": "B09WZ936D8",
+      "Product": {
+        "CompetitivePricing": {
+          "CompetitivePrices": [
+            {
+              "belongsToRequester": false,
+              "condition": "New",
+              "subcondition": "New",
+              "Price": {
+                "LandedPrice": {
+                  "CurrencyCode": "USD",
+                  "Amount": 149.95
+                },
+                "ListingPrice": {
+                  "CurrencyCode": "USD",
+                  "Amount": 149.95
+                },
+                "Shipping": {
+                  "CurrencyCode": "USD",
+                  "Amount": 0
+                }
+              },
+              "CompetitivePriceId": "1"
+            }
+          ],
+          "NumberOfOfferListings": [
+            {
+              "condition": "New",
+              "Count": 4
+            },
+            {
+              "condition": "Used",
+              "Count": 1
+            },
+            {
+              "condition": "Any",
+              "Count": 5
+            }
+          ]
+        },
+        "Identifiers": {
+          "MarketplaceASIN": {
+            "MarketplaceId": "ATVPDKIKX0DER",
+            "ASIN": "B09WZ936D8"
+          }
+        },
+        "SalesRankings": [
+          {
+            "ProductCategoryId": "kitchen_display_on_website",
+            "Rank": 253657
+          },
+          {
+            "ProductCategoryId": "289819",
+            "Rank": 160
+          }
+        ]
+      },
+      "status": "Success"
+    },
+    {
+      "ASIN": "B012BM6AHG",
+      "Product": {
+        "CompetitivePricing": {
+          "CompetitivePrices": [
+            {
+              "belongsToRequester": false,
+              "condition": "New",
+              "subcondition": "New",
+              "Price": {
+                "LandedPrice": {
+                  "CurrencyCode": "USD",
+                  "Amount": 212.64
+                },
+                "ListingPrice": {
+                  "CurrencyCode": "USD",
+                  "Amount": 212.64
+                },
+                "Shipping": {
+                  "CurrencyCode": "USD",
+                  "Amount": 0
+                }
+              },
+              "CompetitivePriceId": "1"
+            }
+          ],
+          "NumberOfOfferListings": [
+            {
+              "condition": "New",
+              "Count": 2
+            },
+            {
+              "condition": "Any",
+              "Count": 2
+            }
+          ]
+        },
+        "Identifiers": {
+          "MarketplaceASIN": {
+            "MarketplaceId": "ATVPDKIKX0DER",
+            "ASIN": "B012BM6AHG"
+          }
+        },
+        "SalesRankings": [
+          {
+            "ProductCategoryId": "kitchen_display_on_website",
+            "Rank": 303485
+          },
+          {
+            "ProductCategoryId": "17384864011",
+            "Rank": 85
+          }
+        ]
+      },
+      "status": "Success"
+    }
+  ]
+}

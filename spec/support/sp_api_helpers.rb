@@ -164,6 +164,11 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/get_competitive_pricing.json"), headers: {})
     end
 
+    def stub_get_competitive_pricing_batch
+      stub_request(:get, "https://#{hostname}/products/pricing/v0/competitivePrice?Asins=#{asins.join("%2C")}&ItemType=#{item_type}&MarketplaceId=#{amazon_marketplace_id}")
+        .to_return(status: 200, body: File.read("./spec/support/get_competitive_pricing_batch.json"), headers: {})
+    end
+
     def stub_get_listings_item
       stub_request(:get, "https://#{hostname}/listings/2021-08-01/items/#{seller_id}/#{sku}?marketplaceIds=#{amazon_marketplace_id}")
         .to_return(status: 200, body: File.read("./spec/support/get_listings_item.json"), headers: {})
