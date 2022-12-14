@@ -1,3 +1,11 @@
+# 1.5.9
+
+- Support for estimateTransport, getTransportDetails, confirmTransport, and voidTransport
+
+# 1.5.8
+
+- Add batch functionality to competitive price
+
 # 1.5.7
 
 - Fix sandbox support for create shipments in Merchant Fulfillment
