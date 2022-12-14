@@ -225,6 +225,26 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/get_inventory_summaries_v1.json"), headers: {})
     end
 
+    def stub_estimate_transport
+      stub_request(:post, "https://#{hostname}/fba/inbound/v0/shipments/#{shipment_id}/transport/estimate")
+        .to_return(status: 200, body: File.read("./spec/support/estimate_transport.json"), headers: {})
+    end
+
+    def stub_get_transport_details
+      stub_request(:get, "https://#{hostname}/fba/inbound/v0/shipments/#{shipment_id}/transport/")
+        .to_return(status: 200, body: File.read("./spec/support/get_transport_details.json"), headers: {})
+    end
+
+    def stub_confirm_transport
+      stub_request(:post, "https://#{hostname}/fba/inbound/v0/shipments/#{shipment_id}/transport/confirm")
+        .to_return(status: 200, body: File.read("./spec/support/confirm_transport.json"), headers: {})
+    end
+
+    def stub_void_transport
+      stub_request(:post, "https://#{hostname}/fba/inbound/v0/shipments/#{shipment_id}/transport/void")
+        .to_return(status: 200, body: File.read("./spec/support/void_transport.json"), headers: {})
+    end
+
     def stub_get_eligible_shipment_services
       stub_request(:post, "https://#{hostname}/mfn/v0/eligibleShippingServices")
         .to_return(status: 200, body: File.read("./spec/support/merchant_fulfillment/get_eligible_shipment_services_v0.json"), headers: {})

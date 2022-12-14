@@ -169,4 +169,48 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
       expect(JSON.parse(response.body).dig("payload", "TransportResult")).to eq(transport_result)
     end
   end
+
+  describe "estimate_transport" do
+    before { stub_estimate_transport }
+    let(:shipment_id) { "FBA1232453KJ" }
+
+    it "makes a request to estimate transport cost" do
+      response = fba_inbound_client.estimate_transport(shipment_id)
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body).dig("payload", "TransportResult", "TransportStatus")).not_to be_empty
+    end
+  end
+
+  describe "get transport details" do
+    before { stub_get_transport_details }
+    let(:shipment_id) { "FBA1232453KJ" }
+
+    it "makes a request to get transport details" do
+      response = fba_inbound_client.get_transport_details(shipment_id)
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body).dig("payload", "TransportContent", "TransportDetails")).not_to be_empty
+    end
+  end
+
+  describe "confirm transport" do
+    before { stub_confirm_transport }
+    let(:shipment_id) { "FBA1232453KJ" }
+
+    it "makes a request to confirm transport" do
+      response = fba_inbound_client.confirm_transport(shipment_id)
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body).dig("payload", "TransportResult", "TransportStatus")).not_to be_empty
+    end
+  end
+
+  describe "void transport" do
+    before { stub_void_transport }
+    let(:shipment_id) { "FBA1232453KJ" }
+
+    it "makes a request to confirm transport" do
+      response = fba_inbound_client.void_transport(shipment_id)
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body).dig("payload", "TransportResult", "TransportStatus")).not_to be_empty
+    end
+  end
 end

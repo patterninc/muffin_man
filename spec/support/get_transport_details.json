@@ -1,0 +1,44 @@
+{
+  "payload": {
+    "TransportContent": {
+      "TransportHeader": {
+        "SellerId": "string",
+        "ShipmentId": "string",
+        "IsPartnered": true,
+        "ShipmentType": "SP"
+      },
+      "TransportDetails": {
+        "PartneredSmallParcelData": {
+          "PackageList": [
+            {
+              "Dimensions": {
+                "Length": 0,
+                "Width": 0,
+                "Height": 0,
+                "Unit": "inches"
+              },
+              "Weight": {
+                "Value": 0,
+                "Unit": "pounds"
+              },
+              "CarrierName": "string",
+              "TrackingId": "string",
+              "PackageStatus": "SHIPPED"
+            }
+          ],
+          "PartneredEstimate": {
+            "Amount": {
+              "CurrencyCode": "USD",
+              "Value": 0
+            },
+            "ConfirmDeadline": "2022-12-14T16:10:26.540Z",
+            "VoidDeadline": "2022-12-14T16:10:26.540Z"
+          }
+        }
+      },
+      "TransportResult": {
+        "TransportStatus": "ESTIMATED"
+      }
+    }
+  }
+}

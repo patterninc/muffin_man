@@ -99,6 +99,30 @@ module MuffinMan
         @request_type = "PUT"
         call_api
       end
+
+      def estimate_transport(shipment_id)
+        @local_var_path = "/fba/inbound/v0/shipments/#{shipment_id}/transport/estimate"
+        @request_type = "POST"
+        call_api
+      end
+
+      def get_transport_details(shipment_id)
+        @local_var_path = "/fba/inbound/v0/shipments/#{shipment_id}/transport/"
+        @request_type = "GET"
+        call_api
+      end
+
+      def confirm_transport(shipment_id)
+        @local_var_path = "/fba/inbound/v0/shipments/#{shipment_id}/transport/confirm"
+        @request_type = "POST"
+        call_api
+      end
+
+      def void_transport(shipment_id)
+        @local_var_path = "/fba/inbound/v0/shipments/#{shipment_id}/transport/void"
+        @request_type = "POST"
+        call_api
+      end
     end
   end
 end
