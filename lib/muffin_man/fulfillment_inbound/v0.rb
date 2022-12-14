@@ -110,7 +110,7 @@ module MuffinMan
         call_api
       end
 
-      SANDBOX_SHIPMENT_ID = "shipmentId1"
+      SANDBOX_SHIPMENT_ID = "shipmentId1".freeze
       def estimate_transport(shipment_id)
         shipment_id = SANDBOX_SHIPMENT_ID if sandbox
         @local_var_path = "/fba/inbound/v0/shipments/#{shipment_id}/transport/estimate"

@@ -231,7 +231,7 @@ module Support
     end
 
     def stub_get_transport_details
-      stub_request(:get, "https://#{hostname}/fba/inbound/v0/shipments/#{shipment_id}/transport/")
+      stub_request(:get, "https://#{hostname}/fba/inbound/v0/shipments/#{shipment_id}/transport")
         .to_return(status: 200, body: File.read("./spec/support/get_transport_details.json"), headers: {})
     end
 
