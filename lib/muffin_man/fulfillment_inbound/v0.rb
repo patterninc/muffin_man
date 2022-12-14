@@ -63,18 +63,28 @@ module MuffinMan
         call_api
       end
 
+      SANDBOX_GET_LABELS_PARAMS = {
+        "shipmentId" => "348975493",
+        "PageType" => "PackageLabel_Letter_2",
+        "LabelType" => "BARCODE_2D"
+      }.freeze
       def get_labels(shipment_id, page_type, label_type, number_of_packages: nil, package_labels_to_print: [], number_of_pallets: nil, page_size: nil, page_start_index: nil)
-        @local_var_path = "/fba/inbound/v0/shipments/#{shipment_id}/labels"
         @query_params = {
           "shipmentID" => shipment_id,
           "PageType" => page_type,
           "LabelType" => label_type
         }
-        @query_params["NumberOfPackages"] = number_of_packages unless number_of_packages.nil?
-        @query_params["PackageLabelsToPrint"] = package_labels_to_print.join(",") if package_labels_to_print.any?
-        @query_params["NumberOfPallets"] = number_of_pallets unless number_of_pallets.nil?
-        @query_params["PageSize"] = page_size unless page_size.nil?
-        @query_params["PageStartIndex"] = page_start_index unless page_start_index.nil?
+        if sandbox
+          shipment_id = SANDBOX_GET_LABELS_PARAMS["shipmentId"]
+          @query_params = SANDBOX_GET_LABELS_PARAMS.except("shipmentId")
+        else
+          @query_params["NumberOfPackages"] = number_of_packages unless number_of_packages.nil?
+          @query_params["PackageLabelsToPrint"] = package_labels_to_print.join(",") if package_labels_to_print.any?
+          @query_params["NumberOfPallets"] = number_of_pallets unless number_of_pallets.nil?
+          @query_params["PageSize"] = page_size unless page_size.nil?
+          @query_params["PageStartIndex"] = page_start_index unless page_start_index.nil?
+        end
+        @local_var_path = "/fba/inbound/v0/shipments/#{shipment_id}/labels"
         @request_type = "GET"
         call_api
       end

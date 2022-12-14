@@ -1,3 +1,7 @@
+# 1.5.11
+
+- Add sandbox support for inbound small parcel get labels
+
 # 1.5.10
 
 - Add sandbox support for inbound small parcel
