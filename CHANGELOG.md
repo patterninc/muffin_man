@@ -1,3 +1,7 @@
+# 1.5.12 [#45](https://github.com/patterninc/muffin_man/pull/45)
+
+- Small update to putTransportDetails
+
 # 1.5.11
 
 - Add sandbox support for inbound small parcel get labels
