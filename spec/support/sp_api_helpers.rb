@@ -191,7 +191,7 @@ module Support
 
     def stub_put_transport_details
       stub_request(:put, "https://sellingpartnerapi-na.amazon.com/fba/inbound/v0/shipments/#{shipment_id}/transport").
-         with(:body => "{\"shipmentId\":\"FBA1232453KJ\",\"IsPartnered\":true,\"ShipmentType\":\"LPL\",\"TransportDetails\":[{\"PartneredSmallParcelData\":[],\"NonPartneredSmallParcelData\":[],\"PartneredLtlData\":[],\"NonPartneredLtlData\":[]}]}").
+         with(:body => "{\"IsPartnered\":true,\"ShipmentType\":\"LPL\",\"TransportDetails\":[{\"PartneredSmallParcelData\":[],\"NonPartneredSmallParcelData\":[],\"PartneredLtlData\":[],\"NonPartneredLtlData\":[]}]}").
          to_return(:status => 200, :body => File.read("./spec/support/put_transport_details_v0.json"), :headers => {})
     end
 
