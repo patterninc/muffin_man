@@ -101,7 +101,6 @@ module MuffinMan
       def put_transport_details(shipment_id, is_partnered, shipment_type, transport_details)
         @local_var_path = "/fba/inbound/v0/shipments/#{shipment_id}/transport"
         @request_body = {
-          "shipmentId": shipment_id,
           "IsPartnered": is_partnered,
           "ShipmentType": shipment_type,
           "TransportDetails": transport_details,
