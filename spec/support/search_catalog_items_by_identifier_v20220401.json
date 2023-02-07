@@ -1,0 +1,1042 @@
+{
+  "numberOfResults": 2,
+  "items": [
+    {
+      "asin": "B07LBYFVG6",
+      "attributes": {
+        "bullet_point": [
+          {
+            "language_tag": "en_US",
+            "value": "Garbage & Trash Cleaning",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "Device Speed Boosting",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "Useless Log/Temp files Cleaning",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "Memory Optimization",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "brand": [
+          {
+            "language_tag": "en_US",
+            "value": "Quickla Soft",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "generic_keyword": [
+          {
+            "language_tag": "en_US",
+            "value": "app",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "devices",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "use",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "cleaner",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "Clean",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "speed",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "tablet",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "fast",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "optimize",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "fire",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "kindle",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "device",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "tablets",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "hardware_platform": [
+          {
+            "language_tag": "en_US",
+            "value": "Android",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "item_type_keyword": [
+          {
+            "value": "multipurpose-cleaners",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "operating_system": [
+          {
+            "language_tag": "en_US",
+            "value": "Android",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "item_name": [
+          {
+            "language_tag": "en_US",
+            "value": "Cleaner for Fire Tablets & TV (Cleanza)",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "list_price": [
+          {
+            "currency": "USD",
+            "value": 0.0,
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "street_date": [
+          {
+            "value": "2019-03-14T20:01:50.000Z",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "compatible_devices": [
+          {
+            "language_tag": "en_US",
+            "value": "SLC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "SHEP1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "MEC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "BRND61",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "BLC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "SHE1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "STC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "GRO1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "ANN1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "AC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "LAGF1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "BC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "JUL1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "EC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "DC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "GC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "EKC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "SPRC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "FC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "KAR1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "SUC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "MRC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "JC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "MC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "TAC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "AUC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "NC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "ASC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "THEC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "HOY1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "OC2",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "MANG1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "JOY1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "SC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "ARC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "TC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "LEC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "THC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "NAC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "AME1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "LAGB1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "ROSC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "BUR1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "PRI1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "HAZ1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "MVRC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "SAC1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "MNS1",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ]
+      },
+      "dimensions": [
+        {
+          "marketplaceId": "ATVPDKIKX0DER"
+        }
+      ],
+      "identifiers": [
+        {
+          "marketplaceId": "ATVPDKIKX0DER",
+          "identifiers": [
+
+          ]
+        }
+      ],
+      "images": [
+        {
+          "marketplaceId": "ATVPDKIKX0DER",
+          "images": [
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/51+G35qek0L.jpg",
+              "height": 512,
+              "width": 512
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/51+G35qek0L._SL75_.jpg",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "variant": "PT01",
+              "link": "https://m.media-amazon.com/images/I/41D1PEPGNiL.jpg",
+              "height": 1024,
+              "width": 600
+            },
+            {
+              "variant": "PT01",
+              "link": "https://m.media-amazon.com/images/I/41D1PEPGNiL._SL75_.jpg",
+              "height": 75,
+              "width": 44
+            },
+            {
+              "variant": "PT02",
+              "link": "https://m.media-amazon.com/images/I/41aku8tiQ4L.jpg",
+              "height": 1024,
+              "width": 600
+            },
+            {
+              "variant": "PT02",
+              "link": "https://m.media-amazon.com/images/I/41aku8tiQ4L._SL75_.jpg",
+              "height": 75,
+              "width": 44
+            },
+            {
+              "variant": "PT03",
+              "link": "https://m.media-amazon.com/images/I/51FtT5zGVXL.jpg",
+              "height": 1024,
+              "width": 600
+            },
+            {
+              "variant": "PT03",
+              "link": "https://m.media-amazon.com/images/I/51FtT5zGVXL._SL75_.jpg",
+              "height": 75,
+              "width": 44
+            },
+            {
+              "variant": "PT04",
+              "link": "https://m.media-amazon.com/images/I/51HjEoTumLL.jpg",
+              "height": 1024,
+              "width": 600
+            },
+            {
+              "variant": "PT04",
+              "link": "https://m.media-amazon.com/images/I/51HjEoTumLL._SL75_.jpg",
+              "height": 75,
+              "width": 44
+            },
+            {
+              "variant": "PT05",
+              "link": "https://m.media-amazon.com/images/I/51w3HHVPC0L.jpg",
+              "height": 1024,
+              "width": 600
+            },
+            {
+              "variant": "PT05",
+              "link": "https://m.media-amazon.com/images/I/51w3HHVPC0L._SL75_.jpg",
+              "height": 75,
+              "width": 44
+            }
+          ]
+        }
+      ],
+      "relationships": [
+        {
+          "marketplaceId": "ATVPDKIKX0DER",
+          "relationships": [
+
+          ]
+        }
+      ],
+      "salesRanks": [
+        {
+          "marketplaceId": "ATVPDKIKX0DER",
+          "classificationRanks": [
+
+          ],
+          "displayGroupRanks": [
+
+          ]
+        }
+      ],
+      "summaries": [
+        {
+          "marketplaceId": "ATVPDKIKX0DER",
+          "adultProduct": false,
+          "autographed": false,
+          "brand": "Quickla Soft",
+          "browseClassification": {
+            "displayName": "All-Purpose Cleaners",
+            "classificationId": "15356141"
+          },
+          "itemClassification": "BASE_PRODUCT",
+          "itemName": "Cleaner for Fire Tablets & TV (Cleanza)",
+          "manufacturer": "Quickla Soft",
+          "memorabilia": false,
+          "partNumber": "com.quickla.soft.cleaner.security.protection.kindle.fire.tablet",
+          "releaseDate": "2019-03-14",
+          "tradeInEligible": false,
+          "websiteDisplayGroup": "mobile_application_display_on_website",
+          "websiteDisplayGroupName": "Mobile Application"
+        }
+      ]
+    },
+    {
+      "asin": "B094D5Y9WS",
+      "attributes": {
+        "item_weight": [
+          {
+            "unit": "kilograms",
+            "value": 0.022675,
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "model_name": [
+          {
+            "language_tag": "en_US",
+            "value": "av2022-Amazon Basic Care-pack aa highperformance alkaline batteries year shelf life easy to open value pack-abe12e36",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "bullet_point": [
+          {
+            "language_tag": "en_US",
+            "value": "RELIABLE PERFORMANCE: 10-pack of 1.5 volt AA alkaline batteries for everyday or professional use",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "DESIGNED TO LAST: 10-year leak-free shelf life; store for emergencies or use right away",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "EVERYDAY COMPATIBILITY: Works with any device that uses AA batteries, like game controllers, remote controls, flashlights, clocks and more",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "EASY TO USE & STORE: Ships in easy-to-open packaging",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "SINGLE USE: These batteries are NOT rechargeable; for rechargeable options, check out Amazon Basics rechargeable batteries",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "NOTE: Same product, new look; appearance of batteries received may vary",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "item_dimensions": [
+          {
+            "width": {
+              "unit": "millimeters",
+              "value": 95.0
+            },
+            "length": {
+              "unit": "millimeters",
+              "value": 115.0
+            },
+            "height": {
+              "unit": "millimeters",
+              "value": 17.0
+            },
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "brand": [
+          {
+            "language_tag": "en_US",
+            "value": "Amazon Basics",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "product_expiration_type": [
+          {
+            "language_tag": "en_US",
+            "value": "Expiration Date Required",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "is_expiration_dated_product": [
+          {
+            "value": true,
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "generic_keyword": [
+          {
+            "language_tag": "en_US",
+            "value": "LR6",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "cpsia_cautionary_statement": [
+          {
+            "value": "no_warning_applicable",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "externally_assigned_product_identifier": [
+          {
+            "value": "840083620012",
+            "type": "upc",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "value": "0840083620012",
+            "type": "ean",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "item_type_keyword": [
+          {
+            "value": "aa-batteries",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "number_of_items": [
+          {
+            "value": 1,
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "item_package_dimensions": [
+          {
+            "length": {
+              "unit": "centimeters",
+              "value": 2.9
+            },
+            "width": {
+              "unit": "centimeters",
+              "value": 9.4
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 11.1
+            },
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "recommended_uses_for_product": [
+          {
+            "language_tag": "en_US",
+            "value": "Everyday devices like remote controls, flashlights, clocks, and more",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "size": [
+          {
+            "language_tag": "en_US",
+            "value": "10 Count (Pack of 1)",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "fc_shelf_life": [
+          {
+            "unit": "days",
+            "value": 150.0,
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "warranty_description": [
+          {
+            "language_tag": "en_US",
+            "value": "1 Year manufacturer",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "part_number": [
+          {
+            "value": "LR6-10B",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "color": [
+          {
+            "language_tag": "en_US",
+            "value": "Orange",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "reusability": [
+          {
+            "language_tag": "en_US",
+            "value": "Rechargeable",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "item_package_weight": [
+          {
+            "unit": "kilograms",
+            "value": 0.23,
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "battery": [
+          {
+            "cell_composition": [
+              {
+                "value": "alkaline"
+              }
+            ],
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "manufacturer": [
+          {
+            "language_tag": "en_US",
+            "value": "Amazon basics",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "number_of_boxes": [
+          {
+            "value": 1,
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "model_number": [
+          {
+            "value": "LR6-10B",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "supplier_declared_dg_hz_regulation": [
+          {
+            "value": "not_applicable",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "num_batteries": [
+          {
+            "quantity": 10,
+            "type": "aa",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "item_name": [
+          {
+            "language_tag": "en_US",
+            "value": "Amazon Basics 10 Pack AA Alkaline Batteries, 10-Year Shelf Life",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "list_price": [
+          {
+            "currency": "USD",
+            "value": 6.99,
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "batteries_required": [
+          {
+            "value": false,
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "street_date": [
+          {
+            "value": "2008-09-15T00:00:01Z",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "voltage": [
+          {
+            "unit": "volts",
+            "value": 1.5,
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "product_site_launch_date": [
+          {
+            "value": "2021-09-30T07:00:01-00:00",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "compatible_devices": [
+          {
+            "language_tag": "en_US",
+            "value": "Clock",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "Toy",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "Controller",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "Torch",
+            "marketplace_id": "ATVPDKIKX0DER"
+          },
+          {
+            "language_tag": "en_US",
+            "value": "Camera",
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "unit_count": [
+          {
+            "type": {
+              "language_tag": "en_US",
+              "value": "Count"
+            },
+            "value": 10.0,
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ],
+        "batteries_included": [
+          {
+            "value": true,
+            "marketplace_id": "ATVPDKIKX0DER"
+          }
+        ]
+      },
+      "dimensions": [
+        {
+          "marketplaceId": "ATVPDKIKX0DER",
+          "item": {
+            "height": {
+              "unit": "inches",
+              "value": 0.66929
+            },
+            "length": {
+              "unit": "inches",
+              "value": 4.52755
+            },
+            "weight": {
+              "unit": "pounds",
+              "value": 0.0499898179085
+            },
+            "width": {
+              "unit": "inches",
+              "value": 3.74015
+            }
+          },
+          "package": {
+            "height": {
+              "unit": "inches",
+              "value": 1.1417322823
+            },
+            "length": {
+              "unit": "inches",
+              "value": 4.3700787357
+            },
+            "weight": {
+              "unit": "pounds",
+              "value": 0.5070632026
+            },
+            "width": {
+              "unit": "inches",
+              "value": 3.7007873978
+            }
+          }
+        }
+      ],
+      "identifiers": [
+        {
+          "marketplaceId": "ATVPDKIKX0DER",
+          "identifiers": [
+            {
+              "identifierType": "EAN",
+              "identifier": "0840083620012"
+            },
+            {
+              "identifierType": "UPC",
+              "identifier": "840083620012"
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "marketplaceId": "ATVPDKIKX0DER",
+          "images": [
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/81mZ0IvedxL.jpg",
+              "height": 2345,
+              "width": 2560
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/51BLy5gUrYL.jpg",
+              "height": 458,
+              "width": 500
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/51BLy5gUrYL._SL75_.jpg",
+              "height": 69,
+              "width": 75
+            },
+            {
+              "variant": "PT01",
+              "link": "https://m.media-amazon.com/images/I/612zDGeN+sL.jpg",
+              "height": 1500,
+              "width": 1500
+            },
+            {
+              "variant": "PT01",
+              "link": "https://m.media-amazon.com/images/I/41g20QcNX0L.jpg",
+              "height": 500,
+              "width": 500
+            },
+            {
+              "variant": "PT01",
+              "link": "https://m.media-amazon.com/images/I/41g20QcNX0L._SL75_.jpg",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "variant": "PT02",
+              "link": "https://m.media-amazon.com/images/I/71VLCNDupmL.jpg",
+              "height": 1500,
+              "width": 1500
+            },
+            {
+              "variant": "PT02",
+              "link": "https://m.media-amazon.com/images/I/51IOk5qT0jL.jpg",
+              "height": 500,
+              "width": 500
+            },
+            {
+              "variant": "PT02",
+              "link": "https://m.media-amazon.com/images/I/51IOk5qT0jL._SL75_.jpg",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "variant": "PT04",
+              "link": "https://m.media-amazon.com/images/I/71z8TgHJGDL.jpg",
+              "height": 2560,
+              "width": 2560
+            },
+            {
+              "variant": "PT04",
+              "link": "https://m.media-amazon.com/images/I/4135XwM7boL.jpg",
+              "height": 500,
+              "width": 500
+            },
+            {
+              "variant": "PT04",
+              "link": "https://m.media-amazon.com/images/I/4135XwM7boL._SL75_.jpg",
+              "height": 75,
+              "width": 75
+            }
+          ]
+        }
+      ],
+      "relationships": [
+        {
+          "marketplaceId": "ATVPDKIKX0DER",
+          "relationships": [
+            {
+              "parentAsins": [
+                "B00QWO9P0O"
+              ],
+              "type": "VARIATION"
+            },
+            {
+              "parentAsins": [
+                "B0BF55Y6PY"
+              ],
+              "type": "PACKAGE_HIERARCHY"
+            }
+          ]
+        }
+      ],
+      "salesRanks": [
+        {
+          "marketplaceId": "ATVPDKIKX0DER",
+          "classificationRanks": [
+            {
+              "classificationId": "389577011",
+              "title": "AA Batteries",
+              "link": "https://www.amazon.com/gp/bestsellers/hpc/389577011",
+              "rank": 1
+            }
+          ],
+          "displayGroupRanks": [
+            {
+              "websiteDisplayGroup": "health_and_beauty_display_on_website",
+              "title": "Health & Household",
+              "link": "https://www.amazon.com/gp/bestsellers/hpc",
+              "rank": 2
+            }
+          ]
+        }
+      ],
+      "summaries": [
+        {
+          "marketplaceId": "ATVPDKIKX0DER",
+          "adultProduct": false,
+          "autographed": false,
+          "brand": "Amazon Basics",
+          "browseClassification": {
+            "displayName": "AA",
+            "classificationId": "389577011"
+          },
+          "color": "Orange",
+          "itemClassification": "BASE_PRODUCT",
+          "itemName": "Amazon Basics 10 Pack AA Alkaline Batteries, 10-Year Shelf Life",
+          "manufacturer": "Amazon basics",
+          "memorabilia": false,
+          "modelNumber": "LR6-10B",
+          "packageQuantity": 1,
+          "partNumber": "LR6-10B",
+          "releaseDate": "2008-09-15",
+          "size": "10 Count (Pack of 1)",
+          "style": "10 Count (Pack of 1)",
+          "tradeInEligible": false,
+          "websiteDisplayGroup": "health_and_beauty_display_on_website",
+          "websiteDisplayGroupName": "Health and Beauty"
+        }
+      ]
+    }
+  ]
+}
