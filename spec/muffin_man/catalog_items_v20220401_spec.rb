@@ -22,7 +22,7 @@ RSpec.describe MuffinMan::CatalogItems::V20220401 do
     end
   end
 
-    describe "search_catalog_items_by_identifier" do
+  describe "search_catalog_items_by_identifier" do
     it "request search_catalog_items with multiple identifiers/asin" do
       response = catalog_items_client.search_catalog_items(amazon_marketplace_id, { "identifiers" => asins})
       response_body = JSON.parse(response.body)
