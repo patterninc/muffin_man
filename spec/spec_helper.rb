@@ -4,7 +4,6 @@ require "muffin_man"
 require "webmock/rspec"
 require "support/sp_api_helpers"
 require "support/lwa_helpers"
-require "byebug"
 
 WebMock.disable_net_connect!(allow_localhost: true)
 
