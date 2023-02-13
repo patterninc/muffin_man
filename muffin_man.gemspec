@@ -20,7 +20,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "rspec", "~> 3.2"
   spec.add_development_dependency 'webmock', '~> 2.1'
-  spec.add_development_dependency 'byebug'
   spec.add_development_dependency 'mock_redis', '>=0.14'
   spec.add_runtime_dependency 'typhoeus', '~> 1.0', '>= 1.0.1'
   spec.add_runtime_dependency 'aws-sigv4', '>= 1.1'
