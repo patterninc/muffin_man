@@ -27,6 +27,7 @@ module MuffinMan
           params = {}
         end
         @keywords = keywords.is_a?(Array) ? keywords : [keywords]
+        @identifiers = params["identifiers"].is_a?(Array) ? params["identifiers"] : [params["identifiers"]]
         @marketplace_ids = marketplace_ids.is_a?(Array) ? marketplace_ids : [marketplace_ids]
         @params = params
         @local_var_path = "/catalog/#{api_version}/items"
@@ -34,11 +35,8 @@ module MuffinMan
           "marketplaceIds" => @marketplace_ids.join(",")
         }
         @query_params["keywords"] = @keywords.join(",") if @keywords.any?
-        if params.key?("identifiers")
-          @identifiers = params["identifiers"].is_a?(Array) ? params["identifiers"] : [params["identifiers"]]
-          @query_params["identifiers"] = @identifiers.join(",") if @identifiers.any?
-          @query_params["identifiersType"] = params["identifiersType"] || "ASIN"
-        end
+        @query_params["identifiers"] = @identifiers.join(",") if @identifiers.any?
+        @query_params["identifiersType"] = params["identifiersType"] || "ASIN"
         @query_params.merge!(@params.slice(*search_catalog_items_params))
         @request_type = "GET"
         call_api
