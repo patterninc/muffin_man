@@ -36,7 +36,7 @@ module MuffinMan
         }
         @query_params["keywords"] = @keywords.join(",") if @keywords.any?
         @query_params["identifiers"] = @identifiers.join(",") if @identifiers.any?
-        @query_params["identifiersType"] = params["identifiersType"] || "ASIN"
+        @query_params["identifiersType"] = params["identifiersType"] || "ASIN" if @identifiers.any?
         @query_params.merge!(@params.slice(*search_catalog_items_params))
         @request_type = "GET"
         call_api
