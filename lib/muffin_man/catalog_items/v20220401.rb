@@ -11,7 +11,7 @@ module MuffinMan
       API_VERSION = "2022-04-01".freeze
 
       def search_catalog_items(marketplace_ids, params = {})
-        super(params["keywords"] || params["identifiers"], marketplace_ids, params, API_VERSION)
+        super(params["keywords"], marketplace_ids, params, API_VERSION)
       end
 
       def get_catalog_item(asin, marketplace_ids, params = {})

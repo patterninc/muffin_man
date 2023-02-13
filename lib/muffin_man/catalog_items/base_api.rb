@@ -33,11 +33,11 @@ module MuffinMan
         @query_params = {
           "marketplaceIds" => @marketplace_ids.join(",")
         }
+        @query_params["keywords"] = @keywords.join(",") if @keywords.any?
         if params.key?("identifiers")
-          @query_params["identifiers"] = @keywords.join(",") if @keywords.any?
-          @query_params["identifiersType"] = @query_params["identifiersType"] || "ASIN"
-        else
-          @query_params["keywords"] = @keywords.join(",") if @keywords.any?
+          @identifiers = params["identifiers"].is_a?(Array) ? params["identifiers"] : [params["identifiers"]]
+          @query_params["identifiers"] = @identifiers.join(",") if @identifiers.any?
+          @query_params["identifiersType"] = params["identifiersType"] || "ASIN"
         end
         @query_params.merge!(@params.slice(*search_catalog_items_params))
         @request_type = "GET"
