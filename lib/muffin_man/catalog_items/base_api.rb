@@ -17,6 +17,7 @@ module MuffinMan
         locale
       ].freeze
       GET_CATALOG_ITEM_PARAMS = %w[includedData locale].freeze
+      DEFAULT_IDENTIFERS_TYPE = "ASIN".freeze
 
       API_VERSION = "2020-12-01".freeze
 
@@ -38,7 +39,7 @@ module MuffinMan
         @query_params["keywords"] = @keywords.join(",") if @keywords.any?
         if @identifiers.any?
           @query_params["identifiers"] = @identifiers.join(",")
-          @query_params["identifiersType"] = params["identifiersType"] || "ASIN"
+          @query_params["identifiersType"] = params["identifiersType"] || DEFAULT_IDENTIFERS_TYPE
         end
         @query_params.merge!(@params.slice(*search_catalog_items_params))
         @request_type = "GET"
