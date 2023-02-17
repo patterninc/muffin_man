@@ -43,17 +43,12 @@ module MuffinMan
         params = params.transform_keys(&:to_s)
         subscription_params = { "destinationId" => params["destination_id"] }
         # currently SP-API's `processingDirective` only supports ANY_OFFER_CHANGED notification type.
-        if PROCESSING_DIRECTIVE_SUPPORTED_NOTIFICATIONS.include? notification_type
-          subscription_params["processingDirective"] =
-            { "eventFilter" => { "eventFilterType" => notification_type,
-                                 "marketplaceIds" => params["marketplace_ids"] } }
-          unless params["aggregation_time_period"].nil?
-            subscription_params["processingDirective"]["eventFilter"]
-              .merge!("aggregationSettings" => {
-                        "aggregationTimePeriod" => params["aggregation_time_period"]
-                      })
-          end
+        if include_processing_directive?(notification_type, params)
+          subscription_params.merge!(
+            "processingDirective" => params["processing_directive"]
+          )
         end
+
         subscription_params.merge!("payloadVersion" => params["payload_version"]) unless params["payload_version"].nil?
         @request_body = subscription_params
         @request_type = "POST"
@@ -79,6 +74,20 @@ module MuffinMan
         @scope = NOTIFICATION_SCOPE
         @request_type = "DELETE"
         call_api
+      end
+
+      def delete_destination(destination_id)
+        @local_var_path = "#{NOTIFICATION_PATH}/destinations/#{destination_id}"
+        @scope = NOTIFICATION_SCOPE
+        @request_type = "DELETE"
+        call_api
+      end
+
+      private
+
+      def include_processing_directive?(notification_type, params)
+        PROCESSING_DIRECTIVE_SUPPORTED_NOTIFICATIONS.include?(notification_type) &&
+          params["processing_directive"].present?
       end
     end
   end

@@ -45,14 +45,26 @@ RSpec.describe MuffinMan::Notifications::V1 do
     end
   end
 
+  describe "delete_destination", uses_grantless: true do
+    it "executes delete_destination request" do
+      stub_delete_destination
+      response = notification_client.delete_destination(destination_id)
+      expect(response.response_code).to eq(200)
+    end
+  end
+
   describe "create_subscription" do
     it "executes create_subscription request" do
       stub_create_subscription
       response = notification_client.create_subscription(notification_type,
                                                          { destination_id: destination_id,
                                                            payload_version: "1.0",
-                                                           marketplace_ids: "ASWDDXDER323",
-                                                           aggregation_time_period: "FiveMinutes" })
+                                                           processing_directive: {
+                                                            "eventFilter": {
+                                                            "eventFilterType": "ANY_OFFER_CHANGED",
+                                                            "marketplaceIds": ["ASWDDXDER323"]
+                                                          }}
+                                                          })
       expect(response.response_code).to eq(200)
       expect(JSON.parse(response.body)["payload"].keys).to include("subscriptionId")
     end
