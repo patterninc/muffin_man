@@ -14,3 +14,5 @@ gem "rubocop", "~> 1.7"
 gem "rubocop-rake"
 
 gem "rubocop-rspec"
+
+gem "byebug"
