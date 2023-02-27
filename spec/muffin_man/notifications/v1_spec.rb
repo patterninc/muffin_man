@@ -60,11 +60,14 @@ RSpec.describe MuffinMan::Notifications::V1 do
                                                          { destination_id: destination_id,
                                                            payload_version: "1.0",
                                                            processing_directive: {
-                                                            "eventFilter": {
-                                                            "eventFilterType": "ANY_OFFER_CHANGED",
-                                                            "marketplaceIds": ["ASWDDXDER323"]
-                                                          }}
-                                                          })
+                                                             eventFilter: {
+                                                               eventFilterType: "ANY_OFFER_CHANGED",
+                                                               marketplaceIds: "ASWDDXDER323",
+                                                               aggregationSettings: {
+                                                                 aggregationTimePeriod: "FiveMinutes"
+                                                               }
+                                                             }
+                                                           } })
       expect(response.response_code).to eq(200)
       expect(JSON.parse(response.body)["payload"].keys).to include("subscriptionId")
     end
