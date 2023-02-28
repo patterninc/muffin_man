@@ -22,9 +22,21 @@ def stub_get_destination
     )
 end
 
+def stub_delete_destination
+  stub_request(:delete, "https://#{hostname}/notifications/v1/destinations/#{destination_id}")
+    .to_return(
+      status: 200,
+      body: {
+        errors: JSON.parse(File.read("./spec/support/notifications/get_destinations.json"))["errors"]
+      }.to_json,
+      headers: {}
+    )
+end
+
 def stub_create_subscription
   stub_request(:post, "https://#{hostname}/notifications/v1/subscriptions/#{notification_type}")
-    .with(body: { payloadVersion: "1.0", destinationId: destination_id,
+    .with(body: { payloadVersion: "1.0",
+                  destinationId: destination_id,
                   processingDirective: {
                     eventFilter: {
                       eventFilterType: notification_type,
@@ -50,7 +62,7 @@ def stub_delete_subscription_by_id
     .to_return(
       status: 200,
       body: {
-        errors: JSON.parse(File.read("./spec/support/notifications/get_destinations.json"))["errors"]
+        errors: JSON.parse(File.read("./spec/support/notifications/get_subscriptions.json"))["errors"]
       }.to_json,
       headers: {}
     )
