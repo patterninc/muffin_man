@@ -1,3 +1,8 @@
+# 2.0.0 [#47](https://github.com/patterninc/muffin_man/pull/47)
+
+- BREAKING CHANGES: Changed signature of processing_directive check as it was confusing and was not working. processing_directive is a nested structure. It has marketplace_ids. Having marketplace_ids as an independent parameter was confusing.
+- Added new endpoint support - delete_subscription.
+
 # 1.5.12 [#45](https://github.com/patterninc/muffin_man/pull/45)
 
 - Small update to putTransportDetails
