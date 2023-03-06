@@ -4,7 +4,6 @@ module MuffinMan
   module CatalogItems
     class V20220401 < BaseApi
       SEARCH_CATALOG_ITEMS_PARAMS = %w(
-        identifiers
         identifiersType
         sellerId
       ).freeze

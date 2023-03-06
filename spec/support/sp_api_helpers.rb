@@ -74,6 +74,11 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/search_catalog_items_v20220401.json"), headers: {})
     end
 
+    def stub_search_catalog_items_by_identifier_v20220401
+      stub_request(:get, "https://#{hostname}/catalog/2022-04-01/items?identifiers=#{asins}&identifiersType=ASIN&marketplaceIds=#{amazon_marketplace_id}")
+        .to_return(status: 200, body: File.read("./spec/support/search_catalog_items_by_identifier_v20220401.json"), headers: {})
+    end
+
     def stub_list_financial_event_groups
       stub_request(:get, "https://#{hostname}/finances/v0/financialEventGroups")
         .with(

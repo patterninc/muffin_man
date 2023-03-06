@@ -17,9 +17,11 @@ module MuffinMan
         locale
       ].freeze
       GET_CATALOG_ITEM_PARAMS = %w[includedData locale].freeze
+      DEFAULT_IDENTIFERS_TYPE = "ASIN".freeze
 
       API_VERSION = "2020-12-01".freeze
 
+      # rubocop:disable Metrics/CyclomaticComplexity
       def search_catalog_items(keywords, marketplace_ids, params = {}, api_version=API_VERSION)
         if sandbox
           keywords = SANDBOX_KEYWORDS
@@ -27,6 +29,7 @@ module MuffinMan
           params = {}
         end
         @keywords = keywords.is_a?(Array) ? keywords : [keywords]
+        @identifiers = params["identifiers"].is_a?(Array) ? params["identifiers"] : [params["identifiers"]]
         @marketplace_ids = marketplace_ids.is_a?(Array) ? marketplace_ids : [marketplace_ids]
         @params = params
         @local_var_path = "/catalog/#{api_version}/items"
@@ -34,10 +37,15 @@ module MuffinMan
           "marketplaceIds" => @marketplace_ids.join(",")
         }
         @query_params["keywords"] = @keywords.join(",") if @keywords.any?
+        if @identifiers.any?
+          @query_params["identifiers"] = @identifiers.join(",")
+          @query_params["identifiersType"] = params["identifiersType"] || DEFAULT_IDENTIFERS_TYPE
+        end
         @query_params.merge!(@params.slice(*search_catalog_items_params))
         @request_type = "GET"
         call_api
       end
+      # rubocop:enable Metrics/CyclomaticComplexity
 
       def get_catalog_item(asin, marketplace_ids, params = {}, api_version=API_VERSION)
         if sandbox
