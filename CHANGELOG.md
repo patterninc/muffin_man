@@ -1,3 +1,7 @@
+# 2.0.1 [#46](https://github.com/patterninc/muffin_man/pull/46)
+
+- Support for passing an array of identifiers to search_catalog_items
+
 # 2.0.0 [#47](https://github.com/patterninc/muffin_man/pull/47)
 
 - BREAKING CHANGES: Changed signature of processing_directive check as it was confusing and was not working. processing_directive is a nested structure. It has marketplace_ids. Having marketplace_ids as an independent parameter was confusing.
