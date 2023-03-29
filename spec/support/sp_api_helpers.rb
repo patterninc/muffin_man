@@ -20,8 +20,8 @@ module Support
         .to_return(status: 400,
                    headers: {},
                    body: {
-                     "error_description"=>"The request has an invalid grant parameter : refresh_token. User may have revoked or didn't grant the permission.",
-                     "error"=>"invalid_grant"
+                     "error_description" => "The request has an invalid grant parameter : refresh_token. User may have revoked or didn't grant the permission.",
+                     "error" => "invalid_grant"
                    }.to_json)
     end
 

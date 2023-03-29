@@ -44,7 +44,7 @@ module MuffinMan
     def call_api
       Typhoeus.send(request_type.downcase.to_sym, request.url, request_opts)
     rescue SpApiAuthError => e
-      return e.auth_response
+      e.auth_response
     end
 
     def request_opts
@@ -102,11 +102,9 @@ module MuffinMan
           "Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8"
         }
       )
-      if response.success?
-        JSON.parse(response.body)
-      else
-        raise SpApiAuthError.new(response)
-      end
+      raise SpApiAuthError, response if response.failure?
+
+      JSON.parse(response.body)
     end
 
     def retrieve_grantless_access_token
