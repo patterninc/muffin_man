@@ -45,8 +45,8 @@ RSpec.describe MuffinMan::SpApiClient do
       end
     end
     let(:client) { MuffinMan::FakeKlass.new(credentials, sandbox) }
+    let!(:access_token_stub) { stub_request_access_token }
     before do
-      stub_request_access_token
       stub_fake_request
     end
 
@@ -55,6 +55,16 @@ RSpec.describe MuffinMan::SpApiClient do
         .with("https://#{hostname}/some_path", headers: hash_including("x-amz-access-token" => fake_lwa_access_token,
                                                                        "authorization" => a_string_including("SignedHeaders=host;x-amz-content-sha256;x-amz-date")))
       client.make_a_request
+    end
+
+    context "error in getting access token" do
+      let!(:access_token_stub) { stub_request_access_token_failed }
+
+      it "returns the error" do
+        response = client.make_a_request
+        expect(response.success?).to be false
+        expect(JSON.parse(response.body)["error"]).to eq("invalid_grant")
+      end
     end
 
     context "when the config defines a lambda for token caching" do

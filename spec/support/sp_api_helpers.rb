@@ -12,6 +12,19 @@ module Support
         .to_return(status: 200, body: '{ "access_token": "this_will_get_you_into_drury_lane", "expires_in": 3600 }', headers: {})
     end
 
+    def stub_request_access_token_failed
+      stub_request(:post, "https://api.amazon.com/auth/o2/token")
+        .with(body: "grant_type=refresh_token&refresh_token=a-refresh-token&client_id=a-client-id&client_secret=a-client-secret",
+              headers: { "Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8", "Expect" => "",
+                         "User-Agent" => "" })
+        .to_return(status: 400,
+                   headers: {},
+                   body: {
+                     "error_description"=>"The request has an invalid grant parameter : refresh_token. User may have revoked or didn't grant the permission.",
+                     "error"=>"invalid_grant"
+                   }.to_json)
+    end
+
     def stub_request_grantless_access_token
       body = {
         grant_type: "client_credentials",

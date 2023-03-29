@@ -23,6 +23,13 @@ require "muffin_man/merchant_fulfillment/v0"
 
 module MuffinMan
   class Error < StandardError; end
+  class SpApiAuthError < StandardError
+    attr_reader :auth_response
+
+    def initialize(auth_response)
+      @auth_response = auth_response
+    end
+  end
 
   class << self
     attr_accessor :configuration
