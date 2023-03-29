@@ -1,3 +1,7 @@
+# 2.0.2 [#49](https://github.com/patterninc/muffin_man/pull/49)
+
+- Better error handling for unauthorized errors when getting LWA tokens
+
 # 2.0.1 [#46](https://github.com/patterninc/muffin_man/pull/46)
 
 - Support for passing an array of identifiers to search_catalog_items
