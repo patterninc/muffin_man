@@ -15,6 +15,7 @@ As of now, this gem only supports portions of the following APIs with more to co
 - `fulfillment_outbound`
 - `feeds`
 - `notifications`
+- `listings`
 
 ## Installation
 

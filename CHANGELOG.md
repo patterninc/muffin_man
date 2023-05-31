@@ -1,3 +1,7 @@
+# 2.0.3 [#](https://github.com/patterninc/muffin_man/pull/50)
+
+- Support for putListingsItem
+
 # 2.0.2 [#49](https://github.com/patterninc/muffin_man/pull/49)
 
 - Better error handling for unauthorized errors when getting LWA tokens
