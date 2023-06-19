@@ -198,8 +198,13 @@ module Support
     end
 
     def stub_delete_listings_item
-      stub_request(:delete, "https://#{hostname}/listings/2021-08-01/items/#{seller_id}/#{sku}?marketplaceIds=#{amazon_marketplace_id}")
+      stub_request(:delete, "https://#{hostname}/listings/2021-08-01/items/#{seller_id}/#{sku}?marketplaceIds=#{amazon_marketplace_id}&issueLocale=#{issue_locale}")
         .to_return(status: 200, body: File.read("./spec/support/delete_listings_item.json"), headers: {})
+    end
+
+    def stub_delete_listings_item_wrong_sku
+      stub_request(:delete, "https://#{hostname}/listings/2021-08-01/items/#{seller_id}/#{nonexistent_sku}?marketplaceIds=#{amazon_marketplace_id}&issueLocale=#{issue_locale}")
+        .to_return(status: 404, body: "", headers: {})
     end
 
     def stub_get_prep_instructions

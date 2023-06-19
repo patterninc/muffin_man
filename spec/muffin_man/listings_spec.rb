@@ -6,6 +6,7 @@ RSpec.describe MuffinMan::Listings::V20210801 do
   let(:sku) { "SD-ABC-12345" }
   let(:seller_id) { "THE_MUFFIN_MAN" }
   let(:amazon_marketplace_id) { "DRURYLANE" }
+  let(:issue_locale) { "en_US" }
 
   subject(:listings_client) { described_class.new(credentials) }
 
@@ -54,20 +55,32 @@ RSpec.describe MuffinMan::Listings::V20210801 do
   end
 
   describe "delete_listings_item" do
-    before { stub_delete_listings_item }
-    let(:delete_listing_result) do
-      {
-        "sku" => "SD-ABC-12345",
-        "status" => "ACCEPTED",
-        "submissionId" => "f1dc2914-75dd-11ea-bc55-0242ac130003",
-        "issues" => []
-      }
+    context "when sku and seller_id combination is correct" do
+      before { stub_delete_listings_item }
+      let(:delete_listing_result) do
+        {
+          "sku" => "SD-ABC-12345",
+          "status" => "ACCEPTED",
+          "submissionId" => "f1dc2914-75dd-11ea-bc55-0242ac130003",
+          "issues" => []
+        }
+      end
+
+      it "makes a request to delete a listings item" do
+        response = listings_client.delete_listings_item(seller_id, sku, amazon_marketplace_id, issue_locale: issue_locale)
+        expect(response.response_code).to eq(200)
+        expect(JSON.parse(response.body)).to eq(delete_listing_result)
+      end
     end
 
-    it "makes a request to delete a listings item" do
-      response = listings_client.delete_listings_item(seller_id, sku, amazon_marketplace_id)
-      expect(response.response_code).to eq(200)
-      expect(JSON.parse(response.body)).to eq(delete_listing_result)
+    context "when sku and seller_id combination is not found" do
+      before { stub_delete_listings_item_wrong_sku }
+      let(:nonexistent_sku) { "SD-XYZ-98765" }
+  
+      it "returns a 'not found' response" do
+        response = listings_client.delete_listings_item(seller_id, nonexistent_sku, amazon_marketplace_id, issue_locale: issue_locale)
+        expect(response.response_code).to eq(404)
+      end
     end
   end
 end
