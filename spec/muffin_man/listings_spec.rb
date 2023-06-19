@@ -76,7 +76,7 @@ RSpec.describe MuffinMan::Listings::V20210801 do
     context "when sku and seller_id combination is not found" do
       before { stub_delete_listings_item_wrong_sku }
       let(:nonexistent_sku) { "SD-XYZ-98765" }
-  
+
       it "returns a 'not found' response" do
         response = listings_client.delete_listings_item(seller_id, nonexistent_sku, amazon_marketplace_id, issue_locale: issue_locale)
         expect(response.response_code).to eq(404)
