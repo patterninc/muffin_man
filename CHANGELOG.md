@@ -1,3 +1,7 @@
+# 2.0.4 [#51](https://github.com/patterninc/muffin_man/pull/51)
+
+- Support for deleteListingsItem
+
 # 2.0.3 [#50](https://github.com/patterninc/muffin_man/pull/50)
 
 - Support for putListingsItem
