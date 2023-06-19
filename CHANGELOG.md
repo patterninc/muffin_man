@@ -1,4 +1,4 @@
-# 2.0.4 [#51](https://github.com/patterninc/muffin_man/pull/51)
+# 2.0.4 [#52](https://github.com/patterninc/muffin_man/pull/52)
 
 - Support for deleteListingsItem
 
