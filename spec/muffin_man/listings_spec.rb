@@ -52,4 +52,22 @@ RSpec.describe MuffinMan::Listings::V20210801 do
       expect(JSON.parse(response.body)).to eq(put_listing_result)
     end
   end
+
+  describe "delete_listings_item" do
+    before { stub_delete_listings_item }
+    let(:delete_listing_result) do
+      {
+        "sku" => "SD-ABC-12345",
+        "status" => "ACCEPTED",
+        "submissionId" => "f1dc2914-75dd-11ea-bc55-0242ac130003",
+        "issues" => []
+      }
+    end
+
+    it "makes a request to delete a listings item" do
+      response = listings_client.delete_listings_item(seller_id, sku, amazon_marketplace_id)
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body)).to eq(delete_listing_result)
+    end
+  end
 end
