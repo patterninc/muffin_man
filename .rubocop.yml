@@ -51,6 +51,3 @@ RSpec/MultipleMemoizedHelpers:
 
 RSpec/MultipleExpectations:
   Enabled: false
-
-Gemspec/DevelopmentDependencies:
-  Enabled: false
