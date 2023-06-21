@@ -197,6 +197,16 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/put_listings_item.json"), headers: {})
     end
 
+    def stub_delete_listings_item
+      stub_request(:delete, "https://#{hostname}/listings/2021-08-01/items/#{seller_id}/#{sku}?marketplaceIds=#{amazon_marketplace_id}&issueLocale=#{issue_locale}")
+        .to_return(status: 200, body: File.read("./spec/support/delete_listings_item.json"), headers: {})
+    end
+
+    def stub_delete_listings_item_wrong_sku
+      stub_request(:delete, "https://#{hostname}/listings/2021-08-01/items/#{seller_id}/#{nonexistent_sku}?marketplaceIds=#{amazon_marketplace_id}&issueLocale=#{issue_locale}")
+        .to_return(status: 404, body: "", headers: {})
+    end
+
     def stub_get_prep_instructions
       stub_request(:get, "https://#{hostname}/fba/inbound/v0/prepInstructions?ShipToCountryCode=#{country_code}&SellerSKUList=#{sku_list.join(",")}")
         .to_return(status: 200, body: File.read("./spec/support/get_prep_instructions.json"), headers: {})

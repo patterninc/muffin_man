@@ -36,6 +36,17 @@ module MuffinMan
         @request_type = "PUT"
         call_api
       end
+
+      def delete_listings_item(seller_id, sku, marketplace_ids, issue_locale: nil)
+        @local_var_path = "/listings/2021-08-01/items/#{seller_id}/#{sku}"
+        @marketplace_ids = marketplace_ids.is_a?(Array) ? marketplace_ids : [marketplace_ids]
+        @query_params = {
+          "marketplaceIds" =>  @marketplace_ids.join(",")
+        }
+        @query_params["issueLocale"] = issue_locale if issue_locale
+        @request_type = "DELETE"
+        call_api
+      end
     end
   end
 end
