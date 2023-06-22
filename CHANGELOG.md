@@ -1,3 +1,7 @@
+# 2.0.5 [#53](https://github.com/patterninc/muffin_man/pull/53)
+
+- Fix for files auto-unzipping from GZIP now
+
 # 2.0.4 [#52](https://github.com/patterninc/muffin_man/pull/52)
 
 - Support for deleteListingsItem
