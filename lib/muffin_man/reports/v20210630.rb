@@ -78,11 +78,15 @@ module MuffinMan
         response = get_report_document(report_document_id)
         parsed_response=JSON.parse(response.body)
         report=Net::HTTP.get(URI.parse(parsed_response['url']))
-        unless (parsed_response['compressionAlgorithm']).nil?
-          input = StringIO.new(report)
-          report = Zlib::GzipReader.new(input).read
+        begin
+          unless (parsed_response['compressionAlgorithm']).nil?
+            input = StringIO.new(report)
+            report = Zlib::GzipReader.new(input).read
+          end
+          report
+        rescue Zlib::GzipFile::Error
+          report
         end
-        report
       end
     end
   end
