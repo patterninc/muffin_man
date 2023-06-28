@@ -6,6 +6,7 @@ RSpec.describe MuffinMan::Orders::V0 do
     stub_get_orders_with_ids
     stub_get_orders_with_next_token
     stub_get_order_items
+    stub_get_order
     stub_get_order_address
   end
 
@@ -49,6 +50,14 @@ RSpec.describe MuffinMan::Orders::V0 do
       response = orders_client.get_order_items(order_id)
       expect(response.response_code).to eq(200)
       expect(JSON.parse(response.body)["payload"]["OrderItems"][0]["ASIN"]).to eq("B07QLFMYWM")
+    end
+  end
+
+  describe 'get_order' do
+    it 'requests for an order by an order_id' do
+      response = orders_client.get_order(order_id)
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body)["payload"]["AmazonOrderId"]).to eq order_id
     end
   end
 
