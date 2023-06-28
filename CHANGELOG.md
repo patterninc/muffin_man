@@ -1,3 +1,7 @@
+# 2.0.6 [#54](https://github.com/patterninc/muffin_man/pull/54)
+
+- Support for getOrder
+
 # 2.0.5 [#53](https://github.com/patterninc/muffin_man/pull/53)
 
 - Fix for files auto-unzipping from GZIP now
