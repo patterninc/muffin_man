@@ -1,0 +1,61 @@
+{
+  "payload": {
+    "AmazonOrderId": "ID323",
+    "PurchaseDate": "2017-01-20T19:49:35Z",
+    "LastUpdateDate": "2017-01-20T19:49:35Z",
+    "OrderStatus": "Pending",
+    "FulfillmentChannel": "SellerFulfilled",
+    "NumberOfItemsShipped": 0,
+    "NumberOfItemsUnshipped": 0,
+    "PaymentMethod": "Other",
+    "PaymentMethodDetails": [
+      "CreditCard",
+      "GiftCerificate"
+    ],
+    "MarketplaceId": "ATVPDKIKX0DER",
+    "ShipmentServiceLevelCategory": "Standard",
+    "OrderType": "StandardOrder",
+    "EarliestShipDate": "2017-01-20T19:51:16Z",
+    "LatestShipDate": "2017-01-25T19:49:35Z",
+    "IsBusinessOrder": false,
+    "IsPrime": false,
+    "IsGlobalExpressEnabled": false,
+    "IsPremiumOrder": false,
+    "IsSoldByAB": false,
+    "IsIBA": false,
+    "DefaultShipFromLocationAddress": {
+      "Name": "MFNIntegrationTestMerchant",
+      "AddressLine1": "2201 WESTLAKE AVE",
+      "City": "SEATTLE",
+      "StateOrRegion": "WA",
+      "PostalCode": "98121-2778",
+      "CountryCode": "US",
+      "Phone": "+1 480-386-0930 ext. 73824",
+      "AddressType": "Commercial"
+    },
+    "FulfillmentInstruction": {
+      "FulfillmentSupplySourceId": "sampleSupplySourceId"
+    },
+    "IsISPU": false,
+    "IsAccessPointOrder": false,
+    "ShippingAddress": {
+      "Name": "Michigan address",
+      "AddressLine1": "1 Cross St.",
+      "City": "Canton",
+      "StateOrRegion": "MI",
+      "PostalCode": "48817",
+      "CountryCode": "US"
+    },
+    "BuyerInfo": {
+      "BuyerEmail": "user@example.com",
+      "BuyerName": "John Doe",
+      "BuyerTaxInfo": {
+        "CompanyLegalName": "A Company Name"
+      },
+      "PurchaseOrderNumber": "1234567890123"
+    },
+    "AutomatedShippingSettings": {
+      "HasAutomatedShippingSettings": false
+    }
+  }
+}

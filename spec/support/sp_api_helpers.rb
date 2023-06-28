@@ -161,6 +161,11 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/get_order_items.json"), headers: {})
     end
 
+    def stub_get_order
+      stub_request(:get, "https://#{hostname}/orders/v0/orders/#{order_id}")
+        .to_return(status: 200, body: File.read("./spec/support/get_order.json"), headers: {})
+    end
+
     def stub_get_order_address
       stub_request(:get, "https://#{hostname}/orders/v0/orders/#{order_id}/address")
         .to_return(status: 200, body: File.read("./spec/support/get_order_address.json"), headers: {})

@@ -38,6 +38,12 @@ module MuffinMan
         call_api
       end
 
+      def get_order(order_id)
+        @local_var_path = "/orders/v0/orders/#{order_id}"
+        @request_type = "GET"
+        call_api
+      end
+
       def get_order_items(order_id, params = {})
         @query_params = params.slice(*GET_ORDER_ITEMS_PARAMS)
         @local_var_path = "/orders/v0/orders/#{order_id}/orderItems"
