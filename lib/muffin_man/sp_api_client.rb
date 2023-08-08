@@ -44,7 +44,7 @@ module MuffinMan
 
     def call_api
       res = Typhoeus.send(request_type.downcase.to_sym, request.url, request_opts)
-      if self.class.const_defined?('LOGGING_ENABLED')
+      if self.class.const_defined?("LOGGING_ENABLED")
         level = res.code == 200 ? :info : :error
         log_request_and_response(level, res)
       end
