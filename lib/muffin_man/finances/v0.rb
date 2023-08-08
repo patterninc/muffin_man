@@ -1,4 +1,4 @@
-require 'muffin_man/muffin_logger'
+require "muffin_man/muffin_logger"
 module MuffinMan
   module Finances
     class V0 < SpApiClient
@@ -17,7 +17,7 @@ module MuffinMan
         @query_params["NextToken"] = next_token unless next_token.nil?
         @request_type = "GET"
         res = call_api
-        level = (res.code == 200) ? :info : :error
+        level = res.code == 200 ? :info : :error
         log_request_and_response(level, res)
         res
       end
@@ -31,7 +31,7 @@ module MuffinMan
         @query_params["NextToken"] = next_token unless next_token.nil?
         @request_type = "GET"
         res = call_api
-        level = (res.code == 200) ? :info : :error
+        level = res.code == 200 ? :info : :error
         log_request_and_response(level, res)
         res
       end
