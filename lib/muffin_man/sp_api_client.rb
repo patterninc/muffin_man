@@ -3,6 +3,7 @@ require "uri"
 require "aws-sdk-core"
 require "typhoeus"
 require "securerandom"
+require "muffin_man/muffin_logger"
 
 module MuffinMan
   class SpApiClient
@@ -42,7 +43,12 @@ module MuffinMan
     private
 
     def call_api
-      Typhoeus.send(request_type.downcase.to_sym, request.url, request_opts)
+      res = Typhoeus.send(request_type.downcase.to_sym, request.url, request_opts)
+      if self.class.const_defined?('LOGGING_ENABLED')
+        level = res.code == 200 ? :info : :error
+        log_request_and_response(level, res)
+      end
+      res
     rescue SpApiAuthError => e
       e.auth_response
     end
@@ -195,6 +201,17 @@ module MuffinMan
 
     def sp_api_params(params)
       params.to_h.transform_keys { |key| key.to_s.split("_").map.with_index { |x, i| i.positive? ? x.capitalize : x }.join }
+    end
+
+    def log_request_and_response(level, res)
+      log_info = "REQUEST\n
+        canonical_uri:#{canonical_uri}\n\n
+        query_params:#{query_params}\n\n
+        RESPONSE\n
+        response_headers=#{res.headers}\n\n
+        response_body=#{res.body}\n\n
+      "
+      MuffinLogger.logger.send(level, log_info)
     end
   end
 end
