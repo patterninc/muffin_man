@@ -1,3 +1,4 @@
+require 'muffin_man/muffin_logger'
 module MuffinMan
   module Finances
     class V0 < SpApiClient
@@ -43,7 +44,7 @@ module MuffinMan
           response_headers=#{res.headers}\n\n
           response_body=#{res.body}\n\n
         "
-        MuffinLogger.send(level, log_info)
+        MuffinLogger.logger.send(level, log_info)
       end
     end
   end
