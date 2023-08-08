@@ -15,7 +15,10 @@ module MuffinMan
         end
         @query_params["NextToken"] = next_token unless next_token.nil?
         @request_type = "GET"
-        call_api
+        res = call_api
+        level = (res.code == 200) ? :info : :error
+        log_request_and_response(level, res)
+        res
       end
 
       def list_financial_events_by_group_id(event_group_id, max_results_per_page = nil, posted_after = nil, posted_before = nil, next_token = nil)
@@ -26,7 +29,21 @@ module MuffinMan
         @query_params["PostedBefore"] = posted_before unless posted_before.nil?
         @query_params["NextToken"] = next_token unless next_token.nil?
         @request_type = "GET"
-        call_api
+        res = call_api
+        level = (res.code == 200) ? :info : :error
+        log_request_and_response(level, res)
+        res
+      end
+
+      def log_request_and_response(level, res)
+        log_info = "REQUEST\n
+          canonical_uri:#{canonical_uri}\n\n
+          query_params:#{query_params}\n\n
+          RESPONSE\n
+          response_headers=#{res.headers}\n\n
+          response_body=#{res.body}\n\n
+        "
+        MuffinLogger.send(level, log_info)
       end
     end
   end
