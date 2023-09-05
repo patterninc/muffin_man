@@ -12,7 +12,7 @@ module MuffinMan
         response_headers=#{res.headers}\n\n
         response_body=#{res.body}\n\n
       "
-      MuffinLogger.logger.send(level, log_info)
+      MuffinMan.logger.send(level, log_info)
     end
   end
 end
