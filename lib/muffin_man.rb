@@ -20,7 +20,7 @@ require "muffin_man/request_helpers"
 require "muffin_man/feeds/v20210630"
 require "muffin_man/notifications/v1"
 require "muffin_man/merchant_fulfillment/v0"
-require "logger"
+require "muffin_man/muffin_logger"
 
 module MuffinMan
   class Error < StandardError; end
@@ -35,7 +35,7 @@ module MuffinMan
   end
 
   class << self
-    attr_accessor :configuration, :log
+    attr_accessor :configuration, :logger
   end
 
   def self.configure
@@ -44,16 +44,10 @@ module MuffinMan
   end
 
   def self.logger
-    self.log ||= Logger.new($stdout)
-  end
-
-  %i[debug info warn error fatal].each do |level|
-    define_method(level) do |message|
-      MuffinLogger.log.send(level, message)
-    end
+    MuffinMan::MuffinLogger.logger
   end
 
   class Configuration
-    attr_accessor :save_access_token, :get_access_token
+    attr_accessor :save_access_token, :get_access_token, :log_with
   end
 end
