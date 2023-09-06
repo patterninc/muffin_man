@@ -4,7 +4,7 @@ module MuffinMan
   module Definitions
     class V20200901 < SpApiClient
       def search_definitions_product_types(marketplace_ids, keywords: nil)
-        @local_var_path = "/definitions/2020-09-01/productTypes#{seller_id}/#{sku}"
+        @local_var_path = "/definitions/2020-09-01/productTypes"
         @marketplace_ids = marketplace_ids.is_a?(Array) ? marketplace_ids : [marketplace_ids]
         @keywords = keywords.is_a?(Array) ? keywords : [keywords]
         @query_params = { marketplaceIds: @marketplace_ids.join(",") }
