@@ -56,6 +56,16 @@ JSON.parse(response.body)
 
 You can optionally use Amazon's sandbox environment by specifying `client = MuffinMan::Solicitations.new(credentials, sandbox = true)`
 
+### Set Custom Logger
+
+By default MuffinMan will log to standard out. To customize the logger used:
+
+```ruby
+MuffinMan.configure do |config|
+  config.logger = Logger.new('log/sp-api.log')
+end
+```
+
 ### Access Token Caching
 
 You can save and retrieve the LWA refresh token by defining a lambda in your initializers.

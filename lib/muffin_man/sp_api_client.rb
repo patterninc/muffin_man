@@ -3,7 +3,6 @@ require "uri"
 require "aws-sdk-core"
 require "typhoeus"
 require "securerandom"
-require "muffin_man/muffin_logger"
 
 module MuffinMan
   class SpApiClient
@@ -45,7 +44,7 @@ module MuffinMan
     def call_api
       res = Typhoeus.send(request_type.downcase.to_sym, request.url, request_opts)
       if self.class.const_defined?("LOGGING_ENABLED")
-        level = res.code == 200 ? :info : :error
+        level = res.code.to_s.match?(/2\d{2}/) ? :info : :error
         log_request_and_response(level, res)
       end
       res
