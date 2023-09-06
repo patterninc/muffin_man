@@ -104,6 +104,10 @@ auth_code = resp['payload']['authorizationCode']
 refresh_token = MuffinMan::Lwa::AuthHelper.get_refresh_token(CLIENT_ID, CLIENT_SECRET, auth_code)
 ```
 
+### Debugging
+
+To use Typheous' verbose mode set env variable `MUFFIN_MAN_DEBUG=true`
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/patterninc/muffin_man. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/patterninc/muffin_man/blob/master/CODE_OF_CONDUCT.md).
