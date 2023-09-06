@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MuffinMan
   module Definitions
     class V20200901 < SpApiClient
