@@ -3,7 +3,6 @@
 require "logger"
 module MuffinMan
   class MuffinLogger
-
     def self.logger
       MuffinMan.configuration&.log_with || Logger.new($stdout)
     end
