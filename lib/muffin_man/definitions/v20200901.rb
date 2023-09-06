@@ -6,7 +6,7 @@ module MuffinMan
         @marketplace_ids = marketplace_ids.is_a?(Array) ? marketplace_ids : [marketplace_ids]
         @keywords = keywords.is_a?(Array) ? keywords : [keywords]
         @query_params = { marketplaceIds: @marketplace_ids.join(",") }
-        @query_params["keywords"] = keywords.join(",") if keywords
+        @query_params["keywords"] = @keywords.join(",") if keywords
         @request_type = "GET"
         call_api
       end
