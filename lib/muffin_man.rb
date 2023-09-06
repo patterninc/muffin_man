@@ -35,7 +35,7 @@ module MuffinMan
   end
 
   class << self
-    attr_accessor :configuration, :logger
+    attr_accessor :configuration
   end
 
   def self.configure

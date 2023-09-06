@@ -5,7 +5,7 @@ module MuffinMan
   class MuffinLogger
 
     def self.logger
-      MuffinMan.configuration.log_with || Logger.new($stdout)
+      MuffinMan.configuration&.log_with || Logger.new($stdout)
     end
 
     %i[debug info warn error fatal].each do |level|
