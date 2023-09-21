@@ -240,7 +240,7 @@ RSpec/EmptyLineAfterHook:
 # Offense count: 12
 # Configuration parameters: Include, CustomTransform, IgnoreMethods, SpecSuffixOnly.
 # Include: **/*_spec*rb*, **/spec/**/*
-RSpec/FilePath:
+RSpec/SpecFilePathFormat:
   Exclude:
     - 'spec/muffin_man/authorization_spec.rb'
     - 'spec/muffin_man/catalog_items_spec.rb'
@@ -255,6 +255,20 @@ RSpec/FilePath:
     - 'spec/muffin_man/solicitations_spec.rb'
     - 'spec/muffin_man/tokens_spec.rb'
 
+RSpec/SpecFilePathSuffix:
+  Exclude:
+    - 'spec/muffin_man/authorization_spec.rb'
+    - 'spec/muffin_man/catalog_items_spec.rb'
+    - 'spec/muffin_man/catalog_items_v20220401_spec.rb'
+    - 'spec/muffin_man/finances_spec.rb'
+    - 'spec/muffin_man/listings_spec.rb'
+    - 'spec/muffin_man/lwa_spec.rb'
+    - 'spec/muffin_man/orders_spec.rb'
+    - 'spec/muffin_man/product_fees_spec.rb'
+    - 'spec/muffin_man/product_pricing_spec.rb'
+    - 'spec/muffin_man/reports_spec.rb'
+    - 'spec/muffin_man/solicitations_spec.rb'
+    - 'spec/muffin_man/tokens_spec.rb'
 
 # Offense count: 15
 # This cop supports safe autocorrection (--autocorrect).
@@ -346,6 +360,7 @@ Style/FrozenStringLiteralComment:
     - 'lib/muffin_man/fulfillment_inbound/v0.rb'
     - 'lib/muffin_man/fulfillment_inbound/v1.rb'
     - 'lib/muffin_man/listings/v20210801.rb'
+    - 'lib/muffin_man/listings/v20200901.rb'
     - 'lib/muffin_man/lwa/auth_helper.rb'
     - 'lib/muffin_man/orders/v0.rb'
     - 'lib/muffin_man/reports/v20210630.rb'
@@ -363,7 +378,8 @@ Style/FrozenStringLiteralComment:
     - 'spec/muffin_man/finances_spec.rb'
     - 'spec/muffin_man/fulfillment_inbound/v0_spec.rb'
     - 'spec/muffin_man/fulfillment_inbound/v1_spec.rb'
-    - 'spec/muffin_man/listings_spec.rb'
+    - 'spec/muffin_man/listings/v20210801_spec.rb'
+    - 'spec/muffin_man/listings/v20200901_spec.rb'
     - 'spec/muffin_man/lwa_spec.rb'
     - 'spec/muffin_man/orders_spec.rb'
     - 'spec/muffin_man/product_fees_spec.rb'

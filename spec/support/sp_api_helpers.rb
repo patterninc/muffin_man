@@ -219,7 +219,7 @@ module Support
 
     def stub_get_definitions_product_type
       stub_request(:get,
-         "https://#{hostname}/definitions/2020-09-01/productTypes/#{product_type}?locale=en_US&marketplaceIds=#{amazon_marketplace_id}&requirementsEnforced=ENFORCED")
+                   "https://#{hostname}/definitions/2020-09-01/productTypes/#{product_type}?locale=en_US&marketplaceIds=#{amazon_marketplace_id}&requirementsEnforced=ENFORCED")
         .to_return(status: 200, body: File.read("./spec/support/get_definitions_product_type.json"), headers: {})
     end
 
