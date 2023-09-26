@@ -1,4 +1,4 @@
-# 2.0.7 [#58](https://github.com/patterninc/muffin_man/pull/58)
+# 2.1.0 [#58](https://github.com/patterninc/muffin_man/pull/58)
 
 - Support for Product Type Definitions
 
