@@ -1,0 +1,153 @@
+{
+    "metaSchema": {
+      "link": {
+        "resource": "https://...",
+        "verb": "GET"
+      },
+      "checksum": "QFQDmPwMARO7vwMEyLhOtw=="
+    },
+    "schema": {
+      "link": {
+        "resource": "https://...",
+        "verb": "GET"
+      },
+      "checksum": "TBr8ubaxXrUyay9hmxUXUw=="
+    },
+    "requirements": "LISTING",
+    "requirementsEnforced": "ENFORCED",
+    "propertyGroups": {
+      "offer": {
+        "title": "Offer",
+        "description": "Product Offer",
+        "propertyNames": [
+          "fulfillment_channel_availability",
+          "purchasable_offer",
+          "condition_type",
+          "condition_note",
+          "list_price",
+          "product_tax_code",
+          "merchant_release_date",
+          "merchant_shipping_group",
+          "max_order_quantity",
+          "gift_options",
+          "main_offer_image_locator",
+          "other_offer_image_locator_1",
+          "other_offer_image_locator_2",
+          "other_offer_image_locator_3",
+          "other_offer_image_locator_4",
+          "other_offer_image_locator_5"
+        ]
+      },
+      "images": {
+        "title": "Images",
+        "description": "Physical imagess or URL's",
+        "propertyNames": [
+          "main_product_image_locator",
+          "other_product_image_locator_1",
+          "other_product_image_locator_2",
+          "other_product_image_locator_3",
+          "other_product_image_locator_4",
+          "other_product_image_locator_5",
+          "other_product_image_locator_6",
+          "other_product_image_locator_7",
+          "other_product_image_locator_8",
+          "swatch_product_image_locator"
+        ]
+      },
+      "shipping": {
+        "title": "Shipping",
+        "description": "Information to determine shipping and storage of your product (e.g., package dimensions, weight, volume)",
+        "propertyNames": [
+          "item_dimensions",
+          "item_package_dimensions",
+          "item_package_weight"
+        ]
+      },
+      "variations": {
+        "title": "Variations",
+        "description": "Variations that product will use",
+        "propertyNames": [
+          "parentage_level",
+          "child_parent_sku_relationship",
+          "variation_theme"
+        ]
+      },
+      "safety_and_compliance": {
+        "title": "Safety & Compliance",
+        "description": "Information to indicate product compliance, hazardous materials, and legal and safety warnings (e.g., lithium batteries, choking hazards, Consumer Product Safety Information Act (CPSIA))",
+        "propertyNames": [
+          "country_of_origin",
+          "warranty_description",
+          "batteries_required",
+          "batteries_included",
+          "battery",
+          "num_batteries",
+          "number_of_lithium_metal_cells",
+          "number_of_lithium_ion_cells",
+          "lithium_battery",
+          "supplier_declared_dg_hz_regulation",
+          "hazmat",
+          "safety_data_sheet_url",
+          "item_weight",
+          "ghs",
+          "supplier_declared_material_regulation",
+          "california_proposition_65",
+          "pesticide_marking"
+        ]
+      },
+      "product_identity": {
+        "title": "Product Identity",
+        "description": "Information to uniquely identify your product (e.g., UPC, EAN, GTIN, Product Type, Brand)",
+        "propertyNames": [
+          "item_name",
+          "brand",
+          "supplier_declared_has_product_identifier_exemption",
+          "externally_assigned_product_identifier",
+          "merchant_suggested_asin",
+          "item_type_keyword",
+          "item_type_name",
+          "model_number",
+          "manufacturer"
+        ]
+      },
+      "product_details": {
+        "title": "Product Details",
+        "description": "Information and characteristics to describe the product to support search, browse and detail page content (e.g., bullets, product features, model, style name)",
+        "propertyNames": [
+          "product_description",
+          "bullet_point",
+          "generic_keyword",
+          "special_feature",
+          "style",
+          "department",
+          "target_gender",
+          "age_range_description",
+          "material",
+          "outer",
+          "fabric_type",
+          "lining_description",
+          "number_of_items",
+          "number_of_wheels",
+          "wheel",
+          "model_name",
+          "color",
+          "size",
+          "size_map",
+          "part_number",
+          "compliance_media"
+        ]
+      }
+    },
+    "locale": "en_US",
+    "marketplaceIds": [
+      "DRURYLANE"
+    ],
+    "productType": "YARN",
+    "productTypeVersion": {
+      "version": "U8L4z4Ud95N16tZlR7rsmbQ==",
+      "latest": true,
+      "releaseCandidate": false
+    }
+  }
+
+  

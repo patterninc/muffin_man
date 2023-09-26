@@ -255,7 +255,6 @@ RSpec/FilePath:
     - 'spec/muffin_man/solicitations_spec.rb'
     - 'spec/muffin_man/tokens_spec.rb'
 
-
 # Offense count: 15
 # This cop supports safe autocorrection (--autocorrect).
 RSpec/LeadingSubject:
@@ -363,7 +362,6 @@ Style/FrozenStringLiteralComment:
     - 'spec/muffin_man/finances_spec.rb'
     - 'spec/muffin_man/fulfillment_inbound/v0_spec.rb'
     - 'spec/muffin_man/fulfillment_inbound/v1_spec.rb'
-    - 'spec/muffin_man/listings_spec.rb'
     - 'spec/muffin_man/lwa_spec.rb'
     - 'spec/muffin_man/orders_spec.rb'
     - 'spec/muffin_man/product_fees_spec.rb'
