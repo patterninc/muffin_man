@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe MuffinMan::Listings::V20210801 do
   subject(:listings_client) { described_class.new(credentials) }
 
