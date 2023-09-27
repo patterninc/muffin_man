@@ -57,6 +57,7 @@ module MuffinMan
         report_id = sandbox ? SANDBOX_REPORT_ID : report_id
         @local_var_path = "/reports/2021-06-30/reports/#{report_id}"
         @request_type = "GET"
+        @request_body = nil
         call_api
       end
 
