@@ -54,8 +54,8 @@ module MuffinMan
 
     def request_opts
       opts = { headers: headers }
-      opts[:body] = request_body.to_json if request_body
       opts[:verbose] = true if ENV.fetch("MUFFIN_MAN_DEBUG", nil) == "true"
+      opts[:body] = request_body.to_json if request_body && request_type != "GET" && request_type != "HEAD"
       opts
     end
 
