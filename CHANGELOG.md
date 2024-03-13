@@ -1,3 +1,7 @@
+# 2.1.0 [#58](https://github.com/patterninc/muffin_man/pull/58)
+
+- Support for Product Type Definitions
+
 # 2.0.6 [#54](https://github.com/patterninc/muffin_man/pull/54)
 
 - Support for getOrder

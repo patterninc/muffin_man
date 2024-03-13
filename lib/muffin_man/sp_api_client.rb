@@ -42,14 +42,20 @@ module MuffinMan
     private
 
     def call_api
-      Typhoeus.send(request_type.downcase.to_sym, request.url, request_opts)
+      res = Typhoeus.send(request_type.downcase.to_sym, request.url, request_opts)
+      if self.class.const_defined?("LOGGING_ENABLED")
+        level = res.code.to_s.match?(/2\d{2}/) ? :info : :error
+        log_request_and_response(level, res)
+      end
+      res
     rescue SpApiAuthError => e
       e.auth_response
     end
 
     def request_opts
       opts = { headers: headers }
-      opts[:body] = request_body.to_json if request_body
+      opts[:verbose] = true if ENV.fetch("MUFFIN_MAN_DEBUG", nil) == "true"
+      opts[:body] = request_body.to_json if request_body && request_type != "GET" && request_type != "HEAD"
       opts
     end
 

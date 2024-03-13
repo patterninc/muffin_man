@@ -1,6 +1,10 @@
+require "muffin_man/enable_logger"
+
 module MuffinMan
   module Finances
     class V0 < SpApiClient
+      include EnableLogger
+
       def list_financial_event_groups(max_results_per_page = nil, financial_event_group_started_before = nil, financial_event_group_started_after = nil, next_token = nil)
         @local_var_path = "/finances/v0/financialEventGroups"
         @query_params = {}

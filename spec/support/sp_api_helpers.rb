@@ -212,6 +212,17 @@ module Support
         .to_return(status: 404, body: "", headers: {})
     end
 
+    def stub_search_definitions_product_types
+      stub_request(:get, "https://#{hostname}/definitions/2020-09-01/productTypes?keywords=#{keyword}&marketplaceIds=#{amazon_marketplace_id}")
+        .to_return(status: 200, body: File.read("./spec/support/search_definitions_product_types.json"), headers: {})
+    end
+
+    def stub_get_definitions_product_type
+      stub_request(:get,
+                   "https://#{hostname}/definitions/2020-09-01/productTypes/#{product_type}?locale=en_US&marketplaceIds=#{amazon_marketplace_id}&requirementsEnforced=ENFORCED")
+        .to_return(status: 200, body: File.read("./spec/support/get_definitions_product_type.json"), headers: {})
+    end
+
     def stub_get_prep_instructions
       stub_request(:get, "https://#{hostname}/fba/inbound/v0/prepInstructions?ShipToCountryCode=#{country_code}&SellerSKUList=#{sku_list.join(",")}")
         .to_return(status: 200, body: File.read("./spec/support/get_prep_instructions.json"), headers: {})

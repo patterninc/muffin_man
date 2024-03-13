@@ -13,4 +13,4 @@ gem "rubocop", "<= 1.43"
 
 gem "rubocop-rake"
 
-gem "rubocop-rspec"
+gem "rubocop-rspec", "<=2.20"

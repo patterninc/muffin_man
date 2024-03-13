@@ -12,6 +12,7 @@ require "muffin_man/authorization/v1"
 require "muffin_man/tokens/v20210301"
 require "muffin_man/product_pricing/v0"
 require "muffin_man/listings/v20210801"
+require "muffin_man/listings/v20200901"
 require "muffin_man/fulfillment_inbound/v0"
 require "muffin_man/fulfillment_inbound/v1"
 require "muffin_man/fulfillment_outbound/v20200701"
@@ -34,15 +35,19 @@ module MuffinMan
   end
 
   class << self
-    attr_accessor :configuration
+    attr_accessor :configuration, :logger
   end
 
   def self.configure
     self.configuration ||= Configuration.new
     yield(configuration)
+    self.logger = configuration.logger if configuration.logger
   end
 
   class Configuration
-    attr_accessor :save_access_token, :get_access_token
+    attr_accessor :save_access_token, :get_access_token, :logger
   end
 end
+
+# Set default logger
+MuffinMan.logger = Logger.new($stdout)
