@@ -67,6 +67,7 @@ module MuffinMan
         end
         @request_body = { "requests" => requests }
         @request_type = "POST"
+        call_api
       end
 
       # params is a hash with the following structure:
@@ -92,6 +93,7 @@ module MuffinMan
         end
         @request_body = { "requests" => requests }
         @request_type = "POST"
+        call_api
       end
 
       private
