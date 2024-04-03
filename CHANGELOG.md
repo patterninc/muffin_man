@@ -1,3 +1,7 @@
+# 2.1.1 [#62](https://github.com/patterninc/muffin_man/pull/62)
+
+- SearchCatalogItems validations on keywords & identifiers
+
 # 2.1.0 [#58](https://github.com/patterninc/muffin_man/pull/58)
 
 - Support for Product Type Definitions

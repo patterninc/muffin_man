@@ -30,6 +30,7 @@ module MuffinMan
         end
         @keywords = keywords.is_a?(Array) ? keywords : [keywords]
         @identifiers = params["identifiers"].is_a?(Array) ? params["identifiers"] : [params["identifiers"]]
+        validate_keywords_and_identifiers
         @marketplace_ids = marketplace_ids.is_a?(Array) ? marketplace_ids : [marketplace_ids]
         @params = params
         @local_var_path = "/catalog/#{api_version}/items"
@@ -67,6 +68,11 @@ module MuffinMan
 
       def search_catalog_items_params
         BASE_SEARCH_CATALOG_ITEMS_PARAMS + self.class::SEARCH_CATALOG_ITEMS_PARAMS
+      end
+
+      def validate_keywords_and_identifiers
+        raise MuffinMan::Error, "Keywords cannot be used with Identifiers" if @keywords.any? && @identifiers.any?
+        raise MuffinMan::Error, "Keywords or Identifiers must be present" if @keywords.none? && @identifiers.none?
       end
     end
   end

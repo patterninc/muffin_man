@@ -31,6 +31,25 @@ RSpec.describe MuffinMan::CatalogItems::V20220401 do
     end
   end
 
+  describe "search_catalog_items_validate_keywords_and_identifiers" do
+    context "when neither keywords nor identifiers are present" do
+      it "raises MuffinMan::Error" do
+        expect do
+          catalog_items_client.search_catalog_items(amazon_marketplace_id, {})
+        end.to raise_error(MuffinMan::Error, "Keywords or Identifiers must be present")
+      end
+    end
+
+    context "when both keywords and identifiers are present" do
+      it "raises MuffinMan::Error" do
+        expect do
+          catalog_items_client.search_catalog_items(amazon_marketplace_id,
+                                                    { "keywords" => keywords, "identifiers" => asins })
+        end.to raise_error(MuffinMan::Error, "Keywords cannot be used with Identifiers")
+      end
+    end
+  end
+
   describe "get_catalog_item" do
     it "makes a get_catalog_item request to amazon" do
       response = catalog_items_client.get_catalog_item(asin, amazon_marketplace_id)
