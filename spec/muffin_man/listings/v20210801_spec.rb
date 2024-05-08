@@ -7,10 +7,19 @@ RSpec.describe MuffinMan::Listings::V20210801 do
     stub_request_access_token
   end
 
-  let(:sku) { "SD-ABC-12345" }
   let(:seller_id) { "THE_MUFFIN_MAN" }
+  let(:sku) { "SD-ABC-12345" }
   let(:amazon_marketplace_id) { "DRURYLANE" }
   let(:issue_locale) { "en_US" }
+  let(:product_type) { "LUGGAGE" }
+  let(:submission_accepted_response) do
+    {
+      "sku" => "SD-ABC-12345",
+      "status" => "ACCEPTED",
+      "submissionId" => "f1dc2914-75dd-11ea-bc55-0242ac130003",
+      "issues" => []
+    }
+  end
 
   describe "get_listings_item" do
     before { stub_get_listings_item }
@@ -25,30 +34,22 @@ RSpec.describe MuffinMan::Listings::V20210801 do
   describe "put_listings_item" do
     before { stub_put_listings_item }
 
-    let(:product_type) { "LUGGAGE" }
     let(:requirements) { "LISTING" }
     let(:attributes) do
       {
-        condition_type:
+        condition_type: [
           {
             value: "new_new",
             marketplace_id: "ATVPDKIKX0DER"
-          },
-        item_name:
+          }
+        ],
+        item_name: [
           {
-            value: 'AmazonBasics 16\" Underseat Spinner Carry-On',
+            value: "AmazonBasics 16\" Underseat Spinner Carry-On",
             language_tag: "en_US",
             marketplace_id: "ATVPDKIKX0DER"
           }
-      }
-    end
-
-    let(:put_listing_result) do
-      {
-        "sku" => "SD-ABC-12345",
-        "status" => "ACCEPTED",
-        "submissionId" => "f1dc2914-75dd-11ea-bc55-0242ac130003",
-        "issues" => []
+        ]
       }
     end
 
@@ -56,7 +57,7 @@ RSpec.describe MuffinMan::Listings::V20210801 do
       response = listings_client.put_listings_item(seller_id, sku, amazon_marketplace_id, product_type, attributes,
                                                    requirements: requirements)
       expect(response.response_code).to eq(200)
-      expect(JSON.parse(response.body)).to eq(put_listing_result)
+      expect(JSON.parse(response.body)).to eq(submission_accepted_response)
     end
   end
 
@@ -64,25 +65,16 @@ RSpec.describe MuffinMan::Listings::V20210801 do
     context "when sku and seller_id combination is correct" do
       before { stub_delete_listings_item }
 
-      let(:delete_listing_result) do
-        {
-          "sku" => "SD-ABC-12345",
-          "status" => "ACCEPTED",
-          "submissionId" => "f1dc2914-75dd-11ea-bc55-0242ac130003",
-          "issues" => []
-        }
-      end
-
       it "makes a request to delete a listings item" do
         response = listings_client.delete_listings_item(seller_id, sku, amazon_marketplace_id,
                                                         issue_locale: issue_locale)
         expect(response.response_code).to eq(200)
-        expect(JSON.parse(response.body)).to eq(delete_listing_result)
+        expect(JSON.parse(response.body)).to eq(submission_accepted_response)
       end
     end
 
     context "when sku and seller_id combination is not found" do
-      before { stub_delete_listings_item_wrong_sku }
+      before { stub_delete_listings_item_nonexistent_sku }
 
       let(:nonexistent_sku) { "SD-XYZ-98765" }
 
@@ -91,6 +83,30 @@ RSpec.describe MuffinMan::Listings::V20210801 do
                                                         issue_locale: issue_locale)
         expect(response.response_code).to eq(404)
       end
+    end
+  end
+
+  describe "patch_listings_item" do
+    before { stub_patch_listings_item }
+
+    let(:patches) do
+      [
+        {
+          op: "replace",
+          path: "/attributes/item_name",
+          value: {
+            value: "AmazonBasics 16\" Underseat Spinner Carry-On",
+            language_tag: "en_US",
+            marketplace_id: "ATVPDKIKX0DER"
+          }
+        }
+      ]
+    end
+
+    it "makes a request to patch a listings item" do
+      response = listings_client.patch_listings_item(seller_id, sku, amazon_marketplace_id, product_type, patches)
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body)).to eq(submission_accepted_response)
     end
   end
 end

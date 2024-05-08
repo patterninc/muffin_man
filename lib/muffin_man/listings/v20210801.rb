@@ -37,7 +37,19 @@ module MuffinMan
         call_api
       end
 
-      def patch_listings_item(seller_id, sku, marketplace_ids, product_type, patches, included_data: [], mode: nil, issue_locale: nil)
+      def delete_listings_item(seller_id, sku, marketplace_ids, issue_locale: nil)
+        @local_var_path = "/listings/2021-08-01/items/#{seller_id}/#{sku}"
+        @marketplace_ids = marketplace_ids.is_a?(Array) ? marketplace_ids : [marketplace_ids]
+        @query_params = {
+          "marketplaceIds" =>  @marketplace_ids.join(",")
+        }
+        @query_params["issueLocale"] = issue_locale if issue_locale
+        @request_type = "DELETE"
+        call_api
+      end
+
+      def patch_listings_item(seller_id, sku, marketplace_ids, product_type, patches, included_data: [], mode: nil,
+                              issue_locale: nil)
         @local_var_path = "/listings/2021-08-01/items/#{seller_id}/#{sku}"
         @marketplace_ids = marketplace_ids.is_a?(Array) ? marketplace_ids : [marketplace_ids]
         @query_params = {
@@ -51,17 +63,6 @@ module MuffinMan
           "patches" => patches
         }
         @request_type = "PATCH"
-        call_api
-      end
-
-      def delete_listings_item(seller_id, sku, marketplace_ids, issue_locale: nil)
-        @local_var_path = "/listings/2021-08-01/items/#{seller_id}/#{sku}"
-        @marketplace_ids = marketplace_ids.is_a?(Array) ? marketplace_ids : [marketplace_ids]
-        @query_params = {
-          "marketplaceIds" =>  @marketplace_ids.join(",")
-        }
-        @query_params["issueLocale"] = issue_locale if issue_locale
-        @request_type = "DELETE"
         call_api
       end
     end
