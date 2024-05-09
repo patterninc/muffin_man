@@ -1,3 +1,7 @@
+# 2.1.2 [#63](https://github.com/patterninc/muffin_man/pull/63)
+
+- Support for patchListingsItem
+
 # 2.1.1 [#62](https://github.com/patterninc/muffin_man/pull/62)
 
 - SearchCatalogItems validations on keywords & identifiers

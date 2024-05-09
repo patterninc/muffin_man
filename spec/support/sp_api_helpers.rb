@@ -207,9 +207,14 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/delete_listings_item.json"), headers: {})
     end
 
-    def stub_delete_listings_item_wrong_sku
+    def stub_delete_listings_item_nonexistent_sku
       stub_request(:delete, "https://#{hostname}/listings/2021-08-01/items/#{seller_id}/#{nonexistent_sku}?marketplaceIds=#{amazon_marketplace_id}&issueLocale=#{issue_locale}")
         .to_return(status: 404, body: "", headers: {})
+    end
+
+    def stub_patch_listings_item
+      stub_request(:patch, "https://#{hostname}/listings/2021-08-01/items/#{seller_id}/#{sku}?marketplaceIds=#{amazon_marketplace_id}")
+        .to_return(status: 200, body: File.read("./spec/support/patch_listings_item.json"), headers: {})
     end
 
     def stub_search_definitions_product_types
