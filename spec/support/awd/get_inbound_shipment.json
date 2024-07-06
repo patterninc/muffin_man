@@ -1,0 +1,75 @@
+{
+	"createdAt": "2023-07-27T12:23:49.324Z",
+	"destinationAddress": {
+		"addressLine1": "string",
+		"addressLine2": "string",
+		"addressLine3": "string",
+		"city": "string",
+		"countryCode": "string",
+		"district": "string",
+		"name": "string",
+		"postalCode": "string",
+		"stateOrRegion": "string"
+	},
+	"orderId": "STAR-SKFFWD6G6FMXX",
+	"originAddress": {
+		"addressLine1": "string",
+		"addressLine2": "string",
+		"city": "string",
+		"countryCode": "string",
+		"district": "string",
+		"name": "string",
+		"postalCode": "string",
+		"stateOrRegion": "string"
+	},
+	"receivedQuantity": [
+		{
+			"quantity": 0,
+			"unitOfMeasurement": "CASES"
+		}
+	],
+	"shipBy": "2024-06-30T18:29:59.000Z",
+	"shipmentContainerQuantities": [
+		{
+			"count": 2,
+			"distributionPackage": {
+				"contents": {
+					"packages": [],
+					"products": [
+						{
+							"attributes": [
+								{
+									"name": "asin",
+									"value": "B001CRVUXX"
+								},
+								{
+									"name": "glProductGroupType",
+									"value": "gl_office_product"
+								}
+							],
+							"quantity": 3,
+							"sku": "SKU1"
+						}
+					]
+				},
+				"measurements": {
+					"dimensions": {
+						"height": 5.08,
+						"length": 25.4,
+						"unitOfMeasurement": "CENTIMETERS",
+						"width": 12.7
+					},
+					"weight": {
+						"unitOfMeasurement": "KILOGRAMS",
+						"weight": 9.07184
+					}
+				},
+				"type": "CASE"
+			}
+		}
+	],
+	"shipmentId": "STAR-RT6G6UWYQ4SXX",
+	"shipmentStatus": "CREATED",
+	"updatedAt": "2024-06-04T18:43:13.251Z",
+	"warehouseReferenceId": "5MEK9YYY"
+}

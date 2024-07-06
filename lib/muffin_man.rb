@@ -21,6 +21,7 @@ require "muffin_man/request_helpers"
 require "muffin_man/feeds/v20210630"
 require "muffin_man/notifications/v1"
 require "muffin_man/merchant_fulfillment/v0"
+require "muffin_man/awd/v20240509"
 
 module MuffinMan
   class Error < StandardError; end
