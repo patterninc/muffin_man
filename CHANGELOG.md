@@ -1,3 +1,7 @@
+# 2.1.3
+
+- Support for AWD getInboundShipment [#64](https://github.com/patterninc/muffin_man/pull/64)
+
 # 2.1.2 [#63](https://github.com/patterninc/muffin_man/pull/63)
 
 - Support for patchListingsItem
