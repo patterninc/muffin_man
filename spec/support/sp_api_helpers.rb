@@ -92,6 +92,31 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/search_catalog_items_by_identifier_v20220401.json"), headers: {})
     end
 
+    def stub_get_queries
+      stub_request(:get, "https://#{hostname}/datakiosk/2023-11-15/queries")
+        .to_return(status: 200, body: File.read("./spec/support/get_queries.json"), headers: {})
+    end
+
+    def stub_create_query
+      stub_request(:post, "https://#{hostname}/datakiosk/2023-11-15/queries")
+        .to_return(status: 202, body: { queryId: query_id }.to_json, headers: {})
+    end
+
+    def stub_get_query
+      stub_request(:get, "https://#{hostname}/datakiosk/2023-11-15/queries/#{query_id}")
+        .to_return(status: 200, body: File.read("./spec/support/get_query.json"), headers: {})
+    end
+
+    def stub_cancel_query
+      stub_request(:delete, "https://#{hostname}/datakiosk/2023-11-15/queries/#{query_id}")
+        .to_return(status: 204, headers: {})
+    end
+
+    def stub_get_document
+      stub_request(:get, "https://#{hostname}/datakiosk/2023-11-15/documents/#{document_id}")
+        .to_return(status: 200, body: { documentId: document_id, documentUrl: "https://d34o8swod1owfl.cloudfront.net/QUERY_DATA_OUTPUT_DOC.txt" }.to_json, headers: {})
+    end
+
     def stub_list_financial_event_groups
       stub_request(:get, "https://#{hostname}/finances/v0/financialEventGroups")
         .with(

@@ -199,14 +199,6 @@ RSpec/AnyInstance:
   Exclude:
     - 'spec/muffin_man/sp_api_client_spec.rb'
 
-# Offense count: 1
-# This cop supports safe autocorrection (--autocorrect).
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: be, be_nil
-RSpec/BeNil:
-  Exclude:
-    - 'spec/muffin_man_spec.rb'
-
 # Offense count: 2
 # Configuration parameters: Prefixes, AllowedPatterns.
 # Prefixes: when, with, without

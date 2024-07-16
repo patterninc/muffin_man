@@ -1,3 +1,7 @@
+# 2.2.0 [#66](https://github.com/patterninc/muffin_man/pull/66)
+
+- Support for Data Kiosk API v2023-11-15
+
 # 2.1.3
 
 - Support for AWD getInboundShipment [#64](https://github.com/patterninc/muffin_man/pull/64)
