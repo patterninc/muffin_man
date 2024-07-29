@@ -1,0 +1,33 @@
+{
+  "shipmentId": "sh150f31d2-f3c0-4364-bf0a-63ee9c7ce99f",
+  "amazonReferenceId": "3H5BMKVZ",
+  "destination": {
+    "address": {
+      "city": "FORT WAYNE",
+      "countryCode": "US",
+      "postalCode": "46809-9771",
+      "name": "FWA4",
+      "addressLine1": "9798 Smith Road",
+      "stateOrProvinceCode": "IN"
+    },
+    "warehouseId": "FWA4",
+    "destinationType": "AMAZON_WAREHOUSE"
+  },
+  "name": "FBA STA (07/12/2024 18:46)-FWA4",
+  "shipmentConfirmationId": "FBA186K16JKY",
+  "source": {
+    "address": {
+      "phoneNumber": "9094763884",
+      "city": "BLOOMINGDALE",
+      "countryCode": "US",
+      "postalCode": "31302",
+      "companyName": "Shire Bakery",
+      "name": "Shire Bakery",
+      "addressLine1": "1 HOBBIT HOLE",
+      "stateOrProvinceCode": "GA"
+    },
+    "sourceType": "SELLER_FACILITY"
+  },
+  "placementOptionId": "plc604453c-1613-4323-a624-df492fe606e7",
+  "status": "WORKING"
+}

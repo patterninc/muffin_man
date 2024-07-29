@@ -1,0 +1,49 @@
+{
+  "createdAt": "2024-07-12T18:43:02Z",
+  "marketplaceIds": [
+    "ATVPDKIKX0DER"
+  ],
+  "packingOptions": [],
+  "sourceAddress": {
+    "phoneNumber": "9095555555",
+    "city": "BLOOMINGDALE",
+    "countryCode": "US",
+    "postalCode": "31302",
+    "companyName": "Shire Bakery",
+    "name": "Shire Bakery",
+    "addressLine1": "1 HOBBIT HOLE",
+    "stateOrProvinceCode": "GA"
+  },
+  "lastUpdatedAt": "2024-07-12T19:32:19Z",
+  "name": "",
+  "inboundPlanId": "wf03769cea-f374-4853-ab93-1a4cf8a62e35",
+  "placementOptions": [
+    {
+      "placementOptionId": "plc604453c-1613-4323-a624-df492fe606e7",
+      "status": "ACCEPTED"
+    }
+  ],
+  "shipments": [
+    {
+      "shipmentId": "sh150f31d2-f3c0-4364-bf0a-63ee9c7ce99f",
+      "status": "WORKING"
+    },
+    {
+      "shipmentId": "sh42e0ac0a-04cd-49a1-a4d6-66db2146297f",
+      "status": "WORKING"
+    },
+    {
+      "shipmentId": "sh54d31df2-6cf3-4a44-a2bd-a6fdb7c08830",
+      "status": "WORKING"
+    },
+    {
+      "shipmentId": "sh5a12b5dd-deac-40a1-bec8-d18acfef8c6e",
+      "status": "WORKING"
+    },
+    {
+      "shipmentId": "shfe490309-f8d2-41e6-ba60-277812b70189",
+      "status": "WORKING"
+    }
+  ],
+  "status": "ACTIVE"
+}
