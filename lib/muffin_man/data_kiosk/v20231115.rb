@@ -78,10 +78,10 @@ module MuffinMan
         call_api
       end
 
-      def download_document(document_id)
+      def retrieve_document_content(document_id)
         response = get_document(document_id)
         if response.success?
-          Typhoeus.get(JSON.parse(response.body)["documentUrl"])
+          Typhoeus.get(JSON.parse(response.body)["documentUrl"], accept_encoding: "")
         else
           response
         end
