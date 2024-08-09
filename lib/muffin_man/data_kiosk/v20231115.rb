@@ -34,7 +34,7 @@ module MuffinMan
       ].freeze
 
       def get_queries(params = {})
-        @local_var_path = "/datakiosk/2023-11-15/queries"
+        @local_var_path = "/dataKiosk/2023-11-15/queries"
         if sandbox
           params = {
             "pageSize" => SANDBOX_PAGE_SIZE,
@@ -47,7 +47,7 @@ module MuffinMan
       end
 
       def create_query(query, pagination_token = nil)
-        @local_var_path = "/datakiosk/2023-11-15/queries"
+        @local_var_path = "/dataKiosk/2023-11-15/queries"
         query = SANDBOX_QUERY if sandbox
         @request_body = {
           "query" => query
@@ -59,21 +59,21 @@ module MuffinMan
 
       def get_query(query_id)
         query_id = SANDBOX_QUERY_ID if sandbox
-        @local_var_path = "/datakiosk/2023-11-15/queries/#{query_id}"
+        @local_var_path = "/dataKiosk/2023-11-15/queries/#{query_id}"
         @request_type = "GET"
         call_api
       end
 
       def cancel_query(query_id)
         query_id = SANDBOX_QUERY_ID if sandbox
-        @local_var_path = "/datakiosk/2023-11-15/queries/#{query_id}"
+        @local_var_path = "/dataKiosk/2023-11-15/queries/#{query_id}"
         @request_type = "DELETE"
         call_api
       end
 
       def get_document(document_id)
         document_id = SANDBOX_DOCUMENT_ID if sandbox
-        @local_var_path = "/datakiosk/2023-11-15/documents/#{document_id}"
+        @local_var_path = "/dataKiosk/2023-11-15/documents/#{document_id}"
         @request_type = "GET"
         call_api
       end
