@@ -1,0 +1,15 @@
+{
+  "pagination": {
+    "nextToken": "string"
+  },
+  "items": [
+    {
+      "msku": "string",
+      "asin": "string",
+      "fnsku": "string",
+      "labelOwner": "AMAZON",
+      "quantity": 1,
+      "prepOwner": "AMAZON"
+    }
+  ]
+}
