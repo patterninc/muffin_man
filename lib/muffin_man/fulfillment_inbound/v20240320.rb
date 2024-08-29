@@ -53,7 +53,7 @@ module MuffinMan
         @request_body = {
           destinationMarketplaces: Array.wrap(destination_marketplaces),
           items: items,
-          sourceAddress: source_address,
+          sourceAddress: source_address
         }
         @request_body["name"] = name if name
         @request_type = "POST"
@@ -85,7 +85,7 @@ module MuffinMan
       end
 
       def confirm_packing_option(inbound_plan_id, packing_option_id)
-        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/packingOptions/#{packing_option_id}/confirmation"
+        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/packingOptions/#{packing_option_id}/confirmation" # rubocop:disable Layout/LineLength
         @request_type = "POST"
         call_api
       end

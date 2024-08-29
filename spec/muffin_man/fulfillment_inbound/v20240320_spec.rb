@@ -38,7 +38,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
 
     it "lists inbound plan items" do
       response = fba_inbound_client.list_inbound_plan_items(inbound_plan_id, page_size: page_size,
-                                                                      pagination_token: pagination_token)
+                                                                             pagination_token: pagination_token)
       expect(response.success?).to be true
       expect(JSON.parse(response.body)["items"]).to be_an(Array)
     end
@@ -92,7 +92,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
   end
 
   describe "create_inbound_plan" do
-    let(:destination_marketplaces) { [ "ATVPDKIKX0DER" ] }
+    let(:destination_marketplaces) { ["ATVPDKIKX0DER"] }
     let(:items) do
       [
         {
@@ -120,6 +120,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
       }
     end
     let(:name) { "My inbound plan" }
+
     before { stub_create_inbound_plan(destination_marketplaces, items, source_address, name: name) }
 
     it "creates an inbound plan" do
@@ -131,6 +132,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
 
   describe "generate_packing_options" do
     let(:inbound_plan_id) { "wf03769cea-f374-4853-ab93-1a4cf8a62e35" }
+
     before { stub_generate_packing_options(inbound_plan_id) }
 
     it "generates packing options" do
@@ -142,6 +144,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
 
   describe "list_packing_options" do
     let(:inbound_plan_id) { "wf03769cea-f374-4853-ab93-1a4cf8a62e35" }
+
     before { stub_list_packing_options(inbound_plan_id) }
 
     it "lists packing options" do
@@ -156,10 +159,19 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
     let(:packing_group_id) { "pg150f31d2-f3c0-4364-bf0a-63ee9c7ce99f" }
     let(:page_size) { 10 }
     let(:pagination_token) { "token" }
-    before { stub_list_packing_group_items(inbound_plan_id, packing_group_id, page_size: page_size, pagination_token: pagination_token) }
+
+    before do
+      stub_list_packing_group_items(inbound_plan_id, packing_group_id, page_size: page_size,
+                                                                       pagination_token: pagination_token)
+    end
 
     it "lists packing group items" do
-      response = fba_inbound_client.list_packing_group_items(inbound_plan_id, packing_group_id, page_size: page_size, pagination_token: pagination_token)
+      response = fba_inbound_client.list_packing_group_items(
+        inbound_plan_id,
+        packing_group_id,
+        page_size: page_size,
+        pagination_token: pagination_token
+      )
       expect(response.success?).to be true
       expect(JSON.parse(response.body)["items"]).to be_an(Array)
     end
@@ -168,6 +180,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
   describe "confirm_packing_option" do
     let(:inbound_plan_id) { "wf03769cea-f374-4853-ab93-1a4cf8a62e35" }
     let(:packing_option_id) { "po150f31d2-f3c0-4364-bf0a-63ee9c7ce99f" }
+
     before { stub_confirm_packing_option(inbound_plan_id, packing_option_id) }
 
     it "confirms packing option" do
@@ -215,6 +228,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
         ]
       }
     end
+
     before { stub_set_packing_information(inbound_plan_id, body) }
 
     it "sets packing information" do
@@ -226,6 +240,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
 
   describe "generate_placement_options" do
     let(:inbound_plan_id) { "wf03769cea-f374-4853-ab93-1a4cf8a62e35" }
+
     before { stub_generate_placement_options(inbound_plan_id) }
 
     it "generates placement options" do
@@ -237,6 +252,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
 
   describe "list_placement_options" do
     let(:inbound_plan_id) { "wf03769cea-f374-4853-ab93-1a4cf8a62e35" }
+
     before { stub_list_placement_options(inbound_plan_id) }
 
     it "lists placement options" do
@@ -248,6 +264,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
 
   describe "get_inbound_operation_status" do
     let(:operation_id) { "op150f31d2-f3c0-4364-bf0a-63ee9c7ce99f" }
+
     before { stub_get_inbound_operation_status(operation_id) }
 
     it "gets inbound operation status" do
@@ -256,5 +273,4 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
       expect(JSON.parse(response.body)["operationId"]).not_to be_nil
     end
   end
-
 end
