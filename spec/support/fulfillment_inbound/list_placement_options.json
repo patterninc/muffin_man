@@ -1,0 +1,38 @@
+{
+  "pagination": {
+    "nextToken": "string"
+  },
+  "placementOptions": [
+    {
+      "inboundPlanId": "string",
+      "placementOptionId": "string",
+      "status": "OFFERED",
+      "fees": [
+        {
+          "currency": {
+            "code": "string",
+            "amount": 0
+          },
+          "type": "FEE",
+          "target": "OUTBOUND_PER_SHIPMENT",
+          "description": "string"
+        }
+      ],
+      "discounts": [
+        {
+          "currency": {
+            "code": "string",
+            "amount": 0
+          },
+          "type": "FEE",
+          "target": "OUTBOUND_PER_SHIPMENT",
+          "description": "string"
+        }
+      ],
+      "expiration": "2019-08-24T14:15:22Z",
+      "shipmentIds": [
+        "string"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "operation": "string",
+  "operationId": "string",
+  "operationProblems": [
+    {
+      "code": "Error code 1234",
+      "message": "Box volume does not meet the expected minimum cubic cm 144,815",
+      "details": "Additional error details",
+      "severity": "WARNING"
+    }
+  ],
+  "status": "SUCCESS"
+}
