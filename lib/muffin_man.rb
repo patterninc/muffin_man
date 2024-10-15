@@ -24,6 +24,15 @@ require "muffin_man/feeds/v20210630"
 require "muffin_man/notifications/v1"
 require "muffin_man/merchant_fulfillment/v0"
 require "muffin_man/awd/v20240509"
+require "muffin_man/vendor_direct_fulfillment_inventory/v1"
+require "muffin_man/vendor_direct_fulfillment_orders/v20211228"
+require "muffin_man/vendor_direct_fulfillment_payments/v1"
+require "muffin_man/vendor_direct_fulfillment_shipping/v20211228"
+require "muffin_man/vendor_direct_fulfillment_transactions/v20211228"
+require "muffin_man/vendor_invoices/v1"
+require "muffin_man/vendor_orders/v1"
+require "muffin_man/vendor_shipments/v1"
+require "muffin_man/vendor_transaction_status/v1"
 
 module MuffinMan
   class Error < StandardError; end

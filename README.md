@@ -6,17 +6,31 @@ MuffinMan is a ruby interface to the Amazon Selling Partner API. For more inform
 
 As of now, this gem only supports portions of the following APIs with more to come:
 
-- `create_product_review_and_seller_feedback_solicitation`
-- `catalog_items`
-- `data_kiosk`
-- `reports`
-- `product_fees`
-- `product_pricing`
-- `fulfillment_inbound`
-- `fulfillment_outbound`
-- `feeds`
-- `notifications`
-- `listings`
+- `Amazon Warehousing and Distribution API v2024-05-09`
+- `Catalog Items API v2022-04-01`
+- `Data Kiosk API v2023-11-15`
+- `FBA Inventory API v1`
+- `Feeds API v2021-06-30`
+- `Finances API v0`
+- `Fulfillment Inbound API v2024-03-20`
+- `Fulfillment Outbound API v2020-07-01`
+- `Merchant Fulfillment API v0`
+- `Notifications API v1`
+- `Orders API v0`
+- `Product Fees API v0`
+- `Product Pricing API v0`
+- `Reports API v2021-06-30`
+- `Solicitations API v1`
+- `Tokens API v2021-03-01`
+- `Vendor Direct Fulfillment Transactions API v1`
+- `Vendor Direct Fulfillment Orders API v2021-12-28`
+- `Vendor Direct Fulfillment Payments API v1`
+- `Vendor Direct Fulfillment Shipping API v2021-12-28`
+- `Vendor Direct Fulfillment Transactions API v2021-12-28`
+- `Vendor Invoices API v1`
+- `Vendor Orders API v1`
+- `Vendor Shipments API v1`
+- `Vendor Transaction Status API v1`
 
 ## Installation
 

@@ -349,6 +349,138 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/merchant_fulfillment/get_additional_seller_inputs_v0.json"), headers: {})
     end
 
+    def stub_vendor_direct_fulfillment_inventory_v1_submit_inventory_update
+      stub_request(:post, "https://#{hostname}/vendor/directFulfillment/inventory/v1/warehouses/#{warehouse_id}/items")
+        .to_return(status: 202, body: { transactionId: transaction_id }.to_json, headers: {})
+    end
+
+    def stub_vendor_direct_fulfillment_orders_v20211228_get_orders
+      stub_request(:get, "https://#{hostname}/vendor/directFulfillment/orders/2021-12-28/purchaseOrders")
+        .with(query: { createdAfter: created_after, createdBefore: created_before, limit: params["limit"], sortOrder: params["sortOrder"], includeDetails: params["includeDetails"] })
+        .to_return(status: 200, body: File.read("./spec/support/vendor_direct_fulfillment_orders/v20211228_get_orders.json"), headers: {})
+    end
+
+    def stub_vendor_direct_fulfillment_orders_v20211228_get_order
+      stub_request(:get, "https://#{hostname}/vendor/directFulfillment/orders/2021-12-28/purchaseOrders/#{purchase_order_number}")
+        .to_return(status: 200, body: File.read("./spec/support/vendor_direct_fulfillment_orders/v20211228_get_order.json"), headers: {})
+    end
+
+    def stub_vendor_direct_fulfillment_orders_v20211228_submit_acknowledgement
+      stub_request(:post, "https://#{hostname}/vendor/directFulfillment/orders/2021-12-28/acknowledgements")
+        .to_return(status: 202, body: { transactionId: transaction_id }.to_json, headers: {})
+    end
+
+    def stub_vendor_direct_fulfillment_payments_v1_submit_invoice
+      stub_request(:post, "https://#{hostname}/vendor/directFulfillment/payments/v1/invoices")
+        .to_return(status: 202, body: { transactionId: transaction_id }.to_json, headers: {})
+    end
+
+    def stub_vendor_direct_fulfillment_shipping_v20211228_get_shipping_labels
+      stub_request(:get, "https://#{hostname}/vendor/directFulfillment/shipping/2021-12-28/shippingLabels")
+        .with(query: { createdAfter: created_after, createdBefore: created_before, limit: params["limit"], sortOrder: params["sortOrder"] })
+        .to_return(status: 200, body: File.read("./spec/support/vendor_direct_fulfillment_shipping/v20211228_get_shipping_labels.json"), headers: {})
+    end
+
+    def stub_vendor_direct_fulfillment_shipping_v20211228_submit_shipping_label_request
+      stub_request(:post, "https://#{hostname}/vendor/directFulfillment/shipping/2021-12-28/shippingLabels")
+        .to_return(status: 202, body: { transactionId: transaction_id }.to_json, headers: {})
+    end
+
+    def stub_vendor_direct_fulfillment_shipping_v20211228_get_shipping_label
+      stub_request(:get, "https://#{hostname}/vendor/directFulfillment/shipping/2021-12-28/shippingLabels/#{purchase_order_number}")
+        .to_return(status: 200, body: File.read("./spec/support/vendor_direct_fulfillment_shipping/v20211228_get_shipping_label.json"), headers: {})
+    end
+
+    def stub_vendor_direct_fulfillment_shipping_v20211228_create_shipping_labels
+      stub_request(:post, "https://#{hostname}/vendor/directFulfillment/shipping/2021-12-28/shippingLabels/#{purchase_order_number}")
+        .to_return(status: 200, body: File.read("./spec/support/vendor_direct_fulfillment_shipping/v20211228_create_shipping_labels.json"), headers: {})
+    end
+
+    def stub_vendor_direct_fulfillment_shipping_v20211228_submit_shipment_confirmations
+      stub_request(:post, "https://#{hostname}/vendor/directFulfillment/shipping/2021-12-28/shipmentConfirmations")
+        .to_return(status: 202, body: { transactionId: transaction_id }.to_json, headers: {})
+    end
+
+    def stub_vendor_direct_fulfillment_shipping_v20211228_submit_shipment_status_updates
+      stub_request(:post, "https://#{hostname}/vendor/directFulfillment/shipping/2021-12-28/shipmentStatusUpdates")
+        .to_return(status: 202, body: { transactionId: transaction_id }.to_json, headers: {})
+    end
+
+    def stub_vendor_direct_fulfillment_shipping_v20211228_get_customer_invoices
+      stub_request(:get, "https://#{hostname}/vendor/directFulfillment/shipping/2021-12-28/customerInvoices")
+        .with(query: { createdAfter: created_after, createdBefore: created_before, limit: params["limit"], sortOrder: params["sortOrder"] })
+        .to_return(status: 200, body: File.read("./spec/support/vendor_direct_fulfillment_shipping/v20211228_get_customer_invoices.json"), headers: {})
+    end
+
+    def stub_vendor_direct_fulfillment_shipping_v20211228_get_customer_invoice
+      stub_request(:get, "https://#{hostname}/vendor/directFulfillment/shipping/2021-12-28/customerInvoices/#{purchase_order_number}")
+        .to_return(status: 200, body: { purchaseOrderNumber: purchase_order_number, content: "base 64 encoded string" }.to_json, headers: {})
+    end
+
+    def stub_vendor_direct_fulfillment_shipping_v20211228_get_packing_slips
+      stub_request(:get, "https://#{hostname}/vendor/directFulfillment/shipping/2021-12-28/packingSlips")
+        .with(query: { createdAfter: created_after, createdBefore: created_before, limit: params["limit"], sortOrder: params["sortOrder"] })
+        .to_return(status: 200, body: File.read("./spec/support/vendor_direct_fulfillment_shipping/v20211228_get_packing_slips.json"), headers: {})
+    end
+
+    def stub_vendor_direct_fulfillment_shipping_v20211228_get_packing_slip
+      stub_request(:get, "https://#{hostname}/vendor/directFulfillment/shipping/2021-12-28/packingSlips/#{purchase_order_number}")
+        .to_return(status: 200, body: { purchaseOrderNumber: purchase_order_number, content: "base 64 encoded string", contentType: "application/pdf" }.to_json, headers: {})
+    end
+
+    def stub_vendor_direct_fulfillment_transactions_v20211228_get_transaction_status
+      stub_request(:get, "https://#{hostname}/vendor/directFulfillment/transactions/2021-12-28/transactions/#{transaction_id}")
+        .to_return(status: 200, body: File.read("./spec/support/vendor_direct_fulfillment_transactions/v20211228_get_transaction_status.json"), headers: {})
+    end
+
+    def stub_vendor_invoices_v1_submit_invoices
+      stub_request(:post, "https://#{hostname}/vendor/payments/v1/invoices")
+        .to_return(status: 202, body: { payload: payload }.to_json, headers: {})
+    end
+
+    def stub_vendor_orders_v1_get_purchase_orders
+      stub_request(:get, "https://#{hostname}/vendor/orders/v1/purchaseOrders")
+        .with(query: { limit: params["limit"], createdAfter: params["createdAfter"], createdBefore: params["createdBefore"], sortOrder: params["sortOrder"], includeDetails: params["includeDetails"] })
+        .to_return(status: 200, body: File.read("./spec/support/vendor_orders/v1_get_purchase_orders.json"), headers: {})
+    end
+
+    def stub_vendor_orders_v1_get_purchase_order
+      stub_request(:get, "https://#{hostname}/vendor/orders/v1/purchaseOrders/#{purchase_order_number}")
+        .to_return(status: 200, body: File.read("./spec/support/vendor_orders/v1_get_purchase_order.json"), headers: {})
+    end
+
+    def stub_vendor_orders_v1_submit_acknowledgement
+      stub_request(:post, "https://#{hostname}/vendor/orders/v1/acknowledgements")
+        .to_return(status: 202, body: { payload: payload }.to_json, headers: {})
+    end
+
+    def stub_vendor_orders_v1_get_purchase_orders_status
+      stub_request(:get, "https://#{hostname}/vendor/orders/v1/purchaseOrdersStatus")
+        .with(query: { limit: params["limit"], createdAfter: params["createdAfter"], createdBefore: params["createdBefore"] })
+        .to_return(status: 200, body: File.read("./spec/support/vendor_orders/v1_get_purchase_orders_status.json"), headers: {})
+    end
+
+    def stub_vendor_shipments_v1_submit_shipment_confirmations
+      stub_request(:post, "https://#{hostname}/vendor/shipping/v1/shipmentConfirmations")
+        .to_return(status: 202, body: { payload: payload }.to_json, headers: {})
+    end
+
+    def stub_vendor_shipments_v1_get_shipment_details
+      stub_request(:get, "https://#{hostname}/vendor/shipping/v1/shipments")
+        .with(query: { vendorShipmentIdentifier: params["vendorShipmentIdentifier"] })
+        .to_return(status: 200, body: File.read("./spec/support/vendor_shipments/v1_get_shipment_details.json"), headers: {})
+    end
+
+    def stub_vendor_shipments_v1_submit_shipments
+      stub_request(:post, "https://#{hostname}/vendor/shipping/v1/shipments")
+        .to_return(status: 202, body: { payload: payload }.to_json, headers: {})
+    end
+
+    def stub_vendor_transaction_status_v1_get_transaction
+      stub_request(:get, "https://#{hostname}/vendor/transactions/v1/transactions/#{transaction_id}")
+        .to_return(status: 200, body: File.read("./spec/support/vendor_transaction_status/v1_get_transaction.json"), headers: {})
+    end
+
     def credentials
       {
         refresh_token: "a-refresh-token",
