@@ -1,0 +1,17 @@
+{
+  "pagination": {
+    "nextToken": "NEBxNEBxNEBxNR=="
+  },
+  "packingSlips": [
+    {
+      "purchaseOrderNumber": "UvgABdBjQ",
+      "content": "base64 encoded string",
+      "contentType": "application/pdf"
+    },
+    {
+      "purchaseOrderNumber": "VvgCDdBjR",
+      "content": "base64 encoded string",
+      "contentType": "application/pdf"
+    }
+  ]
+}

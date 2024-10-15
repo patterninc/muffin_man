@@ -1,0 +1,107 @@
+{
+  "purchaseOrderNumber": "2JK3S9VC",
+  "orderDetails": {
+    "customerOrderNumber": "123-ABC",
+    "orderDate": "2020-02-20T13:51:00Z",
+    "shipmentDetails": {
+      "isPriorityShipment": false,
+      "isScheduledDeliveryShipment": false,
+      "isPslipRequired": true,
+      "isGift": false,
+      "shipMethod": "UPS_2ND",
+      "shipmentDates": {
+        "requiredShipDate": "2020-02-21T00:00:00Z",
+        "promisedDeliveryDate": "2020-02-24T00:00:00Z"
+      },
+      "messageToCustomer": "This shipment completes your order. You can always check the status of your orders from the \"Your Account\" link at the top of each page of our site.Thank you for shopping at Amazon.com"
+    },
+    "taxTotal": {
+      "taxLineItem": [
+        {
+          "taxRate": "0.1",
+          "taxAmount": {
+            "currencyCode": "USD",
+            "amount": "190"
+          },
+          "type": "TOTAL"
+        }
+      ]
+    },
+    "sellingParty": {
+      "partyId": "999US"
+    },
+    "shipFromParty": {
+      "partyId": "ABCD"
+    },
+    "shipToParty": {
+      "name": "John Doe",
+      "attention": "John Doe",
+      "addressLine1": "123 Any Street",
+      "addressLine2": "Apt 5",
+      "city": "San Jose",
+      "stateOrRegion": "Any Town",
+      "postalCode": "94086",
+      "countryCode": "USA"
+    },
+    "billToParty": {
+      "partyId": "ABCD"
+    },
+    "items": [
+      {
+        "itemSequenceNumber": "00001",
+        "buyerProductIdentifier": "B07DFVDRAB",
+        "vendorProductIdentifier": "8806098286500",
+        "title": "LG 8 kg Inverter Wi-Fi Fully-Automatic Front Loading Washing Machine (FHT1408SWS, STS-VCM, Inbuilt Heater)",
+        "orderedQuantity": {
+          "amount": 1,
+          "unitOfMeasure": "EACH"
+        },
+        "netPrice": {
+          "currencyCode": "USD",
+          "amount": "500"
+        },
+        "taxDetails": {
+          "taxLineItem": [
+            {
+              "taxRate": "0.1",
+              "taxAmount": {
+                "currencyCode": "USD",
+                "amount": "50"
+              },
+              "type": "TOTAL"
+            }
+          ]
+        },
+        "buyerCustomizedInfo": {
+          "customizedUrl": "aHR0cHM6Ly8xcC1kZi1wdWJsaWMtZGF0YS5zMy5hbWF6b25hd3MuY29tLzExMS0xMjYwNzQ1LTYyOTE0MTZfNTgzNjIxNTQwMTM1NjEuemlw"
+        }
+      },
+      {
+        "itemSequenceNumber": "00002",
+        "buyerProductIdentifier": "B07DFYF5AB",
+        "vendorProductIdentifier": "8806098286123",
+        "title": "LG 6.5 kg Inverter Fully-Automatic Front Loading Washing Machine (FHT1065SNW, Blue and White, Inbuilt Heater)",
+        "orderedQuantity": {
+          "amount": 2,
+          "unitOfMeasure": "EACH"
+        },
+        "netPrice": {
+          "currencyCode": "USD",
+          "amount": "700"
+        },
+        "taxDetails": {
+          "taxLineItem": [
+            {
+              "taxRate": "0.1",
+              "taxAmount": {
+                "currencyCode": "USD",
+                "amount": "140"
+              },
+              "type": "TOTAL"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

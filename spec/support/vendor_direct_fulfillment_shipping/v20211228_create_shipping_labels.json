@@ -1,0 +1,19 @@
+{
+  "purchaseOrderNumber": "2JK3S9VC",
+  "sellingParty": {
+    "partyId": "999US"
+  },
+  "shipFromParty": {
+    "partyId": "ABCD"
+  },
+  "labelFormat": "PNG",
+  "labelData": [
+    {
+      "packageIdentifier": "1",
+      "trackingNumber": "1Z69664F0310685739",
+      "shipMethod": "UPS_GR_RES_SIG",
+      "shipMethodName": "UPS Ground Residential",
+      "content": "Base 64 encoded string goes here"
+    }
+  ]
+}

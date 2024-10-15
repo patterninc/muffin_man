@@ -1,3 +1,16 @@
+# 2.4.0 [#71](https://github.com/patterninc/muffin_man/pull/71)
+
+- Support for the following:
+  Vendor Direct Fulfillment Inventory API v1
+  Vendor Direct Fulfillment Orders API v2021-12-28
+  Vendor Direct Fulfillment Payments API v1
+  Vendor Direct Fulfillment Shipping API v2021-12-28
+  Vendor Direct Fulfillment Transactions API v2021-12-28
+  Vendor Invoices API v1
+  Vendor Orders API v1
+  Vendor Shipments API v1
+  Vendor Transaction Status API v1
+
 # 2.2.0 [#66](https://github.com/patterninc/muffin_man/pull/66)
 
 - Support for Data Kiosk API v2023-11-15
