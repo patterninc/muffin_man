@@ -1,4 +1,4 @@
-# 2.4.0 [#71](https://github.com/patterninc/muffin_man/pull/71)
+# 2.4.0 [#72](https://github.com/patterninc/muffin_man/pull/72)
 
 - Support for the following:
   Vendor Direct Fulfillment Inventory API v1

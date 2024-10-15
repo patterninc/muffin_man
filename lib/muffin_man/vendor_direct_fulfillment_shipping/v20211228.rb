@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 module MuffinMan
   module VendorDirectFulfillmentShipping
     class V20211228 < SpApiClient
-
       VENDOR_DIRECT_FULFILLMENT_SHIPPING_PARAMS = %w[
         shipFromPartyId
         limit

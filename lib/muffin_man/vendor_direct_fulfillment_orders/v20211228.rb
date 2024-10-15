@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 module MuffinMan
   module VendorDirectFulfillmentOrders
     class V20211228 < SpApiClient
-
       GET_ORDERS_PARAMS = %w[
         shipFromPartyId
         status

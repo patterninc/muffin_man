@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe MuffinMan::VendorInvoices::V1 do
   subject(:vendor_invoices_client) { described_class.new(credentials) }
 

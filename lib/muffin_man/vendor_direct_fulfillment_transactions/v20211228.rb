@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MuffinMan
   module VendorDirectFulfillmentTransactions
     class V20211228 < SpApiClient

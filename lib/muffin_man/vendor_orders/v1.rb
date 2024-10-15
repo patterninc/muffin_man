@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 module MuffinMan
   module VendorOrders
     class V1 < SpApiClient
-
       GET_PURCHASE_ORDERS_PARAMS = %w[
         limit
         createdAfter

@@ -1,7 +1,9 @@
-RSpec.describe MuffinMan::VendorShipments::V1 do
-  let(:payload) { { "transactionId" => "20190905010908-8a3b6901-ef20-412f-9270-21c021796605" } }
+# frozen_string_literal: true
 
+RSpec.describe MuffinMan::VendorShipments::V1 do
   subject(:vendor_shipments_client) { described_class.new(credentials) }
+
+  let(:payload) { { "transactionId" => "20190905010908-8a3b6901-ef20-412f-9270-21c021796605" } }
 
   before do
     stub_request_access_token

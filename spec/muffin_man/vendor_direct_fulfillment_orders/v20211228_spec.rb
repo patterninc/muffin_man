@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe MuffinMan::VendorDirectFulfillmentOrders::V20211228 do
   subject(:vendor_direct_fulfillment_orders_client) { described_class.new(credentials) }
 

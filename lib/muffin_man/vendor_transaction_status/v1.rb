@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MuffinMan
   module VendorTransactionStatus
     class V1 < SpApiClient

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe MuffinMan::VendorTransactionStatus::V1 do
   subject(:vendor_transaction_status_client) { described_class.new(credentials) }
 

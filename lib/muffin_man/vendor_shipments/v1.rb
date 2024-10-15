@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 module MuffinMan
   module VendorShipments
     class V1 < SpApiClient
-
       GET_SHIPMENT_DETAILS_PARAMS = %w[
         limit
         sortOrder

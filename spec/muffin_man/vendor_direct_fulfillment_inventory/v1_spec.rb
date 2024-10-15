@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe MuffinMan::VendorDirectFulfillmentInventory::V1 do
   subject(:vendor_direct_fulfillment_inventory_client) { described_class.new(credentials) }
 
@@ -26,7 +28,12 @@ RSpec.describe MuffinMan::VendorDirectFulfillmentInventory::V1 do
 
     it "executes submit_inventory_update request" do
       stub_vendor_direct_fulfillment_inventory_v1_submit_inventory_update
-      response = vendor_direct_fulfillment_inventory_client.submit_inventory_update(warehouse_id, selling_party, is_full_update, items)
+      response = vendor_direct_fulfillment_inventory_client.submit_inventory_update(
+        warehouse_id,
+        selling_party,
+        is_full_update,
+        items
+      )
       expect(response.response_code).to eq(202)
       expect(JSON.parse(response.body)["transactionId"]).to eq transaction_id
     end
