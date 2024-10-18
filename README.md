@@ -14,6 +14,9 @@ As of now, this gem only supports portions of the following APIs with more to co
 - `Finances API v0`
 - `Fulfillment Inbound API v2024-03-20`
 - `Fulfillment Outbound API v2020-07-01`
+- `Listings API v2021-08-01`
+- `Listings API v2020-09-01`
+- `Listings Restrictions API v2021-08-01`
 - `Merchant Fulfillment API v0`
 - `Notifications API v1`
 - `Orders API v0`
