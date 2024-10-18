@@ -1,0 +1,184 @@
+{
+  "restrictions": [
+    {
+      "marketplaceId": "ATVPDKIKX0DER",
+      "conditionType": "collectible_like_new",
+      "reasons": [
+        {
+          "reasonCode": "APPROVAL_REQUIRED",
+          "message": "You cannot list the product in this condition.",
+          "links": [
+            {
+              "resource": "https://sellercentral.amazon.com/hz/approvalrequest/restrictions/approve?asin=B08XXLG119",
+              "verb": "GET",
+              "title": "Request Approval via Seller Central.",
+              "type": "text/html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "marketplaceId": "ATVPDKIKX0DER",
+      "conditionType": "new_new",
+      "reasons": [
+        {
+          "reasonCode": "APPROVAL_REQUIRED",
+          "message": "You need approval to list.",
+          "links": [
+            {
+              "resource": "https://sellercentral.amazon.com/hz/approvalrequest/restrictions/approve?asin=B08XXLG119",
+              "verb": "GET",
+              "title": "Request Approval via Seller Central.",
+              "type": "text/html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "marketplaceId": "ATVPDKIKX0DER",
+      "conditionType": "used_acceptable",
+      "reasons": [
+        {
+          "reasonCode": "APPROVAL_REQUIRED",
+          "message": "You cannot list the product in this condition.",
+          "links": [
+            {
+              "resource": "https://sellercentral.amazon.com/hz/approvalrequest/restrictions/approve?asin=B08XXLG119",
+              "verb": "GET",
+              "title": "Request Approval via Seller Central.",
+              "type": "text/html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "marketplaceId": "ATVPDKIKX0DER",
+      "conditionType": "used_like_new",
+      "reasons": [
+        {
+          "reasonCode": "APPROVAL_REQUIRED",
+          "message": "You cannot list the product in this condition.",
+          "links": [
+            {
+              "resource": "https://sellercentral.amazon.com/hz/approvalrequest/restrictions/approve?asin=B08XXLG119",
+              "verb": "GET",
+              "title": "Request Approval via Seller Central.",
+              "type": "text/html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "marketplaceId": "ATVPDKIKX0DER",
+      "conditionType": "collectible_very_good",
+      "reasons": [
+        {
+          "reasonCode": "APPROVAL_REQUIRED",
+          "message": "You cannot list the product in this condition.",
+          "links": [
+            {
+              "resource": "https://sellercentral.amazon.com/hz/approvalrequest/restrictions/approve?asin=B08XXLG119",
+              "verb": "GET",
+              "title": "Request Approval via Seller Central.",
+              "type": "text/html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "marketplaceId": "ATVPDKIKX0DER",
+      "conditionType": "used_very_good",
+      "reasons": [
+        {
+          "reasonCode": "APPROVAL_REQUIRED",
+          "message": "You cannot list the product in this condition.",
+          "links": [
+            {
+              "resource": "https://sellercentral.amazon.com/hz/approvalrequest/restrictions/approve?asin=B08XXLG119",
+              "verb": "GET",
+              "title": "Request Approval via Seller Central.",
+              "type": "text/html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "marketplaceId": "ATVPDKIKX0DER",
+      "conditionType": "collectible_acceptable",
+      "reasons": [
+        {
+          "reasonCode": "APPROVAL_REQUIRED",
+          "message": "You cannot list the product in this condition.",
+          "links": [
+            {
+              "resource": "https://sellercentral.amazon.com/hz/approvalrequest/restrictions/approve?asin=B08XXLG119",
+              "verb": "GET",
+              "title": "Request Approval via Seller Central.",
+              "type": "text/html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "marketplaceId": "ATVPDKIKX0DER",
+      "conditionType": "collectible_good",
+      "reasons": [
+        {
+          "reasonCode": "APPROVAL_REQUIRED",
+          "message": "You cannot list the product in this condition.",
+          "links": [
+            {
+              "resource": "https://sellercentral.amazon.com/hz/approvalrequest/restrictions/approve?asin=B08XXLG119",
+              "verb": "GET",
+              "title": "Request Approval via Seller Central.",
+              "type": "text/html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "marketplaceId": "ATVPDKIKX0DER",
+      "conditionType": "used_good",
+      "reasons": [
+        {
+          "reasonCode": "APPROVAL_REQUIRED",
+          "message": "You cannot list the product in this condition.",
+          "links": [
+            {
+              "resource": "https://sellercentral.amazon.com/hz/approvalrequest/restrictions/approve?asin=B08XXLG119",
+              "verb": "GET",
+              "title": "Request Approval via Seller Central.",
+              "type": "text/html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "marketplaceId": "ATVPDKIKX0DER",
+      "conditionType": "refurbished_refurbished",
+      "reasons": [
+        {
+          "reasonCode": "APPROVAL_REQUIRED",
+          "message": "You cannot list the product in this condition.",
+          "links": [
+            {
+              "resource": "https://sellercentral.amazon.com/hz/approvalrequest/restrictions/approve?asin=B08XXLG119",
+              "verb": "GET",
+              "title": "Request Approval via Seller Central.",
+              "type": "text/html"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
