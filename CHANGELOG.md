@@ -1,3 +1,6 @@
+# 2.4.1 [#73](https://github.com/patterninc/muffin_man/pull/73)
+
+- Support for Listings Restrictions API v2021-08-01
 # 2.4.0 [#72](https://github.com/patterninc/muffin_man/pull/72)
 
 - Support for the following:

@@ -242,6 +242,16 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/patch_listings_item.json"), headers: {})
     end
 
+    def stub_get_listings_restricted
+      stub_request(:get, "https://#{hostname}/listings/2021-08-01/restrictions?asin=#{asin}&conditionType=#{condition_type}&marketplaceIds=#{amazon_marketplace_id}&sellerId=#{seller_id}")
+        .to_return(status: 200, body: File.read("./spec/support/get_listings_restrictions_restricted.json"), headers: {})
+    end
+
+    def stub_get_listings_unrestricted
+      stub_request(:get, "https://#{hostname}/listings/2021-08-01/restrictions?asin=#{asin}&conditionType=#{condition_type}&marketplaceIds=#{amazon_marketplace_id}&sellerId=#{seller_id}")
+        .to_return(status: 200, body: File.read("./spec/support/get_listings_restrictions_unrestricted.json"), headers: {})
+    end
+
     def stub_search_definitions_product_types
       stub_request(:get, "https://#{hostname}/definitions/2020-09-01/productTypes?keywords=#{keyword}&marketplaceIds=#{amazon_marketplace_id}")
         .to_return(status: 200, body: File.read("./spec/support/search_definitions_product_types.json"), headers: {})
