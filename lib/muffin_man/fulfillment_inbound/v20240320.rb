@@ -38,6 +38,15 @@ module MuffinMan
         call_api
       end
 
+      def get_shipment_items(inbound_plan_id, shipment_id, page_size: nil, pagination_token: nil)
+        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/items"
+        @query_params = {}
+        @query_params["pageSize"] = page_size if page_size
+        @query_params["paginationToken"] = pagination_token if pagination_token
+        @request_type = "GET"
+        call_api
+      end
+
       def list_shipment_boxes(inbound_plan_id, shipment_id, page_size: nil, pagination_token: nil)
         @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/boxes"
         @query_params = {}

@@ -251,6 +251,14 @@ module Support
           .to_return(
             status: 200,
             body: File.read("./spec/support/fulfillment_inbound/set_prep_details.json"),
+      end
+
+      def stub_get_shipment_items(inbound_plan_id, shipment_id, page_size: nil, pagination_token: nil)
+        stub_request(:get, "https://#{hostname}/inbound/fba/2024-03-20/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/items")
+          .with(query: { pageSize: page_size, paginationToken: pagination_token }.compact)
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/get_shipment_items.json"),
             headers: {}
           )
       end
