@@ -128,7 +128,7 @@ module MuffinMan
       end
 
       def get_self_ship_appointment_slots(inbound_plan_id, shipment_id, page_size: nil, pagination_token: nil)
-        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/selfShipAppointmentSlots"
+        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/selfShipAppointmentSlots" # rubocop:disable Layout/LineLength
         @query_params = {}
         @query_params["pageSize"] = page_size if page_size
         @query_params["paginationToken"] = pagination_token if pagination_token
@@ -137,14 +137,14 @@ module MuffinMan
       end
 
       def generate_self_ship_appointment_slots(inbound_plan_id, shipment_id, body)
-        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/selfShipAppointmentSlots"
+        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/selfShipAppointmentSlots" # rubocop:disable Layout/LineLength
         @request_body = body
         @request_type = "POST"
         call_api
       end
 
       def schedule_self_ship_appointment(inbound_plan_id, shipment_id, slot_id, body)
-        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/selfShipAppointmentSlots/#{slot_id}/schedule"
+        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/selfShipAppointmentSlots/#{slot_id}/schedule" # rubocop:disable Layout/LineLength
         @request_body = body
         @request_type = "POST"
         call_api
@@ -210,7 +210,7 @@ module MuffinMan
         call_api
       end
 
-      def set_prep_details(body)
+      def set_prep_details(body) # rubocop:disable Naming/AccessorMethodName
         @local_var_path = "#{INBOUND_PATH}/items/prepDetails"
         @request_body = body
         @request_type = "POST"
