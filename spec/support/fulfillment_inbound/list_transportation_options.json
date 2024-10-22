@@ -1,0 +1,20 @@
+{
+    "transportationOptions": [
+      {
+        "optionId": "option1",
+        "carrier": "Carrier A",
+        "cost": {
+          "currency": "USD",
+          "amount": 50.00
+        }
+      },
+      {
+        "optionId": "option2",
+        "carrier": "Carrier B",
+        "cost": {
+          "currency": "USD",
+          "amount": 75.00
+        }
+      }
+    ]
+  }

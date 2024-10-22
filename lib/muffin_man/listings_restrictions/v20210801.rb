@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MuffinMan
   module ListingsRestrictions
     class V20210801 < SpApiClient
