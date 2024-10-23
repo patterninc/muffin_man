@@ -142,6 +142,118 @@ module Support
             headers: {}
           )
       end
+
+      def stub_list_shipment_pallets
+        stub_request(:get, "https://#{hostname}/inbound/fba/2024-03-20/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/pallets")
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/list_shipment_pallets.json"),
+            headers: {}
+          )
+      end
+
+      def stub_get_self_ship_appointment_slots
+        stub_request(:get, "https://#{hostname}/inbound/fba/2024-03-20/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/selfShipAppointmentSlots")
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/get_self_ship_appointment_slots.json"),
+            headers: {}
+          )
+      end
+
+      def stub_generate_self_ship_appointment_slots
+        stub_request(:post, "https://#{hostname}/inbound/fba/2024-03-20/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/selfShipAppointmentSlots")
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/generate_self_ship_appointment_slots.json"),
+            headers: {}
+          )
+      end
+
+      def stub_schedule_self_ship_appointment
+        stub_request(:post, "https://#{hostname}/inbound/fba/2024-03-20/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/selfShipAppointmentSlots/#{slot_id}/schedule")
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/schedule_self_ship_appointment.json"),
+            headers: {}
+          )
+      end
+
+      def stub_list_transportation_options(inbound_plan_id)
+        stub_request(:get, "https://#{hostname}/inbound/fba/2024-03-20/inboundPlans/#{inbound_plan_id}/transportationOptions")
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/list_transportation_options.json"),
+            headers: {}
+          )
+      end
+
+      def stub_generate_transportation_options
+        stub_request(:post, "https://#{hostname}/inbound/fba/2024-03-20/inboundPlans/#{inbound_plan_id}/transportationOptions")
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/generate_transportation_options.json"),
+            headers: {}
+          )
+      end
+
+      def stub_confirm_transportation_options
+        stub_request(:post, "https://#{hostname}/inbound/fba/2024-03-20/inboundPlans/#{inbound_plan_id}/transportationOptions/confirmation")
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/confirm_transportation_options.json"),
+            headers: {}
+          )
+      end
+
+      def stub_list_item_compliance_details
+        stub_request(:get, "https://#{hostname}/inbound/fba/2024-03-20/items/compliance")
+          .with(query: { mskus: mskus, marketplaceId: marketplace_id })
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/list_item_compliance_details.json"),
+            headers: {}
+          )
+      end
+
+      def stub_update_item_compliance_details
+        stub_request(:put, "https://#{hostname}/inbound/fba/2024-03-20/items/compliance")
+          .with(query: { marketplaceId: marketplace_id })
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/update_item_compliance_details.json"),
+            headers: {}
+          )
+      end
+
+      def stub_create_marketplace_item_labels
+        stub_request(:post, "https://#{hostname}/inbound/fba/2024-03-20/items/labels")
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/create_marketplace_item_labels.json"),
+            headers: {}
+          )
+      end
+
+      def stub_list_prep_details
+        stub_request(:get, "https://#{hostname}/inbound/fba/2024-03-20/items/prepDetails")
+          .with(query: { marketplaceId: marketplace_id, mskus: mskus })
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/list_prep_details.json"),
+            headers: {}
+          )
+      end
+
+      def stub_set_prep_details(prep_details)
+        stub_request(:post, "https://#{hostname}/inbound/fba/2024-03-20/items/prepDetails")
+          .with(body: prep_details)
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/set_prep_details.json"),
+            headers: {}
+          )
+      end
     end
   end
 end

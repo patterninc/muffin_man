@@ -17,15 +17,15 @@ RSpec.describe MuffinMan::ListingsRestrictions::V20210801 do
     it "get listing restrictions for restricted asin" do
       stub_get_listings_restricted
       listings_restrictions = listings_redictions_client.get_listings_restrictions(asin, seller_id,
-                                                                                   amazon_marketplace_id, condition_type)
+                                                                                   amazon_marketplace_id, condition_type) # rubocop:disable Layout/LineLength
       expect(listings_restrictions.response_code).to eq(200)
-      expect(JSON.parse(listings_restrictions.body)["restrictions"][0]["reasons"][0]["reasonCode"]).to eq("APPROVAL_REQUIRED")
+      expect(JSON.parse(listings_restrictions.body)["restrictions"][0]["reasons"][0]["reasonCode"]).to eq("APPROVAL_REQUIRED") # rubocop:disable Layout/LineLength
     end
 
     it "get listing restrictions for unrestricted asin" do
       stub_get_listings_unrestricted
       listings_restrictions = listings_redictions_client.get_listings_restrictions(asin, seller_id,
-                                                                                   amazon_marketplace_id, condition_type)
+                                                                                   amazon_marketplace_id, condition_type) # rubocop:disable Layout/LineLength
       expect(listings_restrictions.response_code).to eq(200)
       expect(JSON.parse(listings_restrictions.body)["restrictions"]).to eq([{}])
     end
