@@ -252,6 +252,11 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/get_listings_restrictions_unrestricted.json"), headers: {})
     end
 
+    def stub_sellers_account
+      stub_request(:get, "https://#{hostname}/sellers/v1/account")
+      .to_return(status: 200, body: File.read("./spec/support/get_sellers_account.json"), headers: {})
+    end
+
     def stub_search_definitions_product_types
       stub_request(:get, "https://#{hostname}/definitions/2020-09-01/productTypes?keywords=#{keyword}&marketplaceIds=#{amazon_marketplace_id}")
         .to_return(status: 200, body: File.read("./spec/support/search_definitions_product_types.json"), headers: {})

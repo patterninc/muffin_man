@@ -24,6 +24,7 @@ As of now, this gem only supports portions of the following APIs with more to co
 - `Product Pricing API v0`
 - `Reports API v2021-06-30`
 - `Solicitations API v1`
+- `Sellers API v1`
 - `Tokens API v2021-03-01`
 - `Vendor Direct Fulfillment Transactions API v1`
 - `Vendor Direct Fulfillment Orders API v2021-12-28`
