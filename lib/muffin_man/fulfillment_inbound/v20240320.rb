@@ -38,7 +38,7 @@ module MuffinMan
         call_api
       end
 
-      def get_shipment_items(inbound_plan_id, shipment_id, page_size: nil, pagination_token: nil)
+      def list_shipment_items(inbound_plan_id, shipment_id, page_size: nil, pagination_token: nil)
         @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/items"
         @query_params = {}
         @query_params["pageSize"] = page_size if page_size
