@@ -254,6 +254,42 @@ module Support
             headers: {}
           )
       end
+
+      def stub_generate_shipment_content_update_previews
+        stub_request(:post, "https://#{hostname}/inbound/fba/2024-03-20/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/contentUpdatePreviews")
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/generate_shipment_content_update_previews.json"),
+            headers: {}
+          )
+      end
+
+      def stub_get_shipment_content_update_preview
+        stub_request(:get, "https://#{hostname}/inbound/fba/2024-03-20/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/contentUpdatePreviews/#{content_update_preview_id}")
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/get_shipment_content_update_preview.json"),
+            headers: {}
+          )
+      end
+
+      def stub_confirm_shipment_content_update_preview
+        stub_request(:post, "https://#{hostname}/inbound/fba/2024-03-20/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/contentUpdatePreviews/#{content_update_preview_id}/confirmation")
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/confirm_shipment_content_update_preview.json"),
+            headers: {}
+          )
+      end
+
+      def stub_list_shipment_content_update_previews
+        stub_request(:get, "https://#{hostname}/inbound/fba/2024-03-20/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/contentUpdatePreviews")
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/list_shipment_content_update_previews.json"),
+            headers: {}
+          )
+      end
     end
   end
 end
