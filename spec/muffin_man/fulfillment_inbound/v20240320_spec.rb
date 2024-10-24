@@ -523,7 +523,8 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
     end
 
     it "gets shipment content update preview" do
-      response = fba_inbound_client.get_shipment_content_update_preview(inbound_plan_id, shipment_id, content_update_preview_id)
+      response = fba_inbound_client.get_shipment_content_update_preview(inbound_plan_id, shipment_id,
+                                                                        content_update_preview_id)
       expect(response.success?).to be true
       expect(JSON.parse(response.body)["contentUpdatePreviewId"]).to eq(content_update_preview_id)
     end
@@ -539,7 +540,8 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
     end
 
     it "confirms shipment content update preview" do
-      response = fba_inbound_client.confirm_shipment_content_update_preview(inbound_plan_id, shipment_id, content_update_preview_id)
+      response = fba_inbound_client.confirm_shipment_content_update_preview(inbound_plan_id, shipment_id,
+                                                                            content_update_preview_id)
       expect(response.success?).to be true
       expect(JSON.parse(response.body)["operationId"]).not_to be_nil
     end

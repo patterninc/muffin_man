@@ -218,7 +218,7 @@ module MuffinMan
       end
 
       def generate_shipment_content_update_previews(inbound_plan_id, shipment_id, body)
-        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/contentUpdatePreviews"
+        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/contentUpdatePreviews" # rubocop:disable Layout/LineLength
         @request_body = body
         @request_type = "POST"
         call_api
@@ -237,7 +237,7 @@ module MuffinMan
       end
 
       def list_shipment_content_update_previews(inbound_plan_id, shipment_id, page_size: nil, pagination_token: nil)
-        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/contentUpdatePreviews"
+        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/contentUpdatePreviews" # rubocop:disable Layout/LineLength
         @query_params = {}
         @query_params["pageSize"] = page_size if page_size
         @query_params["paginationToken"] = pagination_token if pagination_token
