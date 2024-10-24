@@ -1,6 +1,8 @@
-# 2.4.1 [#73](https://github.com/patterninc/muffin_man/pull/73)
+# 2.4.1
 
-- Support for Listings Restrictions API v2021-08-01
+- Support for Listings Restrictions API v2021-08-01 [#73](https://github.com/patterninc/muffin_man/pull/73)
+- Support for FulfillmentInbound listShipmentItems [#74](https://github.com/patterninc/muffin_man/pull/74)
+
 # 2.4.0 [#72](https://github.com/patterninc/muffin_man/pull/72)
 
 - Support for the following:

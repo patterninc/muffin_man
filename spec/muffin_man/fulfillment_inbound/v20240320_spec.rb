@@ -76,6 +76,26 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
     end
   end
 
+  describe "list_shipment_items" do
+    let(:inbound_plan_id) { "wf03769cea-f374-4853-ab93-1a4cf8a62e35" }
+    let(:shipment_id) { "sh150f31d2-f3c0-4364-bf0a-63ee9c7ce99f" }
+    let(:page_size) { 10 }
+    let(:pagination_token) { "token" }
+
+    before do
+      stub_list_shipment_items(inbound_plan_id, shipment_id, page_size: page_size, pagination_token: pagination_token)
+    end
+
+    it "gets shipment items" do
+      response = fba_inbound_client.list_shipment_items(inbound_plan_id,
+                                                        shipment_id,
+                                                        page_size: page_size,
+                                                        pagination_token: pagination_token)
+      expect(response.success?).to be true
+      expect(JSON.parse(response.body)["items"]).to be_an(Array)
+    end
+  end
+
   describe "list_shipment_boxes" do
     let(:inbound_plan_id) { "wf03769cea-f374-4853-ab93-1a4cf8a62e35" }
     let(:shipment_id) { "sh150f31d2-f3c0-4364-bf0a-63ee9c7ce99f" }
