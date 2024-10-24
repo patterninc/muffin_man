@@ -1,0 +1,75 @@
+{
+    "pagination": {
+      "nextToken": "string"
+    },
+    "contentUpdatePreviews": [
+      {
+        "contentUpdatePreviewId": "string",
+        "expiration": "2019-08-24T14:15:22Z",
+        "transportationOption": {
+          "shipmentId": "string",
+          "transportationOptionId": "string",
+          "shippingSolution": "AMAZON_PARTNERED_CARRIER",
+          "carrier": {
+            "name": "string",
+            "alphaCode": "string"
+          },
+          "shippingMode": "GROUND_SMALL_PARCEL",
+          "quote": {
+            "cost": {
+              "code": "str",
+              "amount": 0
+            },
+            "voidableUntil": "2019-08-24T14:15:22Z",
+            "expiration": "2019-08-24T14:15:22Z"
+          },
+          "carrierAppointment": {
+            "startTime": "2019-08-24T14:15:22Z",
+            "endTime": "2019-08-24T14:15:22Z"
+          },
+          "preconditions": [
+            "string"
+          ]
+        },
+        "requestedUpdates": {
+          "boxes": [
+            {
+              "weight": {
+                "unit": "LB",
+                "value": 0
+              },
+              "dimensions": {
+                "unitOfMeasurement": "IN",
+                "length": 0,
+                "width": 0,
+                "height": 0
+              },
+              "quantity": 1,
+              "packageId": "string",
+              "items": [
+                {
+                  "msku": "Sunglasses",
+                  "prepOwner": "AMAZON",
+                  "labelOwner": "AMAZON",
+                  "quantity": 1,
+                  "expiration": "2019-08-24T14:15:22Z",
+                  "manufacturingLotCode": "manufacturingLotCode"
+                }
+              ],
+              "contentInformationSource": "BOX_CONTENT_PROVIDED"
+            }
+          ],
+          "items": [
+            {
+              "msku": "Sunglasses",
+              "prepOwner": "AMAZON",
+              "labelOwner": "AMAZON",
+              "quantity": 1,
+              "expiration": "2019-08-24T14:15:22Z",
+              "manufacturingLotCode": "manufacturingLotCode"
+            }
+          ]
+        }
+      }
+    ]
+  }

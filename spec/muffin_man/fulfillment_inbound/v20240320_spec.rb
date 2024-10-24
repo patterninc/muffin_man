@@ -482,4 +482,81 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
       expect(JSON.parse(response.body)["operationId"]).not_to be_nil
     end
   end
+
+  describe "generate_shipment_content_update_previews" do
+    let(:inbound_plan_id) { "wf03769cea-f374-4853-ab93-1a4cf8a62e35" }
+    let(:shipment_id) { "sh150f31d2-f3c0-4364-bf0a-63ee9c7ce99f" }
+    let(:body) do
+      {
+        boxes: [
+          {
+            boxId: "box1",
+            items: [
+              {
+                msku: "Sunglasses",
+                quantity: 5
+              }
+            ]
+          }
+        ]
+      }
+    end
+
+    before do
+      stub_generate_shipment_content_update_previews
+    end
+
+    it "generates shipment content update previews" do
+      response = fba_inbound_client.generate_shipment_content_update_previews(inbound_plan_id, shipment_id, body)
+      expect(response.success?).to be true
+      expect(JSON.parse(response.body)["operationId"]).not_to be_nil
+    end
+  end
+
+  describe "get_shipment_content_update_preview" do
+    let(:inbound_plan_id) { "wf03769cea-f374-4853-ab93-1a4cf8a62e35" }
+    let(:shipment_id) { "sh150f31d2-f3c0-4364-bf0a-63ee9c7ce99f" }
+    let(:content_update_preview_id) { "preview123" }
+
+    before do
+      stub_get_shipment_content_update_preview
+    end
+
+    it "gets shipment content update preview" do
+      response = fba_inbound_client.get_shipment_content_update_preview(inbound_plan_id, shipment_id, content_update_preview_id)
+      expect(response.success?).to be true
+      expect(JSON.parse(response.body)["contentUpdatePreviewId"]).to eq(content_update_preview_id)
+    end
+  end
+
+  describe "confirm_shipment_content_update_preview" do
+    let(:inbound_plan_id) { "wf03769cea-f374-4853-ab93-1a4cf8a62e35" }
+    let(:shipment_id) { "sh150f31d2-f3c0-4364-bf0a-63ee9c7ce99f" }
+    let(:content_update_preview_id) { "preview123" }
+
+    before do
+      stub_confirm_shipment_content_update_preview
+    end
+
+    it "confirms shipment content update preview" do
+      response = fba_inbound_client.confirm_shipment_content_update_preview(inbound_plan_id, shipment_id, content_update_preview_id)
+      expect(response.success?).to be true
+      expect(JSON.parse(response.body)["operationId"]).not_to be_nil
+    end
+  end
+
+  describe "list_shipment_content_update_previews" do
+    let(:inbound_plan_id) { "wf03769cea-f374-4853-ab93-1a4cf8a62e35" }
+    let(:shipment_id) { "sh150f31d2-f3c0-4364-bf0a-63ee9c7ce99f" }
+
+    before do
+      stub_list_shipment_content_update_previews
+    end
+
+    it "lists shipment content update previews" do
+      response = fba_inbound_client.list_shipment_content_update_previews(inbound_plan_id, shipment_id)
+      expect(response.success?).to be true
+      expect(JSON.parse(response.body)["contentUpdatePreviews"]).to be_an(Array)
+    end
+  end
 end
