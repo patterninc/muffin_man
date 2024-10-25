@@ -1,0 +1,45 @@
+{
+    "pagination": {
+      "nextToken": "string"
+    },
+    "boxes": [
+      {
+        "packageId": "string",
+        "weight": {
+          "unit": "LB",
+          "value": 0
+        },
+        "dimensions": {
+          "unitOfMeasurement": "IN",
+          "length": 0,
+          "width": 0,
+          "height": 0
+        },
+        "quantity": 0,
+        "boxId": "string",
+        "templateName": "string",
+        "items": [
+          {
+            "msku": "string",
+            "asin": "string",
+            "fnsku": "string",
+            "labelOwner": "AMAZON",
+            "quantity": 1,
+            "expiration": "string",
+            "manufacturingLotCode": "string",
+            "prepInstructions": [
+              {
+                "prepType": "string",
+                "prepOwner": "AMAZON",
+                "fee": {
+                  "code": "string",
+                  "amount": 0
+                }
+              }
+            ]
+          }
+        ],
+        "shipmentId": "string"
+      }
+    ]
+  }

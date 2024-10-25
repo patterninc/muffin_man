@@ -318,6 +318,42 @@ module Support
             headers: {}
           )
       end
+
+      def stub_generate_delivery_window_options
+        stub_request(:post, "https://#{hostname}/inbound/fba/2024-03-20/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/deliveryWindowOptions")
+          .to_return(
+            status: 202,
+            body: File.read("./spec/support/fulfillment_inbound/operation_response.json"),
+            headers: {}
+          )
+      end
+
+      def stub_list_delivery_window_options
+        stub_request(:get, "https://#{hostname}/inbound/fba/2024-03-20/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/deliveryWindowOptions")
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/list_delivery_window_options.json"),
+            headers: {}
+          )
+      end
+
+      def stub_confirm_delivery_window_options
+        stub_request(:post, "https://#{hostname}/inbound/fba/2024-03-20/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/deliveryWindowOptions/#{delivery_window_option_id}/confirmation")
+          .to_return(
+            status: 202,
+            body: File.read("./spec/support/fulfillment_inbound/operation_response.json"),
+            headers: {}
+          )
+      end
+
+      def stub_list_inbound_plan_boxes
+        stub_request(:get, "https://#{hostname}/inbound/fba/2024-03-20/inboundPlans/#{inbound_plan_id}/boxes")
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/list_inbound_plan_boxes.json"),
+            headers: {}
+          )
+      end
     end
   end
 end
