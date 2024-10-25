@@ -129,7 +129,7 @@ module MuffinMan
 
       def cancel_inbound_plan(inbound_plan_id)
         @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/cancellation"
-        @request_type = "POST"
+        @request_type = "PUT"
         call_api
       end
 
