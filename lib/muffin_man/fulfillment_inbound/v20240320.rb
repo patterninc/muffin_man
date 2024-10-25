@@ -112,6 +112,18 @@ module MuffinMan
         call_api
       end
 
+      def confirm_placement_option(inbound_plan_id, placement_option_id)
+        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/placementOptions/#{placement_option_id}/confirmation" # rubocop:disable Layout/LineLength
+        @request_type = "POST"
+        call_api
+      end
+
+      def cancel_inbound_plan(inbound_plan_id)
+        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/cancellation"
+        @request_type = "POST"
+        call_api
+      end
+
       def get_inbound_operation_status(operation_id)
         @local_var_path = "#{INBOUND_PATH}/operations/#{operation_id}"
         @request_type = "GET"

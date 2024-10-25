@@ -290,6 +290,24 @@ module Support
             headers: {}
           )
       end
+
+      def stub_confirm_placement_option
+        stub_request(:post, "https://#{hostname}/inbound/fba/2024-03-20/inboundPlans/#{inbound_plan_id}/placementOptions/#{placement_option_id}/confirmation")
+          .to_return(
+            status: 202,
+            body: File.read("./spec/support/fulfillment_inbound/operation_response.json"),
+            headers: {}
+          )
+      end
+
+      def stub_cancel_inbound_plan
+        stub_request(:put, "https://#{hostname}/inbound/fba/2024-03-20/inboundPlans/#{inbound_plan_id}/cancellation")
+          .to_return(
+            status: 202,
+            body: File.read("./spec/support/fulfillment_inbound/operation_response.json"),
+            headers: {}
+          )
+      end
     end
   end
 end
