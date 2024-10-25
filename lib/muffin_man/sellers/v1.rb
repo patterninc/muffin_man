@@ -8,6 +8,12 @@ module MuffinMan
         @request_type = "GET"
         call_api
       end
+
+      def marketplace_participations
+        @local_var_path = "/sellers/v1/marketplaceParticipations"
+        @request_type = "GET"
+        call_api
+      end
     end
   end
 end

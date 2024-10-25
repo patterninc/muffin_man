@@ -14,5 +14,10 @@ RSpec.describe MuffinMan::Sellers::V1 do
       expect(response.response_code).to eq(200)
       expect(JSON.parse(response.body)["business"]["name"]).to eq("BestSeller Inc.")
     end
+
+    it "executes `marketplace_participations` request" do
+      response = sellers_client.marketplace_participations
+      expect(response.response_code).to eq(200)
+    end
   end
 end
