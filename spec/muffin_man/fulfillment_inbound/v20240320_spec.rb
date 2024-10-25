@@ -565,6 +565,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
   describe "confirm_placement_option" do
     let(:inbound_plan_id) { "wf03769cea-f374-4853-ab93-1a4cf8a62e35" }
     let(:placement_option_id) { "placementOption123" }
+
     before do
       stub_confirm_placement_option
     end
@@ -576,15 +577,15 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
     end
   end
 
-
   describe "cancel_inbound_plan" do
     let(:inbound_plan_id) { "wf03769cea-f374-4853-ab93-1a4cf8a62e35" }
     let(:placement_option_id) { "placementOption123" }
+
     before do
       stub_confirm_placement_option
     end
 
-    it "confirms placement option" do
+    it "cancels the inbound plan" do
       response = fba_inbound_client.confirm_placement_option(inbound_plan_id, placement_option_id)
       expect(response.success?).to be true
       expect(JSON.parse(response.body)["operationId"]).not_to be_nil
