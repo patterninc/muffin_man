@@ -611,4 +611,55 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
       expect(JSON.parse(response.body)["operationId"]).not_to be_nil
     end
   end
+
+  describe "generate_delivery_window_options" do
+    before do
+      stub_generate_delivery_window_options
+    end
+
+    it "generates delivery window options" do
+      response = fba_inbound_client.generate_delivery_window_options(inbound_plan_id, shipment_id)
+      expect(response.success?).to be true
+      expect(JSON.parse(response.body)["operationId"]).not_to be_nil
+    end
+  end
+
+  describe "list_delivery_window_options" do
+    before do
+      stub_list_delivery_window_options
+    end
+
+    it "lists delivery window options" do
+      response = fba_inbound_client.list_delivery_window_options(inbound_plan_id, shipment_id)
+      expect(response.success?).to be true
+      expect(JSON.parse(response.body)["deliveryWindowOptions"]).to be_an(Array)
+    end
+  end
+
+  describe "confirm_delivery_window_option" do
+    let(:delivery_window_option_id) { "deliveryWindowOption123" }
+
+    before do
+      stub_confirm_delivery_window_options
+    end
+
+    it "confirms delivery window option" do
+      response = fba_inbound_client.confirm_delivery_window_options(inbound_plan_id, shipment_id,
+                                                                    delivery_window_option_id)
+      expect(response.success?).to be true
+      expect(JSON.parse(response.body)["operationId"]).not_to be_nil
+    end
+  end
+
+  describe "list_inbound_plan_boxes" do
+    before do
+      stub_list_inbound_plan_boxes
+    end
+
+    it "lists inbound boxes" do
+      response = fba_inbound_client.list_inbound_plan_boxes(inbound_plan_id)
+      expect(response.success?).to be true
+      expect(JSON.parse(response.body)["boxes"]).to be_an(Array)
+    end
+  end
 end

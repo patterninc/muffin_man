@@ -1,0 +1,17 @@
+{
+    "pagination": {
+      "nextToken": "string"
+    },
+    "deliveryWindowOptions": [
+      {
+        "inboundPlanId": "string",
+        "placementOptionId": "string",
+        "shipmentId": "string",
+        "deliveryWindowOptionId": "string",
+        "startDate": "2019-08-24T14:15:22Z",
+        "endDate": "2019-08-24T14:15:22Z",
+        "availabilityType": "string",
+        "validUntil": "2019-08-24T14:15:22Z"
+      }
+    ]
+  }

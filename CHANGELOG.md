@@ -1,3 +1,6 @@
+# 2.4.6 [#79](https://github.com/patterninc/muffin_man/pull/79)
+
+- Support for FulfillmentInbound delivery window options and listInboundPlanBoxes [#79](https://github.com/patterninc/muffin_man/pull/79)
 # 2.4.5 [#74](https://github.com/patterninc/muffin_man/pull/74)
 
 - Support for FulfillmentInbound listShipmentItems [#74](https://github.com/patterninc/muffin_man/pull/74)

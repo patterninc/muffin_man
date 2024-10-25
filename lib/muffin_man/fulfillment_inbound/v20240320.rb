@@ -265,6 +265,36 @@ module MuffinMan
         @request_type = "GET"
         call_api
       end
+
+      def generate_delivery_window_options(inbound_plan_id, shipment_id)
+        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/deliveryWindowOptions" # rubocop:disable Layout/LineLength
+        @request_type = "POST"
+        call_api
+      end
+
+      def list_delivery_window_options(inbound_plan_id, shipment_id, page_size: nil, pagination_token: nil)
+        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/deliveryWindowOptions" # rubocop:disable Layout/LineLength
+        @query_params = {}
+        @query_params["pageSize"] = page_size if page_size
+        @query_params["paginationToken"] = pagination_token if pagination_token
+        @request_type = "GET"
+        call_api
+      end
+
+      def confirm_delivery_window_options(inbound_plan_id, shipment_id, delivery_window_option_id)
+        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/deliveryWindowOptions/#{delivery_window_option_id}/confirmation" # rubocop:disable Layout/LineLength
+        @request_type = "POST"
+        call_api
+      end
+
+      def list_inbound_plan_boxes(inbound_plan_id, page_size: nil, pagination_token: nil)
+        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/boxes"
+        @query_params = {}
+        @query_params["pageSize"] = page_size if page_size
+        @query_params["paginationToken"] = pagination_token if pagination_token
+        @request_type = "GET"
+        call_api
+      end
     end
   end
 end
