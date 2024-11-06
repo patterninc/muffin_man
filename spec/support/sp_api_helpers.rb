@@ -93,7 +93,7 @@ module Support
     end
 
     def stub_get_item_review_topics_v20220601
-      stub_request(:get, "https://#{hostname}/customerFeedback/2022-06-01/items/#{asin}/reviews/topics?marketplaceId=#{marketplace_id}")
+      stub_request(:get, "https://#{hostname}/customerFeedback/2022-06-01/items/#{asin}/reviews/topics?marketplaceId=#{marketplace_id}?sortBy=#{sort_type}")
         .to_return(status: 200, body: File.read("./spec/support/search_catalog_items_by_identifier_v20220401.json"), headers: {})
     end
 
