@@ -1,0 +1,214 @@
+{
+    "marketplaceId": "ATVPDKIKX0DER",
+    "itemName": "Philips Sonicare for Kids 7+ Genuine Replacement Toothbrush Heads, 2 Brush Heads, Turquoise and White, Standard, HX6042/94",
+    "dateRange": {
+        "endDate": "2024-10-18T00:00:00.000Z",
+        "startDate": "2024-04-18T00:00:00.000Z"
+    },
+    "countryCode": "US",
+    "topics": {
+        "negativeTopics": [
+            {
+                "childAsinMetrics": {
+                    "mostMentions": {
+                        "numberOfMentions": 1,
+                        "asin": "B00G5L85S2"
+                    },
+                    "leastMentions": {
+                        "numberOfMentions": 1,
+                        "asin": "B00G5L85S2"
+                    }
+                },
+                "browseNodeMetrics": {
+                    "starRatingImpact": {
+                        "allProducts": 0.02
+                    },
+                    "occurrencePercentage": {
+                        "allProducts": 4.64
+                    }
+                },
+                "asinMetrics": {
+                    "starRatingImpact": -0.05,
+                    "numberOfMentions": 1,
+                    "occurrencePercentage": 100
+                },
+                "reviewSnippets": [
+                    "The packaging is excessive for just two replacement heads",
+                    "Only come in packs of two, excessive packaging",
+                    "Only come in packs of two, excessive packaging"
+                ],
+                "subtopics": [
+                    {
+                        "reviewSnippets": [
+                            "Only come in packs of two, excessive packaging"
+                        ],
+                        "metrics": {
+                            "numberOfMentions": 1,
+                            "occurrencePercentage": 100
+                        },
+                        "subtopic": "wrong packaging"
+                    }
+                ],
+                "topic": "Packaging Quality",
+                "parentAsinMetrics": {
+                    "starRatingImpact": -0.05,
+                    "numberOfMentions": 1,
+                    "occurrencePercentage": 100
+                }
+            }
+        ],
+        "positiveTopics": [
+            {
+                "childAsinMetrics": {
+                    "mostMentions": {
+                        "numberOfMentions": 2,
+                        "asin": "B00G5L85S2"
+                    },
+                    "leastMentions": {
+                        "numberOfMentions": 2,
+                        "asin": "B00G5L85S2"
+                    }
+                },
+                "browseNodeMetrics": {
+                    "starRatingImpact": {
+                        "allProducts": 0.53
+                    },
+                    "occurrencePercentage": {
+                        "allProducts": 16.78
+                    }
+                },
+                "asinMetrics": {
+                    "starRatingImpact": 3.18,
+                    "numberOfMentions": 2,
+                    "occurrencePercentage": 33.33
+                },
+                "reviewSnippets": [
+                    "Nice product",
+                    "We love sonicare products",
+                    "No complaints"
+                ],
+                "subtopics": [
+                    {
+                        "reviewSnippets": [
+                            "No complaints"
+                        ],
+                        "metrics": {
+                            "numberOfMentions": 1,
+                            "occurrencePercentage": 50
+                        },
+                        "subtopic": "no complaints"
+                    },
+                    {
+                        "reviewSnippets": [
+                            "Nice product"
+                        ],
+                        "metrics": {
+                            "numberOfMentions": 1,
+                            "occurrencePercentage": 50
+                        },
+                        "subtopic": "great idea"
+                    }
+                ],
+                "topic": "Customer Satisfaction",
+                "parentAsinMetrics": {
+                    "starRatingImpact": 3.18,
+                    "numberOfMentions": 2,
+                    "occurrencePercentage": 33.33
+                }
+            },
+            {
+                "childAsinMetrics": {
+                    "mostMentions": {
+                        "numberOfMentions": 1,
+                        "asin": "B00G5L85S2"
+                    },
+                    "leastMentions": {
+                        "numberOfMentions": 1,
+                        "asin": "B00G5L85S2"
+                    }
+                },
+                "browseNodeMetrics": {
+                    "starRatingImpact": {
+                        "allProducts": 2.08
+                    },
+                    "occurrencePercentage": {
+                        "allProducts": 22.29
+                    }
+                },
+                "asinMetrics": {
+                    "starRatingImpact": 1.19,
+                    "numberOfMentions": 1,
+                    "occurrencePercentage": 16.67
+                },
+                "reviewSnippets": [
+                    "worth the extra money"
+                ],
+                "subtopics": [
+                    {
+                        "reviewSnippets": [
+                            "worth the extra money"
+                        ],
+                        "metrics": {
+                            "numberOfMentions": 1,
+                            "occurrencePercentage": 100
+                        },
+                        "subtopic": "worth the money"
+                    }
+                ],
+                "topic": "Value For Money",
+                "parentAsinMetrics": {
+                    "starRatingImpact": 1.19,
+                    "numberOfMentions": 1,
+                    "occurrencePercentage": 16.67
+                }
+            },
+            {
+                "childAsinMetrics": {
+                    "mostMentions": {
+                        "numberOfMentions": 1,
+                        "asin": "B00G5L85S2"
+                    },
+                    "leastMentions": {
+                        "numberOfMentions": 1,
+                        "asin": "B00G5L85S2"
+                    }
+                },
+                "browseNodeMetrics": {
+                    "starRatingImpact": {
+                        "allProducts": 0.11
+                    },
+                    "occurrencePercentage": {
+                        "allProducts": 4.64
+                    }
+                },
+                "asinMetrics": {
+                    "starRatingImpact": 0.53,
+                    "numberOfMentions": 1,
+                    "occurrencePercentage": 16.67
+                },
+                "reviewSnippets": [
+                    "Easy to use and good quality"
+                ],
+                "subtopics": [
+                    {
+                        "reviewSnippets": [
+                            "Easy to use and good quality"
+                        ],
+                        "metrics": {
+                            "numberOfMentions": 1,
+                            "occurrencePercentage": 100
+                        },
+                        "subtopic": "easy to use"
+                    }
+                ],
+                "topic": "Ease Of Use",
+                "parentAsinMetrics": {
+                    "starRatingImpact": 0.53,
+                    "numberOfMentions": 1,
+                    "occurrencePercentage": 16.67
+                }
+            }
+        ]
+    },
+    "asin": "B00G5L85S2"
+}

@@ -6,6 +6,7 @@ MuffinMan is a ruby interface to the Amazon Selling Partner API. For more inform
 
 As of now, this gem only supports portions of the following APIs with more to come:
 
+- `Customer Feedback Insights API v2024-06-01`
 - `Amazon Warehousing and Distribution API v2024-05-09`
 - `Catalog Items API v2022-04-01`
 - `Data Kiosk API v2023-11-15`
