@@ -1,3 +1,7 @@
+# 2.4.7
+
+- Finances V20240619 list_transactions [#81](https://github.com/patterninc/muffin_man/pull/81)
+
 # 2.4.6 [#79](https://github.com/patterninc/muffin_man/pull/79)
 
 - Support for FulfillmentInbound delivery window options and listInboundPlanBoxes [#79](https://github.com/patterninc/muffin_man/pull/79)
