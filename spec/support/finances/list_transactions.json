@@ -1,0 +1,232 @@
+{
+  "payload": {
+    "transactions": [
+      {
+        "sellingPartnerMetadata": {
+          "sellingPartnerId": "A1111111111111",
+          "marketplaceId": "AT614YYYNOC1S",
+          "accountType": "Standard Orders"
+        },
+        "transactionType": "Shipment",
+        "transactionId": "lo6cQ55-40s5sU4g_lSwkZV22qz-vCNVtjLLqAQyux4",
+        "transactionStatus": null,
+        "relatedIdentifiers": [
+          {
+            "relatedIdentifierName": "ORDER_ID",
+            "relatedIdentifierValue": "999-0852306-5138236"
+          },
+          {
+            "relatedIdentifierName": "SHIPMENT_ID",
+            "relatedIdentifierValue": "11111111111111"
+          },
+          {
+            "relatedIdentifierName": "FINANCIAL_EVENT_GROUP_ID",
+            "relatedIdentifierValue": "_fSsCZmGkBME7DCFtbqKLcDX-KB-M-5Pdr1NaefqCkB"
+          }
+        ],
+        "totalAmount": {
+          "currencyAmount": 294.46,
+          "currencyCode": "SEK"
+        },
+        "description": "Order Payment",
+        "postedDate": "2024-01-18T12:45:47Z",
+        "marketplaceDetails": {
+          "marketplaceId": "AT614YYYNOC1S",
+          "marketplaceName": "Amazon.se"
+        },
+        "items": [
+          {
+            "description": "SAMSUNG Galaxy Tab S6 Lite WiFi - 64GB, 4GB, Grigio",
+            "totalAmount": {
+              "currencyAmount": 294.46,
+              "currencyCode": "SEK"
+            },
+            "relatedIdentifiers": [
+              {
+                "itemRelatedIdentifierName": "ORDER_ADJUSTMENT_ITEM_ID",
+                "itemRelatedIdentifierValue": "6226957701205"
+              }
+            ],
+            "breakdowns": [
+              {
+                "breakdownType": "Tax",
+                "breakdownAmount": {
+                  "currencyAmount": 89.8,
+                  "currencyCode": "SEK"
+                },
+                "breakdowns": [
+                  {
+                    "breakdownType": "OurPriceTax",
+                    "breakdownAmount": {
+                      "currencyAmount": 80,
+                      "currencyCode": "SEK"
+                    },
+                    "breakdowns": []
+                  },
+                  {
+                    "breakdownType": "ShippingTax",
+                    "breakdownAmount": {
+                      "currencyAmount": 9.8,
+                      "currencyCode": "SEK"
+                    },
+                    "breakdowns": []
+                  }
+                ]
+              },
+              {
+                "breakdownType": "ProductCharges",
+                "breakdownAmount": {
+                  "currencyAmount": 320,
+                  "currencyCode": "SEK"
+                },
+                "breakdowns": [
+                  {
+                    "breakdownType": "OurPricePrincipal",
+                    "breakdownAmount": {
+                      "currencyAmount": 320,
+                      "currencyCode": "SEK"
+                    },
+                    "breakdowns": []
+                  }
+                ]
+              },
+              {
+                "breakdownType": "Shipping",
+                "breakdownAmount": {
+                  "currencyAmount": 39.2,
+                  "currencyCode": "SEK"
+                },
+                "breakdowns": [
+                  {
+                    "breakdownType": "ShippingPrincipal",
+                    "breakdownAmount": {
+                      "currencyAmount": 39.2,
+                      "currencyCode": "SEK"
+                    },
+                    "breakdowns": []
+                  }
+                ]
+              },
+              {
+                "breakdownType": "AmazonFees",
+                "breakdownAmount": {
+                  "currencyAmount": -154.54,
+                  "currencyCode": "SEK"
+                },
+                "breakdowns": [
+                  {
+                    "breakdownType": "FBAPerUnitFulfillmentFee",
+                    "breakdownAmount": {
+                      "currencyAmount": -45.54,
+                      "currencyCode": "SEK"
+                    },
+                    "breakdowns": [
+                      {
+                        "breakdownType": "Base",
+                        "breakdownAmount": {
+                          "currencyAmount": -36.43,
+                          "currencyCode": "SEK"
+                        }
+                      },
+                      {
+                        "breakdownType": "Tax",
+                        "breakdownAmount": {
+                          "currencyAmount": -9.11,
+                          "currencyCode": "SEK"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "breakdownType": "Commission",
+                    "breakdownAmount": {
+                      "currencyAmount": -60,
+                      "currencyCode": "SEK"
+                    },
+                    "breakdowns": [
+                      {
+                        "breakdownType": "Base",
+                        "breakdownAmount": {
+                          "currencyAmount": -60,
+                          "currencyCode": "SEK"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "breakdownType": "ShippingChargeback",
+                    "breakdownAmount": {
+                      "currencyAmount": -49,
+                      "currencyCode": "SEK"
+                    },
+                    "breakdowns": [
+                      {
+                        "breakdownType": "Base",
+                        "breakdownAmount": {
+                          "currencyAmount": -39.2,
+                          "currencyCode": "SEK"
+                        }
+                      },
+                      {
+                        "breakdownType": "Tax",
+                        "breakdownAmount": {
+                          "currencyAmount": -9.8,
+                          "currencyCode": "SEK"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "contexts": [
+              {
+                "asin": "B085V6LQPB",
+                "quantityShipped": 1,
+                "sku": "PSMM-TEST-SKU-Aug-29_08_03_14-0898",
+                "fulfillmentNetwork": "AFN",
+                "contextType": "ProductContext"
+              }
+            ]
+          }
+        ],
+        "breakdowns": [
+          {
+            "breakdownType": "Sales",
+            "breakdownAmount": {
+              "currencyAmount": 449,
+              "currencyCode": "SEK"
+            },
+            "breakdowns": [
+              {
+                "breakdownType": "Tax",
+                "breakdownAmount": {
+                  "currencyAmount": 89.8,
+                  "currencyCode": "SEK"
+                },
+                "breakdowns": null
+              },
+              {
+                "breakdownType": "ProductCharges",
+                "breakdownAmount": {
+                  "currencyAmount": 320,
+                  "currencyCode": "SEK"
+                },
+                "breakdowns": null
+              },
+              {
+                "breakdownType": "Shipping",
+                "breakdownAmount": {
+                  "currencyAmount": 39.2,
+                  "currencyCode": "SEK"
+                },
+                "breakdowns": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "nextToken": "nextToken"
+}
