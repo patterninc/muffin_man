@@ -1,5 +1,5 @@
 module MuffinMan
-  module CustomerFeedback
+  module CustomerFeedback ### THIS API IS ONLY IN BETA
     class V20240601 < SpApiClient
       CUSTOMER_FEEDBACK_PATH = "/customerFeedback/2024-06-01"
 
