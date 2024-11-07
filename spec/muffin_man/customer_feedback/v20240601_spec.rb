@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-RSpec.describe MuffinMan::CategoryFeedback::V20240601 do
+RSpec.describe MuffinMan::CustomerFeedback::V20240601 do
   subject(:customer_feedback_client) { described_class.new(credentials) }
 
   before do
