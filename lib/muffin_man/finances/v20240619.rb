@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MuffinMan
   module Finances
     class V20240619 < SpApiClient
