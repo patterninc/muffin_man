@@ -295,6 +295,13 @@ module MuffinMan
         @request_type = "GET"
         call_api
       end
+
+      def update_shipment_tracking_details(inbound_plan_id, shipment_id, body)
+        @local_var_path = "#{INBOUND_PATH}/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/trackingDetails"
+        @request_body = body
+        @request_type = "PUT"
+        call_api
+      end
     end
   end
 end

@@ -354,6 +354,15 @@ module Support
             headers: {}
           )
       end
+
+      def stub_update_shipment_tracking_details
+        stub_request(:put, "https://#{hostname}/inbound/fba/2024-03-20/inboundPlans/#{inbound_plan_id}/shipments/#{shipment_id}/trackingDetails")
+          .to_return(
+            status: 200,
+            body: File.read("./spec/support/fulfillment_inbound/update_shipment_tracking_details.json"),
+            headers: {}
+          )
+      end
     end
   end
 end
