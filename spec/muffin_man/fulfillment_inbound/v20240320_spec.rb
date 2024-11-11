@@ -666,12 +666,12 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
   describe "update_shipment_tracking_details" do
     let(:body) do
       {
-        "trackingDetails": {
-          "spdTrackingDetail": {
-            "spdTrackingItems": [
+        trackingDetails: {
+          spdTrackingDetail: {
+            spdTrackingItems: [
               {
-                "boxId": "FBA10ABC0YY100001",
-                "trackingId": "FBA10002000"
+                boxId: "FBA10ABC0YY100001",
+                trackingId: "FBA10002000"
               }
             ]
           }
