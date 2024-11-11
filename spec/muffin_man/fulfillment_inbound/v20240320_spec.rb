@@ -662,4 +662,31 @@ RSpec.describe MuffinMan::FulfillmentInbound::V20240320 do
       expect(JSON.parse(response.body)["boxes"]).to be_an(Array)
     end
   end
+
+  describe "update_shipment_tracking_details" do
+    let(:body) do
+      {
+        trackingDetails: {
+          spdTrackingDetail: {
+            spdTrackingItems: [
+              {
+                boxId: "FBA10ABC0YY100001",
+                trackingId: "FBA10002000"
+              }
+            ]
+          }
+        }
+      }
+    end
+
+    before do
+      stub_update_shipment_tracking_details
+    end
+
+    it "updates shipment tracking details" do
+      response = fba_inbound_client.update_shipment_tracking_details(inbound_plan_id, shipment_id, body)
+      expect(response.success?).to be true
+      expect(JSON.parse(response.body)["operationId"]).not_to be_nil
+    end
+  end
 end

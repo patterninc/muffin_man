@@ -1,6 +1,12 @@
+# 2.4.8
+
+- Customer Feedback v2024-06-01 [#80] (https://github.com/patterninc/muffin_man/pull/80)
+- Finances v2024-06-19 list_transactions [#81](https://github.com/patterninc/muffin_man/pull/81)
+- FulFillment Inbound v2024-03-20 [#82](https://github.com/patterninc/muffin_man/pull/82)
+
 # 2.4.7
 
-- Finances V20240619 list_transactions [#81](https://github.com/patterninc/muffin_man/pull/81)
+- Correct request type for cancel_inbound_plan
 
 # 2.4.6 [#79](https://github.com/patterninc/muffin_man/pull/79)
 
