@@ -36,6 +36,7 @@ require "muffin_man/vendor_orders/v1"
 require "muffin_man/vendor_shipments/v1"
 require "muffin_man/vendor_transaction_status/v1"
 require "muffin_man/customer_feedback/v20240601"
+require "muffin_man/uploads/v20201101"
 
 module MuffinMan
   class Error < StandardError; end
