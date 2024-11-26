@@ -3,6 +3,7 @@ require './spec/support/feeds/stub_feeds'
 require './spec/support/notifications/stub_notifications'
 require './spec/support/finances/stub_finances'
 require './spec/support/uploads/stub_uploads'
+require './spec/support/aplus_content/stub_aplus_content_apis'
 
 module Support
   module SpApiHelpers

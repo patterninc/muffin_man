@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 module MuffinMan
   module Uploads
     class V20201101 < SpApiClient
-
       # Creates a new upload destination for a resource.
       #
-      # This method generates a signed upload destination URL for a specific resource 
+      # This method generates a signed upload destination URL for a specific resource
       # that you can use to upload files to Amazon SP-API.
       #
       # @param [String] marketplace_id
@@ -15,8 +16,8 @@ module MuffinMan
       #   - `aplus/2020-11-01/contentDocuments`.
       # @param [String] content_md5
       #   The MD5 hash of the file's content. Use `Digest::MD5.file(file_path).hexdigest` to calculate this.
-      # @param [String] content_type
-      #   The MIME type of the file to be uploaded (e.g., 'application/pdf').
+      # @param [String] content_type (optional)
+      #   The content type of the file (e.g., 'application/pdf').
       # @return [Hash]
       #   The response from the API, which includes the signed upload URL and additional metadata.
       # @raise [StandardError]
@@ -31,9 +32,10 @@ module MuffinMan
       #     "application/pdf"
       #   )
       #   puts response
-      def create_upload_destination_for_resource(marketplace_id, resource, content_md5, content_type)
+      def create_upload_destination_for_resource(marketplace_id, resource, content_md5, content_type: nil)
         @local_var_path = "/uploads/2020-11-01/uploadDestinations/#{resource}"
-        @query_params = { "marketplaceIds" => marketplace_id, "contentMD5" => content_md5, contentType: content_type }
+        @query_params = { "marketplaceIds" => marketplace_id, "contentMD5" => content_md5 }
+        @query_params["contentType"] = content_type if content_type
         @request_type = "POST"
 
         call_api
