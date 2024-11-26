@@ -35,6 +35,8 @@ As of now, this gem only supports portions of the following APIs with more to co
 - `Vendor Orders API v1`
 - `Vendor Shipments API v1`
 - `Vendor Transaction Status API v1`
+- `Uploads API v2020-11-01`
+- `A+ API v2020-11-01`
 
 ## Installation
 
