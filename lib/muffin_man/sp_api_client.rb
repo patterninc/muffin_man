@@ -39,6 +39,10 @@ module MuffinMan
       @config = MuffinMan.configuration
     end
 
+    def request
+      Typhoeus::Request.new(canonical_uri, params: query_params)
+    end
+
     private
 
     def call_api
@@ -71,10 +75,6 @@ module MuffinMan
     def canonical_uri
       # local_var_path is defined in subclasses
       "#{sp_api_url}#{local_var_path}"
-    end
-
-    def request
-      Typhoeus::Request.new(canonical_uri, params: query_params)
     end
 
     def retrieve_lwa_access_token
