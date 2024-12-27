@@ -240,7 +240,7 @@ RSpec/EmptyLineAfterHook:
 # Offense count: 12
 # Configuration parameters: Include, CustomTransform, IgnoreMethods, SpecSuffixOnly.
 # Include: **/*_spec*rb*, **/spec/**/*
-RSpec/SpecFilePathFormat:
+RSpec/FilePath:
   Exclude:
     - 'spec/muffin_man/authorization_spec.rb'
     - 'spec/muffin_man/catalog_items_spec.rb'
