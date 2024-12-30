@@ -110,7 +110,7 @@ module MuffinMan
       )
 
       if response.failure?
-        raise SpApiAuthError, response.return_message
+        raise SpApiAuthError, response.return_message || "LWA access token request failed"
       end
       parsed_body = JSON.parse(response.body) rescue {}
       if response.return_code != :ok || parsed_body["error"]
