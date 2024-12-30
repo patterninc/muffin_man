@@ -108,9 +108,16 @@ module MuffinMan
           "Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8"
         }
       )
-      raise SpApiAuthError, response unless response.success?
 
-      JSON.parse(response.body)
+      if response.failure?
+        raise SpApiAuthError, response.return_message
+      end
+      parsed_body = JSON.parse(response.body) rescue {}
+      if response.return_code != :ok || parsed_body["error"]
+        raise SpApiAuthError, parsed_body["error_description"] || "Error requesting access token"
+      end
+
+      parsed_body
     end
 
     def retrieve_grantless_access_token
