@@ -108,7 +108,7 @@ module MuffinMan
           "Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8"
         }
       )
-      raise SpApiAuthError, response if !response.success?
+      raise SpApiAuthError, response unless response.success?
 
       JSON.parse(response.body)
     end
