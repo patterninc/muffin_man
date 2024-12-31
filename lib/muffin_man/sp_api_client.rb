@@ -108,16 +108,10 @@ module MuffinMan
           "Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8"
         }
       )
+      # byebug
+      raise SpApiAuthError, response unless response.success?
 
-      if response.failure?
-        raise SpApiAuthError, response.return_message || "LWA access token request failed"
-      end
-      parsed_body = JSON.parse(response.body) rescue {}
-      if response.return_code != :ok || parsed_body["error"]
-        raise SpApiAuthError, parsed_body["error_description"] || "Error requesting access token"
-      end
-
-      parsed_body
+      JSON.parse(response.body)
     end
 
     def retrieve_grantless_access_token
