@@ -108,7 +108,6 @@ module MuffinMan
           "Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8"
         }
       )
-      # byebug
       raise SpApiAuthError, response unless response.success?
 
       JSON.parse(response.body)
