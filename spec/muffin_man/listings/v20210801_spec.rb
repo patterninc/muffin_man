@@ -109,4 +109,34 @@ RSpec.describe MuffinMan::Listings::V20210801 do
       expect(JSON.parse(response.body)).to eq(submission_accepted_response)
     end
   end
+
+  describe "search_listings_items" do
+    let(:optional_query_test) do
+      { identifiers: ["XXXXXXXXX", "YYYYYYYY", "ZZZZZZZZ"],
+        identifiers_type: "SKU",
+        included_data: ["issues", "attributes", "summaries"],
+        page_size: 20 }
+    end
+
+    let(:optional_query) do
+      { identifiers: "XXXXXXXXX,YYYYYYYY,ZZZZZZZZ",
+        identifiers_type: "SKU",
+        included_data: "issues,attributes,summaries",
+        page_size: 20 }
+    end
+
+    it "makes a simple request to search listings items" do
+      stub_search_listings_item
+      response = listings_client.search_listings_items(seller_id, amazon_marketplace_id)
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body)["items"][0]["sku"]).to eq("GM-ZDPI-9B4E")
+    end
+
+    it "makes a complex request to search listings items" do
+      stub_search_listings_item_query
+      response = listings_client.search_listings_items(seller_id, amazon_marketplace_id, issue_locale: "en_US",
+                                                                                         **optional_query)
+      expect(response.response_code).to eq(200)
+    end
+  end
 end

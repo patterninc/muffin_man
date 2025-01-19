@@ -65,6 +65,18 @@ module MuffinMan
         @request_type = "PATCH"
         call_api
       end
+
+      def search_listings_items(seller_id, marketplace_ids, issue_locale: nil, **optional_query)
+        @local_var_path = "/listings/2021-08-01/items/#{seller_id}"
+        @marketplace_ids = marketplace_ids.is_a?(Array) ? marketplace_ids : [marketplace_ids]
+        @query_params = {
+          "marketplaceIds" =>  @marketplace_ids.join(",")
+        }
+        @query_params["issueLocale"] = issue_locale if issue_locale
+        optional_query.each { |key, value| @query_params[key] = value }
+        @request_type = "GET"
+        call_api
+      end
     end
   end
 end
