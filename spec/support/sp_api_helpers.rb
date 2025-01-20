@@ -248,7 +248,7 @@ module Support
     end
 
     def stub_search_listings_item_query
-      stub_request(:get, "https://sellingpartnerapi-na.amazon.com/listings/2021-08-01/items/#{seller_id}?identifiers=XXXXXXXXX,YYYYYYYY,ZZZZZZZZ&identifiers_type=SKU&included_data=issues,attributes,summaries&issueLocale=en_US&marketplaceIds=#{amazon_marketplace_id}&page_size=20")
+      stub_request(:get, "https://sellingpartnerapi-na.amazon.com/listings/2021-08-01/items/#{seller_id}?identifiers=XXXXXXXXX,YYYYYYYY,ZZZZZZZZ&identifiersType=SKU&includedData=issues,attributes,summaries&issueLocale=en_US&marketplaceIds=#{amazon_marketplace_id}&pageSize=20")
       .to_return(status: 200, body: File.read("./spec/support/search_listings_item.json"), headers: {})
     end
 

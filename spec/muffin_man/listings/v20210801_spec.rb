@@ -111,17 +111,11 @@ RSpec.describe MuffinMan::Listings::V20210801 do
   end
 
   describe "search_listings_items" do
-    let(:optional_query_test) do
-      { identifiers: ["XXXXXXXXX", "YYYYYYYY", "ZZZZZZZZ"],
-        identifiers_type: "SKU",
-        included_data: ["issues", "attributes", "summaries"],
-        page_size: 20 }
-    end
-
     let(:optional_query) do
       { identifiers: "XXXXXXXXX,YYYYYYYY,ZZZZZZZZ",
         identifiers_type: "SKU",
-        included_data: "issues,attributes,summaries",
+        included_data: ["issues", "attributes", "summaries"],
+        issueLocale: "en_US",
         page_size: 20 }
     end
 
@@ -134,8 +128,7 @@ RSpec.describe MuffinMan::Listings::V20210801 do
 
     it "makes a complex request to search listings items" do
       stub_search_listings_item_query
-      response = listings_client.search_listings_items(seller_id, amazon_marketplace_id, issue_locale: "en_US",
-                                                                                         **optional_query)
+      response = listings_client.search_listings_items(seller_id, amazon_marketplace_id, **optional_query)
       expect(response.response_code).to eq(200)
     end
   end
