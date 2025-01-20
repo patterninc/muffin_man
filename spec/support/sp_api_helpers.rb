@@ -262,6 +262,11 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/get_listings_restrictions_unrestricted.json"), headers: {})
     end
 
+    def stub_sellers_account
+      stub_request(:get, "https://#{hostname}/sellers/v1/account")
+      .to_return(status: 200, body: File.read("./spec/support/get_sellers_account.json"), headers: {})
+    end
+
     def stub_sellers_marketplace_participations
       stub_request(:get, "https://#{hostname}/sellers/v1/marketplaceParticipations")
       .to_return(status: 200, body: File.read("./spec/support/get_marketplace_participations.json"), headers: {})

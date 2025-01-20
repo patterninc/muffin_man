@@ -3,6 +3,7 @@
 module MuffinMan
   module Sellers
     class V1 < SpApiClient
+      # This is only available in the EU region.
       def account
         @local_var_path = "/sellers/v1/account"
         @request_type = "GET"
