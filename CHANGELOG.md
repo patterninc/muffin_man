@@ -1,3 +1,8 @@
+# 2.4.10
+
+- Sellers API v1 [#87](https://github.com/patterninc/muffin_man/pull/87)
+- Listings API v20210801 searchListingsItem [#87](https://github.com/patterninc/muffin_man/pull/87)
+
 # 2.4.8
 
 - Customer Feedback v2024-06-01 [#80] (https://github.com/patterninc/muffin_man/pull/80)
