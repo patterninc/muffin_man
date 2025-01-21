@@ -65,6 +65,21 @@ module MuffinMan
         @request_type = "PATCH"
         call_api
       end
+
+      def search_listings_items(seller_id, marketplace_ids, **optional_query)
+        @local_var_path = "/listings/2021-08-01/items/#{seller_id}"
+        @marketplace_ids = marketplace_ids.is_a?(Array) ? marketplace_ids : [marketplace_ids]
+        @query_params = {
+          "marketplaceIds" =>  @marketplace_ids.join(",")
+        }
+        optional_query.each do |key, value|
+          camel_key = key.to_s.camelize(:lower).to_sym
+          string_value = value.is_a?(Array) ? value.join(",") : value
+          @query_params[camel_key] = string_value
+        end
+        @request_type = "GET"
+        call_api
+      end
     end
   end
 end

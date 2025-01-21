@@ -1,0 +1,41 @@
+{
+  "businessType": "PRIVATE_LIMITED",
+  "marketplaceLevelAttributes": [
+    {
+      "marketplace": {
+        "id": "ATVPDKIKX0DER",
+        "name": "United States",
+        "countryCode": "US",
+        "domainName": "www.amazon.com"
+      },
+      "storeName": "BestSellerStore",
+      "listingStatus": "ACTIVE",
+      "sellingPlan": "PROFESSIONAL"
+    }
+  ],
+  "business": {
+    "name": "BestSeller Inc.",
+    "nonLatinName": "ベストセラー株式会社",
+    "registeredBusinessAddress": {
+      "addressLine1": "123 Main St",
+      "addressLine2": "Suite 500",
+      "city": "Seattle",
+      "stateOrProvinceCode": "WA",
+      "postalCode": "98101",
+      "countryCode": "US"
+    },
+    "companyRegistrationNumber": "123456789"
+  },
+  "primaryContact": {
+    "name": "John Doe",
+    "nonLatinName": "ジョン・ドゥ",
+    "address": {
+      "addressLine1": "456 Oak St",
+      "addressLine2": "Apt 12",
+      "city": "Seattle",
+      "stateOrProvinceCode": "WA",
+      "postalCode": "98102",
+      "countryCode": "US"
+    }
+  }
+}
