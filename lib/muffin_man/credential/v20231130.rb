@@ -1,5 +1,5 @@
-module MuffinMan::ApiAccountCredential 
-  class CredentialHelper
+module MuffinMan::Credential
+  class V20231130
     NEW_APP_CREDENTIAL_URL = "https://sellingpartnerapi-na.amazon.com/applications/2023-11-30/clientSecret".freeze
 
     def self.create_new_credentials(access_token)
