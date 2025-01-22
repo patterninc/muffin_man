@@ -1,4 +1,4 @@
-module MuffinMan::Credential
+module MuffinMan::ApplicationManagement
   class V20231130
     NEW_APP_CREDENTIAL_URL = "https://sellingpartnerapi-na.amazon.com/applications/2023-11-30/clientSecret".freeze
 
@@ -14,7 +14,7 @@ module MuffinMan::Credential
         error = "#{error_body['error']}: #{error_body['error_description']} "
         raise MuffinMan::Error, error
       end
-      response.code
+      response
     end
   end
 end
