@@ -21,13 +21,14 @@ RSpec.describe MuffinMan::ApplicationManagement::V20231130 do
         allow(response).to receive(:body).and_return("")
       end
 
-      it "returns the response" do
-        result = described_class.create_new_credentials(access_token)
-        expect(result).to eq(response)
-        expect(Typhoeus).to have_received(:post).with(
+      it "returns the response and makes the correct API call" do
+        expect(Typhoeus).to receive(:post).with(
           new_app_credential_url,
           headers: { "x-amz-access-token" => access_token }
         )
+
+        result = described_class.create_new_credentials(access_token)
+        expect(result).to eq(response)
       end
     end
 
