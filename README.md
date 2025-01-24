@@ -133,6 +133,12 @@ To retrieve the access token, you can use the LWA helper:
 access_token = MuffinMan::Lwa::AuthHelper.get_access_token(scope, client_id, client_secret)
 ```
 
+### Rotating application client secret
+To rotate client secret for application
+```ruby
+MuffinMan::ApplicationManagement::V20231130.rotate_application_client_secret(access_token)
+```
+
 ### Debugging
 
 To use Typheous' verbose mode set env variable `MUFFIN_MAN_DEBUG=true`
