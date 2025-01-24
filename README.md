@@ -38,6 +38,7 @@ As of now, this gem only supports portions of the following APIs with more to co
 - `Vendor Transaction Status API v1`
 - `Uploads API v2020-11-01`
 - `A+ API v2020-11-01`
+- `Application Management API v2023-11-30`
 
 ## Installation
 
@@ -124,6 +125,12 @@ resp = JSON.parse(client.get_authorization_code(seller_id, developer_id, mws_aut
 auth_code = resp['payload']['authorizationCode']
 # Then query retrieve the refresh token to store
 refresh_token = MuffinMan::Lwa::AuthHelper.get_refresh_token(CLIENT_ID, CLIENT_SECRET, auth_code)
+```
+
+### Retrieiving the access token
+To retrieve the access token, you can use the LWA helper:
+```ruby
+access_token = MuffinMan::Lwa::AuthHelper.get_access_token(scope, client_id, client_secret)
 ```
 
 ### Debugging
