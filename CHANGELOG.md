@@ -1,3 +1,7 @@
+# 2.4.11
+
+- Application Management API v2023-11-30 [#88](https://github.com/patterninc/muffin_man/pull/88)
+
 # 2.4.10
 
 - Sellers API v1 [#87](https://github.com/patterninc/muffin_man/pull/87)
