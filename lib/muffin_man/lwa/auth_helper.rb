@@ -24,9 +24,10 @@ module MuffinMan::Lwa
       JSON.parse(response.body)["refresh_token"]
     end
 
-    def self.get_client_credential_refresh_token(client_id, client_secret)
+    def self.get_access_token(scope, client_id, client_secret)
       body = {
         grant_type: "client_credentials",
+        scope: scope,
         client_id: client_id,
         client_secret: client_secret
       }
@@ -43,7 +44,7 @@ module MuffinMan::Lwa
         error = "#{error_body["error"]}: #{error_body["error_description"]}"
         raise MuffinMan::Error, error
       end
-      JSON.parse(response.body)["refresh_token"]
+      JSON.parse(response.body)["access_token"]
     end
   end
 end
