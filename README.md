@@ -136,7 +136,7 @@ access_token = MuffinMan::Lwa::AuthHelper.get_access_token(scope, client_id, cli
 ### Rotating application client secret
 To rotate client secret for application
 ```ruby
-MuffinMan::ApplicationManagement::V20231130.rotate_application_client_secret(access_token)
+MuffinMan::ApplicationManagement::V20231130.rotate_application_client_secret(client_id,client_secret)
 ```
 
 ### Debugging
