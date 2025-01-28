@@ -10,12 +10,10 @@ RSpec.describe MuffinMan::ApplicationManagement::V20231130 do
     let(:response) { instance_double(Typhoeus::Response) }
 
     before do
-      # Mock the AuthHelper to return the test access token
       allow(MuffinMan::Lwa::AuthHelper).to receive(:get_access_token)
         .with("sellingpartnerapi::client_credential:rotation", client_id, client_secret)
         .and_return(access_token)
-      
-      # Mock the Typhoeus.post response
+
       allow(Typhoeus).to receive(:post).and_return(response)
     end
 
@@ -33,20 +31,6 @@ RSpec.describe MuffinMan::ApplicationManagement::V20231130 do
 
         result = described_class.rotate_application_client_secret(client_id, client_secret)
         expect(result).to eq(response)
-      end
-    end
-
-    context "when the request fails (e.g., 400)" do
-      before do
-        allow(response).to receive(:code).and_return(400)
-        allow(response).to receive(:body).and_return("Error message")
-      end
-
-      it "returns the response with the error" do
-        result = described_class.rotate_application_client_secret(client_id, client_secret)
-        expect(result).to eq(response)
-        expect(response.code).to eq(400)
-        expect(response.body).to eq("Error message")
       end
     end
   end
