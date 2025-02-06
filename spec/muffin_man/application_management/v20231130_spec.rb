@@ -20,7 +20,10 @@ RSpec.describe MuffinMan::ApplicationManagement::V20231130 do
       it "returns the response and makes the correct API call" do
         expect(Typhoeus).to receive(:post).with(
           new_app_credential_url,
-          headers: { "x-amz-access-token" => access_token }
+          headers:{
+             "x-amz-access-token" => access_token,
+              "Content-Type" => "application/json;charset=UTF-8"
+            }
         )
 
         result = described_class.rotate_application_client_secret(access_token)
