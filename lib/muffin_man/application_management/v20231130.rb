@@ -6,7 +6,10 @@ module MuffinMan
       def self.rotate_application_client_secret(access_token)
         Typhoeus.post(
           "https://sellingpartnerapi-na.amazon.com/applications/2023-11-30/clientSecret",
-          headers: { "x-amz-access-token" => access_token }
+          headers: {
+             "x-amz-access-token" => access_token,
+              "Content-Type" => "application/json;charset=UTF-8"
+            }
         )
       end
     end
