@@ -1,3 +1,10 @@
+# 2.4.12
+
+- [#95](https://github.com/patterninc/muffin_man/pull/95)
+- [#94](https://github.com/patterninc/muffin_man/pull/94)
+- [#93](https://github.com/patterninc/muffin_man/pull/93)
+- [#92](https://github.com/patterninc/muffin_man/pull/92)
+
 # 2.4.11
 
 - Application Management API v2023-11-30 [#88](https://github.com/patterninc/muffin_man/pull/88)
