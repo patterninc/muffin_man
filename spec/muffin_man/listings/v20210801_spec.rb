@@ -90,12 +90,6 @@ RSpec.describe MuffinMan::Listings::V20210801 do
         }
       end
 
-      #     PUT https://sellingpartnerapi-na.amazon.com/listings/2021-08-01/items/AXXXXXXXXXXXXX/ABC123
-      # ?marketplaceIds=ATVPDKIKX0DER
-      # &issueLocale=en_US
-      # &mode=VALIDATION_PREVIEW
-      # &includedData=issues,identifiers
-
       it "returns a VALIDATED status" do
         response = listings_client.put_listings_item(seller_id, sku,
                                                      amazon_marketplace_id, product_type, attributes,
