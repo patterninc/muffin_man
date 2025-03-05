@@ -1,0 +1,44 @@
+{
+    "pagination": {
+      "nextToken": "string"
+    },
+    "packingOptions": [
+      {
+        "inboundPlanId": "string",
+        "packingOptionId": "string",
+        "packingGroups": [
+          "string"
+        ],
+        "fees": [
+          {
+            "currency": {
+              "code": "string",
+              "amount": 0
+            },
+            "type": "FEE",
+            "target": "OUTBOUND_PER_SHIPMENT",
+            "description": "string"
+          }
+        ],
+        "discounts": [
+          {
+            "currency": {
+              "code": "string",
+              "amount": 0
+            },
+            "type": "FEE",
+            "target": "OUTBOUND_PER_SHIPMENT",
+            "description": "string"
+          }
+        ],
+        "expiration": "2019-08-24T14:15:22Z",
+        "status": "OFFERED",
+        "supportedShippingModes": [
+          {
+            "shippingSolution": "AMAZON_PARTNERED_CARRIER",
+            "shippingMode": "GROUND_SMALL_PARCEL"
+          }
+        ]
+      }
+    ]
+  }

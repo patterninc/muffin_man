@@ -1,0 +1,20 @@
+{
+    "pallets": [
+      {
+        "palletId": "pallet1",
+        "quantity": 5,
+        "weight": {
+          "unit": "LB",
+          "value": 100
+        }
+      },
+      {
+        "palletId": "pallet2",
+        "quantity": 3,
+        "weight": {
+          "unit": "LB",
+          "value": 75
+        }
+      }
+    ]
+  }

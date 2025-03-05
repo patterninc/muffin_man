@@ -1,3 +1,69 @@
+# 2.4.12
+
+- [#95](https://github.com/patterninc/muffin_man/pull/95)
+- [#94](https://github.com/patterninc/muffin_man/pull/94)
+- [#93](https://github.com/patterninc/muffin_man/pull/93)
+- [#92](https://github.com/patterninc/muffin_man/pull/92)
+
+# 2.4.11
+
+- Application Management API v2023-11-30 [#88](https://github.com/patterninc/muffin_man/pull/88)
+
+# 2.4.10
+
+- Sellers API v1 [#87](https://github.com/patterninc/muffin_man/pull/87)
+- Listings API v20210801 searchListingsItem [#87](https://github.com/patterninc/muffin_man/pull/87)
+
+# 2.4.8
+
+- Customer Feedback v2024-06-01 [#80] (https://github.com/patterninc/muffin_man/pull/80)
+- Finances v2024-06-19 list_transactions [#81](https://github.com/patterninc/muffin_man/pull/81)
+- FulFillment Inbound v2024-03-20 [#82](https://github.com/patterninc/muffin_man/pull/82)
+
+# 2.4.7
+
+- Correct request type for cancel_inbound_plan
+
+# 2.4.6 [#79](https://github.com/patterninc/muffin_man/pull/79)
+
+- Support for FulfillmentInbound delivery window options and listInboundPlanBoxes [#79](https://github.com/patterninc/muffin_man/pull/79)
+# 2.4.5 [#74](https://github.com/patterninc/muffin_man/pull/74)
+
+- Support for FulfillmentInbound listShipmentItems [#74](https://github.com/patterninc/muffin_man/pull/74)
+# 2.4.4 [#78](https://github.com/patterninc/muffin_man/pull/78)
+
+- Support for more Fulfillment Inbound API v2024-03-30 endpoints
+# 2.4.1 [#73](https://github.com/patterninc/muffin_man/pull/73)
+
+# 2.4.0 [#72](https://github.com/patterninc/muffin_man/pull/72)
+
+- Support for the following:
+  Vendor Direct Fulfillment Inventory API v1
+  Vendor Direct Fulfillment Orders API v2021-12-28
+  Vendor Direct Fulfillment Payments API v1
+  Vendor Direct Fulfillment Shipping API v2021-12-28
+  Vendor Direct Fulfillment Transactions API v2021-12-28
+  Vendor Invoices API v1
+  Vendor Orders API v1
+  Vendor Shipments API v1
+  Vendor Transaction Status API v1
+
+# 2.2.0 [#66](https://github.com/patterninc/muffin_man/pull/66)
+
+- Support for Data Kiosk API v2023-11-15
+
+# 2.1.3
+
+- Support for AWD getInboundShipment [#64](https://github.com/patterninc/muffin_man/pull/64)
+
+# 2.1.2 [#63](https://github.com/patterninc/muffin_man/pull/63)
+
+- Support for patchListingsItem
+
+# 2.1.1 [#62](https://github.com/patterninc/muffin_man/pull/62)
+
+- SearchCatalogItems validations on keywords & identifiers
+
 # 2.1.0 [#58](https://github.com/patterninc/muffin_man/pull/58)
 
 - Support for Product Type Definitions

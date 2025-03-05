@@ -1,0 +1,23 @@
+{
+  "pagination": {},
+  "items": [
+    {
+      "labelOwner": "SELLER",
+      "msku": "MUFFIN-CHOCOLATE-20",
+      "quantity": 20,
+      "fnsku": "X00000X00X",
+      "asin": "B00X0X0X0X",
+      "expiration": "2025-09-01",
+      "prepInstructions": [
+        {
+          "prepType": "ITEM_LABELING",
+          "prepOwner": "SELLER"
+        },
+        {
+          "prepType": "ITEM_NO_PREP",
+          "prepOwner": "SELLER"
+        }
+      ]
+    }
+  ]
+}

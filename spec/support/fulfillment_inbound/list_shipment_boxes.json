@@ -1,0 +1,787 @@
+{
+  "boxes": [
+    {
+      "quantity": 1,
+      "packageId": "pk0063dffd-701c-4a46-afc3-b95dfd7dd25e",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000001",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk051d784a-5070-4103-a6c1-768da89519da",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000002",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk0864e456-0a0f-418d-aaff-1ecf336461ff",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000003",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk09677dce-0766-44a1-b2d5-3f7ef3df9be7",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000004",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk0f1c24ae-9cff-4c02-8dc3-cd7eea9014b0",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000005",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk0fe4dd30-7d58-459f-bc1c-3dcd0d9253b3",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000006",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk13a285c6-5f2a-4bb8-b379-a6c398fcc29e",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000007",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk13ca695e-fd23-48d1-adce-71b54fb76156",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000008",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk145a87a8-8708-429b-91a3-9a8a1eaa589e",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000009",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk1869a903-b711-4317-b8ef-a5099966425e",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000010",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk1a751553-4582-4198-95cf-d55cb4735903",
+      "weight": {
+        "unit": "LB",
+        "value": 44.75
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "619177",
+          "quantity": 12,
+          "fnsku": "B0BFRVR94Z",
+          "asin": "B0BFRVR94Z",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000104",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 18,
+        "width": 17,
+        "height": 23
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk1b93e023-3c2a-4b64-95cc-24e50a76778f",
+      "weight": {
+        "unit": "LB",
+        "value": 15.01
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "619181",
+          "quantity": 12,
+          "fnsku": "B0B622HY9W",
+          "asin": "B0B622HY9W",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000120",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 14,
+        "width": 14,
+        "height": 10
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk1c6e76bd-e3b1-4960-8000-fc59a0ca4116",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000011",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk1ceefc1e-ed50-498a-854b-aa6c40ea3425",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000012",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk229e5e53-79df-4ef1-834b-6efeea7cff2e",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000013",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk23aec5c4-4144-44b8-a1a8-ad031950664e",
+      "weight": {
+        "unit": "LB",
+        "value": 44.75
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "619177",
+          "quantity": 12,
+          "fnsku": "B0BFRVR94Z",
+          "asin": "B0BFRVR94Z",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000105",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 18,
+        "width": 17,
+        "height": 23
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk248e96d5-176f-4ec9-9bcd-e4a9391fadcf",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000014",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk26d6860c-b355-4326-bca3-30f563468c43",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000015",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk29cebaff-0fcc-4f43-8e7e-c9d6db718e40",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000016",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk2b4e6a74-8878-4407-b1e8-8054a230f5f9",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000017",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk2d0658a2-464b-47ec-9f93-c7ea8287ef5d",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000018",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk2dc0ac62-77d5-401c-aebb-40e1fd1b3ec6",
+      "weight": {
+        "unit": "LB",
+        "value": 15.01
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "619181",
+          "quantity": 12,
+          "fnsku": "B0B622HY9W",
+          "asin": "B0B622HY9W",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000121",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 14,
+        "width": 14,
+        "height": 10
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk2fa397f3-d578-45e5-9c21-d4161c426208",
+      "weight": {
+        "unit": "LB",
+        "value": 44.75
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "619177",
+          "quantity": 12,
+          "fnsku": "B0BFRVR94Z",
+          "asin": "B0BFRVR94Z",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000106",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 18,
+        "width": 17,
+        "height": 23
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk315d98ba-0f37-47b6-b542-e1da65e8baa9",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000019",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk321ba75b-e717-40da-a9c7-47713488c82a",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000020",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk337313c7-8f89-4ba5-b559-6ee1fc1e8c16",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000021",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk35f52c9e-1b99-4b3d-908f-aec45791798e",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000022",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk36af6f2b-6afd-4e49-a5de-5dce7f5a11e1",
+      "weight": {
+        "unit": "LB",
+        "value": 15.01
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "619181",
+          "quantity": 12,
+          "fnsku": "B0B622HY9W",
+          "asin": "B0B622HY9W",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000122",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 14,
+        "width": 14,
+        "height": 10
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk3887521d-2ce7-4923-8f1b-a018df75a82f",
+      "weight": {
+        "unit": "LB",
+        "value": 44.75
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "619177",
+          "quantity": 12,
+          "fnsku": "B0BFRVR94Z",
+          "asin": "B0BFRVR94Z",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000107",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 18,
+        "width": 17,
+        "height": 23
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    },
+    {
+      "quantity": 1,
+      "packageId": "pk3aa043d6-ef80-4c40-b103-9ac5d27c87b3",
+      "weight": {
+        "unit": "LB",
+        "value": 5.09
+      },
+      "items": [
+        {
+          "labelOwner": "NONE",
+          "msku": "617206",
+          "quantity": 4,
+          "fnsku": "B07CZGVXKZ",
+          "asin": "B07CZGVXKZ",
+          "prepInstructions": []
+        }
+      ],
+      "boxId": "FBA186K16JKYU000023",
+      "dimensions": {
+        "unitOfMeasurement": "IN",
+        "length": 9,
+        "width": 8,
+        "height": 11
+      },
+      "contentInformationSource": "BOX_CONTENT_PROVIDED"
+    }
+  ],
+  "pagination": {
+    "nextToken": "27a21272-a937-4c00-a8d6-87050899b880"
+  }
+}

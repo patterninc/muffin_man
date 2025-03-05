@@ -1,0 +1,12 @@
+{
+    "complianceDetails": [
+      {
+        "msku": "Sunglasses",
+        "complianceStatus": "COMPLIANT"
+      },
+      {
+        "msku": "Hat",
+        "complianceStatus": "NON_COMPLIANT"
+      }
+    ]
+  }

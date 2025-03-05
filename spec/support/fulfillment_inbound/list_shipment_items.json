@@ -1,0 +1,45 @@
+{
+  "pagination": {},
+  "items": [
+    {
+      "labelOwner": "SELLER",
+      "msku": "8O-5442-FEWU",
+      "quantity": 1,
+      "fnsku": "X000000000",
+      "asin": "B004O25R8A",
+      "expiration": "2026-04-01",
+      "prepInstructions": [
+        {
+          "prepType": "ITEM_LABELING",
+          "prepOwner": "SELLER"
+        },
+        {
+          "prepType": "ITEM_POLYBAGGING",
+          "prepOwner": "SELLER"
+        },
+        {
+          "prepType": "ITEM_HANG_GARMENT",
+          "prepOwner": "SELLER"
+        }
+      ]
+    },
+    {
+      "labelOwner": "SELLER",
+      "msku": "1V-7FGV-CJ2B",
+      "quantity": 1,
+      "fnsku": "X000000001",
+      "asin": "B07YGXL71Y",
+      "expiration": "2026-01-01",
+      "prepInstructions": [
+        {
+          "prepType": "ITEM_LABELING",
+          "prepOwner": "SELLER"
+        },
+        {
+          "prepType": "ITEM_NO_PREP",
+          "prepOwner": "SELLER"
+        }
+      ]
+    }
+  ]
+}

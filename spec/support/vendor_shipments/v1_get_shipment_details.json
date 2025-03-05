@@ -1,0 +1,226 @@
+{
+  "payload": {
+    "pagination": {
+      "nextToken": "MDAwMDAwMDAwMQ=="
+    },
+    "shipments": [
+      {
+        "vendorShipmentIdentifier": "00050003",
+        "buyerReferenceNumber": "1234567",
+        "currentShipmentStatus": "Created",
+        "currentshipmentStatusDate": "2019-08-07T19:56:45.632",
+        "shipmentStatusDetails": [
+          {
+            "shipmentStatus": "Created",
+            "shipmentStatusDate": "2019-08-07T19:56:45.632"
+          }
+        ],
+        "shipmentCreateDate": "2019-07-07T19:56:45.632",
+        "shipmentConfirmDate": "2019-08-07T19:56:45.632",
+        "packageLabelCreateDate": "2019-08-07T19:56:45.632",
+        "shipmentFreightTerm": "Collect",
+        "sellingParty": {
+          "partyId": "998US"
+        },
+        "shipFromParty": {
+          "address": {
+            "name": "ABC electronics warehouse",
+            "addressLine1": "DEF 1st street",
+            "city": "Lisses",
+            "stateOrRegion": "abcland",
+            "postalCode": "91090",
+            "countryCode": "DE"
+          },
+          "partyId": "ABCD12"
+        },
+        "shipToParty": {
+          "partyId": "999US"
+        },
+        "shipmentMeasurements": {
+          "totalCartonCount": 30,
+          "totalPalletStackable": 30,
+          "totalPalletNonStackable": 30,
+          "shipmentWeight": {
+            "unitOfMeasure": "Kg",
+            "value": "120.45"
+          },
+          "shipmentVolume": {
+            "unitOfMeasure": "CuFt",
+            "value": "2.4"
+          }
+        },
+        "collectFreightPickupDetails": {
+          "requestedPickUp": "2019-08-07T19:56:45.632",
+          "scheduledPickUp": "2019-08-07T19:56:45.632",
+          "carrierAssignmentDate": "2019-08-07T19:56:45.632"
+        },
+        "purchaseOrders": [
+          {
+            "purchaseOrderNumber": "1BBBAAAA",
+            "purchaseOrderDate": "2019-08-07T19:56:45.632",
+            "shipWindow": "08/25/2021 - 08/31/2021",
+            "items": [
+              {
+                "itemSequenceNumber": "001",
+                "vendorProductIdentifier": "9782700001659",
+                "buyerProductIdentifier": "9782700001690",
+                "shippedQuantity": {
+                  "amount": 100,
+                  "unitOfMeasure": "Eaches",
+                  "unitSize": 1
+                },
+                "maximumRetailPrice": {
+                  "currencyCode": "USD",
+                  "amount": "12345"
+                }
+              }
+            ]
+          }
+        ],
+        "importDetails": {
+          "methodOfPayment": "PaidByBuyer",
+          "sealNumber": "1232142132",
+          "route": {
+            "stops": [
+              {
+                "functionCode": "PortOfDischarge",
+                "locationIdentification": {
+                  "type": "string",
+                  "locationCode": "string",
+                  "countryCode": "US"
+                },
+                "arrivalTime": "2021-07-12T22:22:25.038Z",
+                "departureTime": "2021-07-12T22:22:25.038Z"
+              }
+            ]
+          },
+          "importContainers": "string",
+          "billableWeight": {
+            "unitOfMeasure": "G",
+            "value": "10"
+          },
+          "estimatedShipByDate": "2021-07-12T22:22:25.038Z",
+          "handlingInstructions": "Oversized"
+        },
+        "containers": [
+          {
+            "containerType": "carton",
+            "containerSequenceNumber": "001",
+            "containerIdentifiers": [
+              {
+                "containerIdentificationType": "SSCC",
+                "containerIdentificationNumber": "213124134213"
+              }
+            ],
+            "trackingNumber": "XXXX",
+            "dimensions": {
+              "length": "12",
+              "width": "12",
+              "height": "12",
+              "unitOfMeasure": "IN"
+            },
+            "weight": {
+              "unitOfMeasure": "KG",
+              "value": "10"
+            },
+            "packedItems": [
+              {
+                "itemSequenceNumber": "001",
+                "buyerProductIdentifier": "B07DFVDRAA",
+                "vendorProductIdentifier": "12312412421",
+                "packedQuantity": {
+                  "amount": 1,
+                  "unitOfMeasure": "Each"
+                },
+                "itemDetails": {
+                  "purchaseOrderNumber": "string",
+                  "lotNumber": "string",
+                  "expiry": {
+                    "manufacturerDate": "2021-07-12T22:22:25.038Z",
+                    "expiryDate": "2021-07-12T22:22:25.038Z",
+                    "expiryAfterDuration": {
+                      "durationUnit": "Days",
+                      "durationValue": 0
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "containerType": "pallet",
+            "containerSequenceNumber": "002",
+            "containerIdentifiers": [
+              {
+                "containerIdentificationType": "SSCC",
+                "containerIdentificationNumber": "ARK123214214213"
+              }
+            ],
+            "trackingNumber": "TRACK001",
+            "dimensions": {
+              "length": "12",
+              "width": "12",
+              "height": "12",
+              "unitOfMeasure": "IN"
+            },
+            "weight": {
+              "unitOfMeasure": "KG",
+              "value": "10"
+            },
+            "tier": 2,
+            "block": 2,
+            "innerContainersDetails": {
+              "containerCount": 10,
+              "containerSequenceNumbers": [
+                {
+                  "containerSequenceNumber": "002"
+                },
+                {
+                  "containerSequenceNumber": "003"
+                }
+              ]
+            },
+            "packedItems": [
+              {
+                "itemSequenceNumber": "001",
+                "buyerProductIdentifier": "B07DFVDRAA",
+                "vendorProductIdentifier": "12312412421",
+                "packedQuantity": {
+                  "amount": 1,
+                  "unitOfMeasure": "Each"
+                },
+                "itemDetails": {
+                  "purchaseOrderNumber": "123142341",
+                  "lotNumber": "A12312412",
+                  "expiry": {
+                    "manufacturerDate": "2021-07-12T22:22:25.038Z",
+                    "expiryDate": "2021-07-12T22:22:25.038Z",
+                    "expiryAfterDuration": {
+                      "durationUnit": "Days",
+                      "durationValue": 0
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "transportationDetails": {
+          "shipMode": "LessThanTruckLoad",
+          "transportationMode": "Road",
+          "shippedDate": "2019-08-07T19:56:45.632",
+          "estimatedDeliveryDate": "2019-08-07T19:56:45.632",
+          "shipmentDeliveryDate": "2019-08-07T19:56:45.632",
+          "carrierDetails": {
+            "name": "UPS",
+            "phone": "1234567890",
+            "email": "abc@xyz.com",
+            "code": "1-1231",
+            "shipmentReferenceNumber": "TRACK001"
+          },
+          "billOfLadingNumber": "12534233421"
+        }
+      }
+    ]
+  }
+}

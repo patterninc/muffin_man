@@ -39,6 +39,10 @@ module MuffinMan
       @config = MuffinMan.configuration
     end
 
+    def request
+      Typhoeus::Request.new(canonical_uri, params: query_params)
+    end
+
     private
 
     def call_api
@@ -73,10 +77,6 @@ module MuffinMan
       "#{sp_api_url}#{local_var_path}"
     end
 
-    def request
-      Typhoeus::Request.new(canonical_uri, params: query_params)
-    end
-
     def retrieve_lwa_access_token
       return request_lwa_access_token["access_token"] unless use_cache?
 
@@ -108,7 +108,7 @@ module MuffinMan
           "Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8"
         }
       )
-      raise SpApiAuthError, response if response.failure?
+      raise SpApiAuthError, response unless response.success?
 
       JSON.parse(response.body)
     end
@@ -139,7 +139,7 @@ module MuffinMan
       client = Aws::STS::Client.new(
         region: derive_aws_region,
         credentials: Aws::Credentials.new(aws_access_key_id, aws_secret_access_key),
-        http_wire_trace: (ENV.fetch("AWS_DEBUG", nil) == "true" || false)
+        http_wire_trace: ENV.fetch("AWS_DEBUG", nil) == "true" || false
       )
       client.assume_role(role_arn: sts_iam_role_arn, role_session_name: SecureRandom.uuid)
     end
