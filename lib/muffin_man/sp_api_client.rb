@@ -6,8 +6,7 @@ require "securerandom"
 
 module MuffinMan
   class SpApiClient
-    attr_reader :refresh_token, :client_id, :client_secret, :aws_access_key_id,
-                :aws_secret_access_key, :sts_iam_role_arn, :sandbox, :config,
+    attr_reader :refresh_token, :client_id, :client_secret, :sandbox, :config,
                 :region, :request_type, :local_var_path, :query_params,
                 :request_body, :scope, :access_token_cache_key, :credentials,
                 :pii_data_elements
@@ -26,9 +25,6 @@ module MuffinMan
       @refresh_token = credentials[:refresh_token]
       @client_id = credentials[:client_id]
       @client_secret = credentials[:client_secret]
-      @aws_access_key_id = credentials[:aws_access_key_id]
-      @aws_secret_access_key = credentials[:aws_secret_access_key]
-      @sts_iam_role_arn = credentials[:sts_iam_role_arn]
       @region = credentials[:region] || "na"
       @scope = credentials[:scope]
       @access_token_cache_key = credentials[:access_token_cache_key]
@@ -135,43 +131,17 @@ module MuffinMan
       JSON.parse(response.body)
     end
 
-    def request_sts_token
-      client = Aws::STS::Client.new(
-        region: derive_aws_region,
-        credentials: Aws::Credentials.new(aws_access_key_id, aws_secret_access_key),
-        http_wire_trace: ENV.fetch("AWS_DEBUG", nil) == "true" || false
-      )
-      client.assume_role(role_arn: sts_iam_role_arn, role_session_name: SecureRandom.uuid)
-    end
-
-    def signed_request
-      request_config = {
-        service: SERVICE_NAME,
-        region: derive_aws_region,
-        endpoint: sp_api_host
-      }
-      if sts_iam_role_arn.nil?
-        request_config[:access_key_id] = aws_access_key_id
-        request_config[:secret_access_key] = aws_secret_access_key
-      else
-        request_config[:credentials_provider] = request_sts_token
-      end
-      signer = Aws::Sigv4::Signer.new(request_config)
-      signer.sign_request(http_method: request_type, url: request.url, body: request_body&.to_json)
-    end
-
     def headers
       if requires_rdt_token_for_pii?
         access_token = retrieve_rdt_access_token || retrieve_lwa_access_token
       else
         access_token = scope ? retrieve_grantless_access_token : retrieve_lwa_access_token
       end
-      headers = {
+      {
         "x-amz-access-token" => access_token,
         "user-agent" => "MuffinMan/#{VERSION} (Language=Ruby)",
         "content-type" => "application/json"
       }
-      signed_request.headers.merge(headers)
     end
 
     def requires_rdt_token_for_pii?

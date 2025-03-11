@@ -66,10 +66,7 @@ credentials = {
   refresh_token: LWA_REFRESH_TOKEN,
   client_id: CLIENT_ID,
   client_secret: CLIENT_SECRET,
-  aws_access_key_id: AWS_ACCESS_KEY_ID,
-  aws_secret_access_key: AWS_SECRET_ACCESS_KEY,
   region: REGION, # This can be one of ['na', 'eu', 'fe'] and defaults to 'na'
-  sts_iam_role_arn: STS_IAM_ROLE_ARN, # Optional
   access_token_cache_key: SELLING_PARTNER_ID, # Optional if you want access token caching
 }
 client = MuffinMan::Solicitations::V1.new(credentials)
@@ -115,9 +112,6 @@ To retrieve the refresh token from an LWA Website authorization workflow, you ca
 credentials = {
   client_id: CLIENT_ID,
   client_secret: CLIENT_SECRET,
-  aws_access_key_id: AWS_ACCESS_KEY_ID,
-  aws_secret_access_key: AWS_SECRET_ACCESS_KEY,
-  sts_iam_role_arn: STS_IAM_ROLE_ARN, # Optional
   scope: 'sellingpartnerapi::migration' # Grantless scope for MWS migration
 }
 client = MuffinMan::Authorization::V1.new(credentials)

@@ -1,3 +1,7 @@
+# 2.4.13
+
+- Remove AWS STS Signature in requests [#97](https://github.com/patterninc/muffin_man/pull/97)
+
 # 2.4.12
 
 - [#95](https://github.com/patterninc/muffin_man/pull/95)

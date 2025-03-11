@@ -523,9 +523,7 @@ module Support
       {
         refresh_token: "a-refresh-token",
         client_id: "a-client-id",
-        client_secret: "a-client-secret",
-        aws_access_key_id: "an-aws-access-key-id",
-        aws_secret_access_key: "an-aws-secret-access-key"
+        client_secret: "a-client-secret"
       }
     end
 
