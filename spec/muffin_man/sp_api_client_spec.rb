@@ -5,8 +5,6 @@ RSpec.describe MuffinMan::SpApiClient do
       refresh_token: "a-refresh-token",
       client_id: "a-client-id",
       client_secret: "a-client-secret",
-      aws_access_key_id: "an-aws-access-key-id",
-      aws_secret_access_key: "an-aws-secret-access-key",
       access_token_cache_key: "a-selling_partner_id"
     }
   end
@@ -20,8 +18,6 @@ RSpec.describe MuffinMan::SpApiClient do
     expect(client.refresh_token).not_to be_nil
     expect(client.client_id).not_to be_nil
     expect(client.client_secret).not_to be_nil
-    expect(client.aws_access_key_id).not_to be_nil
-    expect(client.aws_secret_access_key).not_to be_nil
   end
 
   it "sets the Typhoeus user agent to an empty string" do
@@ -52,8 +48,10 @@ RSpec.describe MuffinMan::SpApiClient do
 
     it "gets an access token and signs the headers" do
       expect(Typhoeus).to receive(:get)
-        .with("https://#{hostname}/some_path", headers: hash_including("x-amz-access-token" => fake_lwa_access_token,
-                                                                       "authorization" => a_string_including("SignedHeaders=host;x-amz-content-sha256;x-amz-date")))
+        .with("https://#{hostname}/some_path",
+              hash_including(
+                headers: hash_including("x-amz-access-token" => fake_lwa_access_token)
+              ))
       client.make_a_request
     end
 
@@ -83,7 +81,10 @@ RSpec.describe MuffinMan::SpApiClient do
           expect_any_instance_of(MockRedis).to receive(:set).with("SP-TOKEN-#{credentials[:access_token_cache_key]}",
                                                                   fake_lwa_access_token)
           expect(Typhoeus).to receive(:get)
-            .with("https://#{hostname}/some_path", headers: hash_including("x-amz-access-token" => fake_lwa_access_token))
+            .with("https://#{hostname}/some_path",
+                  hash_including(
+                    headers: hash_including("x-amz-access-token" => fake_lwa_access_token)
+                  ))
           client.make_a_request
         end
       end
@@ -97,7 +98,10 @@ RSpec.describe MuffinMan::SpApiClient do
         it "uses the stored token" do
           expect_any_instance_of(MockRedis).to receive(:get).with("SP-TOKEN-#{credentials[:access_token_cache_key]}").and_return(another_fake_lwa_access_token)
           expect(Typhoeus).to receive(:get)
-            .with("https://#{hostname}/some_path", headers: hash_including("x-amz-access-token" => another_fake_lwa_access_token))
+            .with("https://#{hostname}/some_path",
+                  hash_including(
+                    headers: hash_including("x-amz-access-token" => another_fake_lwa_access_token)
+                  ))
           client.make_a_request
         end
       end
@@ -105,7 +109,8 @@ RSpec.describe MuffinMan::SpApiClient do
       context "when using the sandbox environment" do
         let(:sandbox) { true }
         it "correctly builds the canonical api hostname" do
-          expect(Typhoeus).to receive(:get).with("https://sandbox.#{hostname}/some_path", headers: hash_including({}))
+          expect(Typhoeus).to receive(:get).with("https://sandbox.#{hostname}/some_path",
+                                                 hash_including(headers: hash_including({})))
           client.make_a_request
         end
       end
@@ -113,10 +118,10 @@ RSpec.describe MuffinMan::SpApiClient do
       context "multiple requests with the same client instance" do
         it "uses correct query params for each new request" do
           expect(Typhoeus).to receive(:get).with("https://#{hostname}/some_path?flavor=blueberry",
-                                                 headers: hash_including({}))
+                                                 hash_including(headers: hash_including({})))
           client.make_a_request(query_params: { "flavor" => "blueberry" })
           expect(Typhoeus).to receive(:get).with("https://#{hostname}/some_path?flavor=chocolate",
-                                                 headers: hash_including({}))
+                                                 hash_including(headers: hash_including({})))
           client.make_a_request(query_params: { "flavor" => "chocolate" })
         end
       end
