@@ -8,7 +8,7 @@ module MuffinMan
         @query_params = {
           "postedAfter" => posted_after
         }
-        @query_params["PostedBefore"] = posted_before unless posted_before.nil?
+        @query_params["postedBefore"] = posted_before unless posted_before.nil?
         @query_params["marketplaceId"] = marketplace_id unless marketplace_id.nil?
         @query_params["nextToken"] = next_token unless next_token.nil?
         @request_type = "GET"
