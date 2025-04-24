@@ -4,6 +4,7 @@ RSpec.describe MuffinMan::Finances::V20240619 do
   subject(:client) { described_class.new(credentials) }
 
   let(:posted_after) { "2024-11-07T00:00:00Z" }
+  let(:posted_before) { "2024-11-08T00:00:00Z" }
 
   before do
     stub_request_access_token
@@ -11,11 +12,11 @@ RSpec.describe MuffinMan::Finances::V20240619 do
 
   describe "list_transactions" do
     before do
-      stub_list_financial_transactions(posted_after: posted_after)
+      stub_list_financial_transactions(posted_after: posted_after, posted_before: posted_before)
     end
 
     it "lists transactions" do
-      response = client.list_transactions(posted_after: posted_after)
+      response = client.list_transactions(posted_after: posted_after, posted_before: posted_before)
       expect(response.success?).to be true
       expect(JSON.parse(response.body)["payload"]["transactions"]).to be_an(Array)
     end

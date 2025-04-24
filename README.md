@@ -39,6 +39,7 @@ As of now, this gem only supports portions of the following APIs with more to co
 - `Uploads API v2020-11-01`
 - `A+ API v2020-11-01`
 - `Application Management API v2023-11-30`
+- `Finances API v2024-06-19`
 
 ## Installation
 
