@@ -1,3 +1,8 @@
+# 2.4.14
+
+- Fixed query params of Amazon Finances API v2024-06-19 [#98](https://github.com/patterninc/muffin_man/pull/98)
+- [#99](https://github.com/patterninc/muffin_man/pull/99)
+
 # 2.4.13
 
 - Remove AWS STS Signature in requests [#97](https://github.com/patterninc/muffin_man/pull/97)
