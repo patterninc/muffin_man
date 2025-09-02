@@ -9,7 +9,7 @@ module MuffinMan
     attr_reader :refresh_token, :client_id, :client_secret, :sandbox, :config,
                 :region, :request_type, :local_var_path, :query_params,
                 :request_body, :scope, :access_token_cache_key, :credentials,
-                :pii_data_elements
+                :pii_data_elements, :requires_rdt
 
     ACCESS_TOKEN_URL = "https://api.amazon.com/auth/o2/token".freeze
     SERVICE_NAME = "execute-api".freeze
@@ -31,6 +31,7 @@ module MuffinMan
       @sandbox = sandbox
       @credentials = credentials
       @pii_data_elements = []
+      @requires_rdt = false
       Typhoeus::Config.user_agent = ""
       @config = MuffinMan.configuration
     end
@@ -132,7 +133,7 @@ module MuffinMan
     end
 
     def headers
-      if requires_rdt_token_for_pii?
+      if requires_rdt_token_for_pii? || requires_rdt
         access_token = retrieve_rdt_access_token || retrieve_lwa_access_token
       else
         access_token = scope ? retrieve_grantless_access_token : retrieve_lwa_access_token

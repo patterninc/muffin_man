@@ -31,16 +31,17 @@ module MuffinMan
       def get_shipping_label(purchase_order_number)
         @local_var_path = "/vendor/directFulfillment/shipping/2021-12-28/shippingLabels/#{purchase_order_number}"
         @request_type = "GET"
+        @requires_rdt = true
         call_api
       end
 
-      def create_shipping_labels(purchase_order_number, selling_party, ship_from_party, containers: nil)
+      def create_shipping_labels(purchase_order_number, selling_party, ship_from_party, containers)
         @local_var_path = "/vendor/directFulfillment/shipping/2021-12-28/shippingLabels/#{purchase_order_number}"
         @request_body = {
           "sellingParty" => selling_party,
-          "shipFromParty" => ship_from_party
+          "shipFromParty" => ship_from_party,
+          "containers" => containers
         }
-        @request_body["containers"] = containers if containers
         @request_type = "POST"
         call_api
       end
@@ -67,12 +68,14 @@ module MuffinMan
         }
         @query_params.merge!(params.slice(*VENDOR_DIRECT_FULFILLMENT_SHIPPING_PARAMS))
         @request_type = "GET"
+        @requires_rdt = true
         call_api
       end
 
       def get_customer_invoice(purchase_order_number)
         @local_var_path = "/vendor/directFulfillment/shipping/2021-12-28/customerInvoices/#{purchase_order_number}"
         @request_type = "GET"
+        @requires_rdt = true
         call_api
       end
 
@@ -84,12 +87,14 @@ module MuffinMan
         }
         @query_params.merge!(params.slice(*VENDOR_DIRECT_FULFILLMENT_SHIPPING_PARAMS))
         @request_type = "GET"
+        @requires_rdt = true
         call_api
       end
 
       def get_packing_slip(purchase_order_number)
         @local_var_path = "/vendor/directFulfillment/shipping/2021-12-28/packingSlips/#{purchase_order_number}"
         @request_type = "GET"
+        @requires_rdt = true
         call_api
       end
     end
