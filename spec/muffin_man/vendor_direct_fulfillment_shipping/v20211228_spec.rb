@@ -94,6 +94,7 @@ RSpec.describe MuffinMan::VendorDirectFulfillmentShipping::V20211228 do
     let(:ship_from_party) { { "partyId" => "ABCD" } }
 
     it "executes create_shipping_labels request" do
+      stub_request_rdt_token
       stub_vendor_direct_fulfillment_shipping_v20211228_create_shipping_labels
       response = vendor_direct_fulfillment_shipping_client.create_shipping_labels(
         purchase_order_number,
