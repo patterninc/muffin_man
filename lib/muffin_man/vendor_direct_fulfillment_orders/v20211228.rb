@@ -20,14 +20,12 @@ module MuffinMan
         }
         @query_params.merge!(params.slice(*GET_ORDERS_PARAMS))
         @request_type = "GET"
-        @requires_rdt = true
         call_api
       end
 
       def get_order(purchase_order_number)
         @local_var_path = "/vendor/directFulfillment/orders/2021-12-28/purchaseOrders/#{purchase_order_number}"
         @request_type = "GET"
-        @requires_rdt = true
         call_api
       end
 
