@@ -1,3 +1,7 @@
+# 2.5.0 [#102](https://github.com/patterninc/muffin_man/pull/102)
+
+- Restrictive data token for Vendor Direct Fulfillment Shipping v2021-12-28 createShippingLabels
+
 # 2.4.14
 
 - Fixed query params of Amazon Finances API v2024-06-19 [#98](https://github.com/patterninc/muffin_man/pull/98)
