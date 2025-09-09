@@ -42,6 +42,7 @@ module MuffinMan
           "containers" => containers
         }
         @request_type = "POST"
+        @requires_rdt = true
         call_api
       end
 
