@@ -1,0 +1,24 @@
+{
+  "offers": [
+    {
+      "asin": "B001234567",
+      "sellerSku": "SKU-TEST-001",
+      "marketplaceId": "ATVPDKIKX0DER",
+      "offerState": "ENABLED",
+      "subscriptionDiscount": {
+        "percentage": 15.0,
+        "isSellerFunded": true
+      },
+      "autoEnrollment": {
+        "enabled": true,
+        "eligibilityType": "NEW_CUSTOMER"
+      },
+      "deliveryFrequencies": [
+        {
+          "unit": "MONTH",
+          "value": 1
+        }
+      ]
+    }
+  ]
+}

@@ -40,6 +40,7 @@ require "muffin_man/customer_feedback/v20240601"
 require "muffin_man/uploads/v20201101"
 require "muffin_man/aplus_content/v20201101"
 require "muffin_man/application_management/v20231130"
+require "muffin_man/replenishment/v20221107"
 
 module MuffinMan
   class Error < StandardError; end
