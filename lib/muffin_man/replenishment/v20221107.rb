@@ -69,7 +69,7 @@ module MuffinMan
       # @return [Hash] Request body
       def build_search_request_body(marketplace_ids, params, allowed_params)
         marketplace_ids = Array(marketplace_ids)
-        
+
         request_body = {
           "marketplaceIds" => marketplace_ids
         }

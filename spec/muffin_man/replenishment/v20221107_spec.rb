@@ -2,6 +2,7 @@
 
 RSpec.describe MuffinMan::Replenishment::V20221107 do
   subject(:replenishment_client) { described_class.new(credentials) }
+
   let(:marketplace_ids) { ["ATVPDKIKX0DER"] }
 
   before do
