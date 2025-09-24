@@ -222,7 +222,7 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
     let(:last_updated_before) { "2022-10-01T00:00:00Z" }
 
     it "makes a request to get shipment items with all parameters" do
-      response = fba_inbound_client.get_shipment_items(query_type, marketplace_id, 
+      response = fba_inbound_client.get_shipment_items(query_type, marketplace_id,
                                                        last_updated_after: last_updated_after,
                                                        last_updated_before: last_updated_before)
       expect(response.response_code).to eq(200)
