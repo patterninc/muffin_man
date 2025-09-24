@@ -333,7 +333,7 @@ module Support
     end
 
     def stub_get_shipment_items
-      stub_request(:get, "https://#{hostname}/fba/inbound/v0/shipmentItems?MarketplaceId=#{marketplace_id}&QueryType=#{query_type}")
+      stub_request(:get, "https://#{hostname}/fba/inbound/v0/shipmentItems?MarketplaceId=#{marketplace_id}&QueryType=#{query_type}&LastUpdatedAfter=#{last_updated_after}&LastUpdatedBefore=#{last_updated_before}")
         .to_return(status: 200, body: File.read("./spec/support/get_shipment_items_by_shipment_id_v0.json"), headers: {})
     end
 
