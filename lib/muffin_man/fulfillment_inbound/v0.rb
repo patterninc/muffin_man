@@ -137,6 +137,20 @@ module MuffinMan
         @request_type = "POST"
         call_api
       end
+
+      def get_shipment_items(query_type, marketplace_id, last_updated_after: nil, last_updated_before: nil, next_token: nil)
+        @local_var_path = "/fba/inbound/v0/shipmentItems"
+        @query_params = {
+          "MarketplaceId" => marketplace_id,
+          "QueryType" => query_type,
+        }
+        @query_params["LastUpdatedAfter"] = last_updated_after unless last_updated_after.nil?
+        @query_params["LastUpdatedBefore"] = last_updated_before unless last_updated_before.nil?
+        @query_params["NextToken"] = next_token unless next_token.nil?
+
+        @request_type = "GET"
+        call_api
+      end
     end
   end
 end
