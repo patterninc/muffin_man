@@ -1,3 +1,7 @@
+# 2.5.1 [#107](https://github.com/patterninc/muffin_man/pull/107)
+
+- Added ORDER_CHANGE to PROCESSING_DIRECTIVE_SUPPORTED_NOTIFICATIONS in Notifications API v1
+
 # 2.5.0 [#102](https://github.com/patterninc/muffin_man/pull/102)
 
 - Restrictive data token for Vendor Direct Fulfillment Shipping v2021-12-28 createShippingLabels
