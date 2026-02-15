@@ -1,0 +1,23 @@
+{
+  "aggregatedMetrics": [
+    {
+      "timeInterval": {
+        "startDate": "2023-01-01T00:00:00Z",
+        "endDate": "2023-01-31T23:59:59Z"
+      },
+      "aggregationFrequency": "MONTHLY",
+      "marketplaceId": "ATVPDKIKX0DER",
+      "metrics": [
+        {
+          "metric": "SHIPPED_SUBSCRIPTION_UNITS",
+          "value": 1250
+        },
+        {
+          "metric": "TOTAL_SUBSCRIPTIONS_REVENUE",
+          "value": 15750.00,
+          "currencyCode": "USD"
+        }
+      ]
+    }
+  ]
+}

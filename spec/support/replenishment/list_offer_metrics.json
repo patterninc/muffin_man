@@ -1,0 +1,59 @@
+{
+  "offerMetrics": [
+    {
+      "asin": "B001234567",
+      "sellerSku": "SKU-TEST-001",
+      "marketplaceId": "ATVPDKIKX0DER",
+      "timeInterval": {
+        "startDate": "2023-01-01T00:00:00Z",
+        "endDate": "2023-01-31T23:59:59Z"
+      },
+      "aggregationFrequency": "MONTHLY",
+      "metrics": [
+        {
+          "metric": "SHIPPED_SUBSCRIPTION_UNITS",
+          "value": 125
+        },
+        {
+          "metric": "TOTAL_SUBSCRIPTIONS_REVENUE",
+          "value": 1250.00,
+          "currencyCode": "USD"
+        },
+        {
+          "metric": "ACTIVE_SUBSCRIPTIONS",
+          "value": 45
+        },
+        {
+          "metric": "SUBSCRIBER_RETENTION",
+          "value": 85.5
+        }
+      ]
+    },
+    {
+      "asin": "B007654321",
+      "sellerSku": "SKU-TEST-002",
+      "marketplaceId": "ATVPDKIKX0DER",
+      "timeInterval": {
+        "startDate": "2023-01-01T00:00:00Z",
+        "endDate": "2023-01-31T23:59:59Z"
+      },
+      "aggregationFrequency": "MONTHLY",
+      "metrics": [
+        {
+          "metric": "SHIPPED_SUBSCRIPTION_UNITS",
+          "value": 80
+        },
+        {
+          "metric": "TOTAL_SUBSCRIPTIONS_REVENUE",
+          "value": 960.00,
+          "currencyCode": "USD"
+        },
+        {
+          "metric": "ACTIVE_SUBSCRIPTIONS",
+          "value": 25
+        }
+      ]
+    }
+  ],
+  "nextToken": "eyJuZXh0VG9rZW4iOiIxMjM0NTY3ODkwIn0="
+}

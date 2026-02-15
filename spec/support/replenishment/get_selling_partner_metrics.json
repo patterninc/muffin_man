@@ -1,0 +1,62 @@
+{
+  "aggregatedMetrics": [
+    {
+      "timeInterval": {
+        "startDate": "2023-01-01T00:00:00Z",
+        "endDate": "2023-01-31T23:59:59Z"
+      },
+      "aggregationFrequency": "MONTHLY",
+      "marketplaceId": "ATVPDKIKX0DER",
+      "metrics": [
+        {
+          "metric": "SHIPPED_SUBSCRIPTION_UNITS",
+          "value": 1250
+        },
+        {
+          "metric": "TOTAL_SUBSCRIPTIONS_REVENUE",
+          "value": 15750.00,
+          "currencyCode": "USD"
+        },
+        {
+          "metric": "ACTIVE_SUBSCRIPTIONS",
+          "value": 485
+        },
+        {
+          "metric": "NOT_DELIVERED_DUE_TO_OOS",
+          "value": 15
+        },
+        {
+          "metric": "SUBSCRIBER_NON_SUBSCRIBER_AVERAGE_REVENUE",
+          "value": 32.47,
+          "currencyCode": "USD"
+        },
+        {
+          "metric": "LOST_REVENUE_DUE_TO_OOS",
+          "value": 180.00,
+          "currencyCode": "USD"
+        },
+        {
+          "metric": "COUPONS_REVENUE_PENETRATION",
+          "value": 12.5
+        },
+        {
+          "metric": "REVENUE_BY_DELIVERIES",
+          "value": 12.6,
+          "currencyCode": "USD"
+        },
+        {
+          "metric": "SUBSCRIBER_RETENTION",
+          "value": 87.2
+        },
+        {
+          "metric": "REVENUE_PENETRATION_BY_SELLER_FUNDING",
+          "value": 65.3
+        },
+        {
+          "metric": "SHARE_OF_COUPON_SUBSCRIPTIONS",
+          "value": 8.9
+        }
+      ]
+    }
+  ]
+}
