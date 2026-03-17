@@ -5,7 +5,7 @@ RSpec.describe MuffinMan::Orders::V20260101 do
 
   describe "#search_orders" do
     it "returns orders" do
-      stub_request(:get, canonical_uri)
+      stub_request(:get, "https://#{hostname}/orders/2026-01-01/orders")
         .to_return(status: 200, body: File.read("./spec/support/orders/v20260101_search_orders.json"))
 
       response = orders_client.search_orders
@@ -17,10 +17,11 @@ RSpec.describe MuffinMan::Orders::V20260101 do
 
   describe "#get_order" do
     it "returns the order" do
-      stub_request(:get, canonical_uri)
+      order_id = "202-1234567-8901234"
+
+      stub_request(:get, "https://#{hostname}/orders/2026-01-01/orders/#{order_id}")
         .to_return(status: 200, body: File.read("./spec/support/orders/v20260101_get_order.json"))
 
-      order_id = "202-1234567-8901234"
       response = orders_client.get_order(order_id)
 
       expect(response).to be_success
