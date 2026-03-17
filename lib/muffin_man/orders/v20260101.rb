@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MuffinMan
   module Orders
     class V20260101 < SpApiClient
