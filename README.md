@@ -4,43 +4,6 @@
 
 MuffinMan is a ruby interface to the Amazon Selling Partner API. For more information on registering to use the Selling Partner API, see [Amazon's documentation](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md)
 
-As of now, this gem only supports portions of the following APIs with more to come:
-
-- `Customer Feedback Insights API v2024-06-01 (BETA)`
-- `Amazon Warehousing and Distribution API v2024-05-09`
-- `Catalog Items API v2022-04-01`
-- `Data Kiosk API v2023-11-15`
-- `FBA Inventory API v1`
-- `Feeds API v2021-06-30`
-- `Finances API v0`
-- `Fulfillment Inbound API v2024-03-20`
-- `Fulfillment Outbound API v2020-07-01`
-- `Listings API v2021-08-01`
-- `Listings API v2020-09-01`
-- `Listings Restrictions API v2021-08-01`
-- `Merchant Fulfillment API v0`
-- `Notifications API v1`
-- `Orders API v0`
-- `Product Fees API v0`
-- `Product Pricing API v0`
-- `Reports API v2021-06-30`
-- `Solicitations API v1`
-- `Sellers API v1`
-- `Tokens API v2021-03-01`
-- `Vendor Direct Fulfillment Transactions API v1`
-- `Vendor Direct Fulfillment Orders API v2021-12-28`
-- `Vendor Direct Fulfillment Payments API v1`
-- `Vendor Direct Fulfillment Shipping API v2021-12-28`
-- `Vendor Direct Fulfillment Transactions API v2021-12-28`
-- `Vendor Invoices API v1`
-- `Vendor Orders API v1`
-- `Vendor Shipments API v1`
-- `Vendor Transaction Status API v1`
-- `Uploads API v2020-11-01`
-- `A+ API v2020-11-01`
-- `Application Management API v2023-11-30`
-- `Finances API v2024-06-19`
-
 ## Installation
 
 Add this line to your application's Gemfile:

@@ -1,0 +1,207 @@
+{
+  "order": {
+    "orderId": "202-1234567-8901234",
+    "orderAliases": [
+      {
+        "aliasId": "UK-MERCHANT-ORDER-2024-001",
+        "aliasType": "SELLER_ORDER_ID"
+      }
+    ],
+    "createdTime": "2024-12-25T09:15:00Z",
+    "lastUpdatedTime": "2024-12-25T16:30:00Z",
+    "programs": [
+      "PRIME"
+    ],
+    "salesChannel": {
+      "channelName": "AMAZON",
+      "marketplaceId": "A1F83G8C2ARO7P",
+      "marketplaceName": "Amazon.co.uk"
+    },
+    "buyer": {
+      "buyerName": "James Wilson",
+      "buyerEmail": "buyer-email@marketplace.amazon.co.uk"
+    },
+    "recipient": {
+      "deliveryAddress": {
+        "name": "James Wilson",
+        "companyName": "Wilson Electronics Ltd",
+        "addressLine1": "123 High Street",
+        "addressLine2": "Unit 4B",
+        "addressLine3": "",
+        "city": "Manchester",
+        "districtOrCounty": "Greater Manchester",
+        "stateOrRegion": "England",
+        "municipality": "",
+        "postalCode": "M1 2AB",
+        "countryCode": "GB",
+        "phone": "+44 161 123 4567",
+        "addressType": "COMMERCIAL"
+      }
+    },
+    "proceeds": {
+      "grandTotal": {
+        "amount": "103.97",
+        "currencyCode": "GBP"
+      }
+    },
+    "fulfillment": {
+      "fulfillmentStatus": "SHIPPED",
+      "fulfilledBy": "MERCHANT",
+      "fulfillmentServiceLevel": "STANDARD",
+      "shipByWindow": {
+        "earliestDateTime": "2024-12-25T00:00:00Z",
+        "latestDateTime": "2024-12-26T23:59:59Z"
+      },
+      "deliverByWindow": {
+        "earliestDateTime": "2024-12-27T00:00:00Z",
+        "latestDateTime": "2024-12-30T23:59:59Z"
+      }
+    },
+    "orderItems": [
+      {
+        "orderItemId": "20212345678901",
+        "quantityOrdered": 3,
+        "programs": [
+          "TRANSPARENCY"
+        ],
+        "product": {
+          "asin": "B08DFPV54V",
+          "title": "Echo Dot (4th Gen) | Smart speaker with Alexa | Charcoal",
+          "sellerSku": "ECHO-DOT-4-UK-CHARCOAL-3PACK",
+          "condition": {
+            "conditionType": "NEW",
+            "conditionSubtype": "NEW",
+            "conditionNote": "Brand new, sealed in original packaging"
+          },
+          "price": {
+            "unitPrice": {
+              "amount": "29.99",
+              "currencyCode": "GBP"
+            },
+            "priceDesignation": "BUSINESS_PRICE"
+          },
+          "serialNumbers": [
+            "ED4UK-2024-ABC123456789",
+            "ED4UK-2024-DEF987654321",
+            "ED4UK-2024-GHI456789123"
+          ],
+          "customization": {
+            "customizedUrl": ""
+          }
+        },
+        "proceeds": {
+          "proceedsTotal": {
+            "amount": "103.97",
+            "currencyCode": "GBP"
+          },
+          "breakdowns": [
+            {
+              "type": "ITEM",
+              "subtotal": {
+                "amount": "89.97",
+                "currencyCode": "GBP"
+              }
+            },
+            {
+              "type": "SHIPPING",
+              "subtotal": {
+                "amount": "10.00",
+                "currencyCode": "GBP"
+              }
+            },
+            {
+              "type": "TAX",
+              "subtotal": {
+                "amount": "4.00",
+                "currencyCode": "GBP"
+              },
+              "detailedBreakdowns": [
+                {
+                  "subtype": "ITEM",
+                  "value": {
+                    "amount": "3.00",
+                    "currencyCode": "GBP"
+                  }
+                },
+                {
+                  "subtype": "SHIPPING",
+                  "value": {
+                    "amount": "1.00",
+                    "currencyCode": "GBP"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "promotion": {
+          "breakdowns": [
+            {
+              "promotionId": "UK-BOXING-DAY-2024"
+            }
+          ]
+        },
+        "fulfillment": {
+          "quantityFulfilled": 3,
+          "quantityUnfulfilled": 0,
+          "packing": {
+            "giftOption": {
+              "giftMessage": "Happy Christmas! Hope you enjoy your new smart speakers.",
+              "giftWrapLevel": "PREMIUM"
+            }
+          },
+          "shipping": {
+            "scheduledDeliveryWindow": {
+              "earliestDateTime": "2024-12-27T09:00:00Z",
+              "latestDateTime": "2024-12-27T17:00:00Z"
+            },
+            "shippingConstraints": {
+              "signatureConfirmation": "MANDATORY",
+              "recipientIdentityVerification": "MANDATORY"
+            },
+            "internationalShipping": {
+              "iossNumber": "IM1234567890"
+            }
+          }
+        }
+      }
+    ],
+    "packages": [
+      {
+        "packageReferenceId": "UK-PKG-2024-001",
+        "createdTime": "2024-12-25T16:45:00Z",
+        "packageStatus": {
+          "status": "IN_TRANSIT",
+          "detailedStatus": "OUT_FOR_DELIVERY"
+        },
+        "carrier": "Royal Mail",
+        "shipTime": "2024-12-26T14:00:00Z",
+        "shippingService": "Royal Mail Tracked 48",
+        "trackingNumber": "RR123456789GB",
+        "shipFromAddress": {
+          "name": "TechGear UK Warehouse",
+          "addressLine1": "Industrial Estate Unit 15",
+          "addressLine2": "Riverside Business Park",
+          "addressLine3": "",
+          "city": "Birmingham",
+          "districtOrCounty": "West Midlands",
+          "stateOrRegion": "England",
+          "municipality": "",
+          "postalCode": "B12 0XY",
+          "countryCode": "GB"
+        },
+        "packageItems": [
+          {
+            "orderItemId": "20212345678901",
+            "quantity": 3,
+            "transparencyCodes": [
+              "T12345ABCDE67890UK",
+              "T12346ABCDF67891UK",
+              "T12347ABCDG67892UK"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

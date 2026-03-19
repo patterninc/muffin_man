@@ -1,3 +1,7 @@
+# 2.6.0 [#108](https://github.com/patterninc/muffin_man/pull/108)
+
+- Orders v2026-01-01
+
 # 2.5.1 [#107](https://github.com/patterninc/muffin_man/pull/107)
 
 - Added ORDER_CHANGE to PROCESSING_DIRECTIVE_SUPPORTED_NOTIFICATIONS in Notifications API v1
