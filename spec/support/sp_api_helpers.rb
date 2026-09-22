@@ -235,6 +235,11 @@ module Support
         .to_return(status: 200, body: File.read("./spec/support/put_listings_item.json"), headers: {})
     end
 
+    def stub_put_listings_item_preview
+      stub_request(:put, "https://#{hostname}/listings/2021-08-01/items/#{seller_id}/#{sku}?includedData=issues,identifiers&issueLocale=en_US&marketplaceIds=DRURYLANE&mode=VALIDATION_PREVIEW")
+        .to_return(status: 200, body: File.read("./spec/support/put_listings_item_preview.json"), headers: {})
+    end
+
     def stub_delete_listings_item
       stub_request(:delete, "https://#{hostname}/listings/2021-08-01/items/#{seller_id}/#{sku}?marketplaceIds=#{amazon_marketplace_id}&issueLocale=#{issue_locale}")
         .to_return(status: 200, body: File.read("./spec/support/delete_listings_item.json"), headers: {})

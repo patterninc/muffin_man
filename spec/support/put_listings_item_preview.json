@@ -1,0 +1,12 @@
+{
+  "sku": "ABC123",
+  "status": "VALID",
+  "submissionId": "65793a6142784e36b39af92b736a3a9f",
+  "issues": [],
+  "identifiers": [
+    {
+      "marketplaceId": "ATVPDKIKX0DER",
+      "asin": "B987654321"
+    }
+  ]
+}
