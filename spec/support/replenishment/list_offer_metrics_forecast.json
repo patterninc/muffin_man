@@ -1,0 +1,50 @@
+{
+  "offerMetrics": [
+    {
+      "asin": "B001234567",
+      "sellerSku": "SKU-TEST-001",
+      "marketplaceId": "ATVPDKIKX0DER",
+      "timeInterval": {
+        "startDate": "2023-02-01T00:00:00Z",
+        "endDate": "2023-04-30T23:59:59Z"
+      },
+      "aggregationFrequency": "MONTHLY",
+      "timePeriodType": "FORECAST",
+      "metrics": [
+        {
+          "metric": "SHIPPED_SUBSCRIPTION_UNITS",
+          "forecastPeriod": "30_DAYS",
+          "value": 35
+        },
+        {
+          "metric": "SHIPPED_SUBSCRIPTION_UNITS",
+          "forecastPeriod": "60_DAYS",
+          "value": 70
+        },
+        {
+          "metric": "SHIPPED_SUBSCRIPTION_UNITS",
+          "forecastPeriod": "90_DAYS",
+          "value": 105
+        },
+        {
+          "metric": "TOTAL_SUBSCRIPTIONS_REVENUE",
+          "forecastPeriod": "30_DAYS",
+          "value": 420.00,
+          "currencyCode": "USD"
+        },
+        {
+          "metric": "TOTAL_SUBSCRIPTIONS_REVENUE",
+          "forecastPeriod": "60_DAYS",
+          "value": 840.00,
+          "currencyCode": "USD"
+        },
+        {
+          "metric": "TOTAL_SUBSCRIPTIONS_REVENUE",
+          "forecastPeriod": "90_DAYS",
+          "value": 1260.00,
+          "currencyCode": "USD"
+        }
+      ]
+    }
+  ]
+}
