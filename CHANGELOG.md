@@ -1,3 +1,7 @@
+# 2.6.1
+
+- Added postContentDocumentApprovalSubmission to A+ Content API v2020-11-01
+
 # 2.6.0 [#108](https://github.com/patterninc/muffin_man/pull/108)
 
 - Orders v2026-01-01

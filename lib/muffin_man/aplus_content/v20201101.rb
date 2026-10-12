@@ -104,6 +104,34 @@ module MuffinMan
 
         call_api
       end
+
+      # Post content document approval submission
+      #
+      # This API is used to submit an A+ Content document for review, approval, and publishing.
+      # Moves the content document from DRAFT to SUBMITTED; Amazon then approves or rejects it.
+      # @param marketplace_id The identifier for the marketplace where the A+ Content is published.
+      # @param content_reference_key The unique reference key for the content document.
+      # @return [Hash]
+      #   The response from the API, which includes any warnings.
+      # @raise [StandardError]
+      #   Raises an error if the API request fails.
+      #
+      # @example
+      #   client = MuffinMan::AplusContent::V20201101.new
+      #   response = client.post_content_document_approval_submission(
+      #     "ATVPDKIKX0DER",
+      #     "contentReferenceKey"
+      #   )
+      #   puts response
+      def post_content_document_approval_submission(marketplace_id, content_reference_key)
+        @local_var_path = "/aplus/2020-11-01/contentDocuments/#{content_reference_key}/approvalSubmissions"
+        @query_params = { "marketplaceId" => marketplace_id }
+        # No request body; reset it so a body from a previous call on this client isn't resent.
+        @request_body = nil
+        @request_type = "POST"
+
+        call_api
+      end
     end
   end
 end
