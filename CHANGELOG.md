@@ -1,4 +1,4 @@
-# 2.6.1
+# 2.6.1 [#111](https://github.com/patterninc/muffin_man/pull/111)
 
 - Added postContentDocumentApprovalSubmission to A+ Content API v2020-11-01
 
