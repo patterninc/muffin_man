@@ -32,32 +32,72 @@ RSpec.describe MuffinMan::Listings::V20210801 do
   end
 
   describe "put_listings_item" do
-    before { stub_put_listings_item }
+    context "when creating or updating a full listing item" do
+      before { stub_put_listings_item }
 
-    let(:requirements) { "LISTING" }
-    let(:attributes) do
-      {
-        condition_type: [
-          {
-            value: "new_new",
-            marketplace_id: "ATVPDKIKX0DER"
-          }
-        ],
-        item_name: [
-          {
-            value: "AmazonBasics 16\" Underseat Spinner Carry-On",
-            language_tag: "en_US",
-            marketplace_id: "ATVPDKIKX0DER"
-          }
-        ]
-      }
+      let(:requirements) { "LISTING" }
+      let(:attributes) do
+        {
+          condition_type: [
+            {
+              value: "new_new",
+              marketplace_id: "ATVPDKIKX0DER"
+            }
+          ],
+          item_name: [
+            {
+              value: "AmazonBasics 16\" Underseat Spinner Carry-On",
+              language_tag: "en_US",
+              marketplace_id: "ATVPDKIKX0DER"
+            }
+          ]
+        }
+      end
+
+      it "returns an ACCEPTED status" do
+        response = listings_client.put_listings_item(seller_id, sku, amazon_marketplace_id, product_type, attributes,
+                                                     requirements: requirements)
+        expect(response.response_code).to eq(200)
+        expect(JSON.parse(response.body)).to eq(submission_accepted_response)
+      end
     end
 
-    it "makes a request to create a listings item or update an existing listings item" do
-      response = listings_client.put_listings_item(seller_id, sku, amazon_marketplace_id, product_type, attributes,
-                                                   requirements: requirements)
-      expect(response.response_code).to eq(200)
-      expect(JSON.parse(response.body)).to eq(submission_accepted_response)
+    context "when previewing validation for a listings item" do
+      before { stub_put_listings_item_preview }
+
+      let(:requirements) { "LISTING_OFFER_ONLY" }
+      let(:attributes) do
+        {
+          condition_type: [
+            {
+              value: "new_new",
+              marketplace_id: "ATVPDKIKX0DER"
+            }
+          ],
+          item_name: [
+            {
+              value: "AmazonBasics 16\" Underseat Spinner Carry-On",
+              language_tag: "en_US",
+              marketplace_id: "ATVPDKIKX0DER"
+            }
+          ],
+          identifiers: [
+            {
+              asin: "B987654321",
+              marketplaceId: "ATVPDKIKX0DER"
+            }
+          ]
+        }
+      end
+
+      it "returns a VALIDATED status" do
+        response = listings_client.put_listings_item(seller_id, sku,
+                                                     amazon_marketplace_id, product_type, attributes,
+                                                     requirements: requirements, mode: "VALIDATION_PREVIEW",
+                                                     included_data: ["issues", "identifiers"], issue_locale: "en_US")
+        expect(response.response_code).to eq(200)
+        expect(JSON.parse(response.body)["status"]).to eq("VALID")
+      end
     end
   end
 
