@@ -1,0 +1,48 @@
+{
+  "offers": [
+    {
+      "asin": "B001234567",
+      "sellerSku": "SKU-TEST-001",
+      "marketplaceId": "ATVPDKIKX0DER",
+      "offerState": "ENABLED",
+      "subscriptionDiscount": {
+        "percentage": 15.0,
+        "isSellerFunded": true
+      },
+      "autoEnrollment": {
+        "enabled": true,
+        "eligibilityType": "NEW_CUSTOMER"
+      },
+      "deliveryFrequencies": [
+        {
+          "unit": "MONTH",
+          "value": 1
+        },
+        {
+          "unit": "MONTH",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "asin": "B007654321",
+      "sellerSku": "SKU-TEST-002",
+      "marketplaceId": "ATVPDKIKX0DER",
+      "offerState": "DISABLED",
+      "subscriptionDiscount": {
+        "percentage": 10.0,
+        "isSellerFunded": false
+      },
+      "autoEnrollment": {
+        "enabled": false
+      },
+      "deliveryFrequencies": [
+        {
+          "unit": "MONTH",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "nextToken": "eyJuZXh0VG9rZW4iOiIxMjM0NTY3ODkwIn0="
+}
