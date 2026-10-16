@@ -1,4 +1,4 @@
-# 2.7.0
+# 2.7.0 [#112](https://github.com/patterninc/muffin_man/pull/112)
 
 - Added createMedia and getMedia to A+ Content API v2020-11-01 (media for Premium video modules)
 
