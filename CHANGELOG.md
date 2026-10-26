@@ -1,6 +1,10 @@
-# 2.7.0 [#103](https://github.com/patterninc/muffin_man/pull/103)
+# 2.8.0 [#103](https://github.com/patterninc/muffin_man/pull/103)
 
 - Replenishment API v2022-11-07: listOffers, listOfferMetrics, and getSellingPartnerMetrics
+
+# 2.7.0 [#112](https://github.com/patterninc/muffin_man/pull/112)
+
+- Added createMedia and getMedia to A+ Content API v2020-11-01 (media for Premium video modules)
 
 # 2.6.1 [#111](https://github.com/patterninc/muffin_man/pull/111)
 

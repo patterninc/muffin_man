@@ -132,6 +132,62 @@ module MuffinMan
 
         call_api
       end
+
+      # Create media
+      #
+      # Registers an uploaded file as an A+ media asset. Video modules reference media by mediaId
+      # (videoMediaId / imageMediaId), not by uploadDestinationId. Upload the file first with the Uploads API
+      # (resource aplus/2020-11-01/contentDocuments), then pass its uploadDestinationId here.
+      # A VIDEO needs descriptions and exactly one VIDEO_PAIRING relatedMedia entry (its thumbnail image).
+      # Idempotent: 201 when created, 200 when identical metadata already exists, 409 when metadata differs.
+      # The media library belongs to the selling account, so there is no marketplaceId.
+      # @param create_media_request The CreateMediaRequest body.
+      # @return [Typhoeus::Response] The unified Media shape (mediaId, status, relatedMedia, issues).
+      #
+      # @example
+      #   client = MuffinMan::AplusContent::V20201101.new
+      #   response = client.create_media(
+      #     {
+      #       "mediaType" => "VIDEO",
+      #       "uploadDestinationId" => "aplus-media-library-service-media-upload/video.mp4",
+      #       "descriptions" => [{ "locale" => "en-US", "value" => "A demonstration of the product." }],
+      #       "relatedMedia" => [{
+      #         "associationType" => "VIDEO_PAIRING",
+      #         "title" => "Product Demo Video",
+      #         "media" => { "mediaType" => "IMAGE", "uploadDestinationId" => "aplus-media/sc/thumbnail.jpg" }
+      #       }]
+      #     }
+      #   )
+      def create_media(create_media_request)
+        @local_var_path = "/aplus/2020-11-01/media"
+        @query_params = {}
+        @request_body = create_media_request
+        @request_type = "POST"
+
+        call_api
+      end
+
+      # Get media
+      #
+      # Returns a media asset's metadata, status and related media. Video processing and moderation can take
+      # up to 48 hours; poll this until the status is AVAILABLE (or UNABLE_TO_PROCESS / NOT_APPROVED).
+      # mediaUrl is temporary, so re-read it instead of caching it.
+      # @param media_id The media asset identifier returned by create_media.
+      # @param associated_media_id Optional; limits relatedMedia to one pairing.
+      # @return [Typhoeus::Response] The unified Media shape.
+      #
+      # @example
+      #   client = MuffinMan::AplusContent::V20201101.new
+      #   response = client.get_media("b2c3d4e5-f6a7-8901-bcde-f12345678901")
+      def get_media(media_id, associated_media_id: nil)
+        @local_var_path = "/aplus/2020-11-01/media/#{media_id}"
+        @query_params = {}
+        @query_params["associatedMediaId"] = associated_media_id if associated_media_id
+        @request_body = nil
+        @request_type = "GET"
+
+        call_api
+      end
     end
   end
 end
