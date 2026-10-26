@@ -213,4 +213,21 @@ RSpec.describe MuffinMan::FulfillmentInbound::V0 do
       expect(JSON.parse(response.body).dig("payload", "TransportResult", "TransportStatus")).not_to be_empty
     end
   end
+
+  describe "get_shipment_items" do
+    before { stub_get_shipment_items }
+    let(:query_type) { "DATE_RANGE" }
+    let(:marketplace_id) { "ATVPDKIKX0DER" }
+    let(:last_updated_after) { "2022-09-30T00:00:00Z" }
+    let(:last_updated_before) { "2022-10-01T00:00:00Z" }
+
+    it "makes a request to get shipment items with all parameters" do
+      response = fba_inbound_client.get_shipment_items(query_type, marketplace_id,
+                                                       last_updated_after: last_updated_after,
+                                                       last_updated_before: last_updated_before)
+      expect(response.response_code).to eq(200)
+      expect(JSON.parse(response.body).dig("payload", "ItemData")).not_to be_empty
+      expect(JSON.parse(response.body).dig("payload", "NextToken")).not_to be_nil
+    end
+  end
 end

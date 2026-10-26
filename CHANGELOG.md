@@ -1,3 +1,15 @@
+# 2.6.1 [#111](https://github.com/patterninc/muffin_man/pull/111)
+
+- Added postContentDocumentApprovalSubmission to A+ Content API v2020-11-01
+
+# 2.6.0 [#108](https://github.com/patterninc/muffin_man/pull/108)
+
+- Orders v2026-01-01
+
+# 2.5.1 [#107](https://github.com/patterninc/muffin_man/pull/107)
+
+- Added ORDER_CHANGE to PROCESSING_DIRECTIVE_SUPPORTED_NOTIFICATIONS in Notifications API v1
+
 # 2.5.0 [#102](https://github.com/patterninc/muffin_man/pull/102)
 
 - Restrictive data token for Vendor Direct Fulfillment Shipping v2021-12-28 createShippingLabels

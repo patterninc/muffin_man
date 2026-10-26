@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: muffin-man
+  description: 'A Onboard an Existing Repo to Backstage created via Backstage'
+  annotations:
+    repo: patterninc/muffin_man
+  labels:
+    CostCenter: DATA
+    Environment: stage
+    Name: muffin-man
+    Owner: dev-data-acquisition
+    Department: DATA
+    CreatedBy: Backstage
+spec:
+  type: service
+  system: data

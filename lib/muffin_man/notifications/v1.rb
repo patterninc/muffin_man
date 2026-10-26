@@ -7,7 +7,7 @@ module MuffinMan
     class V1 < SpApiClient
       NOTIFICATION_PATH = "/notifications/v1"
       NOTIFICATION_SCOPE = "sellingpartnerapi::notifications"
-      PROCESSING_DIRECTIVE_SUPPORTED_NOTIFICATIONS = ["ANY_OFFER_CHANGED"].freeze
+      PROCESSING_DIRECTIVE_SUPPORTED_NOTIFICATIONS = ["ANY_OFFER_CHANGED", "ORDER_CHANGE"].freeze
 
       def create_destination(arn, name, params = {})
         @local_var_path = "#{NOTIFICATION_PATH}/destinations"
@@ -42,7 +42,7 @@ module MuffinMan
         @local_var_path = "#{NOTIFICATION_PATH}/subscriptions/#{notification_type}"
         params = params.transform_keys(&:to_s)
         subscription_params = { "destinationId" => params["destination_id"] }
-        # currently SP-API's `processingDirective` only supports ANY_OFFER_CHANGED notification type.
+        # currently SP-API's `processingDirective` supports ANY_OFFER_CHANGED and ORDER_CHANGE notification types.
         if include_processing_directive?(notification_type, params)
           subscription_params.merge!(
             "processingDirective" => params["processing_directive"]

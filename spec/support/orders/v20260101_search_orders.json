@@ -1,0 +1,357 @@
+{
+  "orders": [
+    {
+      "orderId": "123-4567890-1234567",
+      "orderAliases": [
+        {
+          "aliasId": "SELLER-ORDER-2024-001",
+          "aliasType": "SELLER_ORDER_ID"
+        }
+      ],
+      "createdTime": "2024-12-25T10:30:00Z",
+      "lastUpdatedTime": "2024-12-25T14:45:00Z",
+      "programs": [
+        "PRIME",
+        "AMAZON_BUSINESS"
+      ],
+      "associatedOrders": [
+        {
+          "orderId": "123-4567890-1234566",
+          "associationType": "REPLACEMENT_ORIGINAL_ID"
+        }
+      ],
+      "salesChannel": {
+        "channelName": "AMAZON",
+        "marketplaceId": "ATVPDKIKX0DER",
+        "marketplaceName": "Amazon.com"
+      },
+      "buyer": {
+        "buyerName": "John Smith",
+        "buyerEmail": "buyer-email@marketplace.amazon.com",
+        "buyerCompanyName": "Smith Industries LLC",
+        "buyerPurchaseOrderNumber": "PO-2024-12345"
+      },
+      "recipient": {
+        "deliveryAddress": {
+          "name": "John Smith",
+          "companyName": "Smith Industries LLC",
+          "addressLine1": "123 Main Street",
+          "addressLine2": "Suite 456",
+          "addressLine3": "",
+          "city": "Seattle",
+          "districtOrCounty": "King County",
+          "stateOrRegion": "WA",
+          "municipality": "",
+          "postalCode": "98101",
+          "countryCode": "US",
+          "phone": "555-123-4567",
+          "addressType": "COMMERCIAL"
+        },
+        "deliveryPreference": {
+          "dropOffLocation": "Front desk reception",
+          "addressInstruction": "Enter through main lobby, ask for John Smith at reception",
+          "deliveryTime": {
+            "businessHours": [
+              {
+                "dayOfWeek": "MON",
+                "timeWindows": [
+                  {
+                    "startTime": {
+                      "hour": 9,
+                      "minute": 0
+                    },
+                    "endTime": {
+                      "hour": 17,
+                      "minute": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "dayOfWeek": "TUE",
+                "timeWindows": [
+                  {
+                    "startTime": {
+                      "hour": 9,
+                      "minute": 0
+                    },
+                    "endTime": {
+                      "hour": 17,
+                      "minute": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "dayOfWeek": "WED",
+                "timeWindows": [
+                  {
+                    "startTime": {
+                      "hour": 9,
+                      "minute": 0
+                    },
+                    "endTime": {
+                      "hour": 17,
+                      "minute": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "dayOfWeek": "THU",
+                "timeWindows": [
+                  {
+                    "startTime": {
+                      "hour": 9,
+                      "minute": 0
+                    },
+                    "endTime": {
+                      "hour": 17,
+                      "minute": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "dayOfWeek": "FRI",
+                "timeWindows": [
+                  {
+                    "startTime": {
+                      "hour": 9,
+                      "minute": 0
+                    },
+                    "endTime": {
+                      "hour": 17,
+                      "minute": 0
+                    }
+                  }
+                ]
+              }
+            ],
+            "exceptionDates": [
+              {
+                "exceptionDate": "2024-12-31",
+                "exceptionDateType": "CLOSED",
+                "timeWindows": []
+              }
+            ]
+          },
+          "deliveryCapabilities": [
+            "HAS_ACCESS_POINT",
+            "PALLET_ENABLED"
+          ]
+        }
+      },
+      "proceeds": {
+        "grandTotal": {
+          "amount": "149.99",
+          "currencyCode": "USD"
+        }
+      },
+      "fulfillment": {
+        "fulfillmentStatus": "SHIPPED",
+        "fulfilledBy": "MERCHANT",
+        "fulfillmentServiceLevel": "STANDARD",
+        "shipByWindow": {
+          "earliestDateTime": "2024-12-26T00:00:00Z",
+          "latestDateTime": "2024-12-27T23:59:59Z"
+        },
+        "deliverByWindow": {
+          "earliestDateTime": "2024-12-28T00:00:00Z",
+          "latestDateTime": "2024-12-30T23:59:59Z"
+        }
+      },
+      "orderItems": [
+        {
+          "orderItemId": "12345678901234",
+          "quantityOrdered": 2,
+          "programs": [
+            "TRANSPARENCY",
+            "SUBSCRIBE_AND_SAVE"
+          ],
+          "product": {
+            "asin": "B08N5WRWNW",
+            "title": "Echo Dot (4th Gen) | Smart speaker with Alexa | Charcoal",
+            "sellerSku": "ECHO-DOT-4-CHARCOAL",
+            "condition": {
+              "conditionType": "NEW",
+              "conditionSubtype": "NEW",
+              "conditionNote": "Brand new in original packaging"
+            },
+            "price": {
+              "unitPrice": {
+                "amount": "49.99",
+                "currencyCode": "USD"
+              },
+              "priceDesignation": "BUSINESS_PRICE"
+            },
+            "customization": {
+              "customizedUrl": "https://amazon.com/custom/view/12345"
+            }
+          },
+          "proceeds": {
+            "proceedsTotal": {
+              "amount": "99.98",
+              "currencyCode": "USD"
+            },
+            "breakdowns": [
+              {
+                "type": "ITEM",
+                "subtotal": {
+                  "amount": "99.98",
+                  "currencyCode": "USD"
+                }
+              },
+              {
+                "type": "TAX",
+                "subtotal": {
+                  "amount": "0.02",
+                  "currencyCode": "USD"
+                },
+                "detailedBreakdowns": [
+                  {
+                    "subtype": "ITEM",
+                    "value": {
+                      "amount": "0.02",
+                      "currencyCode": "USD"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "promotion": {
+            "breakdowns": [
+              {
+                "promotionId": "PROMO-HOLIDAY-2024"
+              }
+            ]
+          },
+          "cancellation": {
+            "cancellationRequest": {
+              "requester": "BUYER",
+              "cancelReason": "Changed mind about purchase"
+            }
+          },
+          "fulfillment": {
+            "quantityFulfilled": 2,
+            "quantityUnfulfilled": 0,
+            "packing": {
+              "giftOption": {
+                "giftMessage": "Happy Holidays! Enjoy your new smart speakers.",
+                "giftWrapLevel": "PREMIUM"
+              }
+            },
+            "shipping": {
+              "scheduledDeliveryWindow": {
+                "earliestDateTime": "2024-12-28T09:00:00Z",
+                "latestDateTime": "2024-12-28T17:00:00Z"
+              },
+              "shippingConstraints": {
+                "palletDelivery": "MANDATORY",
+                "cashOnDelivery": "MANDATORY",
+                "signatureConfirmation": "MANDATORY",
+                "recipientIdentityVerification": "MANDATORY",
+                "recipientAgeVerification": "MANDATORY"
+              }
+            }
+          }
+        },
+        {
+          "orderItemId": "12345678901235",
+          "quantityOrdered": 1,
+          "programs": [],
+          "product": {
+            "asin": "B07XJ8C8F5",
+            "title": "Fire TV Stick 4K with Alexa Voice Remote",
+            "sellerSku": "FIRE-TV-4K-2021",
+            "condition": {
+              "conditionType": "NEW",
+              "conditionSubtype": "NEW",
+              "conditionNote": ""
+            },
+            "price": {
+              "unitPrice": {
+                "amount": "49.99",
+                "currencyCode": "USD"
+              }
+            }
+          },
+          "proceeds": {
+            "proceedsTotal": {
+              "amount": "49.99",
+              "currencyCode": "USD"
+            },
+            "breakdowns": [
+              {
+                "type": "ITEM",
+                "subtotal": {
+                  "amount": "49.99",
+                  "currencyCode": "USD"
+                }
+              }
+            ]
+          },
+          "fulfillment": {
+            "quantityFulfilled": 1,
+            "quantityUnfulfilled": 0,
+            "shipping": {
+              "scheduledDeliveryWindow": {
+                "earliestDateTime": "2024-12-28T09:00:00Z",
+                "latestDateTime": "2024-12-28T17:00:00Z"
+              },
+              "shippingConstraints": {
+                "signatureConfirmation": "MANDATORY"
+              }
+            }
+          }
+        }
+      ],
+      "packages": [
+        {
+          "packageReferenceId": "PKG-2024-001",
+          "createdTime": "2024-12-25T15:00:00Z",
+          "packageStatus": {
+            "status": "DELIVERED",
+            "detailedStatus": "DELIVERED"
+          },
+          "carrier": "UPS",
+          "shipTime": "2024-12-25T14:00:00Z",
+          "shippingService": "UPS Ground",
+          "trackingNumber": "1Z999AA1234567890",
+          "shipFromAddress": {
+            "name": "Smith Electronics Warehouse",
+            "addressLine1": "456 Industrial Blvd",
+            "addressLine2": "Building A",
+            "city": "Bellevue",
+            "districtOrCounty": "King County",
+            "stateOrRegion": "WA",
+            "postalCode": "98004",
+            "countryCode": "US"
+          },
+          "packageItems": [
+            {
+              "orderItemId": "12345678901234",
+              "quantity": 2,
+              "transparencyCodes": [
+                "T12345ABCDE67890",
+                "T12346ABCDF67891"
+              ]
+            },
+            {
+              "orderItemId": "12345678901235",
+              "quantity": 1,
+              "transparencyCodes": [
+                "T67890GHIJK12345"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "pagination": {
+    "nextToken": "2YgYW55IGNhcm5hbCBwbGVhc3VyZS4"
+  },
+  "lastUpdatedBefore": "2024-12-25T15:00:00Z"
+}

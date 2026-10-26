@@ -8,6 +8,7 @@ RSpec.describe MuffinMan::AplusContent::V20201101 do
     stub_create_content_documents
     stub_post_content_document_asin_relations
     stub_validate_content_document_asin
+    stub_post_content_document_approval_submission
   end
 
   let(:marketplace_id) { "ATVPDKIKX0DER" }
@@ -80,6 +81,21 @@ RSpec.describe MuffinMan::AplusContent::V20201101 do
     it "validates the content document ASINs" do
       response = aplus_content_client.validate_content_document_asin_relations(marketplace_id, asin_set,
                                                                                content_document_payload)
+      expect(response.code).to eq(200)
+    end
+  end
+
+  describe "#post_content_document_approval_submission" do
+    it "submits the content document for approval" do
+      response = aplus_content_client.post_content_document_approval_submission(marketplace_id,
+                                                                                content_reference_key)
+      expect(response.code).to eq(200)
+    end
+
+    it "does not resend the body of a previous call on the same client" do
+      aplus_content_client.post_content_document_asin_relations(marketplace_id, content_reference_key, asin_set)
+      response = aplus_content_client.post_content_document_approval_submission(marketplace_id,
+                                                                                content_reference_key)
       expect(response.code).to eq(200)
     end
   end
