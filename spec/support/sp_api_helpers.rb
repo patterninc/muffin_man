@@ -4,6 +4,7 @@ require './spec/support/notifications/stub_notifications'
 require './spec/support/finances/stub_finances'
 require './spec/support/uploads/stub_uploads'
 require './spec/support/aplus_content/stub_aplus_content_apis'
+require './spec/support/replenishment/stub_replenishment'
 
 module Support
   module SpApiHelpers
@@ -522,41 +523,6 @@ module Support
     def stub_vendor_transaction_status_v1_get_transaction
       stub_request(:get, "https://#{hostname}/vendor/transactions/v1/transactions/#{transaction_id}")
         .to_return(status: 200, body: File.read("./spec/support/vendor_transaction_status/v1_get_transaction.json"), headers: {})
-    end
-
-    def stub_replenishment_list_offers
-      stub_request(:post, "https://#{hostname}/replenishment/2022-11-07/offers/search")
-        .to_return(status: 200, body: File.read("./spec/support/replenishment/list_offers.json"), headers: {})
-    end
-
-    def stub_replenishment_list_offers_with_filters
-      stub_request(:post, "https://#{hostname}/replenishment/2022-11-07/offers/search")
-        .to_return(status: 200, body: File.read("./spec/support/replenishment/list_offers_filtered.json"), headers: {})
-    end
-
-    def stub_replenishment_list_offer_metrics
-      stub_request(:post, "https://#{hostname}/replenishment/2022-11-07/offers/metrics/search")
-        .to_return(status: 200, body: File.read("./spec/support/replenishment/list_offer_metrics.json"), headers: {})
-    end
-
-    def stub_replenishment_list_offer_metrics_forecast
-      stub_request(:post, "https://#{hostname}/replenishment/2022-11-07/offers/metrics/search")
-        .to_return(status: 200, body: File.read("./spec/support/replenishment/list_offer_metrics_forecast.json"), headers: {})
-    end
-
-    def stub_replenishment_get_selling_partner_metrics
-      stub_request(:post, "https://#{hostname}/replenishment/2022-11-07/sellingPartners/metrics/search")
-        .to_return(status: 200, body: File.read("./spec/support/replenishment/get_selling_partner_metrics.json"), headers: {})
-    end
-
-    def stub_replenishment_get_selling_partner_metrics_specific
-      stub_request(:post, "https://#{hostname}/replenishment/2022-11-07/sellingPartners/metrics/search")
-        .to_return(status: 200, body: File.read("./spec/support/replenishment/get_selling_partner_metrics_specific.json"), headers: {})
-    end
-
-    def stub_replenishment_get_selling_partner_metrics_forecast
-      stub_request(:post, "https://#{hostname}/replenishment/2022-11-07/sellingPartners/metrics/search")
-        .to_return(status: 200, body: File.read("./spec/support/replenishment/get_selling_partner_metrics_forecast.json"), headers: {})
     end
 
     def credentials

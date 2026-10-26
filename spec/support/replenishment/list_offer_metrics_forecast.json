@@ -1,50 +1,22 @@
 {
-  "offerMetrics": [
+  "offers": [
     {
-      "asin": "B001234567",
-      "sellerSku": "SKU-TEST-001",
-      "marketplaceId": "ATVPDKIKX0DER",
+      "asin": "B07CYBR5GZ",
+      "sku": "SD-RES-101973",
+      "next30DayShippedSubscriptionUnits": 40,
+      "next60DayShippedSubscriptionUnits": 75,
+      "next90DayShippedSubscriptionUnits": 110,
+      "next30DayTotalSubscriptionsRevenue": 210.15,
+      "next60DayTotalSubscriptionsRevenue": 400.22,
+      "next90DayTotalSubscriptionsRevenue": 610.48,
       "timeInterval": {
-        "startDate": "2023-02-01T00:00:00Z",
-        "endDate": "2023-04-30T23:59:59Z"
+        "startDate": "2022-01-01T00:00:00Z",
+        "endDate": "2022-12-31T00:00:00Z"
       },
-      "aggregationFrequency": "MONTHLY",
-      "timePeriodType": "FORECAST",
-      "metrics": [
-        {
-          "metric": "SHIPPED_SUBSCRIPTION_UNITS",
-          "forecastPeriod": "30_DAYS",
-          "value": 35
-        },
-        {
-          "metric": "SHIPPED_SUBSCRIPTION_UNITS",
-          "forecastPeriod": "60_DAYS",
-          "value": 70
-        },
-        {
-          "metric": "SHIPPED_SUBSCRIPTION_UNITS",
-          "forecastPeriod": "90_DAYS",
-          "value": 105
-        },
-        {
-          "metric": "TOTAL_SUBSCRIPTIONS_REVENUE",
-          "forecastPeriod": "30_DAYS",
-          "value": 420.00,
-          "currencyCode": "USD"
-        },
-        {
-          "metric": "TOTAL_SUBSCRIPTIONS_REVENUE",
-          "forecastPeriod": "60_DAYS",
-          "value": 840.00,
-          "currencyCode": "USD"
-        },
-        {
-          "metric": "TOTAL_SUBSCRIPTIONS_REVENUE",
-          "forecastPeriod": "90_DAYS",
-          "value": 1260.00,
-          "currencyCode": "USD"
-        }
-      ]
+      "currencyCode": "USD"
     }
-  ]
+  ],
+  "pagination": {
+    "totalResults": 1
+  }
 }

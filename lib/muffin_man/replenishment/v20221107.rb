@@ -3,83 +3,56 @@
 module MuffinMan
   module Replenishment
     class V20221107 < SpApiClient
-      # Parameters for listOffers operation
-      LIST_OFFERS_PARAMS = %w[
-        filters
-        sort
-        pageSize
-        nextToken
-      ].freeze
+      REPLENISHMENT_PATH = "/replenishment/2022-11-07"
 
-      # Parameters for listOfferMetrics operation
-      LIST_OFFER_METRICS_PARAMS = %w[
-        filters
-        sort
-        pageSize
-        nextToken
-      ].freeze
-
-      # Parameters for getSellingPartnerMetrics operation
-      GET_SELLING_PARTNER_METRICS_PARAMS = %w[
-        filters
-        sort
-        pageSize
-        nextToken
-      ].freeze
-
-      # Get all of a selling partner's replenishment offers filtered by specific criteria
-      # @param marketplace_ids [Array<String>] A list of marketplace identifiers
-      # @param params [Hash] Optional filtering and pagination parameters
-      # @return [Typhoeus::Response] API response
-      def list_offers(marketplace_ids, params = {})
-        @local_var_path = "/replenishment/2022-11-07/offers/search"
-        @request_body = build_search_request_body(marketplace_ids, params, LIST_OFFERS_PARAMS)
-        @request_type = "POST"
-        call_api
-      end
-
-      # Get replenishment business metrics for each of a selling partner's offers
-      # @param marketplace_ids [Array<String>] A list of marketplace identifiers
-      # @param params [Hash] Optional filtering and pagination parameters
-      # @return [Typhoeus::Response] API response
-      def list_offer_metrics(marketplace_ids, params = {})
-        @local_var_path = "/replenishment/2022-11-07/offers/metrics/search"
-        @request_body = build_search_request_body(marketplace_ids, params, LIST_OFFER_METRICS_PARAMS)
-        @request_type = "POST"
-        call_api
-      end
-
-      # Get a selling partner's replenishment business metrics
-      # @param marketplace_ids [Array<String>] A list of marketplace identifiers
-      # @param params [Hash] Optional filtering and pagination parameters
-      # @return [Typhoeus::Response] API response
-      def get_selling_partner_metrics(marketplace_ids, params = {})
-        @local_var_path = "/replenishment/2022-11-07/sellingPartners/metrics/search"
-        @request_body = build_search_request_body(marketplace_ids, params, GET_SELLING_PARTNER_METRICS_PARAMS)
-        @request_type = "POST"
-        call_api
-      end
-
-      private
-
-      # Build request body for search operations
-      # @param marketplace_ids [Array<String>] A list of marketplace identifiers
-      # @param params [Hash] Parameters containing filters and other options
-      # @param allowed_params [Array<String>] List of allowed parameters for this operation
-      # @return [Hash] Request body
-      def build_search_request_body(marketplace_ids, params, allowed_params)
-        marketplace_ids = Array(marketplace_ids)
-
-        request_body = {
-          "marketplaceIds" => marketplace_ids
+      # Returns a selling partner's replenishment offers.
+      # `filters` requires `marketplaceId` and `programTypes`.
+      # `pagination` is `{ "limit" => Integer, "offset" => Integer }`.
+      def list_offers(filters, pagination, sort: nil)
+        @local_var_path = "#{REPLENISHMENT_PATH}/offers/search"
+        @query_params = {}
+        @request_body = {
+          "filters" => filters,
+          "pagination" => pagination
         }
+        @request_body["sort"] = sort if sort
+        @request_type = "POST"
+        call_api
+      end
 
-        # Add allowed parameters from params
-        allowed_params.each do |param|
-          request_body[param] = params[param] if params.key?(param)
-        end
+      # Returns replenishment metrics for each of a selling partner's offers.
+      # `filters` requires `marketplaceId`, `programTypes`, `timeInterval`, and `timePeriodType`.
+      # `pagination` is `{ "limit" => Integer, "offset" => Integer }`.
+      def list_offer_metrics(filters, pagination, sort: nil)
+        @local_var_path = "#{REPLENISHMENT_PATH}/offers/metrics/search"
+        @query_params = {}
+        @request_body = {
+          "filters" => filters,
+          "pagination" => pagination
+        }
+        @request_body["sort"] = sort if sort
+        @request_type = "POST"
+        call_api
+      end
 
-        request_body
+      # Returns aggregated replenishment metrics for a selling partner.
+      # `time_period_type` is `PERFORMANCE` or `FORECAST`.
+      # Optional `filters` narrow by ASIN, SKU, fulfillment channel, brand, or product group.
+      def get_selling_partner_metrics(marketplace_id, time_interval, time_period_type, program_types,
+                                      aggregation_frequency: nil, metrics: nil, filters: nil)
+        @local_var_path = "#{REPLENISHMENT_PATH}/sellingPartners/metrics/search"
+        @query_params = {}
+        @request_body = {
+          "marketplaceId" => marketplace_id,
+          "timeInterval" => time_interval,
+          "timePeriodType" => time_period_type,
+          "programTypes" => program_types
+        }
+        @request_body["aggregationFrequency"] = aggregation_frequency if aggregation_frequency
+        @request_body["metrics"] = metrics if metrics
+        @request_body["filters"] = filters if filters
+        @request_type = "POST"
+        call_api
       end
     end
   end
