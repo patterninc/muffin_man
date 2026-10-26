@@ -1,0 +1,22 @@
+{
+  "offers": [
+    {
+      "asin": "B07CYBR5GZ",
+      "sku": "SD-RES-101973",
+      "next30DayShippedSubscriptionUnits": 40,
+      "next60DayShippedSubscriptionUnits": 75,
+      "next90DayShippedSubscriptionUnits": 110,
+      "next30DayTotalSubscriptionsRevenue": 210.15,
+      "next60DayTotalSubscriptionsRevenue": 400.22,
+      "next90DayTotalSubscriptionsRevenue": 610.48,
+      "timeInterval": {
+        "startDate": "2022-01-01T00:00:00Z",
+        "endDate": "2022-12-31T00:00:00Z"
+      },
+      "currencyCode": "USD"
+    }
+  ],
+  "pagination": {
+    "totalResults": 1
+  }
+}
